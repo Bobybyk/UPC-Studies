@@ -1,0 +1,5 @@
+Exercice 1 :
+
+	2/. Les variables f et g sont deux variables différentes contrairement à h. Ces trois variables pointes vers des objets Fruit.
+
+	3/. 

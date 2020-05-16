@@ -1,0 +1,12 @@
+body{
+	background-color : PowderBlue;
+}
+h1{
+	text-align : center;
+	font-size : xx-large;
+}
+footer{
+	text-align : right;
+	font-size : small;
+	color : SlateGray;
+}

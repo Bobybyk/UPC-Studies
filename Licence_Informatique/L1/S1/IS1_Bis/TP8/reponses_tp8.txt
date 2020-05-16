@@ -1,0 +1,38 @@
+NOM : Le Franc
+Prenom : Matthieu
+#################
+
+Exercice 1 :
+	1/. On peut obtenir un défilement page par page avec : "ps -ax | less"
+	2/.	Pour compter les processus attachés au terminal, on peut utiliser : "ps | tail -q | wc -l"
+		"ps" pour lister les processus attachés au terminal, "tail -q" pour lister les lignes sans les titres (pour garder les lignes qui nous intéressent, celles des processus), "wc -l" pour récupérer le nombre de ligne.
+
+Exercice 2 :
+	1/. tr 'abcdefghijklmnopqrstuvwxyz' 'bcdefghijklmnopqrstuvwxyza'
+	2/. echo "hello world" | tr 'abcdefghijklmnopqrstuvwxyz' 'bcdefghijklmnopqrstuvwxyza' > crypte
+	3/. echo "hello world" | tr 'bcdefghijklmnopqrstuvwxyza' 'abcdefghijklmnopqrstuvwxyz' > decrypte
+	4/. echo "hello world" | ./crypte | ./decrypte
+	5/. echo "hello world" | ./crypte | tee message_secret | ./decrypte 
+
+Exercice 3 :
+	1/. dd if=/dev/zero of=nul count=10000 bs=1
+	2/. commande 1 : dd if=/dev/zero of=grosfichier count=200 bs=1 
+		(on crée un fichier "grosfichier" contenant 200 caractères nuls).
+		commande 2 : tr '\0' 'a' < grosfichier | tee grosfichier 
+		(avec la commande "tr" on transforme le caractère nul en a, avec l'opérateur "<" on injecte le contenu de "grosfichier" dans la commande tr, avec un tube (|) et la commande tee on dédouble la sortie sur le fichier gros fichier).
+		Si l'on essaye maintenant d'afficher le contenu du fichier "grosfichier" (cat grosfichier) on visualisera 200 caractères 'a'
+
+Exercice 4 :
+	1/. cat -n | tail -n 3 grosfichier
+	2/. cat -n | head -7 grosfichier | tail -1
+
+Exercice 5 :
+	2/. ls -R ~/*.java
+
+Exercice 6 :
+	1/. dd if=/dev/random of=alea count=1 bs=1
+	2/. od -t d alea
+
+
+
+

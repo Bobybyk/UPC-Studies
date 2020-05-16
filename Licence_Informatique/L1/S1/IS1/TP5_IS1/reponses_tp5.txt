@@ -1,0 +1,20 @@
+Exercice 5 :
+
+	Commandes :
+
+		chmod u=rwx,g=rx,o=rx Spirou
+		chmod u=rwx,g=rx,o=rx Fantasio
+		chmod u=rwx,g=r,o=r champignac
+
+	Exercice 6 :
+
+		1. Commandes : "mkdir -p Poudlard/{CabaneHurlante,SauleCogneur}/Honeydukes"	"touch Poudlard/CabaneHurlante/fumeseck"
+		3. Si on change les droits d'accès de : "ls_fumseck" on change, par la même occasion, les droits de : "ln_fumeseck"
+		4. Changer les droits de : "CabaneHurlente" nous permet de voir le contenu de : "ln_fumeseck" mais pas celui de "ls_fumeseck" . Certainement car "fumeseck" est lié à son emplacement.
+		5. On peut seulement afficher le contenu de : "ln_fumeseck" . Sûrement parce que le lien symbolique était lié au fichier fumeseck quand il était présent dans le répertoire : "CabaneHurlante" .
+		6. En utilisant la commannde : "cat ls_fumeseck" après avoir créé un nouveau fichier, nous pouvons voir son texte. Car "ls_fumeseck" est lié à n'importe quel fichier "fumeseck" placé dans le dossier CabaneHurlante.
+		7. Après avoir déplacé "ls_fumseck" dans "CabaneHurlante" on ne peut plus afficher le contenu. Le fichier "ls_fumeseck" doit se trouver dans le répertoire où il a été créé pour pouvoir trouver le chemin pour retrouver son fichier lié.
+		8. Après avoir déplacé le fichier "ls_fumeseck", on ne peut plus le faire fonctionner car il ne retrouve plus le fichier auquel il est lié.
+		10. On remarque que l'on peut se connecter avec passageSecret, via cd CabaneHurlante/HoneyDukes . En faisant pwd on peut observer dans quel dossier nous nous trouvons.
+		11. Lorsu'on utilise la commande : "ls -R" , on peut voir tous les répertoires et sous répertoires exepté le lien de Honeydukes.
+		12. Commandes : "touch frere" ; "ln -s frere george" ; "ln -s george fred" ; "rm george" ; "ln -s fred george"

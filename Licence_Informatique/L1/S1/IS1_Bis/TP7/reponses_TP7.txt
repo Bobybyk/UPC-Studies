@@ -1,0 +1,48 @@
+NOM : Le Franc
+Prenom : Matthieu
+#################
+
+Exercice 1 : 
+
+	1/. ">" semble permettre d'affecter du contenu (commande ou texte) à un fichier.
+	2/. ">>" semble permettre d'ajouter un contenu à un fichier à la suite du contenu déjà présent.
+
+Exercice 2 : 
+	
+	1/. La commande tty retourne comme référence : /dev/pts/1 
+		Ses permissions : crw--w---- 1 matthieu tty  136, 1 30 oct.  17:12 1
+		Ce fichier est de type caractère (c'est la sortie standard).
+	2/. Lorsque l'on redirige la commande date (tappé dans un second terminal) vers le fichier /dev/pts/1 : le resultat de son exectution s'affiche dans le permier terminal.
+
+Exercice 3 : 
+
+	2/. Avec man gabuzomeu 2> bugagu : le message "Aucune entrée de manuel pour gabuzomeu" s'inscrit dans le fichier gabuzomeu (en réitérant l'opération avec 2>> le message s'ajoute au précédent).
+	3/. En redirigeant la sortie erreur standard vers un fichier meuzobu, on peut constater que l'erreur est contenue dans ce même fichier car nous avons demandé que l'erreur soit écrite dans un fichier.
+
+Exercice 4 : 
+
+	1/. ls -d */*[A-Z]* 2> /dev/null
+	2/. ls -R 2> /dev/pts/1
+		Ainsi on redirige dans un second terminal les messages d'erreurs pour les y afficher.
+
+Exercice 5 :
+
+	Il n'y a pas de différence de comportement entre : "cat BlancheNeige" & "cat < BlancheNeige" les deux commandes affichent la même chose. En revanche : "wc BlancheNeige" & "wc < BlancheNeige" ne produisent pas le même résultat. "wc BlancheNeige" affiche le nombre de lignes, de mots et d'octets ainsi que le nom du fichier mais "wc < BlancheNeige" afficheC tout sauf le nom du fichier. Certainement car en redirigeant seulement le contenu du fichier "BlancheNeige" à la commande "wc", la commande n'a plus accès au nom du fichier et ne l'affiche donc pas. 
+
+Exercice 6 :
+
+	2/. ctrl-D et ctrl-C ne produisent pas le même résultat combiné avec la commande "cat". En effet, lorsque l'on tapper ctrl-D avec une chaine de caractères déjà écrite, la commande cat est executé et affiche la chaine de caractère avant de se stopper alors qu'avec ctrl-C rien ne s'affiche, la commande est stoppée directement.
+		Certainement car ctrl-D est configuré pour stopper le processus après son execution alors que ctrl-C le stop directement.
+	3/. L'option "-n" de "cat" ajoute des un numéro de ligne à chaque début de ligne.
+
+
+Exercice 7 :
+
+	1/. Commandes : "head -6 Reine" & "tail -6 Reine" affiche les 6 dernières lignes du fichier.
+	2/. Lorsque l'on tappe la commande "tail -n 3" puis cinq lignes et ctrl-D, la commande renvoie les 3 dernières ligne.
+		le résultat l'explique par le fait que l'on demande à la commande de renvoyer les 3 dernières lignes.
+	3/. Avec la commmande "head -n 3" la commande se stop à la troisième ligne tappée.
+		Cela s'explique par le fait que la commande head renvoie directement le résultat.
+	6/. On peut remarquer qu'à chaque début d'affichage du contenu de chaque fichier, le nom du fichier est affiché en en-tête.
+		Avec l'option -q de tail, on peut supprimer l'affichage du nom du fichier.
+

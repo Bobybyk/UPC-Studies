@@ -1,0 +1,5 @@
+Static : le mot clef static signifie qu'un attribut ou une méthode peut être appelé sans avoir construit d'objet. Un argument static, par exemple, est défini dans la classe où il est déclaré et commun à toutes les instances de cette classe.
+
+Final : une variable déclarée comem final est immuable et ne peut être modifié lorsque sa valeur est définie.
+
+this : fait référence à l'intance de la classe dans laquelle elle est appelée. "this" permet, par exemple, de différencier les argument de la classe des arguments locaux à une méthode.

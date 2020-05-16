@@ -1,0 +1,113 @@
+NOM : Le Franc
+Prénom : Matthieu
+#################
+
+Exercice 1 :
+
+	1/. 
+
+	Dans le premier terminal, avec le quel on avait auparavant executer "xcalc" & "xclock" on peut observer comme processus :
+		- bash
+		- xcalc
+		- xclock
+		- ps
+	
+	Et dans le second terminal, ouvert ensuite, on peut voir :
+		- bash
+		- ps
+
+	En tappant la commande ps dans le même terminal, on peut voir les processus rattachés à celui-ci (dont xclock & xcalc). En tappant ps dans un autre terminal, on ne peut pas voir les processus comme xclock ou xcalc lancés dans l'autre terminal.
+
+	Avec ps -e, on peut afficher tous les processus du système.
+	PID : c'est le numéro du processus.
+	TIME : c'est le temps que le processus a été actif
+	CMD : c'est la commande pour executer le processus.
+
+	2/. 
+	
+	F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD	
+	0 S 21800858 2599 2479  0 80   0 - 15268 poll_s pts/0    00:00:00 xcalc
+	0 S 21800858 2601 2479  0 80   0 - 20107 poll_s pts/0    00:00:00 xclock
+	
+	PPID signifie : parent process ID. (L'ID du processus).
+	PRI : priority of the process.  Higher number means lower priority. (la priorité du processus selon son numéro PRI).
+	SZ : size in physical pages of the core image of the process. (la taille du processus).
+	TT : controlling tty (terminal).
+	UID : see euid.
+
+	3/. Avec la commande : "ps -ax"
+
+	4/. La commande on peut utiliser la commande : "ps c" ou : "ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm"
+
+	5/. Avec la commande : "ps -aux" et en remplaçant "x" par l'utilisateur souhaité (machin par exemple).
+	Pour afficher le processus appartenant au super utilisateur, on utilise la commande : "ps -au root".
+
+	6/. On peut afficher le processus dont le PID est n avec la commande : "ps --pid n" où n est le numéro du pid.
+
+	7/. Pour retrouver le PID de son parent on utilise la commande : "pstree" 
+	Le parent, des processus lancés ultérieurement, est bash.
+
+Exercice 2 :
+	
+	1/. Les informations affichées sont :
+		- les différents processus
+		- le pourcentage de consommation CPU
+		- le pourcentage de consommation mémoire
+		- le temps que chaque processus a été actif
+		- le PID
+		- l'utilisateur à l'origine du processus
+	
+	Les processus sont classés par ordre de priorité.
+
+
+Exercice 3 :
+
+	1/. On peut obtenir la liste de tous les signaux que l'on peut envoyer aux processus avec la commande "kill -l"
+	Les numéro des signaux sont :
+		- Pour SIGTERM : 15
+		- Pour SIGKILL : 9
+		- Pour SIGINT : 2
+		- Pour SIGSTOP : 19
+		- Pour SIGCONT : 18
+
+	2/. Avec SIGTERM : la fenêtre de xcalc se ferment.
+	Avec SIGKILL : la fenêtre de xcalc se ferment.
+	Avec SIGINT : la fenêtre de xcalc se ferment.
+	Avec SIGSTOP : la fenêtre de xcalc se "vérouille" et on ne peut plus intéragir avec la calculatrice.
+	Avec SIGKILL : dévérouille la fenêtre xcalc. Ne sers que si SIGSTOP a été utilisé avant.
+
+	3/. Avec SIGTERM : rien ne se passe.
+	Avec SIGKILL : Le terminal se ferme mais pas xcalc
+	Avec SIGINT : rien ne se passe
+	Avec SIGSTOP : le terminal dans le quel la commande a été entrée n'accepte plus de commandes et xcalc se ferme.
+	Avec SIGCONT : rien ne se passe.
+
+	4/. bash -> xterm -> bash -> xcalc
+		
+	5/. Avec SIGTERM : xterm ainsi que xcalc se ferment.
+	Avec SIGKILL : xterm ainsi que xcalc se ferment.
+	Avec SIGINT : xterm ainsi que xcalc se ferment.
+
+	6/. On ne peut pas stopper un processus pour lequel nous ne sommes pas propriétaire. Certainement pour éviter d'endommager ou de stopper des processus important pour le système.
+
+
+Exercice 4 : 
+
+	1/. On constate que le PID est le même.
+
+
+Exercice 5 :
+
+	1/. Le processus est actif et permet de continuer à entrer des commandes dans le même terminal. Le processus est en tache de fond.
+
+	2/. Le processus est actif mais ne permet pas d'entrer des commandes dans le terminal. Après avoir effectué un "ctrl-Z" le processus tourne en tache de fond.
+
+	3/. Le nom du signal envoyé par "ctrl-Z" est SIGCONT.
+
+
+Exercice 7 :
+
+	1/. Un seul processus peut être en avant plan.
+
+	3/. Le raccourci ctrl-C correspond au signal SIGINT.
+ 	

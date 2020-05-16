@@ -1,0 +1,23 @@
+LISIK Hugo L1 Info
+
+Exercice 5 :
+
+Je créer le dossier Spirou et Fantasio ainsi que le fichier champignac, puis ensuite je change les droits avec chmod. 
+
+chmod u=rwx,g=rx,o=rx Spirou
+chmod u=rwx,g=rx,o=rx Fantasio
+chmod u=rwx,g=r,o=r champignac
+
+Exercice 6 :
+1. mkdir -p Poudlard/{CabaneHurlante,SauleCogneur}/Honeydukes
+   touch Poudlard/CabaneHurlante/fumeseck
+3. Lorsque l'on change les droits d'accès de ls_fumseck	cela change les droits de ln_fumeseck
+4. En changeant les droits de CabaneHurlente nous pouvons voir le contenu de ln_fumeseck mais pas celui de ls_fumeseck car il est lié à fumeseck à son emplacement donc si l'emplacement est réservé de droit alors ca sera le cas aussi de ls_fumeseck.
+5. On peut afficher uniquement celui de ln_fumeseck car le lien symbolique était lié au fichier fumeseck lorsque qu'il était dans CabaneHurlante mtn il n'a plus aucun lien avec lui contrairement à ln_fumeseck
+6. en faisant cat ls_fumeseck après la manipulation nous pouvons voir le texte du nouveau fichier fumeseck car le fichier ls_fumeseck est lié à n'importe quel fichier nommé fumeseck et se trouvant dans le dossier CabaneHurlante
+7. cela n'affiche rien car le fichier ls_fumeseck doit se trouver à l'endroit précis où il a été créé afin de pouvoir le chemin qu'il doit parcourir pour retrouver son fichier lié.
+8. le fichier ls_fumeseck une fois déplacé ne fonctionne pas car il ne retrouve pas le fichier auquel il est lié.
+10. On peut si connecter via passageSecret, via cd CabaneHurlante/HoneyDukes 
+   Lorsque qu'on fait pwd on voit dans quel dossier nous sommes soit lorsque l'on est dans passage secret, on voit qu'on dans celui-ci et de meme lorsque je suis dans HoneyDukes. Cepdant la commande pwd -P nous permet de voir le dossier parent, donc où que l'on soit on voit qu'elle dossier est le père de passageSecret.
+11. On voit tous les dossiers et sous dossier sauf le lien de Honeydukes (passageSecret)
+12. touch frere -> ln -s frere george -> ln -s george fred -> rm george -> ln -s fred george

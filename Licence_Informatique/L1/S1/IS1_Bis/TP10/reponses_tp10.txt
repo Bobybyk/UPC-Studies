@@ -1,0 +1,22 @@
+NOM : Le Franc
+Prénom : Matthieu
+#################
+
+Exercice 1 :
+	2/. Un processus a été créé après avoir executé "sleep 500 ; xclock". Lorsque l'on kill le processus sleep on que l'on attend 500 secondes, le processus xclock se lance.
+
+	3/. Avec "sleep 500 & xclock" les deux processus (sleep et xclock) se lance simultanément.
+
+	4/. Avec "(sleep 500 ; xclock) &" le processus sleep est lancé en background (on peut toujours intéragir avec le shell). Lorsque l'on kill le processus sleep, le processus xclock se lance, comme le processus sleep précédemment, en background. Après avoir kill le processus xclock, il ne reste "plus rien", le combot "(sleep 500 ; xclock)" n'existe plus.
+
+	5/. Lorsque l'on kill le processus père, les deux processus se coupe.
+
+Exercice 2 :
+	1/. La valeur de retour de "ls" est 0. La valeur de retour de "ls" ficInexistant est 2.
+	2/. La valeur de retour est 0.
+	3/. La valeur de retour de sleep 100 interrompu avec ctrl-c est 0.
+		Avec ctrl-x : 148
+
+Exercice 4 :
+	1/. La commande "cmp" ne renvoie rien si elle a été appelé avec deux fichiers identiques. Si elle est appelé avec deux fichiers différents, elle renvoie le nombre d'octets et la ligne différente.
+	2/. Le message affiché par la commande cmp correspond à la sortie standard. 

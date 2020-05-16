@@ -1,0 +1,44 @@
+Prenom : Matthieu
+Nom : Le Franc
+###################
+
+Exercice 1 :
+	1/. alias li="ls -1a"
+	2/. alias la="ls -a"
+	3/. alias ls="ls -p"
+	4/. alias rm="rm -i"
+	5/. Les alias ne sont pas reconnu dans d'autres terminals
+
+Exercice 3 :
+	1/. ls -i TP3/
+		➜ 12583226 Canards/  12583248 Toutou/  12583230 bip_bip  12583231 bugs_bunny  12583232 daffy_duck  12583233 grosminet  12583234 titi
+	2/. Le numéro d'i-noeud du fichier renommé dans le même répertoire n'a pas changé.
+	3/. Le numéro d'i-noeud du fichier copier dans le même répertoire est différent.
+	5/. ln Fifi loulou
+	6/. Les fichiers ont le même contenu mais pas le même numéro d'i-noeud.
+	7/. echo Tout est en ordre, Donald > hihihi
+		cat RiRi FiFi loulou hihihi 
+		➜ 	C'est Donald qui l'a perdu, onc'Picsou...
+			C'est Donald qui l'a perdu, onc'Picsou...
+			C'est Donald qui l'a perdu, onc'Picsou...
+			Tout est en ordre, Donald
+
+	8/. D'abord, si l'on utilise pas l'échappement avec \, les guillemets ne seront pas affichés, ils serviront de délimitateurs de la chaine de charactères.
+	Lorsqu'on tente d'afficher le contenu de Riri, FiFi, loulou et hihi après avoir modifié le contenu de FiFi : on constate que le contenu de tous les fichiers du même numéro i-noeud que FiFi a changé
+	9/. On peut toujours afficher le contenu de Riri, loulou et hihihi mais pas de FiFi. On peut recréer le nom FiFi en gardant son i-noeud originaire en recréant un lien avec ln de loulou vers Fifi ou de Riri vers Fifi car leur i-noeud est identique.
+
+Exercice 4 :
+	groupes=3110(Sc.Exactes_L1)
+
+Exercice 5 :
+	1/. Les symboles décrivants les droits sont : xwr (x : droit d'execution ; w : droit d'écriture ; r : droit de lecture).
+		Le plus gros fichier ordinaire est titi avec 32octets.
+
+Exercice 6 :
+	1/. Nous n'avons que le droit de lecture sur le fichier tata. Lorsqu'on souhaite le modifier, on ne peut pas enregistrer les modifications, nous ne sommes qu'en lecture seule.
+
+	2/. Nous avons seulement le droit d'écriture avec titi mais pas le droit de lecture.
+
+	3/. Nous avons les droits de lecture et d'execution du fichier toto. Nous pouvons lire son contenu, executer son contenu mais pas le modifier.
+
+	4/. Les seuls droits que nous possédons sur le fichier tutu sont les droits d'execution. Nous pouvons donc executer son code mais pas le lire ni le modifier. 

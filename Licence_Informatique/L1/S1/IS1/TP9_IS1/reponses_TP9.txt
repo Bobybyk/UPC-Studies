@@ -1,0 +1,32 @@
+Exercice 1 :
+
+	1/. On peut obtenir un défilement page par page en utilisant le filtre "less".
+
+
+Exercice 2 :
+	
+	2/. Commandes pour cryptage selon la méthode de César : 
+
+		#! /usr/bin/env bash 
+		read cesar
+		echo $cesar | tr 'abcdefghijklmnopqrstuvwxyz' 'bcdefghijklmnopqrstuvwxyza'
+
+	3/. Commandes pour décryptage selon la méthode de César :
+
+		#! /usr/bin/env bash 
+		read cesar	
+		echo $cesar | tr 'abcdefghijklmnopqrstuvwxyz' 'zabcdefghijklmnopqrstuvwxy'
+
+	4/. Commande : "./decrypte.sh $(./crypte.sh bonjour)"
+
+
+Exercice 3 :
+
+	1/. Pour créer un fichier nul contenant 10 000 caractères nuls, j'utilise la commande : cat /dev/zero | head -c 10000 > fichier_nul
+
+
+Exercice 5 :
+
+	2/. Commande : "grep -l '' *.java"
+
+	

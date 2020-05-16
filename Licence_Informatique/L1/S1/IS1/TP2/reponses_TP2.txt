@@ -1,0 +1,69 @@
+Exercie 1 :
+
+	1/.L'option de ls permettant de lister les fichiers ordinaires et sous-répertoires en déterminant leur type est : "ls *"
+	
+
+	2/.La commande permettant en une seule ligne de lister tous les fichiers et sous-répertoires contenus exactement 3 niveaux en dessous est : "ls -D"
+	
+	3/. "ls -R" permet de lister en une seule ligne de commande tout le contenu de l'arborescence de racine.
+
+
+Exercice 2 :
+
+	 1/. cat TP2/Tintin/Personnages/milou
+	     Résultat : Tu as tort, Tintin !… Tu sais que ça ne te réussit jamais, de t’occuper des affaires des autres.
+
+	 2/. cat Cours-L1-Info/IS1/TP2/Duck/CoffreDePicsou
+	     Résultat : /CoffreDePicsou est un dossier
+
+	 3/. Les répertoires de travail dans lesquels la commande "cat ../Personnages/haddock" s'exécute sans erreur sont :  /Personnages ; /lieux ;  /véhicules
+
+	 4/. Depuis le répertoire .../Toto, la commande permettant de lister le contenu du répertoire .../Personnages  est : " ls ~/Cours-L1-Info/IS1/TP2/Tintin/Personnages
+
+
+Exercice 3 :
+
+	 2/. La référence contenue dans cette URL est la référence absolue.
+
+
+Exercice 4 : 
+
+L'option de ls permettant de les afficher est : "ls -a" ils s'appellent : ".emeraudes ; .lingots ; .pepites ; .perles ; .rubis"
+
+
+Exercice 5 :
+
+	 2/. Commande : "du -sh .../TP2" Résultat : "347k	TP2"
+
+	 3/. Commande : "ls -AR .../TP2"
+
+
+Exercice 7 :
+	 
+	 1/. Commande : "cp -rvf Tintin/ Sauvegarde/"
+	 
+	 2/. On vérifie avec la commande : "diff Tintin/Personnages/milou Sauvegarde/Personnages/milou"
+
+	 3/. On vérifi l'arborescence avec l'option "diff /Tintin /Sauvegarde"
+	 
+	 6/. On créer le répertoire avec la commande : "mkdir -p Toto/Tutu/titi"
+
+
+Exercice 8 :
+
+	 1/. ls /usr/bin/q*
+	 2/. ls /usr/bin/*q*
+	 3/. ls /usr/bin/*q
+	 4/. ls /usr/bin/m*e
+	 5/. ls /usr/bin/??q
+	 6/. ls /usr/bin/q?????
+	 7/. ls /usr/bin/q?????*
+	 8/. ls /usr/bin/
+	 9/. ls /usr/bin/*[jy]*
+	 10/. ls /usr/bin/*[09]*
+	 11/. ls /usr/bin/*[!az]*
+	 12/. 
+
+
+
+	  

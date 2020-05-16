@@ -1,0 +1,24 @@
+NOM : Le Franc
+Prenom : Matthieu
+#################
+
+Exercice 1 :
+	1/. head -n1 ratp.csv
+
+	2/. a/. grep Paris ratp.csv
+		b/. grep -v Paris ratp.csv
+		c/. grep Paris\;13 ratp.csv 
+		d/. grep [0-999999999]\;13 ratp.csv 
+		e/. grep SCEAUX ratp.csv
+
+Exercice 2 :
+	1/.	b/. uniq ratp.csv | sort -d 
+
+Exercice 4 : 
+	1/. a/. find ~/ -name *.java
+		b/. find ~/ -name \?\?\?\?\?\?
+		c/. find ~/ -name *.*.*
+
+	3/. find ~/ -name *.sh -exec chmod go-x \{\} \+
+	4/. find ~/ -name *.java -exec tar -cvf java.tar \{\} \;
+	

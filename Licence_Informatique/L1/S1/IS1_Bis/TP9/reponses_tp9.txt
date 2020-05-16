@@ -1,0 +1,23 @@
+NOM : LE FRANC
+Prenom : Matthieu
+#################
+
+Exercice 1 :
+	2/. echo "Bonjour $USER, vous êtes actuellement dans le répertoire $PWD"
+	
+	3/. La variable HOME est la variable racine.
+	
+	4/. La variable OLDPWD est la variable contenu le chemin du répertoire précédemment consulté.
+
+Exercice 2 :
+	3/. Lorsque l'on execute le fichier fic.sh avec la commande "./fic.sh" dans le répertoire où il est contenu, le fichier s'execute mais lorsque l'on essaye de l'executer en entrant "fic.sh", un message d'erreur s'affiche. En revanche, quand on tente d'exectuer fic.sh via un autre répertoire (exemple : "TP9/fic.sh"), le fichier s'execute.
+	Il faut visiblement, pour executer un fichier .sh, qu'il soit appelé "via un répertoire" pour lui montrer le chemin (dans le répertoire où il se trouve avec "./fic.sh" ou par un autre répertoire en fournissant le chemin).
+	
+	4/. PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin/:~/Bureau/Fac/Licence_Informatique/L1/S1/IS1/TP9/
+
+	5/. Si on déplace fic.sh dans un autre répertoire, la commande "fic.sh" ne fonctionne plus. Il faudrait, pour qu'elle fonctionne, modifier la variable $PATH.
+
+Exercice 3 :
+	3/. NOM = matthieu
+
+	

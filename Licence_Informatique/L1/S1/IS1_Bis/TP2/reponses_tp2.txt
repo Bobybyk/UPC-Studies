@@ -1,0 +1,140 @@
+NOM : LE FRANC
+PRENOM : Matthieu
+
+######################
+
+Exercice 1 :
+	1/. L'option de "ls" permettant de lister les fichiers ordinaires et sous-répertoires est : "*" ce qui donne la commande : ls *
+
+	2/. La commande permettant en une seule ligne de lister tous les fichiers et sous-répertoires contenus exactement 3 niveaux en dessous est : "ls -D"
+
+	3/. "ls -R" permet de lister en une seule ligne de commande tout le contenu de l'arborescence de racine.
+
+Exercice 2 :
+	1/. cat TP2/Tintin/Personnages/haddock 
+		➜ 	Mille millions de mille milliards de mille sabords de tonnerre de Brest!
+			Bougre de faux jeton à la sauce tartare! Clysopompe! 
+			Simili-Martien à la graisse de cabestan!
+
+	2/. cat ../../Tintin/Personnages/haddock 
+		➜ 	Mille millions de mille milliards de mille sabords de tonnerre de Brest!
+			Bougre de faux jeton à la sauce tartare! Clysopompe! 
+			Simili-Martien à la graisse de cabestan!
+
+	3/. Les répertoires dans lesquels la commande : cat ../Personnages/haddock s'execute sans erreur sont : Lieux/ Vehicules/
+
+	4/. La commande permettant de lister le contenu est : ls ~/Cours/2019/IS1/TP2/Tintin/Lieux
+
+	5/. Avec la commande : "cat Personnages/dupont Personnages/dupond" On peut afficher le contenu de "dupont" et "dupond"
+		➜	C'est ça... tu as pris mon chameau et moi le chien. Enfin, le contraire...
+			Ah... je comprends, tu as mis mon chapeau et moi le tien!
+
+Exercice 3 :
+	2/. La référence contenue dans cette URL est la référence absolue.
+
+Exercice 4 :
+	L'option de "ls" permettant de les afficher, est : "-a". Ces fichiers sont :
+		➜	.  ..  .emeraudes  .lingots  .pepites  .perles	.rubis
+
+Exercice 5 :
+	2/. Commande : "du -sh .../TP2"
+		➜	"232K	TP2/"
+
+	3/. Commande : "ls -AR TP2/"
+		
+➜	bip_bip  bugs_bunny  daffy_duck  Duck  grosminet  reponses_tp2.txt  Tintin  titi  Toto	tp2.pdf
+
+./Duck:
+CoffreDePicsou	daisy  donald  fifi  picsou  riri
+
+./Duck/CoffreDePicsou:
+.emeraudes  .lingots  .pepites	.perles  .rubis
+
+./Tintin:
+Lieux  Personnages  Vehicules
+
+./Tintin/Lieux:
+Imaginaires  Reels
+
+./Tintin/Lieux/Imaginaires:
+bordurie  khemed  moulinsart  san_theodoros  syldavie
+
+./Tintin/Lieux/Reels:
+chine  egypte  inde  perou  tibet
+
+./Tintin/Personnages:
+castafiore  dupond  dupont  haddock  lampion  milou  tournesol
+
+./Tintin/Vehicules:
+caravane  char_lunaire	fusee  hydravion  jeep	licorne  requin
+
+./Toto:
+Tata  Titi  Tutu
+
+./Toto/Tata:
+Turlu  Tutu
+
+./Toto/Tata/Turlu:
+chapeau
+
+./Toto/Tata/Tutu:
+pointu
+
+./Toto/Titi:
+Tata
+
+./Toto/Titi/Tata:
+
+./Toto/Tutu:
+Tata  Titi
+
+./Toto/Tutu/Tata:
+Titi
+
+./Toto/Tutu/Tata/Titi:
+
+./Toto/Tutu/Titi:
+Toto
+
+./Toto/Tutu/Titi/Toto:
+
+	4/. Commande : du -a /var | sort -n -r | head -n 10
+		➜	232	.
+			108	./tp2.pdf
+			48	./Tintin
+			44	./Toto
+			28	./Tintin/Personnages
+			20	./Toto/Tutu
+			16	./Duck
+			12	./Toto/Tata
+			12	./Tintin/Lieux
+			8	./Toto/Tutu/Titi
+
+Exercice 7 :
+	1/. Commande : "cp -rvf Tintin/ Sauvegarde/"
+
+	2/. On vérifie avec la commande : "diff Tintin/Personnages/milou Sauvegarde/Personnages/milou"
+		Il n'y a pas de retour sur la sortie standard. Le fichier a bien été copier.
+
+	3/. On vérifi l'arborescence avec l'option "diff Tintin/ Sauvegarde/"
+		➜	Les sous-répertoires Tintin/Lieux et Sauvegarde/Lieux sont identiques
+			Les sous-répertoires Tintin/Personnages et Sauvegarde/Personnages sont identiques
+			Les sous-répertoires Tintin/Vehicules et Sauvegarde/Vehicules sont identiques
+
+	6/. On crée le répertoire avec la commande : "mkdir -p Toto/Tutu/titi"
+
+Exercice 8 :
+	1/. ls /usr/bin/r*
+	2/. ls /usr/bin/*r*
+	3/. ls /usr/bin/*r
+	4/. ls /usr/bin/p*n
+	5/. ls /usr/bin/??r*
+	6/. ls /usr/bin/r?????
+	7/.	ls /usr/bin/r?????*
+	9/. ls /usr/bin/*[sl]*
+	10/. ls /usr/bin/*[09]*
+	11/. ls /usr/bin/*[!az]*
+	
+
+
+

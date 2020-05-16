@@ -1,0 +1,47 @@
+Exercice 1 :
+
+	2/. Commande : echo Bonjour $USER , vous êtes actuellement dans le répertoire $PWD
+
+	3/. La variable HOME est la variable racine.
+
+	4/. la variable OLDPWD contient le répertoire précédent. Lorsqu'on entre la commande "cd -" on accède à ce répertoire. La variable OLDPWD enregistre à chaque changement de répertoire, le répertoire précédent.
+
+
+Exercice 2 :
+
+	3/. On peut executer le script fic depuis IS1 sans problèmes. Cependant pour l'executer depuis son répertoire (TP7) il faut utiliser le ./fic.sh car la commande fic.sh n'est pas dans le PATH.
+
+	4/. Commande : PATH=$PATH:~./
+	
+	5/. Commande : PATH=$PATH:~/Cours-L1-Info/IS1/TP7
+
+
+Exercice 3 :
+
+	3/. Commande : "NOM=Matthieu" 
+	
+	4/. La valeur de la variable ne s'affiche pas car la variable n'est accessible que dans le terminal dans le quel elle a été définie.
+
+	5/. La valeur de NOM dans le shell initial, est toujours "Matthieu"
+
+	6/. avec NOM comme variable d'environnement, la valeur de NOM dans le shell initial est maintenant Tartempion.
+
+	7/. La première variable déclarée dans le premier terminal est une variable "relative" et ne peut être utilisé que dans l'environnement du shell où elle a été déclarée.
+	La deuxième variable est une variable d'environnement et peut donc être utilisé partout.
+
+
+Exercice 5 : 
+
+#! /usr/bin/env bash 
+echo "Je dois saluer $# personnes"
+
+
+Exercice 6 : 
+
+
+
+
+
+
+
+

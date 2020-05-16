@@ -1,0 +1,110 @@
+Exercice 1 :
+
+3/. Terminal 1 :
+    	     id : uid=21802328("mclipa28") gid=3110(Sc.Exactes_L1) groupes=3110(Sc.exactes_L1)
+	     who : mlfran58 tty7	   2018-09-20 10:50 (:0)
+    Terminal 2 :
+    	     id : uid=21800858(mlfran58) gid=3110(Sc.exactes_L1) groupes=3110(Sc.exactes_L1)
+	     who : hlisik tty7		 2018-09-20 10:49 (:0)
+	     	   mlfran58 pts/4	 2018-09-20 11:12 (172.16.10.9)
+    Terminal 3 :
+    	     id : uid=21800858(mlfran58) gid=3110(Sc.exactes_L1) groupes=3110(Sc.Exactes_L1)
+	     who : mlfran58 tty7	 2018-09-20 10:50 (:0)
+
+
+Exercice 2 :
+
+1/. Pour afficher le calendrier complet de l'année courante, il suffit d'entrer la commande "cal" suivie de l'option "-y" et l'année souhaitée. Exemple : "cal -y 2018".
+
+                           2018
+      Janvier               Février                 Mars          
+di lu ma me je ve sa  di lu ma me je ve sa  di lu ma me je ve sa  
+    1  2  3  4  5  6               1  2  3               1  2  3  
+ 7  8  9 10 11 12 13   4  5  6  7  8  9 10   4  5  6  7  8  9 10  
+14 15 16 17 18 19 20  11 12 13 14 15 16 17  11 12 13 14 15 16 17  
+21 22 23 24 25 26 27  18 19 20 21 22 23 24  18 19 20 21 22 23 24  
+28 29 30 31           25 26 27 28           25 26 27 28 29 30 31  
+                                                                  
+
+       Avril                  Mai                   Juin          
+di lu ma me je ve sa  di lu ma me je ve sa  di lu ma me je ve sa  
+ 1  2  3  4  5  6  7         1  2  3  4  5                  1  2  
+ 8  9 10 11 12 13 14   6  7  8  9 10 11 12   3  4  5  6  7  8  9  
+15 16 17 18 19 20 21  13 14 15 16 17 18 19  10 11 12 13 14 15 16  
+22 23 24 25 26 27 28  20 21 22 23 24 25 26  17 18 19 20 21 22 23  
+29 30                 27 28 29 30 31        24 25 26 27 28 29 30  
+                                                                  
+
+      Juillet                 Août               Septembre        
+di lu ma me je ve sa  di lu ma me je ve sa  di lu ma me je ve sa  
+ 1  2  3  4  5  6  7            1  2  3  4                     1  
+ 8  9 10 11 12 13 14   5  6  7  8  9 10 11   2  3  4  5  6  7  8  
+15 16 17 18 19 20 21  12 13 14 15 16 17 18   9 10 11 12 13 14 15  
+22 23 24 25 26 27 28  19 20 21 22 23 24 25  16 17 18 19 20 21 22  
+29 30 31              26 27 28 29 30 31     23 24 25 26 27 28 29  
+                                            30                    
+
+      Octobre               Novembre              Décembre        
+di lu ma me je ve sa  di lu ma me je ve sa  di lu ma me je ve sa  
+    1  2  3  4  5  6               1  2  3                     1  
+ 7  8  9 10 11 12 13   4  5  6  7  8  9 10   2  3  4  5  6  7  8  
+14 15 16 17 18 19 20  11 12 13 14 15 16 17   9 10 11 12 13 14 15  
+21 22 23 24 25 26 27  18 19 20 21 22 23 24  16 17 18 19 20 21 22  
+28 29 30 31           25 26 27 28 29 30     23 24 25 26 27 28 29  
+                                            30 31      
+
+
+
+2/.Pour afficher le calendrier de juin de l'année courante, il suffit d'entrer la commande "cal" suivie de l'option "-m" et le mois souhaité. Exemple : "cal -m june".
+
+
+     Juin 2018        
+di lu ma me je ve sa  
+                1  2  
+ 3  4  5  6  7  8  9  
+10 11 12 13 14 15 16  
+17 18 19 20 21 22 23  
+24 25 26 27 28 29 30  
+
+
+
+3/.Pour afficher le calendrier de juin 2048 en indiquant les numéros de semaine, il suffit d'entrer la commande : "ncal -m juin 2048 -w"
+
+
+    Juin 2048         
+lu  1  8 15 22 29   
+ma  2  9 16 23 30   
+me  3 10 17 24      
+je  4 11 18 25      
+ve  5 12 19 26      
+sa  6 13 20 27      
+di  7 14 21 28      
+   23 24 25 26 27   
+
+
+4/. Pour afficher le calendrier de janvier à mars 2048, il faut entrer la commande : "ncal -m février 2048 -3"
+
+
+    Janvier 2048      Février 2048      Mars 2048         
+lu     6 13 20 27        3 10 17 24        2  9 16 23 30
+ma     7 14 21 28        4 11 18 25        3 10 17 24 31
+me  1  8 15 22 29        5 12 19 26        4 11 18 25   
+je  2  9 16 23 30        6 13 20 27        5 12 19 26   
+ve  3 10 17 24 31        7 14 21 28        6 13 20 27   
+sa  4 11 18 25        1  8 15 22 29        7 14 21 28   
+di  5 12 19 26        2  9 16 23        1  8 15 22 29
+
+
+5/. Pour afficher la date de la Pâque orthodoxe de 2048; il faut entrer la commande : "ncal -jo 2048".
+
+
+05/04/2048
+
+
+Exercice 3 :
+
+/home2/mlfran58/Téléchargements/Tata/Titi/Turlu/Tutu
+
+
+
+
