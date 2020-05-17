@@ -9,5 +9,17 @@ public class Cellule {
         this.precedent = null;
     }
 
-    
+    public void setSuivant (Cellule c) {
+        this.suivant = c;
+    }
+    public void setPrecedent (Cellule c) {
+        this.precedent = c;
+    }
+
+    public Cellule getSuivant() {
+        return this.suivant;
+    }
+    public Cellule getPrecedent() {
+        return this.precedent;
+    }
 }
