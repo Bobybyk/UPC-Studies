@@ -1,0 +1,46 @@
+Exercice 1 :
+
+	1/. egrep Odette swan.txt
+
+	2/. egrep -c Odette swann.txt
+		449
+
+	3/. egrep -c Gilberte swann.txt
+		99
+
+	4/. egrep -o Gilberte swann.txt | wc -l
+		100
+
+	5/. Certaines lignes peuvent contenir plusieurs fois le mot recherché.
+
+		egrep 'Gilberte.*Gilberte' swann.txt 
+		Gilberte, peut-être même plus que Gilberte, comme il convenait à des
+
+	6/. egrep -o 'Gilberte|Odette' swann.txt |wc -l
+		553
+
+	7/. 
+
+	8/. 
+
+	9/. egrep -c [0-9] swann.txt
+		7
+
+	10/. egrep -c z[a-z] swann.txt 
+		114
+
+	11/. egrep -c z[^a-z] swann.txt 
+		752
+
+	12/. egrep -c '\.$' swann.txt 
+		887
+
+	13/. egrep -c '\(.*[^)]' swann.txt 
+		185
+
+	14/. egrep '(.*,){5,}' swann.txt | wc -legrep '(.*,){5,}' swann.txt | wc -l
+
+		17
+
+	15/. egrep -c '[a-zA-Z]{15,}' swann.txt 
+		206
