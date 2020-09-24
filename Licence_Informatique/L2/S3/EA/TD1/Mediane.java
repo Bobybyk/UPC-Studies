@@ -18,24 +18,22 @@ public class Mediane {
 		for (int i = 0 ; i<t.length ; i++) {
 			for (int j = i+1 ; j<t.length ; j++) {
 				if (t[i] == t[j]) {
-					return 0;
+					return 0;	// return 0 si éléments du tableau non distincts
 				}
 			}
 		}
 		for (int i = 0 ; i<(t.length-1) / 2 ; i++) {
 			if (compteInf(t, t[i]) == (t.length-1)/2) {
-				System.out.println("t[i]");
 				return t[i];
 			}
 		}
-		System.out.println("Erreur");
-		return 0;
+		return 0;	// return 0 si pas de médiane
 
 
 	}
 
 	public static void main (String[] args) {
-		int[] t = {50, 5, 2, 12, 24, 48, 1};
+		int[] t = {3, 4, 1, 5, 2};
 		System.out.println(findMed(t));
 		
 	}
