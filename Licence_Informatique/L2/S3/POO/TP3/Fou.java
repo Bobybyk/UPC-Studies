@@ -1,3 +1,6 @@
-public class Fou {
-	private String nom = this.getClass().getName();
+public class Fou extends Piece {
+
+	public Fou (boolean b) {
+		super(b, "f");
+	}
 }

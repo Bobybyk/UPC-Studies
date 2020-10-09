@@ -1,3 +1,6 @@
-public class Dame {
-	private String nom = this.getClass().getName();
+public class Dame extends Piece {
+
+	public Dame (boolean b) {
+		super(b, "d");
+	}
 }

@@ -2,8 +2,9 @@ public class Case {
 	private boolean etat;
 	private Piece piece;
 
-	public Case() {
-
+	public Case(boolean etat) {
+		this.etat = etat;
+		this.piece = null;
 	}
 
 	public Piece getPiece() {
@@ -11,23 +12,32 @@ public class Case {
 	} 
 
 	public boolean estVide() {
-		if (this.etat) {
+		if (this.piece != null) {
 			return true;
 		} return false;
 	}
 
 	public void remplirPiece (Piece p) {
-		this.piece = p;
+		if (this.piece == null) {
+			this.piece = p;
+		} else { System.out.println("Erreur : la case est déjà occupée"); }
+		
 	}
 
-	public void enleverPiece(Piece p) {
-		this.piece = null;
+	public void enleverPiece() {
+		if (this.piece != null) {
+			this.piece = null;
+		} else { System.out.println("Erreur : la case est déjà vide"); }
 	} 
 
 	public String toString() {
-		if (this.piece != null) {
-			return "-";
-		} return "*";
-	}
+        if(this.piece == null){
+            if(this.etat) {
+            	return "-";
+            } else { return "*"; }
+        } return piece.toString().substring(0,1);
+    }
+
+    public 
 
 }

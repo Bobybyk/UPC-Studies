@@ -1,5 +1,7 @@
-public class Pion {
-	private String nom = this.getClass().getName();
+public class Pion extends Piece {
 
-	
+	public Pion (boolean b) {
+
+		super(b, "p");
+	}
 }

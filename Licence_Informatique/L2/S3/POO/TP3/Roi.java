@@ -1,3 +1,6 @@
-public class Roi {
-	private String nom = this.getClass().getName();
+public class Roi extends Piece {
+	
+	public Roi (boolean b) {
+		super(b, "r");
+	}
 }

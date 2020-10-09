@@ -1,3 +1,6 @@
-public class Tour {
-	private String nom = this.getClass().getName();
+public class Tour extends Piece {
+
+	public Tour (boolean b) {
+		super(b, "t");
+	}
 }
