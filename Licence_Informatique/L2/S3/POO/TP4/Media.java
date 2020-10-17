@@ -21,5 +21,12 @@ public class Media {
 		if (this.numero < doc.numero) {
 			return true;
 		} return false;
+
+	}
+
+	public int ordreMedia() {
+		if (this instanceof Dictionnaire) { return 1; }
+		if (this instanceof Livre) { return 2; }
+		else { return 3; }
 	}
 }
