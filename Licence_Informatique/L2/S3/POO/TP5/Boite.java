@@ -1,12 +1,10 @@
 public class Boite {
-
-	public Boite() {}
 	
 	public int length() {
-
+		return 0;
 	}
 
 	public String toString() {
-
+		return "";
 	}
 }
