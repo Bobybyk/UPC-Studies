@@ -1,23 +1,37 @@
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
-
 import org.w3c.dom.events.MouseEvent;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
 import java.awt.Rectangle;
+import java.awt.Graphics2D;
+import javax.swing.JFrame.*;
 
 public class ImageEditView extends JFrame {
     private static final long serialVersionUID = 1L;
-    private JButton cutButton;
-    private JButton undoButton;
-    private JButton redoButton;
+    private JButton cutButton = new JButton("cut");
+    private JButton undoButton = new JButton("undo");
+    private JButton redoButton = new JButton("redo");
+    private JMenuBar menu = new JMenuBar();
     ImagePane imagePane;
     ImageEditModel model;
+
+    public ImageEditView(ImageEditModel model) {
+        this.model = model;
+        this.setTitle("Editeur"); // Titre de la fenêtre
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Méthode de fermeture
+        this.setJMenuBar(this.menu);
+        this.imagePane = new ImagePane();
+        this.setContentPane(imagePane);
+        this.menu.add(cutButton);
+        this.menu.add(undoButton);
+        this.menu.add(redoButton);
+        cutButton.setEnabled(false);
+    } 
 
     class ImagePane extends JPanel {
         private static final long serialVersionUID = 1L;
@@ -25,24 +39,41 @@ public class ImageEditView extends JFrame {
 
         public ImagePane() {
             setPreferredSize(new Dimension(model.getImage().getWidth(), model.getImage().getHeight()));
-            addMouseListener((MouseListener) selection);
-            addMouseMotionListener((MouseMotionListener) selection);
+            addMouseListener(selection);
+            addMouseMotionListener(selection);
         }
 
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.drawImage(model.getImage(), 0, 0, this);
-        }
+            ((Graphics2D) g).draw(selection.getRectangle());
 
+        }
+        
         class Selection extends MouseAdapter implements MouseMotionListener {
-            private int x, y, z, t;
+            int x1, y1, x2, y2;
 
             public Rectangle getRectangle() {
-                return new Rectangle(x, y, z, t);
+                return new Rectangle(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x2-x1), Math.abs(y1-y2));
             }
+
             public void mousePressed(MouseEvent event) {
-                
+               this.x1 = event.getX(); 
+               this.y1 = event.getY();
+               cutButton.setEnabled(false);
+               repaint();
             }
+
+            public void mouseDragged(MouseEvent event) {
+                this.x2 = event.getX();
+                this.y2 = event.getY();
+                if (this.x2 != this.x1 && this.y2 != this.y1) {
+                    cutButton.setEnabled(true);
+                    repaint();
+                }
+            }
+
+            public void mouseMoved (MouseEvent event) {}
         }
     }
 }
