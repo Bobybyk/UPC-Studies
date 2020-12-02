@@ -33,6 +33,7 @@ public class ImageEditView extends JFrame {
         this.menu.add(cutButton);
         this.menu.add(undoButton);
         this.menu.add(redoButton);
+        // Lecture du bouton cut
         cutButton.addActionListener(e -> { 
             this.model.saveCut(imagePane.selection.getRectangle());
             imagePane.repaint();
@@ -40,12 +41,14 @@ public class ImageEditView extends JFrame {
             redoButton.setEnabled(true);
             cutButton.setEnabled(false);
         });
+        // Lecture du bouton CTRL+Z
         undoButton.addActionListener(e -> { 
             if (this.model.undoManager.canUndo()) {
                 this.model.undoManager.undo();
                 repaint();
             }
         });
+        // Lecture du bouton retour en avant
         redoButton.addActionListener(e -> {
             this.model.undoManager.redo();
             repaint();
