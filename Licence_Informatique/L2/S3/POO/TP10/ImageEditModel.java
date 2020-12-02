@@ -26,7 +26,15 @@ public class ImageEditModel {
     }
 
     public void clearzone (Rectangle z) {
-        fillzone(z, getColor(z, Color.white));
+        Color color = Color.white;
+        int rgBis = color.getRGB();
+        int[][] pixels = new int[(int) z.getWidth()][(int) z.getHeight()];
+        for (int i = 0 ; i < pixels.length ; i++) {
+            for (int j = 0 ; i < pixels[i].length ; j++) {
+                pixels[i][j] = rgBis;
+            }
+        }
+        fillzone(z, pixels);
     }
 
     public int[][] getColor(Rectangle z, Color color) {
