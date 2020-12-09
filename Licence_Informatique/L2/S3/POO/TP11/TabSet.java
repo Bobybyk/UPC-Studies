@@ -105,13 +105,7 @@ public class TabSet<E> implements Iterable<E>, Set<E>{
 
     @Override
     public <T> T[] toArray(T[] a) {
-        for (Object o : a) {
-            if (o != null) {
-                //this.tableau[index] = a[o];
-            }
-            
-        }
-        return null;
+        return null; // Non fonctionnel
     }
 
     @Override
@@ -149,9 +143,10 @@ public class TabSet<E> implements Iterable<E>, Set<E>{
         return true;
     }
 
+// class Tab Iter
+
     public class TabIter implements Iterator<E> {
         private int index;
-        //private E[] tableau;
 
         public TabIter(E[] tab) {
             tableau = tab;
