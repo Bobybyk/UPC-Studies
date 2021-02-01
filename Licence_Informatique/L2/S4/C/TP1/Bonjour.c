@@ -1,6 +1,8 @@
 #include<stdio.h>
 
 int main (void) {
-    printf("Bonjour");
+	int z = 12;
+    printf("La valeur de z = %d\n", z);
+    printf("Bonjour\n");
     return 0;
 }
