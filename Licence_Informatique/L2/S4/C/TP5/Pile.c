@@ -44,6 +44,6 @@ int depile_pile_amortie(pile_amortie *pile, int*e) {
 
 int main() {
 	pile_amortie *p = alloue_pile_amortie();
-	printf("%s\n", empile_pile_amortie(p, 5));
+	printf("%s\n", empile_pile_amortie(p, 5));pppppppppppppppppp
 	return 0;
 }
