@@ -118,7 +118,13 @@ def derangeUnPeu(n,k,rev):
 #
 
 def triInsertionEchange(T):
-    # À COMPLETER
+    for i in range(1, len(T)): 
+        k = T[i] 
+        j = i-1
+        while j >= 0 and k < T[j] : 
+                T[j + 1] = T[j] 
+                j -= 1
+        T[j + 1] = k
     return T
 
 def triInsertionRotation(T):
@@ -136,26 +142,22 @@ def triInsertionRapide(T):
 #
 
 def fusion(T1, T2):
-    i, j = 0
-    res = []
-    while (i < len(T1) and j < len(T2)):
-        if T1[i] <= T2[j]:
-            res += T1[i]
-            i += 1
-        else :
-            res += T2[j]
-            j += 1
-    while (i < len(T1)):
-        res += T1[i]
-        i += 1
-    while (j < len(T2)):
-        res += T2[j]
-        j += 1
-    return res
+    if T1 == []:
+        return T2
+    elif T2 == []:
+        return T1
+    elif T1[0] < T2[0]:
+        return [T1[0] + fusion(T1[1], T2)]
+    else:
+        return [T2[0] + fusion(T1, T2[1])]
 
 def triFusion(T) :
-    # À COMPLETER
-    return T
+    n = len(T)
+    if n < 2:
+        return T
+    else:
+        m = n//2
+        return fusion(triFusion(T[m]), triFusion(T[m]))
 
 ############################################################
 # Exercice 2.3
@@ -164,7 +166,11 @@ def triFusion(T) :
 #
 
 def triBulles(T) :
-    # À COMPLETER
+    n = len(T)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if T[j] > T [j+1]:
+                T[j], T[j+1] = T[j+1], T[j]
     return T
 
 
@@ -327,9 +333,9 @@ if __name__ == '__main__':
 
   #exercice2
 
-  # print("Exercice 2")
-  # algos += trisInsertion + [triFusion, triBulles]
-  # compareAlgos(algos)
+  print("Exercice 2")
+  algos += trisInsertion + [triFusion, triBulles]
+  compareAlgos(algos)
 
   #exercice3
 
