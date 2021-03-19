@@ -128,12 +128,38 @@ def triInsertionEchange(T):
     return T
 
 def triInsertionRotation(T):
-    # À COMPLETER
+    for i in range(1, len(T)):
+        j = i
+        for k in range(i,0,-1):
+            if(T[k-1]>T[i]):
+                j -= 1
+        toMove = T[i]
+        T = decaler(T,debut = k, fin = i)
+        T[j] = toMove
+    return T
+
+def decaler(T, debut, fin):
+    for i in range(fin,debut,-1):
+        T[i] = T[i-1]
     return T
 
 def triInsertionRapide(T):
-    # À COMPLETER
-    return T
+    n = len(T)
+    if n < 2:
+        return T
+    else:
+        m = n//2
+        return fusion(triInsertionRapide(T[:m]), triInsertionRapide(T[m:]))
+
+def fusion(T1, T2):
+    if T1 == []:
+        return T2
+    elif T2 == []:
+        return T1
+    elif T1[0] < T2[0]:
+        return [T1[0]] + fusion(T1[1:], T2)
+    else:
+        return [T2[0]] + fusion(T1, T2[1:])
 
 ############################################################
 # Exercice 2.2
@@ -147,9 +173,9 @@ def fusion(T1, T2):
     elif T2 == []:
         return T1
     elif T1[0] < T2[0]:
-        return [T1[0] + fusion(T1[1], T2)]
+        return [T1[0]] + fusion(T1[1:], T2)
     else:
-        return [T2[0] + fusion(T1, T2[1])]
+        return [T2[0]] + fusion(T1, T2[1:])
 
 def triFusion(T) :
     n = len(T)
@@ -157,7 +183,7 @@ def triFusion(T) :
         return T
     else:
         m = n//2
-        return fusion(triFusion(T[m]), triFusion(T[m]))
+        return fusion(triFusion(T[:m]), triFusion(T[m:]))
 
 ############################################################
 # Exercice 2.3
@@ -181,12 +207,21 @@ def triBulles(T) :
 #
 
 def triRapide(T) :
-    # À COMPLETER
-    return T
+    if len(T) <= 1 : 
+        return T
+    pivot = T[0]
+    gauche = [val for val in T[1:] if val <= pivot]
+    droite = [val for val in T[1:] if val > pivot]
+    return triRapide(gauche) + [pivot] + triRapide(droite)
+
 
 def triRapideEnPlace(T):
-    # À COMPLETER
-    return T
+    if len(T) <= 1 : 
+        return T
+    pivot = T[0]
+    gauche = [val for val in T[1:] if val <= pivot]
+    droite = [val for val in T[1:] if val > pivot]
+    return triRapide(gauche) + [pivot] + triRapide(droite)
 
 ############################################################
 # Exercice 3.2
@@ -196,12 +231,20 @@ def triRapideEnPlace(T):
 #
 
 def triRapideAleatoire(T) :
-    # À COMPLETER
-    return T
+    if len(T) <= 1 : 
+        return T
+    pivot = T[random.randint(1, len(T))-1]
+    gauche = [val for val in T[1:] if val <= pivot]
+    droite = [val for val in T[1:] if val > pivot]
+    return triRapide(gauche) + [pivot] + triRapide(droite)
 
 def triRapideEnPlaceAleatoire(T):
-    # À COMPLETER
-    return T
+    if len(T) <= 1 : 
+        return T
+    pivot = T[random.randint(1, len(T))-1]
+    gauche = [val for val in T[1:] if val <= pivot]
+    droite = [val for val in T[1:] if val > pivot]
+    return triRapide(gauche) + [pivot] + triRapide(droite)
 
 
 ############################################################
@@ -339,9 +382,9 @@ if __name__ == '__main__':
 
   #exercice3
 
-  #print("Exercice 3")
-  #algos = [triRapide, triRapideEnPlace, triRapideAleatoire, triRapideEnPlaceAleatoire]
-  #compareAlgos(algos)
+  print("Exercice 3")
+  algos = [triRapide, triRapideEnPlace, triRapideAleatoire, triRapideEnPlaceAleatoire]
+  compareAlgos(algos)
 
   #exercice4
 
