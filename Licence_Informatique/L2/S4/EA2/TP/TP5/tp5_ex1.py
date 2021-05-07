@@ -18,15 +18,19 @@ def mesure_temps(f, *param, rep=1, cle=True):
     return tps/rep
     
 def cherche(x, I) :
-    for key, val in I[hash(x)][::-1] :
+    for key, val in I :
         if key == x : 
             return val
     return None
 
 
 def nb_elts_diff_liste(L):
-    #A COMPLETER
-    return
+    i = len(L)
+    for key in L :
+        for keyBis in L :
+            if key == key : 
+                i-=1
+    return i
 
 def nb_elts_diff_ens(E):
     #A COMPLETER
