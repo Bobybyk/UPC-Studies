@@ -38,7 +38,8 @@ int empile_pile_amortie(pile_amortie *pile, int n) {
     if (pile->capacite == pile->occupation+1) {
     // il faut etendre le tableau
         int *new_elements = realloc(pile->elements, (pile->capacite*2)*sizeof(int));
-        // ne pas faire p = realloc(p, ...) car si realloc echoue, on pert l'adresse de p et on a une fuite de memoire
+        // ne pas faire p = realloc(p, ...) car si realloc echoue, on pert l'adresse 
+        // de p et on a une fuite de memoire
 
         if (new_elements == NULL) {
             return -1; // l'allocation echoue

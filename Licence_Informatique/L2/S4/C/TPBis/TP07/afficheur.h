@@ -13,7 +13,7 @@ void print_head (int depth, int addr) {
     if (depth > 1) {
 	int pre = addr / 2;
 	print_head (depth - 1, pre);
-	printf ("%s", (pre % 2) != (addr % 2) ? "|    " : "     ");
+	printf ("%s", (pre % 2) != (addr % 2) ? "| " : " ");
 	return;
     }
     if (depth == 1)

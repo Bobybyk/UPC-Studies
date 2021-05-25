@@ -1,9 +1,6 @@
 #include<assert.h>
 #include "./afficheur.h"
 
-// a lot of stuff are already defined in the afficheur.h file
-// (the node struct and more)
-
 node *const_tree(int val, node *left, node *right) {
     node *n = malloc(sizeof(node));
     assert(n != NULL);
