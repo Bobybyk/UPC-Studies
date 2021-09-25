@@ -145,16 +145,18 @@ alias local="cd /srv/http"
 ###################
 ###### SHORT ######
 ###################
-alias ll="ls -l"
-alias la= "ls -a"
+alias ll="ls -lh"
+alias la="ls -a"
 alias writer="libreoffice --writer"   # Lance le traitement de texte
 alias calc="libreoffice --calc"     # Lance le tableur
 alias impress="libreoffice --impress"  # Lance l'éditeur de présentation
 alias draw="libreoffice --draw"     # Lance l'éditeur graphique
 alias base="libreoffice --base"     # Lance le gestionnaire de base de données
 alias math="libreoffice --math"     # Lance l'éditeur de formule
-
 alias f="find . -iname"
+alias bashrc="subl ~/.bashrc"
+alias config="subl ~/.ssh/config"
+
 ###################
 ##### Réseau ######
 ###################
@@ -170,8 +172,9 @@ alias tvpn="sudo openvpn /etc/openvpn/ovpn_tcp/$(ls /etc/openvpn/ovpn_tcp/ | shu
 alias lucy="ssh lefrancm@lucy.informatique.univ-paris-diderot.fr"
 alias lulu="ssh lefrancm@lulu -J lefrancm@lucy.informatique.univ-paris-diderot.fr"
 alias nivose="ssh lefrancm@nivose.informatique.univ-paris-diderot.fr"
-alias flush="sudo nscd -i hosts"
-
+tput setaf 1; 
+echo "Ctrl+D to exit ssh login"
+tput setaf 7;
 if [[ "$SSH_AUTH_SOCK" = "" ]]; then
     # on the first round, we do this...
     exec ssh-agent bash
@@ -185,6 +188,17 @@ fi
 ###################
 alias reload="exec $SHELL"
 alias maj='sudo pacman-mirrors -g && sudo pacman -Syyu && yaourt -Syua'
-alias tok='echo "JF9-OBV-GWY-ZT1"'
+alias tok='echo "JF9-OBV-GWY-ZT1"'###################
+alias sd="shutdown now"
+alias clean="sudo pacman -Qdt ; sudo pacman -Sc"
+alias frm="shred -zvu -n 10"
 alias path="echo $PATH"
+alias flush="sudo nscd -i hosts | echo 'succesfully flushed DNS'"
+# provisoire, faire script bash
+alias erase="echo 'zero.small.file creation (102 400b)' ; dd if=/dev/zero of=zero.small.file bs=1024 count=102400 ; shred -zv zero.small.file ; echo 'zero.file filling...' ; cat /dev/urandom > zero.file ; sync ; echo 'removing zero.small.file' ; rm zero.small.file ; shred -zv zero.file ; sync ; echo 'removing zero.file' ; rm zero.file"
 
+###################
+######  GIT  ######
+###################
+alias gitlog="git config --global user.email matt.lefranc@gmail.com ; git config --global user.name 'Matthieu Le Franc'"
+alias gitlist="git config --list"
