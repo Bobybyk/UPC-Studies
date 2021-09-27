@@ -12,8 +12,10 @@ public class Complexe {
     }
 
     public void somme(Complexe c) {
-        reel += c.reel;
-        imaginaire += c.imaginaire;
+        return new Complexe(this.re + autre.re, this.im + autre.im);
+    }
+    public static Complexe somme (Complexe arg1, Complexe arg2) {
+        return new Complexe(arg1.re + arg2.re, arg1.im + arg2.im)   ;
     }
 
     public void soustraction(Complexe c) {
