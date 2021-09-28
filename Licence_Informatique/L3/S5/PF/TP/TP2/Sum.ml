@@ -1,0 +1,1 @@
+let rec sum n = if n > 0 then n + sum(n-1) else n 
