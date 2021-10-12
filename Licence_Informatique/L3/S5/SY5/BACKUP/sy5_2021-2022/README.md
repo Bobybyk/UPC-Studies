@@ -53,6 +53,9 @@ il est facile de s'y perdre...
   d'inoeuds; `stat`, `chmod`, ...; [slides](Cours/cours_3.pdf) +
   [programmes](Cours/code_cours3) présentés en cours
 
+* cours nº4 : retour sur `stat`; les répertoires et leur consultation
+  (`opendir`, `readdir`, `closedir`); les [slides](Cours/cours_4.pdf)
+
 # TP
 
 
