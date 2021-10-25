@@ -27,7 +27,7 @@ let rec list_min l =
 
 let rec last l =
   match l with
-  | [] -> failwith "Error: empty list"
+  | [] -> failwith "error: empty list"
   | [e] -> e
   | e::l' -> last l';;
 
@@ -37,8 +37,15 @@ let rec is_sorted l =
   | [e] -> true
   | e::e'::l' -> if e < e' then is_sorted (e'::l') else false;;
 
-let rec average l = 1;;
-  (* j'ai pas fait lol *)
+let rec list_sum l = 
+  match l with
+  | [] -> 0
+  | e :: l' -> e + list_sum l';; 
+
+let rec average l = 
+  match l with
+  | [] -> failwith "error: empty list"
+  | e :: l' -> (e + list_sum l') / (list_length (l') + 1);; 
 
 let rec nth l k =
   match l with
