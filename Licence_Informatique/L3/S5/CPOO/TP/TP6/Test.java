@@ -29,6 +29,6 @@ public class Test {
 		liPer.pourChaque(c);
 
 		List<Integer> filteredList = li.filter(x -> x<5);
-		filteredList.pourChaque(c);
+		((MaListe<Integer>) filteredList).pourChaque(c);
 	}
 }

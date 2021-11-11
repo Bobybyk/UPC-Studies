@@ -14,7 +14,7 @@ public class MaListe<E> extends LinkedList<E> {
 	}
 
 	public List<E> filter(Predicate<E> pred) {
-		MaList<E> list = new MaList();
+		MaListe<E> list = new MaListe();
 		for (E e : this) {
 			if (pred.test(e)) {
 				list.add(e);
@@ -24,7 +24,7 @@ public class MaListe<E> extends LinkedList<E> {
 	}
 
 	public <U> List<U> map(Function<E,U> f) {
-		MaListe<U> rep = new MaList();
+		MaListe<U> rep = new MaListe();
 		for (E e : this) {
 			rep.add(f.apply(e));
 		}
@@ -33,9 +33,9 @@ public class MaListe<E> extends LinkedList<E> {
 
 	public <U> U fold(U z, BiFunction<U, E, U> f) {
 		U acc = z;
-		for (E e : this) {
+		/* for (E e : this) {
 			acc = f.apply(acc, x);
-		}
+		} */
 		return acc;
 	}
 }
