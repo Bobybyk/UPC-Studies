@@ -9,6 +9,6 @@ public class Additionneur implements UnaryOperator<Integer> {
 
     @Override
     public Integer apply(Integer integer) {
-        return integer + x;
+        return (integer.intValue()+ x);
     }
 }

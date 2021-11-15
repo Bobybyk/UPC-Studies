@@ -1,0 +1,88 @@
+                      Mini-projet 1 : solveur DPLL récursif
+                             fichier RENDU
+                       (à remplir obligatoirement)
+
+**Un mini-projet sans fichier RENDU rempli ne recevra pas de note.**
+
+Date limite: 29 octobre 2021, 23h59
+
+Identité
+--------
+Nombre de binôme: 3
+Nom, prénom 1: JACOTOT Hugo
+Nom, prénom 2: LE FRANC Matthieu
+
+
+Questions sur votre code
+------------------------
+0. Avez-vous testé que `make dpll` s'exécute sans erreurs ou warnings,
+   et que ensuite `./dpll sudoku-4x4.cnf` donne la réponse attendue (voir
+   fichier README) ?
+
+   **Réponse :**
+    - `make dpll` s'exécute bien sans erreurs ou warnings.
+    - `./dpll sudoku-4x4.cnf` donne la réponse attendue : à savoir la réponse donnée dans le fichier README ainsi que le même résultat obtenu par la fonction `solveur_split`.
+
+---
+
+1. Avez-vous utilisé la fonction `filter_map` (donné dans dpll.ml)
+   dans votre implémentation de `simplifie` ? 
+   - Si oui, expliquez en quelques phrases en français comment vous
+     l'avez utilisée.
+   - Si non, expliquez en quelques phrases en français comment
+     fonctionne votre implémentation de `simplifie`.
+
+   **Réponse :**
+      - Nous n'avons pas fait appel à la fonction `filter_map` mais utilisés, pour la fonction `simplifie`, nos propres appels aux fonctions **List** d'**OCAML**.
+      - La fonction détermine l'ensemble des clauses de la formule ne contenant pas le littéral passé en argument (à l'aide de la fonction List.filter), puis applique à chacune de ces clauses une fonction permettant de supprimer la négation de i dans l'ensemble des clauses (à l'aide de List.map et List.filter). En cas de réussite une liste de clauses simplifiées est retournée et en cas d'échec (a priori impossible dans l'architecture établie) la liste de clauses sans modifications.
+
+---
+
+2. Pour l'implémentation de `unitaire`, quelles sont les fonctions
+   auxiliaires que vous avez utilisées et/ou écrites ? (Par une
+   fonction auxiliaire, on entend ici soit une fonction d'une
+   bibliothèque, par exemple des fonctions comme `List.length`,
+   `List.rev_append`, ou une fonction `aux_unitaire` que vous avez
+   écrite vous-mêmes.) Expliquez en quelques phrases en français
+   comment ces fonctions auxiliaires sont utilisées dans votre
+   implémentation de la fonction `unitaire`.
+
+   **Réponse :**
+   
+   La fonction `List.find` permet de renvoyer le premier élément d'une liste satisfiant la condition donnée.
+   On applique donc cette fonction à une liste de listes représentant une CNF, avec comme condition que la liste recherchée doit contenir un seul élément (à l'aide de la fonction List.length).
+   On récupère ensuite l'unique littéral contenu dans cette liste à l'aide de la fonction List.hd
+   La fonction List.find lève une exception de type 'Not_found' si aucun élément ne correspond aux spécifications données.
+
+---
+
+3. Pour l'implémentation de `pur`, quelles sont les fonctions
+   auxiliaires que vous avez utilisées et/ou écrites ?  Expliquez en
+   quelques phrases en français comment ces fonctions auxiliaires sont
+   utilisées dans votre implémentation de la fonction `pur`.
+
+   **Réponse :** le principe de notre implémentation de la fonction `pur` et de faire la copie dans une liste **auxiliaire** de tous les littéraux des sous listes de la liste de listes **clauses** en prenant garde à ne pas copier deux fois le même littéral (dans sa forme positive ou négative). Ceci fait, nous comparons les littéraux de la liste **auxiliaire** avec ceux de **clauses**. La non présence d'un littéral de la liste **auxiliaire** dans **clauses** sous sa forme inverse implique que celui-ci est pur et nous le retournons donc.  
+      - Pour se faire, nous faisons appel à 3 fonctions auxiliaires et une fonction récursive au sein de `pur`. Elles sont :
+         -  `copy_wo_dl` (copie sans doublons) : interne à la fonction `pur` qui va parcourir **clauses** pour appeler la fonction `copy_wo_dl_bis` avec successivement chaque clause de **clauses** puis, une fois toute la liste de listes parcourue, appeler `list_of_clauses_wo_dl` avec **clauses** et la liste de littéraux **lit_wo_dl**.
+         -  `copy_wo_dl_bis` (copie sans doublons bis) : va parcourir les littéraux de **clause** et les ajouter à **lit_wo_dl** s'ils ne sont pas déjà présents (en positif ou en négatif).
+         - `list_of_clauses_wo_dl` (liste de clauses sans doublon) : va parcourir **lit_wo_dl** et regarder pour chaque littéral (via la fonction `is_pur`) s'il n'est présent dans **clauses** sous sa forme inverse. Si tel est le cas, on retourne ce littéral, sinon on continu le parcours de **lit_wo_dl**. Si on arrive à la fin de la liste, cela veut dire qu'aucun littéral n'est pure et on retourne alors **Not_found**.
+
+---
+
+4. Donnez un exemple d'une formule pour laquelle les deux fonctions
+   `solveur_split` et `solveur_dpll_rec` ont un comportement
+   différent, et expliquez les différences entre ces deux fonctions.
+
+   Après avoir tester les deux fonctions sur la formule satisfiable **sudoku-9x9-expert.cnf**, on peut observer que sur même machine :
+   - `solveur_dpll_rec` a un temps de résolution de moins de 4 secondes
+   - `solveur_split` a un temps de résolution de plus de 5 minutes.
+
+   Ce qui montre dans ce cas précis au moins la net plus grande efficacité de l'algorithme dpll. Ceci peut s'expliquer par le fait de l'utilisation des heuristiques, dans le cas de `solveur_dpll_rec`, permettant de déterminer les littéraux purs et les clauses unitaires. On peut ainsi optimiser la simplification de la formule sans démultiplier les possibilités.
+
+---
+
+5. Avez-vous d'autres remarques sur votre rendu ? (question optionnelle)
+
+---
+
+--fin du fichier RENDU--
