@@ -1,3 +1,5 @@
+/* lldict.h */
+
 typedef struct lldict lldict;
 
 struct lldict {
@@ -7,6 +9,7 @@ struct lldict {
 };
 
 void lldshw(lldict* const dic);
+lldict* lldnew(int key, int val);
 lldict* lldadd(lldict* dic, int key, int val);
 lldict* lldmod(lldict* dic, int key, int val);
 lldict* llddel(lldict* dic, int key);

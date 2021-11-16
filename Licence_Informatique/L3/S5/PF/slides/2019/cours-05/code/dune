@@ -1,0 +1,5 @@
+(executable
+   (name tree)
+   (libraries vg gg cairo2 vg.cairo cairo2-gtk lablgtk2)
+   (flags :standard -w -27-26)
+)

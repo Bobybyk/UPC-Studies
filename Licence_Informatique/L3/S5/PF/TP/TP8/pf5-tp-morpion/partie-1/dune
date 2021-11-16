@@ -1,0 +1,30 @@
+(env (_ (flags :standard -w -27-26-32-33)))
+
+(library
+ (name morpion_lib)
+ (modules matrix morpion_prelude morpion_victoire))
+
+(executable
+ (name morpion_imperatif)
+ (libraries morpion_lib graphics)
+ (modules morpion_debut morpion_imperatif)
+ (flags -open Morpion_lib -open Morpion_prelude)
+ (preprocess
+   (per_module
+      ((action (system "tr a-z% n-za-m' ' < %{input-file}")) morpion_imperatif))))
+
+(library
+ (name metamorpion_lib)
+ (libraries morpion_lib)
+ (modules metamorpion_prelude)
+ (flags -open Morpion_lib))
+
+(executable
+ (name metamorpion_imperatif)
+ (libraries metamorpion_lib graphics)
+ (modules metamorpion_debut metamorpion_victoire metamorpion_imperatif)
+ (flags -open Morpion_lib -open Metamorpion_lib -open Metamorpion_prelude)
+ (preprocess
+   (per_module
+      ((action (system "tr a-z% n-za-m' ' < %{input-file}")) metamorpion_imperatif))))
+
