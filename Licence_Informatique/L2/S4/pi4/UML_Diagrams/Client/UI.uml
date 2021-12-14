@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>client.control.UI</OriginalElement>
+  <nodes>
+    <node x="275.0" y="0.0">client.control.UI.SceneSwing</node>
+    <node x="0.0" y="345.0">client.control.UI.Images</node>
+    <node x="0.0" y="0.0">client.control.UI.VueSwing</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="256.5" y="188.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

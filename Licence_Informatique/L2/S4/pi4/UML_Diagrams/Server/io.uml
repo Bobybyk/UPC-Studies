@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>server.io</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">server.io.Communication</node>
+    <node x="345.0" y="288.0">server.io.Console</node>
+    <node x="331.0" y="0.0">server.io.ConnectionHandler</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="274.5" y="257.0" />
+  <SelectedNodes>
+    <node>server.io.Console</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

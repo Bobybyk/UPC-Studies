@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>server.elements</OriginalElement>
+  <nodes>
+    <node x="0.0" y="242.0">server.elements.Hole</node>
+    <node x="317.0" y="242.0">server.elements.Wall</node>
+    <node x="139.0" y="219.0">server.elements.Treasure</node>
+    <node x="135.0" y="0.0">server.elements.Element</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="server.elements.Treasure" target="server.elements.Element" relationship="GENERALIZATION">
+      <point x="0.0" y="-62.0" />
+      <point x="0.0" y="84.5" />
+    </edge>
+    <edge source="server.elements.Wall" target="server.elements.Element" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="375.5" y="194.0" />
+      <point x="218.0" y="194.0" />
+      <point x="0.0" y="84.5" />
+    </edge>
+    <edge source="server.elements.Hole" target="server.elements.Element" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="59.5" y="194.0" />
+      <point x="218.0" y="194.0" />
+      <point x="0.0" y="84.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="217.0" y="171.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

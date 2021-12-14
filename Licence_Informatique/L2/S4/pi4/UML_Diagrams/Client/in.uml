@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>client.commands.in</OriginalElement>
+  <nodes>
+    <node x="366.0" y="147.0">client.commands.in.CommandPlayerPosBroadcast</node>
+    <node x="275.0" y="767.0">client.commands.in.CommandMoveOk</node>
+    <node x="0.0" y="643.0">client.commands.in.CommandRequestStart</node>
+    <node x="274.0" y="0.0">client.commands.in.CommandUpdateMapList</node>
+    <node x="0.0" y="519.0">client.commands.in.CommandEveryoneDead</node>
+    <node x="0.0" y="271.0">client.commands.in.CommandWalkedOnTreasure</node>
+    <node x="285.0" y="643.0">client.commands.in.CommandUpdateWalls</node>
+    <node x="539.0" y="767.0">client.commands.in.CommandWallMet</node>
+    <node x="0.0" y="767.0">client.commands.in.CommandPlayerDied</node>
+    <node x="582.0" y="519.0">client.commands.in.CommandUpdateHoles</node>
+    <node x="0.0" y="147.0">client.commands.in.CommandPlayerTreasurePosBroadcast</node>
+    <node x="0.0" y="0.0">client.commands.in.CommandGameStart</node>
+    <node x="294.0" y="519.0">client.commands.in.CommandNotYourTurn</node>
+    <node x="318.0" y="271.0">client.commands.in.CommandUpdateTreasures</node>
+    <node x="0.0" y="395.0">client.commands.in.CommandMoveHoleDead</node>
+    <node x="570.0" y="643.0">client.commands.in.CommandMapJoined</node>
+    <node x="301.0" y="395.0">client.commands.in.CommandTurnBroadcast</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.6235565819861432" showDependencies="false" x="412.0" y="423.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

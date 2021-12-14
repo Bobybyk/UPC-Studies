@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>server</OriginalElement>
+  <nodes>
+    <node x="0.0" y="228.0">server.maps</node>
+    <node x="0.0" y="152.0">server.elements</node>
+    <node x="0.0" y="304.0">server.io</node>
+    <node x="176.0" y="228.0">server.ServerMain</node>
+    <node x="0.0" y="76.0">server.commands</node>
+    <node x="0.0" y="0.0">server.playingProps</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="272.0" y="210.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

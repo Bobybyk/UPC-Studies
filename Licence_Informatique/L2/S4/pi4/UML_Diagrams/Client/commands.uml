@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>client.commands</OriginalElement>
+  <nodes>
+    <node x="127.0" y="196.0">client.commands.userIn</node>
+    <node x="18.25" y="0.0">client.commands.Command</node>
+    <node x="0.0" y="196.0">client.commands.in</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="client.commands.in" target="client.commands.Command" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="53.5" y="171.0" />
+      <point x="123.75" y="171.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+    <edge source="client.commands.userIn" target="client.commands.Command" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="194.0" y="171.0" />
+      <point x="123.75" y="171.0" />
+      <point x="0.0" y="73.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="130.5" y="113.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

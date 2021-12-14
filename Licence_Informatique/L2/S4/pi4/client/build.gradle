@@ -1,0 +1,20 @@
+plugins {
+    id 'application' 
+}
+
+application {
+    mainClass = 'client.Player' 
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation project(':server')
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+}
+
+run{
+    standardInput = System.in
+}

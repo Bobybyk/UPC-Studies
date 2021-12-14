@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>client.view.graphicDisplay</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">client.view.graphicDisplay.GameSelectionDisplay</node>
+    <node x="246.0" y="0.0">client.view.graphicDisplay.ControlDisplay</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.5901639344262295" showDependencies="false" x="216.5" y="447.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

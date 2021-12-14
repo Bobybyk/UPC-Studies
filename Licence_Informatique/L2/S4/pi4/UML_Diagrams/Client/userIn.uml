@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>client.commands.userIn</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">client.commands.userIn.CommandCreateGame</node>
+    <node x="0.0" y="270.0">client.commands.userIn.CommandRequestStartSayNo</node>
+    <node x="0.0" y="518.0">client.commands.userIn.CommandJoinGame</node>
+    <node x="285.0" y="0.0">client.commands.userIn.CommandMove</node>
+    <node x="0.0" y="394.0">client.commands.userIn.CommandRequestStart</node>
+    <node x="285.0" y="394.0">client.commands.userIn.CommandStopServer</node>
+    <node x="0.0" y="146.0">client.commands.userIn.CommandRequestStartSayYes</node>
+    <node x="271.0" y="518.0">client.commands.userIn.CommandGetList</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.8752025931928687" showDependencies="false" x="257.5" y="298.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
