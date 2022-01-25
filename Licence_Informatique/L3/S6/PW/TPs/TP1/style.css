@@ -1,0 +1,20 @@
+header {
+	text-align: center;
+	border: darkblue 2px double;
+	background-color: lightblue;
+}
+
+* {
+	font-family: sans-serif;
+	color: darkblack;
+}
+
+nav a : hover {
+	color: green;
+	font-style: italic;
+}
+
+#auteur {
+	text-align: right;
+	font-weight: bold;
+}
