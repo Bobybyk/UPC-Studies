@@ -8,11 +8,13 @@ int main(int argc, char **argv) {
 	sockaddr.sin_family = AF_INET;
 	sockaddr.sin_port = htons(13);
 
-	inet_aton("192.168.70.237",sockaddr.sin_port); 
+	assert(inet_aton("192.168.70.237",sockaddr.sin_port) != 0); 
 
 	int socket_fd = socket(AF_INET, SOCK_STREAM, 0);
 
-	int err = connect(socket_fd, (struct sockaddr *) &sockaddr, sizeof(sockaddr));
+	assert(socket_fd >= 0);
+
+	assert(connect(socket_fd, (struct sockaddr *) &sockaddr, sizeof(sockaddr)) != 0);
 	
 	return 0;
 
