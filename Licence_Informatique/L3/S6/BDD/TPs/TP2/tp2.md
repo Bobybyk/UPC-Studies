@@ -102,3 +102,36 @@
 
 * **Algèbre relationnelle :** π c.nom ( (σ e.eid) = m.gagnant(e × (σ m1.tournois) = m2.tournois ∧ m1.gagnant = m2.perdant (m1 × m2) ))
 * **SQL :** SELECT e.nom FROM  equipes e,tournois t,matchs m WHERE m.tour ='finale' AND m.gagnant=e.eid AND t.tid = m.tournois;
+
+---
+
+**5).**
+
+* **Algèbre relationnelle :**
+* **SQL :**
+
+---
+
+## 4 : Condition d'existence et inexistence
+
+**1).** Les équipes dont le pays n’a jamais hébergé une coupe du monde 
+
+* **Algèbre relationnelle :** π p.nom ( (σ ))
+* **SQL :** SELECT  FROM pays WHERE
+
+
+**2).** Le nom des équipes n’ayant jamais participé à une finale
+
+* **Algèbre relationnelle :** 
+	
+	π e.nom (e) - π e.nom (σ m.tour=finale ∧ (e.id=gagnant ∨ e.id=perdant) (e × m))
+
+* **SQL :** 
+
+**3).** Les tournois pendant lequel le ‘XV de France’ a perdu tous ses matchs 
+
+* **Algèbre relationnelle :** 
+	
+	π t.nom, t.annee(t) - π t.nom, t.annee ( (σ t.tid=m.tournois) (t × (σ m.gagnant=e.id) (m × (σ e.noms='XV de France') (e) )))
+	
+* **SQL :**
