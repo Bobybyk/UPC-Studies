@@ -1,6 +1,8 @@
+#include <assert.h> 
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <assert.h> 
+#include <netdb.h>
+#include <arpa/inet.h>
 
 int main(int argc, char **argv) {
 	
