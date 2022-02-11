@@ -19,9 +19,6 @@ void listener(int conn_fd) {
 	while(1) {
 		bzero(buff, MAX);
 		read(conn_fd, buff, sizeof(buff));
-		n = 0;
-        // copy server message in the buffer
-        while ((buff[n++] = getchar()) != '\n');
 		write(conn_fd, buff, sizeof(buff));
 	}
 	close(conn_fd);

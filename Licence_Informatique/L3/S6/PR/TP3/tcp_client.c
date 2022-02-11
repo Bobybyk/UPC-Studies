@@ -9,8 +9,7 @@
 #define PORT 6666
 #define SA struct sockaddr
 
-void sender(int sockfd)
-{
+void sender(int sockfd) {
     char buff[MAX];
     int n;
     while(1) {
@@ -21,12 +20,7 @@ void sender(int sockfd)
             write(sockfd, buff, sizeof(buff));
             bzero(buff, sizeof(buff));
             read(sockfd, buff, sizeof(buff));
-            printf("From Server : %s", buff);
-            if ((strncmp(buff, "exit", 4)) == 0) {
-                printf("Client Exit...\n");
-                break;
-            }
-        }
+        }printf("From Server : %s", buff);
     }
 }
 
