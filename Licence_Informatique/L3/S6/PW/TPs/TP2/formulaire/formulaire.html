@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="formulaire.js"></script>
+	<link rel="stylesheet" href="formulaire.css">
+	<title></title>
+</head>
+<body>
+	<h1>
+		Formulaire
+	</h1>
+	<div>
+		<form>
+			<table>
+				<tr>
+					<td>
+						<label>Etat Civil</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<select name="civil">
+							<option value="M">Monsieur</option>
+							<option value="Mme">Madame</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Nom :</label><input type="text" name="nom">
+						<label>Prénom :</label><input type="text" name="prenom">
+						<label>Nom complet :</label><input type="text" name="complet" disabled>
+					</td>
+				</tr>
+					<td>
+						 <label>Date de naissance :<label><input type="date" name="dn" min="1922-02-15" max="2022-02-15">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Nive en JS :<label>
+						<input id="niveau" name="niveau" type="range" min="0" max="10">
+						<output name="niv"></output>
+
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Couleur préférée :<label><input type="color" name="couleur">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Mot de passe :<label><input type="password" name="psw">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Mot de passe confirmation :<label><input type="password" name="pswc">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Afficher le mot de passe :<label><input type="checkbox" name="showp">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Description :<label><input type="textarea" name="desc">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Réinitialiser formulaire :<label><input type="reset" name="rst">
+					</td>
+				</tr>
+				</tr>
+					<td>
+						<label>Envoyer formulaire :<label><input type="submit" name="send">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

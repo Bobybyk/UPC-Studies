@@ -153,6 +153,7 @@ alias impress="libreoffice --impress"  # Lance l'éditeur de présentation
 alias draw="libreoffice --draw"     # Lance l'éditeur graphique
 alias base="libreoffice --base"     # Lance le gestionnaire de base de données
 alias math="libreoffice --math"     # Lance l'éditeur de formule
+alias pdf="mimeopen -d"
 alias f="find . -iname"
 alias bashrc="subl ~/.bashrc"
 alias config="subl ~/.ssh/config"
@@ -160,13 +161,14 @@ alias killn="kill-name"
 kill-name() {
     kill $(pgrep $1)
 }
-alias start="./on_startup.sh"
+alias pg="sudo su - postgres"
 ### tp3 SY5
 alias listar="/home/sha/Repo/sy5_2021-2022/TP/TP3/work/listar"
 alias detar="/home/sha/Repo/sy5_2021-2022/TP/TP3/work/detar"
+
 alias p="python3"
 alias dpll="/home/sha/Projets/lo5---solveur-dpll-recursif/dpll"
-
+alias society="cd /home/sha/Projets/Society ; /usr/bin/env /usr/lib/jvm/java-17-openjdk/bin/java -XX:+ShowCodeDetailsInExceptionMessages @/tmp/cp_f0ipkk7yj2jnyxv62rcwuhern.argfile application.Main"
 ###################
 ##### Réseau ######
 ###################
@@ -177,23 +179,14 @@ alias fuvpn="sudo openvpn /etc/openvpn/ovpn_udp/$(ls /etc/openvpn/ovpn_udp/ | eg
 alias fiuvpn="sudo openvpn /etc/openvpn/ovpn_udp/$(ls /etc/openvpn/ovpn_udp/ | egrep fi | shuf -n 1)"
 alias kuvpn="sudo openvpn /etc/openvpn/ovpn_udp/$(ls /etc/openvpn/ovpn_udp/ | egrep uk | shuf -n 1)"
 alias tvpn="sudo openvpn /etc/openvpn/ovpn_tcp/$(ls /etc/openvpn/ovpn_tcp/ | shuf -n 1)"
+alias services="cat /etc/services" # ajouter paramètre pour alias de la forme "services serviceName"     <=> "cat /etc/services | grep servicesName"
 
 ###### ssh
 alias lucy="ssh lefrancm@lucy.informatique.univ-paris-diderot.fr"
 alias lulu="ssh lefrancm@lulu -J lefrancm@lucy.informatique.univ-paris-diderot.fr"
 alias nivose="ssh lefrancm@nivose.informatique.univ-paris-diderot.fr"
 alias pi="ssh pi@sha-webserver.ddns.net"
-tput setaf 1; 
-echo "Ctrl+D to exit ssh login"
-tput setaf 7;
-if [[ "$SSH_AUTH_SOCK" = "" ]]; then
-    # on the first round, we do this...
-    exec ssh-agent bash
-else
-    # ... and when ssh-agent is running, we do this instead.
-    ssh-add
-fi
-
+alias assh="bash /home/sha/scripts/ssh_agent_up.sh"
 ###################
 #####  SYST  ######
 ###################
@@ -202,7 +195,7 @@ alias majm='sudo pacman-mirrors -g && sudo pacman -Syyu && yaourt -Syua'
 alias maj='sudo pacman -Syyu && yaourt -Syua'
 alias sy="sudo rm /var/lib/pacman/sync/*"
 alias tok='echo "JF9-OBV-GWY-ZT1"'###################
-alias sd="shutdown now"
+alias sd="systemctl poweroff -i"
 alias clean="sudo pacman -Qdt ; sudo pacman -Sc"
 alias frm="shred -zvu -n 10"
 alias path="echo $PATH"
@@ -211,7 +204,8 @@ alias flush="sudo nscd -i hosts | echo 'succesfully flushed DNS'"
 alias erase="echo 'zero.small.file creation (102 400b)' ; dd if=/dev/zero of=zero.small.file bs=1024 count=102400 ; shred -zv zero.small.file ; echo 'zero.file filling...' ; cat /dev/urandom > zero.file ; sync ; echo 'removing zero.small.file' ; rm zero.small.file ; shred -zv zero.file ; sync ; echo 'removing zero.file' ; rm zero.file"
 alias conk="conky -c ~/.config/conky/conky.conkyrc"
 eval `opam env`
-#sudo systemctl mask sleep.target suspend.target 	
+#sudo systemctl mask sleep.target suspend.target    
+#pour mise à jour et conflits : sudo pacman -Rdd libs-conflits && sudo pacman -Syyu
 
 ###################
 ######  GIT  ######

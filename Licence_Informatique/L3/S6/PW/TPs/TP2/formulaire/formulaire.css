@@ -1,0 +1,22 @@
+h1 {
+	text-align: center;
+}
+form {
+	text-align: center;
+	width: 10%;
+	margin: auto;
+}
+label, input, textarea {
+	text-align: center;
+	display: block;
+	width: 200px;
+}
+#njs{
+	line-height: 1.5;
+}
+#couleur{
+	width: 60px;
+}
+br {
+	clear: left;
+}
