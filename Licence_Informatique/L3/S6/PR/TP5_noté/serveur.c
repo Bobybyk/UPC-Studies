@@ -39,7 +39,7 @@ void *communication(void *arg) {
     char buf_message[MAX_NAME];
     char pseudo[MAX_NAME];
 
-    inet_ntoa(socket_comm.sin_addr);
+    //inet_ntoa(socket_comm.sin_addr);
 
     while(1) {
 
@@ -101,6 +101,7 @@ int main(void) {
 		
         if(*server_socket_bis >=0) {
 			pthread_t th;	
+            // passer la structure en argument plutôt que le descripteur...
 			pthread_create(&th, NULL, communication, &server_socket_bis);
 			pthread_join(th, NULL);
 		}
