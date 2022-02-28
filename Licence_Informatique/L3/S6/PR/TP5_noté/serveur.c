@@ -12,17 +12,106 @@
 
 #define PORT 4296
 #define MAX_NAME 10
+#define MAX_MSG 20
 #define SA struct sockaddr
 pthread_mutex_t lock= PTHREAD_MUTEX_INITIALIZER;
 
-int max_int;
-
+typedef struct data {
+    int *socket;
+    char *max_pseudo;
+    int *max_int;
+    char *ip;
+} data;
 
 char* max_request() {
 
 }
 
 void *communication(void *arg) {
+
+    /* 
+     * récupération des arguments de la structure donnée en argument
+     * et initialisation des paramètres.
+     */
+    data *d = (data*) arg;
+    int *socket_com = d -> socket;
+    int *max_int = d -> max_int;
+    char *max_pseudo = d -> max_pseudo;
+    char *ip_com = d -> ip;
+
+    // pseudo du client
+    char name[MAX_NAME];
+    int ret = recv(socket_com, name, (MAX_NAME)*sizeof(char), 0);
+    name[ret] = '\0';
+    printf("Message reçu : %s\n", name);
+
+    // réponse "Hello <pseudo>"
+    char resp[MAX_NAME+7];
+    strcpy(resp, "HELLO ");
+    strcat(resp, name);
+    printf("réponse : %s\n", resp);
+    send(*socket_com, resp, strlen(resp)*sizeof(char), 0);
+
+
+    // gestion message client
+    char request[MAX_MSG];
+    ret = recv(*socket_com, request, (MAX_MSG)*sizeof(char), 0);
+    request[ret] = "\0";
+    printf("Message reçu %s\n", request);
+
+    // parsing pour savoir quel est le type de requête
+    char *arg1;
+    char *arg2;
+    const char delim[2] = " ";
+    arg1 = strtok(request, delim);
+
+    if (strcmp(arg1, "INT") == 0) {
+        arg2 = strtok(NULL, delim);
+        char *arg2_bis = malloc(sizeof(char) * strlen(arg2));
+        strcpy(arg2_bis, arg2);
+
+        int check_val = 1;
+        int received_integer;
+        for (long unsigned i = 0 ; i<strlen(arg2) ; i++) {
+            if (isdigit(*arg2_bis)) {
+                continue;
+            } else {
+                check_val = 0;
+            }
+            arg2_bis += 1;
+        }
+
+        if (check_val == 0) {
+            goto end;
+        }
+        
+        received_integer = atoi(arg2);
+        if (received_integer >= *max_int) {
+            
+            pthread_mutex_lock(&lock);
+            
+            *max_int = received_integer;
+            strcpy(max_pseudo, name);
+            
+            pthread_mutex_unlock(&lock);
+        }
+
+        send(*socket_com, "INTOK", strlen("INTOK")*sizeof(char), 0);
+        goto end;
+    }
+
+    if (strcmp(arg1, "MAX") == 0) {
+        char resp_req[MAX_MSG];
+
+        int max = *max_int;
+        char max_string[MAX_MSG];
+
+
+    }
+    
+    end:
+        close(*socket_com);
+        return NULL;
 
     /*
      *
@@ -34,7 +123,7 @@ void *communication(void *arg) {
      * 
      */
 
-    int ret = -1;
+    /* int ret = -1;
     int socket_comm=*((int *)arg);
     char buf_message[MAX_NAME];
     char pseudo[MAX_NAME];
@@ -70,7 +159,7 @@ void *communication(void *arg) {
             printf("error sending message\n");
             exit(0);
         }
-    }
+    } */
 
 }
 
