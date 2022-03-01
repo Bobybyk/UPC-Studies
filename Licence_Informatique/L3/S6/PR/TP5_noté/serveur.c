@@ -9,6 +9,8 @@
 #include <time.h>
 #include <fcntl.h>
 #include <pthread.h>
+#include <string.h>
+#include <ctype.h>
 
 #define PORT 4296
 #define MAX_NAME 10
@@ -23,9 +25,6 @@ typedef struct data {
     char *ip;
 } data;
 
-char* max_request() {
-
-}
 
 void *communication(void *arg) {
 
@@ -41,7 +40,7 @@ void *communication(void *arg) {
 
     // pseudo du client
     char name[MAX_NAME];
-    int ret = recv(socket_com, name, (MAX_NAME)*sizeof(char), 0);
+    int ret = recv(*socket_com, name, (MAX_NAME)*sizeof(char), 0);
     name[ret] = '\0';
     printf("Message reçu : %s\n", name);
 
@@ -56,7 +55,7 @@ void *communication(void *arg) {
     // gestion message client
     char request[MAX_MSG];
     ret = recv(*socket_com, request, (MAX_MSG)*sizeof(char), 0);
-    request[ret] = "\0";
+    request[ret] = '\0';
     printf("Message reçu %s\n", request);
 
     // parsing pour savoir quel est le type de requête
@@ -106,7 +105,17 @@ void *communication(void *arg) {
         int max = *max_int;
         char max_string[MAX_MSG];
 
+        if (max == -1) {
+            strcpy(resp_req, "NOP");
+        } else {
+            strcpy(resp_req, "REP");
+            strcat(resp_req, max_pseudo);
+            strcat(resp_req, ip_com);
+            strcat(resp_req, max_string);
+        }
 
+        printf("réponse : %s\n", resp_req);
+        send(*socket_com, resp_req ,strlen(resp_req)*sizeof(char),0);
     }
     
     end:
@@ -172,8 +181,6 @@ int main(void) {
 	server_socket.sin_port= htons(PORT);
 	server_socket.sin_addr.s_addr=htonl(INADDR_ANY);
 
-    memset(server_socket, 0, sizeof(server_socket));
-
 	int ret = bind(sock,(SA*) &server_socket,sizeof(server_socket));
 	assert(ret >= 0);
 
@@ -183,22 +190,33 @@ int main(void) {
 	struct sockaddr_in caller;
 	socklen_t socket_size = sizeof(caller);
 
+    int *max_int = (int *) malloc(sizeof(int));
+    *max_int = -1;
+
     while(1) {
 
         int *server_socket_bis = (int *)malloc(sizeof(int));
 		*server_socket_bis = accept(sock, (SA*)&caller, &socket_size);
 		
         if(*server_socket_bis >=0) {
+            data *d = malloc(sizeof(data));
+            d -> socket = server_socket_bis;
+            d -> max_pseudo = NULL;
+            d -> ip = inet_ntoa(caller.sin_addr);
+
 			pthread_t th;	
             // passer la structure en argument plutôt que le descripteur...
-			pthread_create(&th, NULL, communication, &server_socket_bis);
+			pthread_create(&th, NULL, communication, d);
 			pthread_join(th, NULL);
-		}
 
+            free(d);
+            close(*server_socket_bis);
+		}
     }
 
     // penser à close les sockets
-
+    free(max_int);
+    close(sock);
 	return EXIT_SUCCESS;
 
 }
