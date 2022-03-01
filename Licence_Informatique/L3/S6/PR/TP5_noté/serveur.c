@@ -18,12 +18,13 @@
 #define SA struct sockaddr
 pthread_mutex_t lock= PTHREAD_MUTEX_INITIALIZER;
 
-typedef struct data {
+char *max_pseudo;
+int max_int;
+
+typedef struct client {
     int *socket;
-    char *max_pseudo;
-    int *max_int;
     char *ip;
-} data;
+} client;
 
 
 void *communication(void *arg) {
@@ -32,16 +33,14 @@ void *communication(void *arg) {
      * récupération des arguments de la structure donnée en argument
      * et initialisation des paramètres.
      */
-    data *d = (data*) arg;
-    int *socket_com = d -> socket;
-    int *max_int = d -> max_int;
-    char *max_pseudo = d -> max_pseudo;
-    char *ip_com = d -> ip;
+    client *cli = (client*) arg;
+    int *socket_com = cli -> socket;
+    char *ip_com = cli -> ip;
 
     // pseudo du client
     char name[MAX_NAME];
     int ret = recv(*socket_com, name, (MAX_NAME)*sizeof(char), 0);
-    name[ret] = '\0';
+    //name[ret] = '\0';
     printf("Message reçu : %s\n", name);
 
     // réponse "Hello <pseudo>"
@@ -65,34 +64,46 @@ void *communication(void *arg) {
     arg1 = strtok(request, delim);
 
     if (strcmp(arg1, "INT") == 0) {
+        printf("OK1\n");
         arg2 = strtok(NULL, delim);
+        printf("%li\n", strlen(arg2));
         char *arg2_bis = malloc(sizeof(char) * strlen(arg2));
         strcpy(arg2_bis, arg2);
 
         int check_val = 1;
         int received_integer;
         for (long unsigned i = 0 ; i<strlen(arg2) ; i++) {
+            printf("OK boucle\n");
             if (isdigit(*arg2_bis)) {
+                printf("OK DIGIT\n");
                 continue;
             } else {
+                printf("OK ELSE\n");
                 check_val = 0;
             }
-            arg2_bis += 1;
+            arg2_bis++;
+            printf("OK BIS\n");
         }
 
         if (check_val == 0) {
+            printf("OK check val\n");
             goto end;
         }
         
+        printf("OK for\n");
         received_integer = atoi(arg2);
-        if (received_integer >= *max_int) {
-            
+        printf("OK val : %i\n", received_integer);
+        if (received_integer >= max_int) {
+            printf("OK entrée lock\n");
             pthread_mutex_lock(&lock);
-            
-            *max_int = received_integer;
+            printf("OK in lock\n");
+            max_int = received_integer;
+            printf("OK max int lock\n");
+            printf("%s\n", name);
             strcpy(max_pseudo, name);
-            
+            printf("OK max pseudo lock\n");
             pthread_mutex_unlock(&lock);
+            printf("OK sortie lock\n");
         }
 
         send(*socket_com, "INTOK", strlen("INTOK")*sizeof(char), 0);
@@ -102,8 +113,9 @@ void *communication(void *arg) {
     if (strcmp(arg1, "MAX") == 0) {
         char resp_req[MAX_MSG];
 
-        int max = *max_int;
+        int max = max_int;
         char max_string[MAX_MSG];
+        sprintf(max_string, "%d", max);
 
         if (max == -1) {
             strcpy(resp_req, "NOP");
@@ -190,8 +202,9 @@ int main(void) {
 	struct sockaddr_in caller;
 	socklen_t socket_size = sizeof(caller);
 
-    int *max_int = (int *) malloc(sizeof(int));
-    *max_int = -1;
+    //*max_int = (int *) malloc(sizeof(int));
+    max_int = -1;
+    max_pseudo = (char *) malloc(sizeof(char));
 
     while(1) {
 
@@ -199,23 +212,21 @@ int main(void) {
 		*server_socket_bis = accept(sock, (SA*)&caller, &socket_size);
 		
         if(*server_socket_bis >=0) {
-            data *d = malloc(sizeof(data));
-            d -> socket = server_socket_bis;
-            d -> max_pseudo = NULL;
-            d -> ip = inet_ntoa(caller.sin_addr);
+            client *cli = malloc(sizeof(client));
+            cli -> socket = server_socket_bis;
+            cli -> ip = inet_ntoa(caller.sin_addr);
 
-			pthread_t th;	
-            // passer la structure en argument plutôt que le descripteur...
-			pthread_create(&th, NULL, communication, d);
+			pthread_t th;
+			pthread_create(&th, NULL, communication, cli);
 			pthread_join(th, NULL);
 
-            free(d);
+            free(cli);
             close(*server_socket_bis);
 		}
     }
 
     // penser à close les sockets
-    free(max_int);
+    //free(max_int);
     close(sock);
 	return EXIT_SUCCESS;
 
