@@ -15,46 +15,51 @@ int main(int argc, char *argv[]){
   struct sockaddr_in adress_sock;
   adress_sock.sin_family = AF_INET;
   adress_sock.sin_addr.s_addr = inet_addr("127.0.0.1");
-  adress_sock.sin_port = htons(atoi(argv[1])); //Récupération du numéro de port par les arguments du main
+  adress_sock.sin_port = htons(atoi(argv[1])); //Récupération du numéro de port (argument passé au lancement)
   inet_aton("lulu", &adress_sock.sin_addr);
 
-  srand(time(NULL)); //Pour la génération des nombres aléatoires
+  //Pour la générer un random uint32_t
+  srand(time(NULL)); 
   int sock;
 
-  for(int i = 0; i<5; i++){
-    //Connexion au serveur
+  // création de 5 clients
+  for(int i = 0 ; i < 5 ; i++){
     sock = socket(PF_INET, SOCK_STREAM, 0);
     int ret = connect(sock, (struct sockaddr *)&adress_sock, sizeof(struct sockaddr_in));
-    printf("\n*************** Nouveau pseudo ***************\n");
+    printf("\n#################### Nouveau client ####################\n");
 
-    //Variables importantes
-    char *liste_de_pseudo[5] = {"Louismmmmm", "Paulmmmmmm", "Lauriemmmm", "Alicemmmmm", "Hugommmmmm"};
+    char *pseudo_list[5] = {"Louismmmmm", "Paulmmmmmm", "Lauriemmmm", "Alicemmmmm", "Hugommmmmm"};
     char name[MAX_NAME];
-    strcpy(name, liste_de_pseudo[i]);
+    strcpy(name, pseudo_list[i]);
 
     if(ret != -1){
-      // ******** le client envoie directement son pseudo au serveur  ******** //
       send(sock,name,strlen(name)*sizeof(char),0);
-      printf("Client envoie : %s\n", name);
+      printf("Envoie du pseudo : %s\n", name);
 
-      //  ******** Attente de la réponse du serveur : "HELLO <pseudo>"  ******** //
+      //  attente de la réponse "HELLO <pseudo>"
       char reponse_hello_pseudo[MAX_NAME + 7];
       int size_rec = recv(sock, reponse_hello_pseudo, (MAX_NAME + 7)*sizeof(char), 0);
       reponse_hello_pseudo[size_rec] = '\0';
-      printf("Client reçoit : %s\n", reponse_hello_pseudo);
+      printf("Réception : %s\n", reponse_hello_pseudo);
       
 
-      // ******** Envoi de la requête INT<val> au serveur  ******** //
-      // Génération du nombre aléatoire à envoyer
-      uint32_t val = rand() % 65535;
+      /*
+       *
+       * Requête INT<val>
+       *
+       */
 
-      // ******** Création du message et envoi de la requête au serveur  ******** //
+      // Génération du nombre aléatoire à envoyer
+      uint16_t val = rand() % 65535;
+      val = htons(val);
+      //Création du message + envoi de la requête
       char send_int_val[7];
       memcpy(send_int_val, "INT ", 4);
       memcpy(send_int_val+4, &val, 2);
       send_int_val[7] = '\0';
-      printf("Client %s envoie : %s\n", name, send_int_val);
+      printf("Envoie : INT%d\n", (unsigned short)val);
       send(sock,send_int_val,strlen(send_int_val), 0);
+
       // ******** Attente de confirmation de la reception  ******** //
       char reponse_intok[6];
       size_rec = recv(sock, reponse_intok, (6)*sizeof(char), 0);
@@ -68,7 +73,7 @@ int main(int argc, char *argv[]){
 
 
     else{
-      perror("Erreur de connexion du client 1.");
+      perror("Erreur de connexion du client 1");
       exit(1);
     }
   }

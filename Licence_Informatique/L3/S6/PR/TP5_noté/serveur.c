@@ -19,7 +19,8 @@
 pthread_mutex_t lock= PTHREAD_MUTEX_INITIALIZER;
 
 char *max_pseudo;
-uint32_t max_int;
+uint16_t max_int;
+u_int32_t ip_addr_max = 0;
 
 typedef struct client {
     int *socket;
@@ -60,21 +61,20 @@ void *communication(void *arg) {
 
     // parsing pour savoir quel est le type de requête
     char arg1[3+1];
-    uint32_t arg2;
-    //const char delim[2] = " ";
-    //arg1 = strtok(request, delim);
+    uint16_t arg2;
 
     memcpy(arg1, request, 3);
     arg1[4] = '\0';
     if (strcmp(arg1, "INT") == 0) {
         memcpy(&arg2, request+4, 2);
-        printf("%lu\n", (unsigned long)arg2);
-        if (arg2 >= max_int) {
-            printf("ok\n");
+        printf("%u\n", (unsigned short)ntohs(arg2));
+        if (ntohs(arg2) >= max_int) {
+            printf("OK\n");
             pthread_mutex_lock(&lock);
 
-            max_int = arg2;
-            strcpy(max_pseudo, name);
+            max_int = ntohs(arg2);
+            memcpy(max_pseudo, name, 10);
+			memcpy(&ip_addr_max,&ip_com,4);
 
             pthread_mutex_unlock(&lock);
 
@@ -85,29 +85,20 @@ void *communication(void *arg) {
     }
 
     if (strcmp(arg1, "MAX") == 0) {
-        char resp_req[20]; // 3+10+4+2
-
-        int max = max_int;
-        char val[2];
-        char ip_str[4];
-        sprintf(val, "%d", max);
-        sprintf(ip_str, "%d", ip_com);
-        if (max == -1) {
-            strcpy(resp_req, "NOP");
+        char resp_req[20]; // 3+10+4+2+1
+        printf("max int : %u\n", (unsigned short)max_int);
+        if (max_int == 0) {
+            ret = send(*socket_com, "NOP" , 3, 0);
+			assert(ret >= 0);
         } else {
-            /* strcpy(resp_req, "REP");
-            strcat(resp_req, );
-            strcat(resp_req, ip_str);
-            strcat(resp_req, val); */
             memcpy(resp_req, "REP", 3);
             memcpy(resp_req+3, max_pseudo, 10);
-            memcpy(resp_req+13, &ip_com, 4);
-            memcpy(resp_req+17, &val, 2);
-            resp_req[19] = '\0';
+            memcpy(resp_req+13, &ip_addr_max, 4);
+            uint16_t maxToSend = htons(max_int);
+            memcpy(resp_req+17, &maxToSend, 2);
+            ret = send(*socket_com, resp_req , 19, 0);
+            assert(ret >= 0);
         }
-
-        printf("réponse : %s\n", resp_req);
-        send(*socket_com, resp_req ,strlen(resp_req)*sizeof(char),0);
     }
     
     end:
