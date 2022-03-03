@@ -67,13 +67,13 @@
 		
 **3).** Liste le numéro des matchs perdus par les Wallabies :
 
-* **Algèbre relationnelle :** π m.id ((σ m.nom) = 'Wallabies' (m × (σ m.perdant) = 'Wallabies' (m) )) [x]
+* **Algèbre relationnelle :** π m.id ((σ e.eid) = m.perdant (m × (σ e.nom) = 'Wallabies' (e) ))
 * **SQL :** SELECT mid FROM matchs,equipes WHERE nom='Wallabies' AND perdant = eid; ~
 
 
 **4).** Liste le numéro des matchs auxquels ont participé les All Blacks (matchs perdus ou gagnés)
 
-* **Algèbre relationnelle :** π m.id ((σ e.nom) = 'All Blacks') [x]
+* **Algèbre relationnelle :** π m.mid ((σ m.gagnant) = e.eid (m × σ e.nom = 'AllBlacks' (e) )
 * **SQL :** SELECT mid FROM matchs,equipes WHERE nom='All Blacks' AND (gagnant = eid or perdant = eid); ~
 
 
