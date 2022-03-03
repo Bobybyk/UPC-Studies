@@ -12,16 +12,17 @@
 #include <string.h>
 #include <ctype.h>
 
-#define PORT 4297
 #define MAX_NAME 10
 #define MAX_MSG 20
 #define SA struct sockaddr
 pthread_mutex_t lock= PTHREAD_MUTEX_INITIALIZER;
 
+// données relatives à l'entier max et son client associé
 char *max_pseudo;
 uint16_t max_int;
 u_int32_t ip_addr_max = 0;
 
+// structure comportant les information du client courant
 typedef struct client {
     int *socket;
     uint32_t ip;
@@ -57,23 +58,26 @@ void *communication(void *arg) {
     char request[MAX_MSG];
     ret = recv(*socket_com, request, (MAX_MSG)*sizeof(char), 0);
     request[ret] = '\0';
-    printf("Message reçu %s\n", request);
 
-    // parsing pour savoir quel est le type de requête
+    // récupération du premier mot (pour connaitre la requête)
     char arg1[3+1];
     uint16_t arg2;
 
     memcpy(arg1, request, 3);
     arg1[4] = '\0';
+    
     if (strcmp(arg1, "INT") == 0) {
+        
         memcpy(&arg2, request+4, 2);
-        printf("%u\n", (unsigned short)ntohs(arg2));
+        printf("Message reçu : INT %u\n", (unsigned short)ntohs(arg2));
+        
         if (ntohs(arg2) >= max_int) {
-            printf("OK\n");
+            
+            printf("Mise à jour max INT\n");
             pthread_mutex_lock(&lock);
 
             max_int = ntohs(arg2);
-            memcpy(max_pseudo, name, 10);
+            memcpy(max_pseudo, name, MAX_NAME);
 			memcpy(&ip_addr_max,&ip_com,4);
 
             pthread_mutex_unlock(&lock);
@@ -82,10 +86,12 @@ void *communication(void *arg) {
 
         send(*socket_com, "INTOK", strlen("INTOK")*sizeof(char), 0);
         goto end;
+
     }
 
     if (strcmp(arg1, "MAX") == 0) {
-        char resp_req[20]; // 3+10+4+2+1
+        printf("Message reçu : MAX\n");
+        char resp_req[MAX_MSG]; // 3+10+4+2+1
         printf("max int : %u\n", (unsigned short)max_int);
         if (max_int == 0) {
             ret = send(*socket_com, "NOP" , 3, 0);
@@ -107,13 +113,15 @@ void *communication(void *arg) {
 
 }
 
-int main(void) {
-
+int main(int argc, char **argv) {
+    
+    (void) argc;
+    
 	int sock = socket(PF_INET,SOCK_STREAM,0);
 
 	struct sockaddr_in server_socket;	
 	server_socket.sin_family = AF_INET;
-	server_socket.sin_port= htons(PORT);
+	server_socket.sin_port= htons(atoi(argv[1]));
 	server_socket.sin_addr.s_addr=htonl(INADDR_ANY);
 
 	int ret = bind(sock,(SA*) &server_socket,sizeof(server_socket));
@@ -125,7 +133,6 @@ int main(void) {
 	struct sockaddr_in caller;
 	socklen_t socket_size = sizeof(caller);
 
-    //*max_int = (int *) malloc(sizeof(int));
     max_int = 0;
     max_pseudo = (char *) malloc(sizeof(char));
 
@@ -135,6 +142,7 @@ int main(void) {
 		*server_socket_bis = accept(sock, (SA*)&caller, &socket_size);
 		
         if(*server_socket_bis >=0) {
+
             client *cli = malloc(sizeof(client));
             cli -> socket = server_socket_bis;
             cli -> ip = caller.sin_addr.s_addr;
@@ -145,6 +153,7 @@ int main(void) {
 
             free(cli);
             close(*server_socket_bis);
+
 		}
     }
 

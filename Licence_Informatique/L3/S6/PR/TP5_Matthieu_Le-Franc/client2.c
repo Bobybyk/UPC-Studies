@@ -32,23 +32,22 @@ int main(int argc, char **argv){
 
 
 	char name[MAX_NAME];
-	memcpy(name, "Matthieu", 8);
+	// taille du pseudo égale à 10 mais peut aussi être inférieur
+	memcpy(name, "Matthieumm", 10);
 	
-	ret = send(sock, name, 8, 0);
+	ret = send(sock, name, 10, 0);
 	assert(ret >= 0);
 	
 	//Attente de la réponse du serveur : "HELLO <pseudo>"
 	char reponse_hello_pseudo[MAX_NAME + 6];
 	ret = recv(sock, reponse_hello_pseudo, MAX_NAME+6, 0);
 	assert(ret >= 0);
-	//reponse_hello_pseudo[size_rec] = '\0';
 	
 	ret = send(sock, "MAX", 3, 0);
 	assert(ret >= 0);
 
 	char resp_req[MAX];
 	ret = recv(sock, resp_req, 19, 0);
-	//resp_req[ret] = '\0';
 	assert(ret >= 0);
 
 	if (ret == 3) {
@@ -69,8 +68,10 @@ int main(int argc, char **argv){
 	struct_output.s_addr = ip;
 	char *ip_output = inet_ntoa(struct_output);
 
-	printf("réponse : %s%d%s\n", pseudo, ntohs(max_int_val), ip_output);
-		
+	printf("réponse serveur : REP%s%d%s\n", pseudo, ntohs(max_int_val), ip_output);
+	printf("pseudo : %s\n", pseudo);	
+	printf("max int : %d\n", ntohs(max_int_val));
+	printf("ip : %s\n", ip_output);
 
 	end:
 		close(sock);

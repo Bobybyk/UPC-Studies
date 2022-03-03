@@ -28,11 +28,13 @@ int main(int argc, char *argv[]){
     int ret = connect(sock, (struct sockaddr *)&adress_sock, sizeof(struct sockaddr_in));
     printf("\n#################### Nouveau client ####################\n");
 
+    // taille des pseudo = 10 mais peut aussi être inférieur
     char *pseudo_list[5] = {"Louismmmmm", "Paulmmmmmm", "Lauriemmmm", "Alicemmmmm", "Hugommmmmm"};
     char name[MAX_NAME];
     strcpy(name, pseudo_list[i]);
 
     if(ret != -1){
+      
       send(sock,name,strlen(name)*sizeof(char),0);
       printf("Envoie du pseudo : %s\n", name);
 
@@ -49,9 +51,10 @@ int main(int argc, char *argv[]){
        *
        */
 
-      // Génération du nombre aléatoire à envoyer
+      // Génération du nombre aléatoire à envoyer (sur 2 octets, soit 16 bits, soit 2^16 : un nombre compris [0 ; 65535])
       uint16_t val = rand() % 65535;
       val = htons(val);
+
       //Création du message + envoi de la requête
       char send_int_val[7];
       memcpy(send_int_val, "INT ", 4);
@@ -64,21 +67,23 @@ int main(int argc, char *argv[]){
       char reponse_intok[6];
       size_rec = recv(sock, reponse_intok, (6)*sizeof(char), 0);
       reponse_intok[size_rec] = '\0';
-      printf("Serveur confirme la bonne reception de la requête INT<val> : %s\n", reponse_intok);
+      printf("Confirmation reception de la requête INT<val> : %s\n", reponse_intok);
 
       // Après l'envoi du message le client se déconnecte
-      printf("Fin du client %s, deconnexion :)\n", name);
+      printf("Fin de la connection avec %s, deconnexion\n", name);
       close(sock);
-    }
-
-
+    
+    } 
+    
     else{
       perror("Erreur de connexion du client 1");
+      close(sock);
       exit(1);
     }
+
   }
 
   close(sock);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
