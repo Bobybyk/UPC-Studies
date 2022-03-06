@@ -24,11 +24,10 @@
 **1).** Liste le contenu de la table :
 
 * **Algèbre relationnelle :** π* (table) 
-* **SQL :** SELECT * from \<table>
+* **SQL :** SELECT * from (table)
 
 
 **2).** Liste l'année des coupes du monde ayant eu lieu en Nouvelle-Zélande :
-
 
 * **Algèbre relationnelle :** π t.année ((σ t.pays) = 'Nouvelle-Zélande'(t) ∧ t.nom = 'Coupe du monde'(t))
 * **SQL :** SELECT annee FROM tournois WHERE pays='Nouvelle-Zélande' AND nom='Coupe du monde';
@@ -51,9 +50,7 @@
 
 **1).** Liste le nom des équipes ayant gagné au moins un match : 
 
-* **Algèbre relationnelle :** 
-
-	π e.nom ((σ m.gagnant) = eid(m × e))
+* **Algèbre relationnelle :** π e.nom ((σ m.gagnant) = eid(m × e))
 
 * **SQL :** 
 
@@ -79,9 +76,7 @@
 		
 **3).** Liste le numéro des matchs perdus par les Wallabies :
 
-* **Algèbre relationnelle :** 
-
-	π m.id ((σ e.eid) = m.perdant (m × (σ e.nom) = 'Wallabies' (e) ))
+* **Algèbre relationnelle :** π m.id ((σ e.eid) = m.perdant (m × (σ e.nom) = 'Wallabies' (e) ))
 
 * **SQL :** 
 
@@ -90,9 +85,7 @@
 
 **4).** Liste le numéro des matchs auxquels ont participé les All Blacks (matchs perdus ou gagnés)
 
-* **Algèbre relationnelle :** 
-
-	π m.mid ((σ m.gagnant) = e.eid (m × σ e.nom = 'AllBlacks' (e) )
+* **Algèbre relationnelle :** π m.mid ((σ m.gagnant) = e.eid (m × σ e.nom = 'AllBlacks' (e) )
 
 * **SQL :** 
 
@@ -101,11 +94,7 @@
 
 **5).** Liste le numéro des équipes ayant participé à la coupe du monde 1991 :
 
-* **Algèbre relationnelle :** 
-
-	 p.eid ((σ p.tid) = t.id (p × σ t.année = 1991 ∧ t.nom = 'Coupe du Monde' (t)))
-
-* **SQL :**
+* **Algèbre relationnelle :** p.eid ((σ p.tid) = t.id (p × σ t.année = 1991 ∧ t.nom = 'Coupe du Monde' (t)))
 		
 ---
 
@@ -113,18 +102,12 @@
 
 **1).** Liste le nom des équipes ayant participé à la coupe du monde 1991 :
 
-* **Algèbre relationnelle :** 
-
-	π e.nom ( (σ t.tid) = p.tid ( (σ t.année) = 1991 ∧ t.nom = 'CdM' (t) × (σ e.eid) = p.eid(e×p) ))
-
-* **SQL :**
+* **Algèbre relationnelle :** π e.nom ( (σ t.tid) = p.tid ( (σ t.année) = 1991 ∧ t.nom = 'CdM' (t) × (σ e.eid) = p.eid(e×p) ))
 
 
 **2).** Liste le nom des équipes ayant participé à la coupe du monde 1991 :
  
-* **Algèbre relationnelle :** 
-	
-	π t.nom, t.année ((σ t.tid) = m.tournois(t × (σ m.perdant) = c.eid ( (σ e.nom) = 'XV de France' (e) × m) ))
+* **Algèbre relationnelle :** π t.nom, t.année ((σ t.tid) = m.tournois(t × (σ m.perdant) = c.eid ( (σ e.nom) = 'XV de France' (e) × m) ))
 
 * **SQL :** 
 	
@@ -133,9 +116,7 @@
 
 **3).** Liste le nom et l’année des tournois dont un match au moins a été perdu par le XV de France :
 
-* **Algèbre relationnelle :** 
-	
-	π c.nom ( (σ e.eid) = m.gagnant(e × (σ m1.tournois) = m2.tournois ∧ m1.gagnant = m2.perdant (m1 × m2) ))
+* **Algèbre relationnelle :** π c.nom ( (σ e.eid) = m.gagnant(e × (σ m1.tournois) = m2.tournois ∧ m1.gagnant = m2.perdant (m1 × m2) ))
 
 * **SQL :** 
 
@@ -144,11 +125,7 @@
 
 **4).** Le nom des équipes ayant perdu au moins un match et gagné au moins un match dans un seul tournoi :
 
-* **Algèbre relationnelle :** 
-
-	π e.nom ( σ e.eid = m1.gagnant(e × σ m1.tournois = m2.tournois ∧ m1.gagnant = m2.perdant (m1 × m2) ))
-
-* **SQL :**
+* **Algèbre relationnelle :** π e.nom ( σ e.eid = m1.gagnant(e × σ m1.tournois = m2.tournois ∧ m1.gagnant = m2.perdant (m1 × m2) ))
 
 
 **5).** Le nom des équipes ayant été au moins deux fois en finale :
@@ -167,8 +144,6 @@
 
 		π e.nom (σ e.eid = m1.gagnant (e × σ m1.gagnant = m2.perdant ∧ φ finales (m1 × m2)))
 
-* **SQL :**
-
 ---
 
 ## 4 : Condition d'existence et inexistence
@@ -181,44 +156,24 @@
 
 **2).** Le nom des équipes n’ayant jamais participé à une finale :
 
-* **Algèbre relationnelle :** 
-
-	π e.nom (e) - π e.nom (σ m.tour=finale ∧ (e.id=gagnant ∨ e.id=perdant) (e × m))
-
-* **SQL :** 
+* **Algèbre relationnelle :** π e.nom (e) - π e.nom (σ m.tour=finale ∧ (e.id=gagnant ∨ e.id=perdant) (e × m))
 
 
 **3).** Les tournois pendant lequel le ‘XV de France’ a perdu tous ses matchs :
 
-* **Algèbre relationnelle :** 
-	
-	π t.nom, t.annee(t) - π t.nom, t.annee ( (σ t.tid=m.tournois) (t × (σ m.gagnant=e.id) (m × (σ e.noms='XV de France') (e) )))
-	
-* **SQL :**
+* **Algèbre relationnelle :** π t.nom, t.annee(t) - π t.nom, t.annee ( (σ t.tid=m.tournois) (t × (σ m.gagnant=e.id) (m × (σ e.noms='XV de France') (e) )))
 
 
 **4).** Le nom des équipes ayant toujours gagné leurs matchs :
 
-* **Algèbre relationnelle :** 
-
-	π e.nom (e) - π e.nom (σ m.perdant = e.eid (m × e))
-
-* **SQL :**
+* **Algèbre relationnelle :** π e.nom (e) - π e.nom (σ m.perdant = e.eid (m × e))
 
 
 **5).** Le nom des équipes n’ayant participé à aucun match :
 
-* **Algèbre relationnelle :** 
-
-	π nom (equipes ⋈ (π eid (equipes) - π eid (participation) ) )
-
-* **SQL :** 
+* **Algèbre relationnelle :** π nom (equipes ⋈ (π eid (equipes) - π eid (participation) ) )
 
 
 **6).** Le nom des tournois ne correspondant à aucun match présent dans les données :
 
-* **Algèbre relationnelle :** 
-
-	π nom (tournois ⋈ (π tid (tournois) - π tid (participation) ) )
-
-* **SQL :** 
+* **Algèbre relationnelle :** π nom (tournois ⋈ (π tid (tournois) - π tid (participation) ) )
