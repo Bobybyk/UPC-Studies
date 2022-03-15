@@ -55,6 +55,12 @@ public class ServerHttp implements Runnable {
         boolean endSequenceRead = false;
         int line = 0;
         String messageClient;
+        String entete =
+            "HTTP/1.1 200 OK\r\n"
+            +
+            "Content-Type: text/html; charset=utf-8\r\n"
+            +
+            "Connection: close\r\n\r\n";
 
         while(!endSequenceRead) {
 
@@ -71,7 +77,7 @@ public class ServerHttp implements Runnable {
             }
 
         }
-        return formatageFichierHtml();
+        return entete+formatageFichierHtml();
     }
 
     @Override
