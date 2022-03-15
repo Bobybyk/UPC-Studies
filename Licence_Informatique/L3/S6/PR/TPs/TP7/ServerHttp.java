@@ -84,7 +84,8 @@ public class ServerHttp implements Runnable {
     public void run() {
         String messageToSend = this.listen();
         System.out.println(messageToSend);
-        this.out.write(messageToSend);
+        this.out.println(messageToSend);
+        this.out.flush();
         System.out.println("OK");
     }
 
