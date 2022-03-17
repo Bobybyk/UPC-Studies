@@ -9,21 +9,38 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class ServerHttp implements Runnable {
-    private ServerSocket socketServer;
-    private Socket socketduserveur;
-    private BufferedReader in;
-    private PrintWriter out;
+    private ServerSocket socketServer = null;
 
     public ServerHttp() {
+        int max = 0;
         try {
             this.socketServer = new ServerSocket(8080);
-            this.socketduserveur = socketServer.accept();
-            this.in = new BufferedReader(new InputStreamReader(socketduserveur.getInputStream()));
-            this.out = new PrintWriter(socketduserveur.getOutputStream());
         } catch(IOException e) {
             e.printStackTrace();
             System.exit(1);
         }
+
+        while(true) {
+            try {
+                new ThreadServer(this.socketServer.accept(), this).start();
+                max++;
+                System.out.println("Thread number : " + max);
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+            if(max > 10) {
+                try {
+                    this.socketServer.close();
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+            }
+        }        
+
     }
 
     public String formatageFichierHtml() {
@@ -46,11 +63,12 @@ public class ServerHttp implements Runnable {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+            System.exit(1);
 		}
         return strToReturn;
     }
 
-    public String listen() {
+    public String listen(BufferedReader in) {
         
         boolean endSequenceRead = false;
         int line = 0;
@@ -74,6 +92,7 @@ public class ServerHttp implements Runnable {
                 line++;
             } catch (IOException e) {
                 e.printStackTrace();
+                System.exit(1);
             }
 
         }
@@ -82,24 +101,11 @@ public class ServerHttp implements Runnable {
 
     @Override
     public void run() {
-        String messageToSend = this.listen();
-        System.out.println(messageToSend);
-        this.out.println(messageToSend);
-        this.out.flush();
-        System.out.println("OK");
+
     }
 
     public static void main(String[] args) {
-        
-        ServerHttp server = new ServerHttp();
-        server.run();
-        
-        try {
-            server.socketServer.close();
-            server.socketduserveur.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new ServerHttp();
     }
 
 }
