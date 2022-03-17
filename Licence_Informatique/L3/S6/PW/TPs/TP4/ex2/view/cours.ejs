@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cours</title>
+</head>
+<body>
+	<header>
+		<h1> Page du cours <%=titre%> </h1>
+	</header>
+	<section>
+		<p> Descriptif <%=descriptif%> </p>
+	</section>
+	<section>
+		les enseignants sont :
+		<ul> <%for (let i = 0 ; i < profs.length ; i++) {%>
+			<li> <%=profs[i]%></li> <% } %>
+		</ul> 
+	</section>
+</body>
+</html>
