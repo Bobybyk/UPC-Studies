@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Cours n° <%= id %></title>
+	</head>
+
+	<body>
+		<header>
+			<h1>Page du cours <%= titre %> </h1>
+		</header>
+
+		<section>
+			<p>Descriptif: <%= descriptif %> </p>
+		</section>
+		<section>
+			<ul>
+				<% for(let i=0;i<profs.length;i++) { %>
+				<li> <%= profs[i] %> </li>
+				<% } %>
+			</ul>
+		</section>
+	</body>
+</html>
