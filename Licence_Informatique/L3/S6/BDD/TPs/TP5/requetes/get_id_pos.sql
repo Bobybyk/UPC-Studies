@@ -1,0 +1,1 @@
+SELECT id_copie, rayon FROM Livre, Copie WHERE Livre.id = Copie.id_livre AND Livre.Titre = 'Foundations of Databases'

@@ -1,0 +1,1 @@
+SELECT fin_j - debut_j FROM Emprunt_term, Copie C, Livre L WHERE titre = 'Foundations of Databases', AND E.id_copie = C.idFoundations of Databases
