@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <meta charset="UTF-8">
+    <meta name=""author" content="Nom de l'auteur">
+  <title>Cours </title>
+  
+ </head>
+<body>
+  <header>
+    <img src="/image.jpg"> </img>
+    <h1> Bienvenu sur la page de <%= titre %> </h1>
+
+  </header>
+    <section>
+
+      <p>
+        Descriptif : <%= desc %>
+      </p>
+    </section>
+
+    <section>
+      <p>
+        Les enseignant de ce cours sont : 
+      </p>
+      <ul> <%
+        for(let i = 0 ; i < profs.length ;i++){
+          %>
+          <li> <%=profs[i] %>
+
+          </li>
+          <% } %>
+        
+      </ul>
+    </section>
+    <footer>
+      Responsable du cours : <%= responsable %> 
+    </footer>
+</body>
+</html>

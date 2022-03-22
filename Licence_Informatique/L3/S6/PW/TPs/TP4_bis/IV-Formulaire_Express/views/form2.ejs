@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" />  
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+<title>
+  <%= titre %>
+</title>
+ 
+ 
+</head>
+<body>
+
+  <h1> Formulaire </h1>
+
+    <form action="/" method="post"> 
+        <br></br>
+        <label for="nom">Entrer votre nom: </label>
+        <input type="text"  id="nom">
+      <!--  <script>
+             document.getElementById("nom").value = <%= nom %> ;
+        </script>  
+       -->
+        <br></br>
+        <label for="password">Entrer votre mot de passe: </label>
+        <input type="password"  id="password" value="">
+      <!--
+        <script>
+            document.getElementById("password").value = <%= mot_de_passe %> ;
+       </script> 
+        -->
+       
+        <br></br>
+        <input type="submit" methode="post" value="Envoyer"></button>
+        </form>
+
+</body>
+</html>

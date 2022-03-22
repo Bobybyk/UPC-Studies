@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <meta charset="UTF-8">
+  <title>Une page EJS </title>
+ </head>
+<body>
+<!--li pour dire que j'ai terminé ma liste ; ou attr+ ";" +user...-->   
+    <h1> Bienvenu sur la page de <%= user['nom']%> </h1>
+<!-- insérer un image ici :-->  
+ <img src="/image.png"> </img>
+<ul> <% let attr; for(attr in user) { %> 
+ 
+<li> <%= user[attr] %> </li>
+<% }%> <!--pour fermer l'accolade-->
+</ul>
+</body>
+</html>
