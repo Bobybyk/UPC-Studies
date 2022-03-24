@@ -1,0 +1,1 @@
+CFLAGS=-g -Wall -Wextra -O1 -pthread
