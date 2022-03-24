@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cours</title>
+</head>
+<body>
+	<header>
+		<h1> <%=title%> </h1>
+	</header>
+
+	voici la liste des noms enlevables :
+	<form action="/" method="post"> 
+
+		<ul> <%for (var nom of content) {%>
+			<br></br>
+			<li> 				
+			    <label for="nom"> <%=nom%> </label>
+			    <input type="checkbox" id="<%=nom%>" name="<%=nom%>">  
+	    	</li> <% } %>
+		</ul> 
+		<br></br>
+    	<button type="submit" name="submit" >supprimer</button>
+    </form>
+
+</body>
+</html>
