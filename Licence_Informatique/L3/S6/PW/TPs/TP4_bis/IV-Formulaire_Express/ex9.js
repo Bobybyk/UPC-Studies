@@ -55,8 +55,7 @@ server.post('/', function (req, res) {
     }else {
         do_treatemnt(user,name,pwd,res);
     }
-     
-             
+           
 });
 
 
