@@ -21,6 +21,7 @@ public class Main {
 
     // liste des mots et leur indice
     private static HashMap<Integer, String> listMots = new HashMap<>();
+    private static LinkedList<Integer> longestWordsIndexList;
 
     // liste mots placés
     private static LinkedList<String> listeMotsPlaces = new LinkedList<>();
@@ -95,17 +96,23 @@ public class Main {
 
     public static void main(String[] args) {
         parsing(args[0]);
+        getLongestWord();
         algoNaif();
         writeOutput();
     }
 
     public static String testPlaceWord(int index, int x, int y, int direction) {
 
+
         // horizontal
         if (direction == 0) {
-            for (int i = x ; Character.isLetter(grid[i][y]) ; i++) {
+            for (int i = x+2 ; Character.isLetter(grid[i][y]) ; i++) {
                 
+                System.out.println("avance horizontale");
+
                 if (grid[i][y] == listMots.get(index).charAt(0)) {
+                    System.out.println("emplacement trouvé parcours horizontal");
+                    System.out.println(i+" "+y);
                     return index + " " + i + " " + y;
                 }
             }
@@ -114,9 +121,12 @@ public class Main {
 
         // vertical
         if (direction == 1) {
-            for (int i = y ; Character.isLetter(grid[x][i]) ; i++) {
+            for (int i = y+2 ; Character.isLetter(grid[x][i]) ; i++) {
                 
+                System.out.println("avance vertical");
+
                 if (grid[x][i] == listMots.get(index).charAt(0)) {
+                    System.out.println("emplacement trouvé parcours vertical");
                     return index + " " + x + " " + i;
                 }
             }
@@ -131,9 +141,9 @@ public class Main {
         String word = listMots.get(index);
         for(int i=0;i<word.length();i++) {
             if(direction == 0) {        //0 c'est horizontal
-                grid[x+i][y] = word.charAt(index);
+                grid[x+i][y] = word.charAt(i);
             } else {    //1 c'est vertical
-                grid[x][y+i] = word.charAt(index);
+                grid[x][y+i] = word.charAt(i);
             }
         }
     }
@@ -148,42 +158,60 @@ public class Main {
     }
 
     public static void algoNaif() {
-        int first = getLongestWord();
+        int first = longestWordsIndexList.get(0);
         writeWordOnGrid(first, 0, 0, 0);    //On place le premier dans la grille horizontalement
+        addWordToList(first, 0, 0, 0);
         listMots.remove(first);
+        longestWordsIndexList.remove(0);
 
         int direction = 0;
         int x = 0;
         int y = 0;
-        boolean changed = true;
-        while(changed == true) {
-            changed = false;
-            for(int i : listMots.keySet()) {
-                String res = testPlaceWord(i, x, y, direction);
-                if(res == null) {
-                    continue;
-                } else {
-                    changed = true;
-                    writeWordOnGrid(i, direction, x, y);
-                    addWordToList(i, direction, x, y);
-                    listMots.remove(i);
-                    x = Integer.parseInt(res.split(" ")[1]);
-                    y = Integer.parseInt(res.split(" ")[2]);
-                    direction = (direction == 0) ? 1 : 0;
-                }
+        int i = 0;
+        
+        while(!longestWordsIndexList.isEmpty()) {
+            
+            int index = longestWordsIndexList.get(i);
+
+            if (index >= listMots.size()) {
+                break;
             }
+
+            String res = testPlaceWord(index, x, y, direction);
+
+            if(res == null) {
+                i++;
+            } else {
+                direction = (direction == 0) ? 1 : 0;
+
+                x = Integer.parseInt(res.split(" ")[1]);
+                y = Integer.parseInt(res.split(" ")[2]);
+                writeWordOnGrid(index, direction, x, y);
+                addWordToList(index, direction, x, y);
+                listMots.remove(index);
+                longestWordsIndexList.remove(i);
+                i = 0;
+            }
+
+
+
         }
     }
 
-    public static int getLongestWord() {
-        String longest = "";        
-        int toRet = 0;
-        for(int index : listMots.keySet()) {
-            if(listMots.get(index).length() > longest.length()) {
-                longest = listMots.get(index);
-                toRet = index;
-            }
+    public static void getLongestWord() {
+        longestWordsIndexList = new LinkedList<Integer>();
+        int maxLength = 0;
+        for(Integer i : listMots.keySet()) {
+            if(listMots.get(i).length() > maxLength)
+                maxLength = listMots.get(i).length();
         }
-        return toRet;
+
+        while(maxLength > 1) {
+            for(Integer i : listMots.keySet()) {
+                if(listMots.get(i).length() == maxLength)
+                    longestWordsIndexList.add(i);
+            }
+                maxLength--;
+        }
     }
 }

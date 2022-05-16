@@ -1,7 +1,0 @@
-format du fichier d'entrée:
-
-N nombre de mots
-N x 
-mot (longueur >= 2) _ points
-
-_ -> espace
