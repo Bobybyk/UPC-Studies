@@ -1,0 +1,29 @@
+100 100 3 50 500 
+
+products:
+3	//count
+100 5 450	//weight of each item	
+
+warehouses:
+2	//count
+
+0 0  	//coordinates
+5 1 0 	//number of each item (5 item0, 1 item1, 0 item2)
+
+5 5 
+0 10 2 
+
+orders:
+3
+
+1 1 	//destination (x,y)
+2	//number of items
+2 0 	//ids of items (one occurence is one item)
+
+3 3 
+1
+0
+
+5 6
+1
+2
