@@ -80,7 +80,7 @@ let unitaire clauses =
          * Return the first (and only) element of that clause
          *)
     
-  (* DONE *)
+  (* DOING à compléter *)
 (* pur : int list list -> int
     - si `clauses' contient au moins un littéral pur, retourne
       ce littéral ;
@@ -124,18 +124,32 @@ let pur clauses =
 
 (* solveur_dpll_rec : int list list -> int list -> int list option *)
 let rec solveur_dpll_rec clauses interpretation =
-  if clauses = [] then Some interpretation
-  else if mem [] clauses then None 
-  else try
-    let cl_uni = (unitaire clauses) in (solveur_dpll_rec (simplifie cl_uni clauses) (cl_uni::interpretation) )
-      with Not_found -> 
-        try let lit_pur = (pur clauses) in (solveur_dpll_rec (simplifie lit_pur clauses) (lit_pur::interpretation) )
-          with Not_found -> let l = List.hd (List.hd clauses) in
-            let branche = solveur_dpll_rec (simplifie l clauses) (l::interpretation) in
-              match branche with
-                | None -> solveur_dpll_rec (simplifie (-l) clauses) ((-l)::interpretation)
-                | _ -> branche
+        if clauses = [] then Some interpretation
+        else if mem clauses [] then None 
+        else 
+                try let cl_uni = (unitaire clauses) in (solveur_dpll_rec (simplifie cl_uni clauses) (cl_uni::interpretation) )
+                with Not_found -> try
+                        let lit_pur = (pur clauses) in (solveur_dpll_rec (simplifie lit_pur clauses) (lit_pur::interpretation) )
+                with Not_found -> None;;
+
+(* tests *)
+(* let () = print_modele (solveur_dpll_rec systeme []) *)
+(* let () = print_modele (solveur_dpll_rec coloriage []) *)
 
 let () =
   let clauses = Dimacs.parse Sys.argv.(1) in
   print_modele (solveur_dpll_rec clauses [])
+
+(* our tests 
+
+let printlist l = List.iter (fun x -> printf "%d " x) l;;
+let print_list_of_lists l = List.iter (fun ll -> printlist ll) l;;
+
+print_list_of_lists exemple_3_12;;
+printf "\n";;
+print_list_of_lists (simplifie 3 exemple_3_12);;
+
+printf "\n";;
+printf "%d\n" (unitaire exemple_7_4);;
+
+printf "%d\n" (pur exemple_7_8);; *)

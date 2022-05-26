@@ -21,7 +21,9 @@ Questions sur votre code
 
    **Réponse :**
     - `make dpll` s'exécute bien sans erreurs ou warnings.
-    - `./dpll sudoku-4x4.cnf` donne la réponse attendue : à savoir la réponse donnée dans le fichier README ainsi que le même résultat obtenu par la fonction `solveur_split`.
+    - `./dpll sudoku-4x4.cnf` donne la réponse attendue : à savoir la réponse donnée dans le fichier README ainsi que le même résultat obtenu par la fonction `solveur_split`
+
+**rempli**
 
 ---
 
@@ -34,7 +36,9 @@ Questions sur votre code
 
    **Réponse :**
       - Nous n'avons pas fait appel à la fonction `filter_map` mais utilisés, pour la fonction `simplifie`, nos propres appels aux fonctions **List** d'**OCAML**.
-      - La fonction détermine l'ensemble des clauses de la formule ne contenant pas le littéral passé en argument (à l'aide de la fonction List.filter), puis applique à chacune de ces clauses une fonction permettant de supprimer la négation de i dans l'ensemble des clauses (à l'aide de List.map et List.filter). En cas de réussite une liste de clauses simplifiées est retournée et en cas d'échec (a priori impossible dans l'architecture établie) la liste de clauses sans modifications.
+      - EXPLICATION DU FONCTIONNEMENT DE SIMPLIFIE  
+
+**à remplir**
 
 ---
 
@@ -47,12 +51,9 @@ Questions sur votre code
    comment ces fonctions auxiliaires sont utilisées dans votre
    implémentation de la fonction `unitaire`.
 
-   **Réponse :**
-   
-   La fonction `List.find` permet de renvoyer le premier élément d'une liste satisfiant la condition donnée.
+   La fonction List.find permet de renvoyer le premier élément d'une liste satisfiant la condition donnée.
    On applique donc cette fonction à une liste de listes représentant une CNF, avec comme condition que la liste recherchée doit contenir un seul élément (à l'aide de la fonction List.length).
    On récupère ensuite l'unique littéral contenu dans cette liste à l'aide de la fonction List.hd
-   La fonction List.find lève une exception de type 'Not_found' si aucun élément ne correspond aux spécifications données.
 
 ---
 
@@ -67,21 +68,21 @@ Questions sur votre code
          -  `copy_wo_dl_bis` (copie sans doublons bis) : va parcourir les littéraux de **clause** et les ajouter à **lit_wo_dl** s'ils ne sont pas déjà présents (en positif ou en négatif).
          - `list_of_clauses_wo_dl` (liste de clauses sans doublon) : va parcourir **lit_wo_dl** et regarder pour chaque littéral (via la fonction `is_pur`) s'il n'est présent dans **clauses** sous sa forme inverse. Si tel est le cas, on retourne ce littéral, sinon on continu le parcours de **lit_wo_dl**. Si on arrive à la fin de la liste, cela veut dire qu'aucun littéral n'est pure et on retourne alors **Not_found**.
 
+**rempli**
+
 ---
 
 4. Donnez un exemple d'une formule pour laquelle les deux fonctions
    `solveur_split` et `solveur_dpll_rec` ont un comportement
    différent, et expliquez les différences entre ces deux fonctions.
 
-   Après avoir tester les deux fonctions sur la formule satisfiable **sudoku-9x9-expert.cnf**, on peut observer que sur même machine :
-   - `solveur_dpll_rec` a un temps de résolution de moins de 4 secondes
-   - `solveur_split` a un temps de résolution de plus de 5 minutes.
-
-   Ce qui montre dans ce cas précis au moins la net plus grande efficacité de l'algorithme dpll. Ceci peut s'expliquer par le fait de l'utilisation des heuristiques, dans le cas de `solveur_dpll_rec`, permettant de déterminer les littéraux purs et les clauses unitaires. On peut ainsi optimiser la simplification de la formule sans démultiplier les possibilités.
+**à remplir**
 
 ---
 
 5. Avez-vous d'autres remarques sur votre rendu ? (question optionnelle)
+
+**à remplir**
 
 ---
 
