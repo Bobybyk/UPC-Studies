@@ -1,0 +1,31 @@
+plugins {
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+javafx {
+	version = "17"
+	modules = [ 'javafx.base',  'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media', 'javafx.graphics' ]
+}
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+  main {
+    resources {
+        srcDirs = ["src/main/fxml", "src/main/css", "src/main/assets"]
+        includes = ["**/*.fxml", "**/*.css", "**/*.png"]
+    }
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'application.Main'
+
+dependencies {
+	implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+}

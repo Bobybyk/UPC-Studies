@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="500.0" maxWidth="1000.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FractController">
+   <children>
+      <HBox prefHeight="500.0" prefWidth="1000.0">
+         <children>
+            <VBox prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #3F2B63;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="241.0" text="Fractal menu" textAlignment="CENTER" textFill="#da0000">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="105.0" prefWidth="200.0" translateY="20.0">
+                     <children>
+                        <HBox prefHeight="49.0" prefWidth="200.0" translateX="5.0" translateY="5.0">
+                           <children>
+                              <Label text="Fractal " textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="fractalComboBox" onAction="#loadFractalEnum" prefHeight="25.0" prefWidth="106.0" promptText="select" translateX="20.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" translateX="5.0" translateY="15.0">
+                           <children>
+                              <Label text="Cpx expr" textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="real" prefHeight="25.0" prefWidth="53.0" translateX="48.0" />
+                              <TextField fx:id="imaginary" prefHeight="25.0" prefWidth="51.0" translateX="55.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" translateX="5.0" translateY="5.0">
+                           <children>
+                              <Label text="Gap" textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="gap" prefHeight="25.0" prefWidth="53.0" translateX="80.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="99.0" prefWidth="250.0" translateY="40.0">
+                     <children>
+                        <HBox prefHeight="31.0" prefWidth="200.0" translateX="5.0">
+                           <children>
+                              <Label text="Dimension x" textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dimX1" prefHeight="25.0" prefWidth="53.0" translateX="22.0" />
+                              <TextField fx:id="dimX2" prefHeight="25.0" prefWidth="51.0" translateX="30.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="200.0" translateX="5.0">
+                           <children>
+                              <Label text="Dimension y" textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dimY1" prefHeight="25.0" prefWidth="53.0" translateX="22.0" />
+                              <TextField fx:id="dimY2" prefHeight="25.0" prefWidth="51.0" translateX="30.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="33.0" prefWidth="250.0" translateY="5.0">
+                     <children>
+                        <CheckBox fx:id="feedback" mnemonicParsing="false" onAction="#checkFeedbackState" text="disable feedback" textFill="WHITE" translateX="15.0" translateY="1.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="232.0" prefWidth="250.0" translateY="1.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="237.0" text="Zoom" textAlignment="CENTER" textFill="#cd0000">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="30.0" prefWidth="250.0" translateY="10.0">
+                           <children>
+                              <Label text="zoom coef" textFill="WHITE" translateX="10.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="zoomCoef" prefHeight="25.0" prefWidth="49.0" translateX="32.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="19.0" prefWidth="200.0" translateY="30.0">
+                           <children>
+                              <Button fx:id="zoomOut" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#zoomOut" prefHeight="57.0" prefWidth="61.0" text="-" textAlignment="CENTER" translateX="40.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="zoomIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#zoomIn" prefHeight="57.0" prefWidth="61.0" text="+" textAlignment="CENTER" translateX="80.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="29.0" prefWidth="200.0" translateY="70.0">
+                           <children>
+                              <Button fx:id="createFract" mnemonicParsing="false" onAction="#generateFractal" prefHeight="29.0" prefWidth="179.0" text="generate fractal" translateX="30.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #3F2B63;">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="250.0" text="Multiple view generator" textAlignment="CENTER" textFill="#cd0000">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="27.0" prefWidth="249.0" />
+                        <HBox alignment="TOP_CENTER" prefHeight="52.0" prefWidth="249.0">
+                           <children>
+                              <Label text="Nbr of view" textFill="WHITE" translateX="1.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nbrView" prefHeight="25.0" prefWidth="53.0" translateX="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="24.0" prefWidth="249.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="createMultipleView" mnemonicParsing="false" onAction="#generateMultipleView" prefHeight="29.0" prefWidth="179.0" text="generate view">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="31.0" prefWidth="249.0" />
+                        <VBox prefHeight="115.0" prefWidth="249.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="249.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="40.0" prefWidth="101.0" text="Screen image" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="249.0">
+                                 <children>
+                                    <Button fx:id="cam" mnemonicParsing="false" onAction="#screenshot" prefHeight="50.0" prefWidth="50.0" styleClass="cam" stylesheets="@btn_style.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="272.0" prefWidth="249.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="250.0" text="Shifting" textAlignment="CENTER" textFill="#cd0000" translateY="15.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="213.0" prefWidth="249.0" translateY="30.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="249.0" style="-fx-background-image: d;">
+                                 <children>
+                                    <Button fx:id="up" contentDisplay="CENTER" mnemonicParsing="false" onAction="#shiftUp" prefHeight="70.0" prefWidth="70.0" styleClass="up" stylesheets="@btn_style.css" text="UP" textAlignment="CENTER" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="249.0">
+                                 <children>
+                                    <Button fx:id="left" mnemonicParsing="false" onAction="#shiftLeft" prefHeight="70.0" prefWidth="70.0" styleClass="left" stylesheets="@btn_style.css" text="LEFT" />
+                                    <HBox alignment="CENTER" prefHeight="70.0" prefWidth="80.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Label contentDisplay="CENTER" prefHeight="23.0" prefWidth="70.0" text="Shifting coef" textFill="WHITE" />
+                                                <HBox alignment="CENTER" prefHeight="42.0" prefWidth="80.0">
+                                                   <children>
+                                                      <TextField fx:id="shiftingCoef" alignment="CENTER" prefHeight="25.0" prefWidth="61.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children></HBox>
+                                    <Button fx:id="right" mnemonicParsing="false" onAction="#shiftRight" prefHeight="70.0" prefWidth="70.0" styleClass="right" stylesheets="@btn_style.css" text="RIGHT" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="70.0" prefWidth="249.0">
+                                 <children>
+                                    <Button fx:id="down" mnemonicParsing="false" onAction="#shiftDown" prefHeight="70.0" prefWidth="70.0" styleClass="down" stylesheets="@btn_style.css" text="DOWN" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <StackPane prefHeight="503.0" prefWidth="503.0">
+                     <children>
+                        <ImageView fx:id="fractalView" fitHeight="503.0" fitWidth="503.0" pickOnBounds="true" preserveRatio="true" />
+                        <Pane prefHeight="503.0" prefWidth="503.0" translateX="5.0" translateY="5.0">
+                           <children>
+                              <VBox prefHeight="62.0" prefWidth="503.0">
+                                 <children>
+                                    <HBox prefHeight="21.0" prefWidth="503.0">
+                                       <children>
+                                          <HBox prefHeight="21.0" prefWidth="450.0">
+                                             <children>
+                                                <Label fx:id="stuff1" text="Expr : " />
+                                                <Label fx:id="realValue" text="real" />
+                                                <Label fx:id="imaginaryValue" text="imaginary" translateX="3.0" />
+                                                <Label fx:id="stuff2" text="i" translateX="4.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="21.0" prefWidth="280.0">
+                                             <children>
+                                                <Label fx:id="stuff3" text="Gap : " />
+                                                <Label fx:id="gapValue" text="gapValue" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="41.0" prefWidth="503.0">
+                                       <children>
+                                          <VBox prefHeight="41.0" prefWidth="450.0">
+                                             <children>
+                                                <HBox prefHeight="20.0" prefWidth="272.0">
+                                                   <children>
+                                                      <Label fx:id="stuff4" text="X dimension : " />
+                                                      <Label text="x1" fx:id="x1Value" />
+                                                      <Label text="x2" translateX="3.0" fx:id="x2Value" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="17.0" prefWidth="500.0">
+                                                   <children>
+                                                      <Label fx:id="stuff6" text="Y dimension : " />
+                                                      <Label fx:id="y1Value" text="y1" />
+                                                      <Label fx:id="y2Value" text="y2" translateX="3.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="41.0" prefWidth="281.0">
+                                             <children>
+                                                <HBox prefHeight="22.0" prefWidth="127.0">
+                                                   <children>
+                                                      <Label fx:id="stuff5" text="Zoom : x" />
+                                                      <Label fx:id="zoomValue" text="zoomValue" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" translateY="5.0">
+                                                   <children>
+                                                      <Label fx:id="stuff7" text="Resolution : " />
+                                                      <Label fx:id="resolution" text="U/N" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
