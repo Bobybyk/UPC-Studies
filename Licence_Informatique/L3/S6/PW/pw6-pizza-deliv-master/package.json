@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "moment": "^2.29.3",
+    "serve-favicon": "^2.5.0"
+  }
+}

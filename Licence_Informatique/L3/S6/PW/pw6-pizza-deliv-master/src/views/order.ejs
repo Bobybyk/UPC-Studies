@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/deliveryLogic.js"></script>
+
+</head>
+
+<body>
+
+    <h3 id="no_orders">Aucune commande !</h3>
+
+    <div id="orders" class="container">
+        <h4 id="order_n">Derniere commande - N° </h4>
+
+        <div id="orders_list" class="row">
+            <div id="item_template" class="col-md-3 wrap">
+                
+                <div class="text">
+                    <br />
+                    <div id="user">Name</div>
+                    <br />
+                    <div id="name">artical</div>
+                    <br />
+                    <div id="price">Price</div>
+                    <br />
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+        <div>Total: <p style="display: inline;" id="total_price"></p>€</div>
+        
+        <br />
+        <hr>
+        <br />
+
+        <input type="button" onclick="finishOrder()" value="Terminer la commande">
+
+    </div>
+
+    </div>
+</body>
+
+</html>
