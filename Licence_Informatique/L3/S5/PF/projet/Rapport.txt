@@ -1,0 +1,28 @@
+1. 	Jacotot Hugo - @jacotot - 71802786
+	Le Franc Matthieu - @lefrancm - 71800858
+
+2. 	Nous avons implémenté une fonction de parsing des fichiers polish transformant la syntaxe concrète en syntaxe abstraite sur laquelle il est par la suite possible de travailler.
+	Notre programme est capable de réafficher le contenu d'un fichier en passant par une étape de parsing puis d'affichage (via l'option --reprint).
+	Nous avons implémenté l'option --simpl permettant de faire des simplifications évidents sur le code et de propager des constantes afin d'éviter des calculs inutiles lors de l'exécution et d'alléger la syntaxe.
+	L'option --vars permet d'afficher la liste des variables utilisées dans le code et si celles-ci peuvent être accédées avant leur initialisation.
+	L'option --eval permet de lancer une exécution du code afin de voir le résultat du programme.
+	L'option --sign étant une charge de travail trop importante, nous ne l'avons pas implémentée par manque de temps.
+
+3.	Notre programme se compile avec dune à l'aide du Makefile fourni.
+	Notre programme accepte les options suivantes:	
+		--reprint
+		--eval
+		--vars
+		--simpl
+	Nous n'avons pas utilisé de bibliothèques externes.
+
+4.	Notre projet possède les modules suivants:	
+		- polish.ml contient la gestion des différentes fonctionnalités du projet et s'occupe de les appeler en fonction des arguments donnés
+		- types.ml contient les définitions des types utilisés dans tous les modules du programme
+		- read_polish.ml contient toutes les fonctions nécessaires au parsing d'un fichier polish permettant la transformation de la syntaxe concrète en syntaxe astraite	
+		- eval_vars.ml parcourt le programme, préalablement traité et placé dans un block program, et récupère toutes les variables rencontrées en séparant celles potentiellement non initialisées des autres
+		- reprint.ml possède toutes les fonctions permettant de réafficher un programme polish préalablement parsé
+		- simpl.ml contient toutes les fonctions nécessaires à la simplification du programme et à la propagation des constantes
+		- eval_polish.ml contient toutes les fonctions nécessaires à l'exécution du programme parsé
+
+5. 	Matthieu s'est occupé au départ de récupérer le contenu du fichier.p pour qu'il puisse être parcouru et segmenté dans read_polish.ml. Il a ensuite travaillé sur la gestion des READ PRINT SET puis Hugo s'est occupé des block IF/ELSE WHILE en revoyant certaines partie de ce qui avait déjà été fait pour que cela convienne mieux à la nouvelle implémentation. Matthieu s'est ensuite occupé d'implémenter l'option eval servant à exécuter le code, tandis que Hugo s'est occupé d'implémenter l'option reprint permettant de réafficher le code. Matthieu s'est ensuite attaqué à l'opion vars pendant que Hugo s'occupait de l'option simpl. La dernière phase du projet a été consacrée au nettoyage du code et à la correction d'erreur résiduelles qui empêchait le programme de s'exécuter selon le comportement attendu.

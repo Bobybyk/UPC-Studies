@@ -1,0 +1,5 @@
+(executable
+ (name polish)
+ (modes byte)
+ (flags :standard -w -27-26-32-33 \ -short-paths)
+)

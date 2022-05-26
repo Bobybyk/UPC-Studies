@@ -1,0 +1,2 @@
+READ n
+PRINT n
