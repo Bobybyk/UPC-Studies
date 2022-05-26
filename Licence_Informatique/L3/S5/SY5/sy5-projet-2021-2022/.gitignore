@@ -1,0 +1,8 @@
+saturnd
+cassini
+run/
+*.dSYM
+*.backup
+*.o
+*.test
+*.pid
