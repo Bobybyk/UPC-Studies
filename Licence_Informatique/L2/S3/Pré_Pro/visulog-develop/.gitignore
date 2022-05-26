@@ -1,0 +1,17 @@
+/bin/
+
+.classpath
+.gradle/
+.project
+.html
+
+*/build/
+*/.settings
+*/bin/
+
+build/
+
+q
+/.idea
+.settings/
+.vscode

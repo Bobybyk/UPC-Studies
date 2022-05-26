@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="head">
+				<a href="https://gaufre.informatique.univ-paris-diderot.fr/nodin/visulog">
+				</a>
+				<span>
+					Visulog
+				</span>
+				<div class="?">
+				</div>
+			</div>
+		</header>
+		<div>
+			<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+		</div>
+		<script>
+			 	window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2",	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Graphe"
+	},
+	data: [{
+		type: "pie",
+		toolTipContent: "<b>{label}</b>: {y} merge",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y} merge",
+		dataPoints: [
+{ y:3, label: 'aldric degorre '},{ y:1, label: 'bouanem yani akli '},{ y:14, label: 'le franc matthieu '},{ y:1, label: 'nodin aurelie '},{ y:5, label: 'alexandre dylan '},{ y:1, label: 'morrisson kevin '},{ y:4, label: 'jacotot hugo '},{ y:1, label: 'colin gonzalez '},]	}]});chart.render();}
+		</script>
+		<div class="?">
+			<div class="?">
+				<p>
+				</p>
+			</div>
+			<div class="?">
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+apply plugin : "java" 
+ext {
+   javaMainClass = "cli/src/main/java/up/visulog/cli/CLILauncher.java"
+}
+ 
+application {
+    mainClassName = javaMainClass
+}
+
+version = "0.0.1"
+group = "up"
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    plugins.apply("java")
+
+    java.sourceCompatibility = JavaVersion.VERSION_1_10
+
+}
+
+dependencies {
+    implementation(project(":analyzer"))
+    implementation(project(":config"))
+    implementation(project(":gitrawdata"))
+    implementation(project(":webgen"))
+    testImplementation("junit:junit:4.+")
+}
