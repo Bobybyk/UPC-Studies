@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_multiply">MultiplyActivity</string>
+    <string name="name_invite">Votre nom?</string>
+    <string name="unknown">Inconnu</string>
+    <string name="fr">Français</string>
+    <string name="maths">Maths</string>
+    <string name="invite_mult">Entraîne-toi à multiplier! </string>
+    <string name="invite_conj">Entraîne-toi à conjuguer le verbe être! </string>
+    <string name="check">vérifier</string>
+    <string name="more">encore</string>
+    <string name="done">terminé</string>
+</resources>
