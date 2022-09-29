@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">TP4</string>
+    <string name="sauvegarder">sauvegarder</string>
+    <string name="supprimer">supprimer</string>
+    <string name="ajouter">ajouter</string>
+    <string-array name="spinner_entries">
+        <item>nom</item>
+        <item>prenom</item>
+    </string-array>
+    <string-array name="nom">
+        <item>Brown</item>
+        <item>Kowalski</item>
+        <item>Dupont</item>
+        <item>Nowak</item>
+        <item>Smith</item>
+        <item>Randal</item>
+        <item>Martin</item>
+        <item>Petit</item>
+        <item>Bernard</item>
+        <item>Dubois</item>
+        <item>Durand</item>
+        <item>Robert</item>
+        <item>Thomas</item>
+        <item>Simon</item>
+        <item>Leroy</item>
+        <item>Roux</item>
+        <item>Novikov</item>
+        <item>Drozdov</item>
+        <item>McCarthy</item>
+        <item>Brzeczyszczykiewicz</item>
+        <item>Kolakowski</item>
+        <item>Kolakowska</item>
+        <item>Lisicka</item>
+        <item>Obel</item>
+        <item>Szczepkowska</item>
+        <item>Waldorf</item>
+        <item>Karonski</item>
+        <item>Brzeczyszczykiewicz</item>
+    </string-array>
+
+    <string-array name="prenom">
+        <item>Anthony</item>
+        <item>Marek</item>
+        <item>André</item>
+        <item>Stanislaw</item>
+        <item>Pathy</item>
+        <item>John</item>
+        <item>Audrey</item>
+        <item>Paul</item>
+        <item>Julien</item>
+        <item>Thérèse</item>
+        <item>André</item>
+        <item>Paul</item>
+        <item>Yves</item>
+        <item>Thierry</item>
+        <item>Monique</item>
+        <item>Agathe</item>
+        <item>Alexandre</item>
+        <item>Serguey</item>
+        <item>Dilan</item>
+        <item>Szczepan</item>
+        <item>Bogdan</item>
+        <item>Malogorzata</item>
+        <item>Teresa</item>
+        <item>Halina</item>
+        <item>Magda</item>
+        <item>Jerzy</item>
+        <item>Stanislaw</item>
+        <item>Bogdan</item>
+    </string-array>
+</resources>
