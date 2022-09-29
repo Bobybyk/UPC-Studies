@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         outState.putStringArrayList("phrases",ArrayList<String>(list))
     }
 
+
     fun action() {
         when {
             newPhrase.text.isEmpty() -> Toast.makeText(this,"Le champ est vide", Toast.LENGTH_LONG).show()
