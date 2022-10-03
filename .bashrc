@@ -146,7 +146,9 @@ alias local="cd /srv/http"
 ###### SHORT ######
 ###################
 alias ll="ls -lh"
+alias lla="ls -lha"
 alias la="ls -a"
+alias wg="du -sh"
 alias writer="libreoffice --writer"   # Lance le traitement de texte
 alias calc="libreoffice --calc"     # Lance le tableur
 alias impress="libreoffice --impress"  # Lance l'éditeur de présentation
@@ -155,6 +157,7 @@ alias base="libreoffice --base"     # Lance le gestionnaire de base de données
 alias math="libreoffice --math"     # Lance l'éditeur de formule
 alias pdf="mimeopen -d"
 alias f="find . -iname"
+alias rmc="find . -name "*.class" -exec rm -rf {} \;"
 alias bashrc="subl ~/.bashrc"
 alias config="subl ~/.ssh/config"
 alias killn="kill-name"
@@ -162,13 +165,10 @@ kill-name() {
     kill $(pgrep $1)
 }
 alias pg="sudo su - postgres"
-### tp3 SY5
-alias listar="/home/sha/Repo/sy5_2021-2022/TP/TP3/work/listar"
-alias detar="/home/sha/Repo/sy5_2021-2022/TP/TP3/work/detar"
 
 alias p="python3"
 alias dpll="/home/sha/Projets/lo5---solveur-dpll-recursif/dpll"
-alias society="cd /home/sha/Projets/Society ; /usr/bin/env /usr/lib/jvm/java-17-openjdk/bin/java -XX:+ShowCodeDetailsInExceptionMessages @/tmp/cp_f0ipkk7yj2jnyxv62rcwuhern.argfile application.Main"
+alias fac="cd ~/Fac"
 ###################
 ##### Réseau ######
 ###################
@@ -191,15 +191,16 @@ alias assh="bash /home/sha/scripts/ssh_agent_up.sh"
 #####  SYST  ######
 ###################
 alias reload="exec $SHELL"
+alias reloads="systemctl restart sshd"
 alias majm='sudo pacman-mirrors -g && sudo pacman -Syyu && yaourt -Syua'
-alias maj='sudo pacman -Syyu && yaourt -Syua'
+alias maj='sudo pacman -Syyu'
 alias sy="sudo rm /var/lib/pacman/sync/*"
 alias tok='echo "JF9-OBV-GWY-ZT1"'###################
 alias sd="systemctl poweroff -i"
 alias clean="sudo pacman -Qdt ; sudo pacman -Sc"
 alias frm="shred -zvu -n 10"
 alias path="echo $PATH"
-alias flush="sudo nscd -i hosts | echo 'succesfully flushed DNS'"
+alias flush="sudo nscd -i hosts ; echo 'succesfully flushed DNS'"
 # provisoire, faire script bash
 alias erase="echo 'zero.small.file creation (102 400b)' ; dd if=/dev/zero of=zero.small.file bs=1024 count=102400 ; shred -zv zero.small.file ; echo 'zero.file filling...' ; cat /dev/urandom > zero.file ; sync ; echo 'removing zero.small.file' ; rm zero.small.file ; shred -zv zero.file ; sync ; echo 'removing zero.file' ; rm zero.file"
 alias conk="conky -c ~/.config/conky/conky.conkyrc"
@@ -213,3 +214,6 @@ eval `opam env`
 alias gitlog="git config --global user.email matt.lefranc@gmail.com ; git config --global user.name 'Matthieu Le Franc'"
 alias gitlist="git config --list"
 alias pushm="git push origin master"
+
+# 9630
+# kuWV-eAMx-vTCW-DVfV
