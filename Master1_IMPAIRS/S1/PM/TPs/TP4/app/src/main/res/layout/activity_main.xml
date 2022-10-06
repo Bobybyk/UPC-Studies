@@ -41,43 +41,49 @@
         android:layout_marginStart="10dp" />
 
 
-<LinearLayout
-    android:id="@id/boutons"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingBottom="10dp"
-    android:layout_alignParentBottom="true">
+    <LinearLayout
+        android:id="@id/boutons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
 
         <Button
             android:id="@+id/sauvegarder"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/textSize"
+            android:layout_weight="1"
             android:text="@string/sauvegarder"
-            />
+            android:textSize="@dimen/buttonSize" />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="@dimen/textSize"
-        android:text="@string/supprimer"
-        android:id="@+id/supprimer"
-        android:onClick="supprimer"
-        />
+        <Button
+            android:id="@+id/lecture"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="lecture"
+            android:text="@string/lecture"
+            android:textSize="@dimen/buttonSize" />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="@dimen/textSize"
-        android:text="@string/ajouter"
-        android:id="@+id/ajouter"
-        android:onClick="ajouter"
-        />
-</LinearLayout>
+        <Button
+            android:id="@+id/supprimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="supprimer"
+            android:text="@string/supprimer"
+            android:textSize="@dimen/buttonSize" />
+
+        <Button
+            android:id="@+id/ajouter"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ajouter"
+            android:text="@string/ajouter"
+            android:textSize="@dimen/buttonSize" />
+    </LinearLayout>
 
 
 

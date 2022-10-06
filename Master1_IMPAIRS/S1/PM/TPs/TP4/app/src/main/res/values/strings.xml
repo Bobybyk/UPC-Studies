@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">TP4</string>
-    <string name="sauvegarder">sauvegarder</string>
-    <string name="supprimer">supprimer</string>
-    <string name="ajouter">ajouter</string>
+    <string name="sauvegarder">save</string>
+    <string name="supprimer">delete</string>
+    <string name="ajouter">add</string>
+    <string name="lecture">read</string>
     <string-array name="spinner_entries">
         <item>nom</item>
         <item>prenom</item>
+        <item>checked</item>
     </string-array>
     <string-array name="nom">
         <item>Brown</item>
