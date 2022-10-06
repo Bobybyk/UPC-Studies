@@ -1,4 +1,5 @@
 #include "Horloge.hpp"
+#include "Date.hpp"
 #include <iostream>
 
 int main() {
@@ -29,5 +30,8 @@ int main() {
     std::cout << horloge << std::endl;
     horloge.tick();
     std::cout << horloge << std::endl;
+
+    Date date{11, 06, 1999};
+    std::cout << date << std::endl;
     
 }
