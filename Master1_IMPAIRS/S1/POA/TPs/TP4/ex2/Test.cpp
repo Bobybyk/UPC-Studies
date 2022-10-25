@@ -1,3 +1,3 @@
 int main() {
-    tab = new int[5];
+    *int tab = new int[5];
 }
