@@ -1,0 +1,13 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	mvt               3001
+//	char0             3014
+//	charNL            3015
+//	arrow             3016
+//	hanoi             301D
+//	hanoi0            3039
+//	main              303B
+//	sttop             3041
+//	stbot             30A5
