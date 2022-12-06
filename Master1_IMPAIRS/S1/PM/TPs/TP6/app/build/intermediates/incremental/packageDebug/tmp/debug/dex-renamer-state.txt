@@ -1,0 +1,13 @@
+#Thu Oct 06 17:40:38 CEST 2022
+path.3=4/classes.dex
+path.2=12/classes.dex
+path.1=0/classes.dex
+path.0=classes.dex
+base.3=/home/matthieu/Fac/Master1_IMPAIRS/S1/PM/TPs/TP6/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.2=/home/matthieu/Fac/Master1_IMPAIRS/S1/PM/TPs/TP6/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.1=/home/matthieu/Fac/Master1_IMPAIRS/S1/PM/TPs/TP6/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.0=/home/matthieu/Fac/Master1_IMPAIRS/S1/PM/TPs/TP6/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
