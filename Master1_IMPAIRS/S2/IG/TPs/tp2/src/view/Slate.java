@@ -7,6 +7,7 @@ import java.awt.Graphics;
 
 public class Slate extends JPanel {
     private BufferedImage canvas;
+    private String selectedTool;
 
     public Slate() {
         super();
@@ -18,5 +19,9 @@ public class Slate extends JPanel {
         super.paintComponent(g);
         g.drawImage(this.canvas, 0, 0, this);
         setPreferredSize(new Dimension(800, 600));
+    }
+
+    public void setSelectedTool(String selectedTool) {
+        this.selectedTool = selectedTool;
     }
 }
