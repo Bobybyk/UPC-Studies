@@ -15,21 +15,12 @@ public class Graph {
                 v1 = new Vertex(edges.get(i)[0]);
                 vertices.add(v1);
             } else {
-                for (int j = 0 ; j < vertices.size() ; j++) {
-                    if (vertices.get(j).getValue() == edges.get(j)[0]) {
-                        v1 = vertices.get(j);
-                    }
-                }
+                v1 = getVertexById(edges.get(i)[0]);
             }
             if (!vertexExist(edges.get(i)[1])) {
                 v2 = new Vertex(edges.get(i)[1]);
-                vertices.add(v2);
             } else {
-                for (int j = 0 ; j < vertices.size() ; j++) {
-                    if (vertices.get(j).getValue() == edges.get(j)[1]) {
-                        v2 = vertices.get(j);
-                    }
-                }
+                v2 = getVertexById(edges.get(i)[1]);
             }
             v1.addAdjacent(v2);
         }
@@ -43,6 +34,15 @@ public class Graph {
         }
     }
 
+    private Vertex getVertexById(int id) {
+        for (int i = 0 ; i < vertices.size() ; i++) {
+            if (vertices.get(i).getValue() == id) {
+                return vertices.get(i);
+            }
+        }
+        return null;
+    }
+
     private boolean vertexExist(int value) {
         for (int i = 0 ; i < vertices.size() ; i++) {
             if (vertices.get(i).getValue() == value) {
@@ -50,5 +50,9 @@ public class Graph {
             }
         }
         return false;
+    }
+
+    public LinkedList<Vertex> getVertices() {
+        return vertices;
     }
 }
