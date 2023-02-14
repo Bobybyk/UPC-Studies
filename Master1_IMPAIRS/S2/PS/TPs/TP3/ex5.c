@@ -9,6 +9,7 @@ int main() {
 
     // Créer/ouvrir le fichier compteur
     int fd = open("files/train.data", O_RDWR | O_CREAT, 0644);
+
     if (fd == -1) {
         perror("open");
         exit(1);
@@ -22,6 +23,8 @@ int main() {
         printf("%i", i);
         i++;
     } while (i < 1023 && buf[0] == '0');
+
+    lseek(fd, -1, SEEK_CUR);
 
     if (i < 1024 && buf[0] != '0') {
         buf[0] = '0';
