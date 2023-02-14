@@ -1,7 +1,7 @@
 CFLAGS=-Wall -Wextra -Werror
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)
-DEP=diff cp ex3 lonely
+DEP=diff cp ex3 lonely ex5
 
 .PHONY:	all
 
@@ -21,3 +21,6 @@ ex3:
 
 lonely:
 	@$(CC) $(CFLAGS) -o $@ lonely.c
+
+ex5:
+	@$(CC) $(CFLAGS) -o $@ ex5.c
