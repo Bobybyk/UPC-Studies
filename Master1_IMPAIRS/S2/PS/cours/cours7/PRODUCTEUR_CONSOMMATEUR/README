@@ -1,0 +1,33 @@
+producer consumer : version with one producer and one consumer
+
+prefic_slash  :  function that adds '/' as the first caractère of a string,
+if the first caracter different from '/'.
+If the first caractère is '/' the functuion return a copy of the argument
+
+thread_error : function that writes on standard error  a message
+concernig the thread error and exits
+
+init_mutex : functions that initialise mutex and condition variables
+
+open_memory :  function that creates and initialises the shared memory object
+and maps it in memory with mmap
+
+producer : programme that should be called as
+./producer memory_name
+where memory_name is the name of a shared memory object
+(starting or not with '/')
+
+producer creates the shared memory object (if it does not exists) or open an existing object. If the object is created then it is initialised.
+
+produce producer writes in an infinite loop an integer to the shared memory objetc
+
+consumer is the program that reads int valeus written by the producer
+It should be called as
+./producer memory_name
+where memory_name is the name of the shared memory object
+
+This implementation supports only one producer and one consumer.
+
+
+
+               
