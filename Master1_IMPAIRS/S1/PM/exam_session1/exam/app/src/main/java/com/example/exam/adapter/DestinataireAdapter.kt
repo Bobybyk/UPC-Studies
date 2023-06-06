@@ -1,12 +1,16 @@
 package com.example.exam.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exam.R
 import com.example.exam.data.Destinataire
+import androidx.core.graphics.ColorUtils
+
 
 class DestinataireAdapter : RecyclerView.Adapter<DestinataireAdapter.DestinataireViewHolder>() {
 
@@ -25,6 +29,14 @@ class DestinataireAdapter : RecyclerView.Adapter<DestinataireAdapter.Destinatair
     override fun onBindViewHolder(holder: DestinataireViewHolder, position: Int) {
         val destinataire = destinataires[position]
         holder.bind(destinataire)
+
+        // Définir les couleurs de fond pour les positions paires et impaires
+        val backgroundColor = if (position % 2 == 0) {
+            ColorUtils.setAlphaComponent(Color.CYAN, 50)
+        } else {
+            ColorUtils.setAlphaComponent(Color.GRAY, 50)
+        }
+        holder.itemView.setBackgroundColor(backgroundColor)
     }
 
     override fun getItemCount(): Int {
@@ -36,12 +48,16 @@ class DestinataireAdapter : RecyclerView.Adapter<DestinataireAdapter.Destinatair
         private val prenomTextView: TextView = itemView.findViewById(R.id.prenomTextView)
         private val mailTextView: TextView = itemView.findViewById(R.id.mailTextView)
         private val annotationTextView: TextView = itemView.findViewById(R.id.annotationTextView)
+        private val checkBox: CheckBox = itemView.findViewById(R.id.checkBox)
 
         fun bind(destinataire: Destinataire) {
             nomTextView.text = destinataire.nom
             prenomTextView.text = destinataire.prenom
             mailTextView.text = destinataire.mail
             annotationTextView.text = destinataire.annotation
+            // Mettre à jour l'état isChecked du CheckBox en fonction de l'annotation
+            checkBox.isChecked = destinataire.annotation != ""
         }
+
     }
 }
