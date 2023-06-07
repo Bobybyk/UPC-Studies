@@ -15,6 +15,7 @@ import androidx.core.graphics.ColorUtils
 class DestinataireAdapter : RecyclerView.Adapter<DestinataireAdapter.DestinataireViewHolder>() {
 
     private var destinataires: List<Destinataire> = emptyList()
+    private val selectedItems = mutableListOf<Int>()
 
     fun setDestinataires(destinataires: List<Destinataire>) {
         this.destinataires = destinataires
@@ -22,19 +23,36 @@ class DestinataireAdapter : RecyclerView.Adapter<DestinataireAdapter.Destinatair
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinataireViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.destinataire_item, parent, false)
-        return DestinataireViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.destinataire_item, parent, false)
+        val viewHolder = DestinataireViewHolder(itemView)
+
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            if (selectedItems.contains(position)) {
+                selectedItems.remove(position)
+            } else {
+                selectedItems.add(position)
+            }
+            notifyItemChanged(position)
+        }
+
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: DestinataireViewHolder, position: Int) {
         val destinataire = destinataires[position]
         holder.bind(destinataire)
 
-        // Définir les couleurs de fond pour les positions paires et impaires
-        val backgroundColor = if (position % 2 == 0) {
-            ColorUtils.setAlphaComponent(Color.CYAN, 50)
+        val isSelected = selectedItems.contains(position)
+        // Définir les couleurs de fond pour les positions paires et impaires et la liste de positions sélectionnées
+        val backgroundColor = if (isSelected) {
+            ColorUtils.setAlphaComponent(Color.RED, 120)
         } else {
-            ColorUtils.setAlphaComponent(Color.GRAY, 50)
+            if (position % 2 == 0) {
+                ColorUtils.setAlphaComponent(Color.CYAN, 50)
+            } else {
+                ColorUtils.setAlphaComponent(Color.GRAY, 50)
+            }
         }
         holder.itemView.setBackgroundColor(backgroundColor)
     }
