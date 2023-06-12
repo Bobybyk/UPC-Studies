@@ -2,6 +2,7 @@ package com.example.exam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.widget.Button
 import android.widget.EditText
 import androidx.lifecycle.Observer
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.exam.adapter.DestinataireAdapter
 import com.example.exam.data.BDMails
 import com.example.exam.data.DestinataireItem
+import sendMail
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +27,11 @@ class MainActivity : AppCompatActivity() {
     // Déclarez les variables pour le RecyclerView et son Adapter
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: DestinataireAdapter
+
+    lateinit var sujet : EditText
+    lateinit var message: EditText
+
+    private val selectedDestinataires = mutableListOf<DestinataireItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,5 +76,17 @@ class MainActivity : AppCompatActivity() {
                 adapter.setDestinataires(destinataires)
             })
         }
+
+        envoyer_mail.setOnClickListener {
+            sujet = findViewById(R.id.subject) // récupérez le sujet du mail depuis l'EditText correspondant
+            message = findViewById(R.id.message)// récupérez le message du mail depuis l'EditText correspondant
+
+            val adressesMails = selectedDestinataires.map { it.mail }.toTypedArray()
+
+            val intent = sendMail(adressesMails, sujet.text.toString(), message.text.toString())
+            startActivity(intent)
+        }
+
     }
+
 }
