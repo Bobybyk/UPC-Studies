@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SpinnerCheckBoxRadioDemo</string>
+    <string-array name="colors">
+        <item>orange</item>
+        <item>blue</item>
+        <item>red</item>
+        <item>green</item>
+        <item>black</item>
+        <item>white</item>
+        <item>grey</item>
+        <item>yellow</item>
+        <item>violet</item>
+        <item>pink</item>
+        <item>brun</item>
+        <item>lazure</item>
+        <item>amaranth</item>
+        <item>amber</item>
+        <item>apricot</item>
+        <item>amethyst</item>
+        <item>beige</item>
+        <item>brown</item>
+        <item>carmine</item>
+        <item>cerise</item>
+        <item>chocolate</item>
+        <item>crimson</item>
+        <item>cyan</item>
+        <item>emerald</item>
+        <item>gold</item>
+        <item>indigo</item>
+        <item>silver</item>
+        <item>scarlet</item>
+    </string-array>
+</resources>

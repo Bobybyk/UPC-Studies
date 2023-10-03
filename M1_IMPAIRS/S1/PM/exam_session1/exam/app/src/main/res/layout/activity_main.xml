@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+
+        android:id="@+id/recycler" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:columnCount="4"
+        android:rowCount="4">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nom :"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nom"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:hint="nom"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prénom :"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prenom"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:hint="prénom"
+            android:inputType="text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mail :"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mail"
+            android:layout_gravity="fill_horizontal"
+            android:hint="mail"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp" />
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/annotation"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill_horizontal"
+            android:hint="annotation"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp" />
+    </GridLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="afficher\nannotation"
+            android:id="@+id/afficherAnnotationButton" />
+
+        <Button
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:text="ajouter\ndestinataire"
+            android:textSize="10sp"
+            android:id="@+id/ajouterDestinataireButton" />
+
+
+        <Button
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:layout_height="wrap_content"
+            android:text="envoyer\nmail"
+            android:textSize="10sp"
+            android:id="@+id/envoyerMailButton" />
+
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="phrases">
+    <item>In vino veritas</item>
+    <item>Homo homini lupus est</item>
+    <item>Carpe diem</item>
+    <item>To be or not to be that is the question</item>
+    <item>Knowledge is power</item>
+</string-array>
+</resources>
