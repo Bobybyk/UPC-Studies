@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"io"
+	"os"
 )
 
 func main() {
@@ -12,12 +14,14 @@ func main() {
 	http.HandleFunc("/hello.html", helloHtml)
 	http.HandleFunc("/name-get", nameGet)
 	http.HandleFunc("/name-post", namePost)
-	http.HandleFunc("/request-name", nameReq)
+	http.HandleFunc("/request-name", nameReqGet)
+	http.HandleFunc("/request-name-post", nameReqPost)
+
 	err := http.ListenAndServe(":8080", nil)
 	log.Fatal("ListenAndServe: ", err)
 }
 
-func nameReq(w http.ResponseWriter, r *http.Request) {
+func nameReqGet(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "HEAD" && r.Method != "GET" {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 		return
@@ -70,6 +74,15 @@ Votre nom: <input type="text" name="name"/> <input type="submit"/></form>
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprintf(w, data)
+}
+
+func nameReqPost(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	io.Copy(os.Stdout, r.Body)
 }
 
 func namePost(w http.ResponseWriter, r *http.Request) {
