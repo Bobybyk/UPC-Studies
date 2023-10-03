@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Notifications</string>
-    <string name="channel_name">private channel</string>
-    <string name="channel_description">channel description</string>
-</resources>

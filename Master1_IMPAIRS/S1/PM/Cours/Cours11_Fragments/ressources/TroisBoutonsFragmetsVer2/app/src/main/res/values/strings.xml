@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">TroisBoutonsFragmetsVer2</string>
-    <string name="ajoutA">ajout \"A\"</string>
-    <string name="ajoutB">ajout \"B\"</string>
-    <string name="ajoutC">ajout \"C\"</string>
-    <string name="aj_a_on_stack">ajout \"A\" on stack</string>
-    <string name="aj_b_on_stack">ajout \"B\" on stack</string>
-    <string name="aj_c_on_stack">ajout \"C\" on stack</string>
-</resources>
