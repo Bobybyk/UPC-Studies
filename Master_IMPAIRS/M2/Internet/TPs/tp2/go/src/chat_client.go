@@ -106,24 +106,45 @@ func printMsg(msg string) {
 	fmt.Println(msg)
 }
 
+func postMsg(msg string) {
+	transport := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client := &http.Client{
+		Transport: transport,
+		Timeout:   50 * time.Second,
+	}
+
+	resp, err := client.Post("https://jch.irif.fr:8082/chat/", "text/plain", strings.NewReader(msg))
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	defer resp.Body.Close()
+}
 
 func main() {
 	var listIds []string = getChatIds()
 	var listMsg []string = getChatMsg(listIds)
 	printList(listMsg)
-	
+	var msgToPost = ""
+	var previousMsg = ""
+
 	for {
 		var listIds2 []string = getChatIds()
 
 		if (len(listIds) != len(listIds2)) {
+			var listMsg []string = getChatMsg(listIds2)
 
-			var nbrMsgtoGet = len(listIds2) - len(listIds)
-			for i := 0 ; i < nbrMsgtoGet ; i++ {
-				var listMsg []string = getChatMsg(listIds2)
-				printList(listMsg)
+			for i := len(listIds)-1 ; i < len(listIds2) ; i++ {
+				printMsg(listMsg[i])
 			}
-			copy(listIds, listIds2)
+			listIds = listIds2
 		}
-
+		fmt.Scanf("%s", &msgToPost)
+		if (msgToPost != previousMsg) {
+			postMsg(msgToPost)
+			previousMsg = msgToPost
+		}
 	}
 }
