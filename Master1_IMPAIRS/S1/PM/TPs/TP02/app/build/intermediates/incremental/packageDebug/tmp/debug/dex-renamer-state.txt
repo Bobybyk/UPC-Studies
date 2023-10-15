@@ -1,0 +1,10 @@
+#Tue Jun 06 15:49:21 CEST 2023
+base.2=D\:\\Fac\\Master1_IMPAIRS\\S1\\PM\\TPs\\TP02\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+path.2=10/classes.dex
+base.1=D\:\\Fac\\Master1_IMPAIRS\\S1\\PM\\TPs\\TP02\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+path.1=0/classes.dex
+base.0=D\:\\Fac\\Master1_IMPAIRS\\S1\\PM\\TPs\\TP02\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
