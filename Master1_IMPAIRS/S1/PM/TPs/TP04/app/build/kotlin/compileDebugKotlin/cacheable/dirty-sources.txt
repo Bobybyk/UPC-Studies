@@ -1,4 +1,0 @@
-D:\Fac\Master1_IMPAIRS\S1\PM\TPs\TP04\app\src\main\java\fr\uparis\tp04\MainActivity.kt
-D:\Fac\Master1_IMPAIRS\S1\PM\TPs\TP04\app\src\main\java\fr\uparis\tp04\AjouterEtudiant.kt
-D:\Fac\Master1_IMPAIRS\S1\PM\TPs\TP04\app\src\main\java\fr\uparis\tp04\Etudiant.kt
-D:\Fac\Master1_IMPAIRS\S1\PM\TPs\TP04\app\src\main\java\fr\uparis\tp04\MonAdapter.kt
