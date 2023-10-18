@@ -1,6 +1,4 @@
 import random
-from collections import defaultdict
-from typing import List
 
 def split_lines(input, seed, output1, output2):
     random.seed(seed)
@@ -15,10 +13,9 @@ def split_lines(input, seed, output1, output2):
     output2.close()
 
 def tokenize_and_split(sms_file) -> tuple:
-    words = defaultdict(str)
+    words = {}
     l1 = []
     l2 = []
-    tmpDup = []
     i = 0
     for line in open(sms_file, 'r').readlines():
         if line.startswith('ham'):
@@ -27,20 +24,21 @@ def tokenize_and_split(sms_file) -> tuple:
             isSpam = True
         tmpL1 = []
         tmpL2 = []
+        
         for word in line.split():
-            if word not in tmpDup:
-                words[i] = word
-                i += 1
-                tmpDup.append(word)
-            if isSpam:
-                for key in words.keys():
-                    if words.get(key) == word:
-                        tmpL1.append(key)
-            else:
-                for key in words.keys():
-                    if words.get(key) == word:
-                        tmpL2.append(key)
-        l1.append(tmpL1)
-        l2.append(tmpL2)
+            if word != 'ham' and word != 'spam':
+                if words.get(word) == None:
+                    words[word] = i
+                    i += 1
+                if isSpam:
+                    tmpL1.append(i)
+                else:
+                    tmpL2.append(i)
+        if len(tmpL1) != 0:
+            l1.append(tmpL1)
+        if len(tmpL2) != 0:
+            l2.append(tmpL2)
 
     return (words, l1, l2)
+
+print(tokenize_and_split("test3_small"))
