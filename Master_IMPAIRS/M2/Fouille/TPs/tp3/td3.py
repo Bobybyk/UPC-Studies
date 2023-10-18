@@ -27,13 +27,13 @@ def tokenize_and_split(sms_file) -> tuple:
         
         for word in line.split():
             if word != 'ham' and word != 'spam':
-                if words.get(word) == None:
+                if word not in words:
                     words[word] = i
                     i += 1
                 if isSpam:
-                    tmpL1.append(i)
+                    tmpL1.append(words[word])
                 else:
-                    tmpL2.append(i)
+                    tmpL2.append(words[word])
         if len(tmpL1) != 0:
             l1.append(tmpL1)
         if len(tmpL2) != 0:
@@ -41,4 +41,21 @@ def tokenize_and_split(sms_file) -> tuple:
 
     return (words, l1, l2)
 
-print(tokenize_and_split("test3_small"))
+def compute_frequencies(num_words, documents):
+    freq = [0] * num_words
+    for doc in documents:
+        for word in set(doc):
+            freq[word] += 1
+    for index in range(len(freq)):
+        freq[index] /= len(documents)
+    return freq
+
+def naive_bayes_train(sms_file):
+    words, l1, l2 = tokenize_and_split(sms_file)
+    spam_ratio = len(l1) / (len(l1) + len(l2))
+    freq1 = compute_frequencies(len(words), l1)
+    freq2 = compute_frequencies(len(words), l2)
+    spamicity = []
+    for index in range(len(freq1)):
+        spamicity.append(freq1[index] / (freq1[index] + freq2[index]))
+    return (spam_ratio, words, spamicity)
