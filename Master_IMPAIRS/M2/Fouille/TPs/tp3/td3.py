@@ -53,9 +53,21 @@ def compute_frequencies(num_words, documents):
 def naive_bayes_train(sms_file):
     words, l1, l2 = tokenize_and_split(sms_file)
     spam_ratio = len(l1) / (len(l1) + len(l2))
-    freq1 = compute_frequencies(len(words), l1)
-    freq2 = compute_frequencies(len(words), l2)
+    spam_freq = compute_frequencies(len(words), l1)
+    union_freq = compute_frequencies(len(words), l1+l2)
     spamicity = []
-    for index in range(len(freq1)):
-        spamicity.append(freq1[index] / (freq1[index] + freq2[index]))
+    for i in range(len(words)):
+        if spam_freq[i] == 0:
+            spamicity.append(0)
+        else:
+            spamicity.append(spam_freq[i] / (union_freq[i]))
     return (spam_ratio, words, spamicity)
+
+def naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms):
+    words = sms.split()
+    spam_ratio = train_spam_ratio
+    for word in set(words):
+        if word in train_words:
+            spam_ratio *= train_spamicity[train_words[word]]
+    return spam_ratio
+
