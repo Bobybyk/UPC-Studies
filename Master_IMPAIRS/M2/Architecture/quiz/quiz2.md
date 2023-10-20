@@ -1,0 +1,107 @@
+# Quiz 2
+
+- Quelles sont les 4 zones mémoire d'un « process » ?
+	- Données statiques 
+	- Dynamiques
+	- Tas
+	- Piles (appels de fonction, adresses)
+- D’après Maurice J. Bach, quels sont les 4 états d’un process Unix ?
+	- kernel (intéruptions)
+	- user
+	- attente
+- Que signifie le trigramme UML ?
+	- Unified modeling language
+- Citez deux Framework orientés Composants Logiciels ?
+	- Symfony
+	- .NET
+- Que signifie le trigramme MMU ?
+	- Mémorie management unit
+- Qui est l'auteur de l'ouvrage de référence MOS ?
+	- Andrew S.T.
+- Quel opérateur SQL permet de résoudre les associations entre deux tables ?
+	- Join
+- Ecrire un exemple de structure C ?
+	- 
+- Ecrire un exemple de structure Java ?
+	- N'existe pas
+- Qu’est qu’un objet anémique ?
+	- Objet sans méthodes
+- Que signifie NoSQL ?
+	- Not only sql
+- Qui a inventé le principe de NoSQL ?
+	- Martin Foller
+- Quel est le nom du livre de Darrell Huff ?
+	- Comment mentir avec des statistiques
+- Quel est le nom du livre de Jordan Ellenberg ?
+	- 
+- Qui reccomande de lire “how to lie with statistics” pendant vos vacances d’été ?
+	- Bill Gates
+- Qui a inventé les “Use Case” ?
+	- Ivar Jacobson
+- Dans quel livre se trouve cette figure ? (chat véto)
+	- Grady Boosh
+- Dans quel livre se trouve cette figure ? (saut souris)
+	- Grady Boosh
+- Chauve lunette
+	- Tannenbaum
+- Blanc beaucoup cheuveux 
+	- Miller
+- Calvace cheveux longs 
+	- Grady Boosh
+- D’après Martin Fowler, Quelles sont les 4 sources de changement au cours d’un projet logiciel ?
+	- Connaissance/compétences
+	- Exigences
+	- Technologie
+- Quel est le titre du livre dans lequel Martin Fowler présente les 4 sources de changement au cours d’un projet logiciel ?
+	- UML distilled
+- Qui est le créateur de MINIX ?
+	- Tannenbaum
+- Qui a dit : Programming in “Future” tense ?
+	- Scott Meyers
+- Quel est le nom du livre de Scott Meyers ?
+	- Effective C++
+- Quel est le nom du livre de Alistair Cockburn ?
+	- 
+- Citez deux exemples de biais cognitifs ?
+	- Biais du survivant
+	- Coûts irrécupérables
+- A Quel temps faut-il programmer ?
+	- Au futur
+- Dans quel ouvrage Martin Fowler définit-il les 3 "perspectives" d'un diagramme de classes UML ?
+	- UML distilled, les trois niveaux sont :
+		- specs
+		- conception
+		- implémentation
+- Citez le nom de deux langages de programmation supportant le multithreading nativement ?
+	- JAVA
+	- Adda
+- Que signifie le sigle PARC ?
+	- palo alto research center
+- Quel ordinateur a été le premier à utiliser une souris ?
+	- Alto
+- Où a été conçu l’ALTO ?
+	- Palo Alto
+- Quel langage objet a été inventé au PARC ?
+	- Small Talk
+- Quel est le langage utilisé pour décrire les interface Java ?
+	- Java
+- Qui a dit “Those who cannot remember the past are condemned to repeat it” ?
+	- George Santayana
+- Quel est le but d’une User Story ?
+	- Se mettre à la place de l'utilisateur
+- Que signifie l’acronyme US ?
+	- User Story
+- Quelle est la signification du trigramme API ?
+	- Application Programming Interface
+- Qu’est-ce que l’impédance missmatch ?
+	- résistance internet
+- Donnez un exemple de polymorphisme ?
+	- Un moteur
+- Illustration bourrage cône
+	- Un problème d'impédence
+- Illustration CPU, BUS...
+	- le MOS, Andrew. S.T.
+- Illustration carré bandelettes
+	- un composant
+- Illustration avion trous
+	- Biais surviant
