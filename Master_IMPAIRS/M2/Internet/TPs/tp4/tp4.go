@@ -28,7 +28,26 @@ func main() {
 	}
 	defer c.Close()
 
-	err = c.WriteMessage(websocket.TextMessage, []byte("{\"type\": \"get\", \"count\": 5}"))
+	msg := jsonMessage{ Type: "subscribe"}
+
+	err = c.WriteJSON(msg)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	var msgRcv jsonMessage
+
+	for {
+		err := c.ReadJSON(&msgRcv)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println(msgRcv)
+	}
+
+	/* err = c.WriteMessage(websocket.TextMessage, []byte("{\"type\": \"get\", \"count\": 5}"))
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -40,5 +59,5 @@ func main() {
 			return
 		}
 		fmt.Println(string(m))
-	}
+	} */
 }
