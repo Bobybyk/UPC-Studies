@@ -101,14 +101,11 @@ def naive_bayes_eval(test_sms_file, f):
         precision = tp / (tp + fp)
     return (recall, precision)
 
-split_lines("SMSSpamCollection", 643456723, "data_train", "data_test")
+split_lines("SMSSpamCollection", 65157458, "data_train", "data_test")
 
 train_spam_ratio, train_words, train_spamicity = naive_bayes_train("data_train")
 
 def classify_spam(sms):
     return naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.5
 
-
-def test_classify_spam(file_sms):
-    for line in open(file_sms, 'r').readlines():
-        print(line, ": ", classify_spam(line.replace("spam", "").replace("ham", "")))
+print(naive_bayes_eval("data_test", classify_spam))
