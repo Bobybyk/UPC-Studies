@@ -71,3 +71,44 @@ def naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms):
             spam_ratio *= train_spamicity[train_words[word]]
     return spam_ratio
 
+def naive_bayes_eval(test_sms_file, f):
+    tp = 0
+    fp = 0
+    fn = 0
+    tn = 0
+    for line in open(test_sms_file, 'r').readlines():
+        if line.startswith('ham'):
+            isSpam = False
+        else:
+            isSpam = True
+        if f(line.replace('ham', '').replace('spam', '')) != 0:
+            if isSpam:
+                tp += 1
+            else:
+                fp += 1
+        else:
+            if isSpam:
+                fn += 1
+            else:
+                tn += 1
+    if tp+fn == 0:
+        recall = 1
+    else:
+        recall = tp / (tp + fn)
+    if tp+fp == 0:
+        precision = 1
+    else:
+        precision = tp / (tp + fp)
+    return (recall, precision)
+
+split_lines("SMSSpamCollection", 643456723, "data_train", "data_test")
+
+train_spam_ratio, train_words, train_spamicity = naive_bayes_train("data_train")
+
+def classify_spam(sms):
+    return naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.5
+
+
+def test_classify_spam(file_sms):
+    for line in open(file_sms, 'r').readlines():
+        print(line, ": ", classify_spam(line.replace("spam", "").replace("ham", "")))
