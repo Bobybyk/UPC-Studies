@@ -1,0 +1,90 @@
+# Quiz 3
+
+- Acronyme TOGAF
+	- The Open Group Architecture Framework
+- Qui a écrit : "Well designed products teach user how to"
+	- Don Norman
+- A quel principe SOLID correspod cette affirmation : "Classes should have a single reponsability"
+	- SRP
+- Que signifie MMU ?
+	- Memory Management Unit
+- Qui est l'auteur de l'ouvrage MOS ?
+	- Andrew S. Tanenbaum
+
+- Quelle est la signification de LSP ?
+	- Liskov Substitution Principle
+- Citer le nom d'un outil de CI-CD :
+	- Jenkins
+- Citer le nom d'un outil de DevOps :
+	- Docker
+- Que signifie MVP ?
+	- Minimum Viable Product
+- En quelle année a été écrit le manifeste agile ?
+	- 2001
+- Quel est le 11e principe du manifeste agile ?
+	- The best architectures, requirements, and designs emerge from self-organizing teams.
+- Quel est le titre du livre de Dustin Boswell ?
+	- The Art of Readable Code
+- Quel est le titre du livre de Yann Le Cun ?
+	- Deep Learning
+- Quel est le surnom de Robert Cecil Martin et qu'a-t-il écrit ?
+	- Uncle Bob, Clean Code
+
+- Que signifie l'acronyme SOLID ?
+	- Single responsibility principle
+	- Open/closed principle
+	- Liskov substitution principle
+	- Interface segregation principle
+	- Dependency inversion principle
+- Qui a défini les principes SOLID ?
+	- Robert Cecil Martin
+- Quel est l'ouvrage de référence des principes SOLID ?
+	- Agile Software Development, Principles, Patterns, and Practices
+- Quel est le titre du livre de Kent Beck ?
+	- Extreme Programming Explained
+- Citez le nom d'un créateur de JUnit
+	- Kent Beck
+- Citez un exemple de MVP
+	- Un skate
+- Quel est le principe de la spirale de Boehm ?
+	- Risque et incertitude
+- Quel est le principe de l'Iterative Prototyping ?
+	- Développement incrémental
+- Quand a eu lieu le premier hiver de l'IA
+	- 1974
+
+- Vieux blond à lunette
+	- Uncle Bob
+- Vieux bg barbe lunette manteau sur l'épaule
+	- Donald Norman
+- Petite calvace moustache courte bizarre
+	- Eric Raymond
+
+- Illustration plaque de cuisine 
+	- bon UX
+- Illustration poignées de porte
+	- bon et mauvais UX
+
+- Quel principe de conception objet permet à du vieux code d'appeler du nouveau code ?
+	- Polymorphisme
+- A quel type d'interface correspond une prise OBD ?
+	- API
+- Quelle est la bonne mesure de qualité du logiciel lors d'une revue de code ?
+	- La lisibilité
+- Quel est le ratio du temps passé à lire un code par rapport au temps passé à l'écrire ?
+	- 10:1
+- Quel est l'inventeur du processus de développement en mode "bazar" ?
+	- Eric Raymond
+- Que signifie EGB ?
+	- Godel escher bach
+
+- A quoi sert le polymorphisme ?
+	- A faire du vieux code appeler du nouveau code
+- Quel est le méta modèle d'une carte routière ?
+	- La légende
+- Que signifie l'acronyme SAFe ?
+	- Scalable Agile Framework
+- Quel est le meta model d'un plan de métro ?
+	- La légende
+- A quoi correspond la légende d'un plan ?
+	- Le méta modèle
