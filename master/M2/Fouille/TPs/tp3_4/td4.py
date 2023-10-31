@@ -1,25 +1,8 @@
 import random
 import re
 
-def split_lines(input, seed, output1, output2):
-    random.seed(seed)
-    output1 = open(output1, 'w')
-    output2 = open(output2, 'w')
-    for line in open(input, 'r').readlines():
-        if random.random() > 0.5:
-            output1.write(line)
-        else: 
-            output2.write(line)
-    output1.close()
-    output2.close()
-
-def tokenize_and_split_2(sms_file) -> tuple:
-    words = {}
-    l1 = []
-    l2 = []
-    i = 0
-    # Liste de ban words
-    ban_words = [
+# Liste de ban words
+ban_words = [
         "gratuit",
         "offre spéciale",
         "argent facile",
@@ -39,7 +22,29 @@ def tokenize_and_split_2(sms_file) -> tuple:
         "cadeau",
         "offre",
         "cash"
-    ]
+        "winner"
+        "chance"
+        "private"
+]
+
+def split_lines(input, seed, output1, output2):
+    random.seed(seed)
+    output1 = open(output1, 'w')
+    output2 = open(output2, 'w')
+    for line in open(input, 'r').readlines():
+        if random.random() > 0.5:
+            output1.write(line)
+        else: 
+            output2.write(line)
+    output1.close()
+    output2.close()
+
+def tokenize_and_split_2(sms_file) -> tuple:
+    words = {}
+    l1 = []
+    l2 = []
+    i = 0
+
     for line in open(sms_file, 'r').readlines():
         if line.startswith('ham'):
             isSpam = False
@@ -52,8 +57,6 @@ def tokenize_and_split_2(sms_file) -> tuple:
 
         for word in words_in_line:
             word = word.lower()
-            if word in ban_words:
-                isSpam = True
             if word != 'ham' and word != 'spam':
                 if word not in words:
                     words[word] = i
@@ -108,24 +111,33 @@ def compute_frequencies(num_words, documents):
     return freq
 
 def naive_bayes_train_ham(sms_file):
+    global ban_words
     words, l1, l2 = tokenize_and_split_2(sms_file)
     ham_ratio = len(l2) / (len(l1) + len(l2))
     ham_freq = compute_frequencies(len(words), l1)
     union_freq = compute_frequencies(len(words), l1+l2)
     hamcity = []
+    if (len(l1) or len(l2)) == 0:
+        return (0.1, words, hamcity)
     for i in range(len(words)):
-        hamcity.append(ham_freq[i] / (union_freq[i]))
+        if (ham_freq[i]/union_freq[i] == 0) or words.get(i) in ban_words:
+            hamcity.append(0.1)
+        else:
+            hamcity.append(ham_freq[i] / (union_freq[i]))
     return (ham_ratio, words, hamcity)
 
 def naive_bayes_train_2(sms_file):
+    global ban_words
     words, l1, l2 = tokenize_and_split_2(sms_file)
     spam_ratio = len(l1) / (len(l1) + len(l2))
     spam_freq = compute_frequencies(len(words), l1)
     union_freq = compute_frequencies(len(words), l1+l2)
     spamicity = []
+    if (len(l1) or len(l2)) == 0:
+        return (0.1, words, spamicity)
     for i in range(len(words)):
-        if spam_freq[i] == 0:
-            spamicity.append(0)
+        if (spam_freq[i]/union_freq[i] == 0) or words.get(i) in ban_words:
+            spamicity.append(0.1)
         else:
             spamicity.append(spam_freq[i] / (union_freq[i]))
     return (spam_ratio, words, spamicity)
@@ -152,10 +164,10 @@ def naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms):
     return spam_ratio
 
 def naive_bayes_eval(test_sms_file, f):
-    tp = 0
-    fp = 0
-    fn = 0
-    tn = 0
+    a = 0
+    b = 0
+    c = 0
+    d = 0
     for line in open(test_sms_file, 'r').readlines():
         if line.startswith('ham'):
             isSpam = False
@@ -163,22 +175,22 @@ def naive_bayes_eval(test_sms_file, f):
             isSpam = True
         if f(line.replace('ham', '').replace('spam', '')) != 0:
             if isSpam:
-                tp += 1
+                a += 1
             else:
-                fp += 1
+                b += 1
         else:
             if isSpam:
-                fn += 1
+                c += 1
             else:
-                tn += 1
-    if tp+fn == 0:
+                d += 1
+    if a + c== 0:
         recall = 1
     else:
-        recall = tp / (tp + fn)
-    if tp+fp == 0:
+        recall = a / (a + c)
+    if a + b== 0:
         precision = 1
     else:
-        precision = tp / (tp + fp)
+        precision = a / (a + b)
     return (recall, precision)
 
 split_lines("SMSSpamCollection", 65157458, "data_train", "data_test")
@@ -191,15 +203,14 @@ def classify_spam(sms):
     return naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.5
 
 def classify_spam_recall(sms):
-    return naive_bayes_predict(train_ham_ratio, train_words_ham, train_hamicity, sms) > 0.9 or naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.9
+    return naive_bayes_predict(train_ham_ratio, train_words_ham, train_hamicity, sms) > 0.1
 
 def classify_spam_precision(sms):
-    return naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.5
+    return naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.9
 
 def classify_spam_balanced(sms):
-    return naive_bayes_predict(train_ham_ratio, train_words_ham, train_hamicity, sms) > 0.9 or naive_bayes_predict(train_spam_ratio, train_words, train_spamicity, sms) > 0.5
+    return naive_bayes_predict(train_spam_ratio_2, train_words_2, train_spamicity_2, sms) > 0.9
 
 print("classify_spam_recal : ", naive_bayes_eval("data_test", classify_spam_recall))
 print("classify_spam_precision : ", naive_bayes_eval("data_test", classify_spam_precision))
-print("classify_spam : ", naive_bayes_eval("data_test", classify_spam))
 print("classify_spam_balanced : ", naive_bayes_eval("data_test", classify_spam_balanced))
