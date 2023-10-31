@@ -1,7 +1,6 @@
 import random
 import re
 
-# Liste de ban words
 ban_words = [
         "gratuit",
         "offre spéciale",
@@ -183,11 +182,11 @@ def naive_bayes_eval(test_sms_file, f):
                 c += 1
             else:
                 d += 1
-    if a + c== 0:
+    if a + c == 0:
         recall = 1
     else:
         recall = a / (a + c)
-    if a + b== 0:
+    if a + b == 0:
         precision = 1
     else:
         precision = a / (a + b)
