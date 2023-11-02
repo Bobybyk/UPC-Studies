@@ -192,7 +192,7 @@ def naive_bayes_eval(test_sms_file, f):
         precision = a / (a + b)
     return (recall, precision)
 
-split_lines("SMSSpamCollection", 65157458, "data_train", "data_test")
+split_lines("SMSSpamCollection", 51865, "data_train", "data_test")
 
 train_spam_ratio, train_words, train_spamicity = naive_bayes_train("data_train")
 train_spam_ratio_2, train_words_2, train_spamicity_2 = naive_bayes_train_2("data_train")
