@@ -2,14 +2,14 @@ from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-def sort_index(values):
-    indices = list(range(len(values)))
+def sort_index(vals):
+    indices = list(range(len(vals)))
     for i in range(len(indices)):
-        max_idx = i
+        max_val = i
         for j in range(i+1, len(indices)):
-            if values[indices[j]] > values[indices[max_idx]]:
-                max_idx = j
-        indices[i], indices[max_idx] = indices[max_idx], indices[i]
+            if vals[indices[j]] > vals[indices[max_val]]:
+                max_val = j
+        indices[i], indices[max_val] = indices[max_val], indices[i]
     return indices
 
 def filter_index(sim_index, item_index):
@@ -99,5 +99,8 @@ similar_items = most_similar(tfidf_matrix, item_index, nbr_index_to_return)
 ### Exercice 2 ###
 
 r = read_ratings('jester_ratings.csv', 150)
+
+print(r[0])
+print(sum([r[0][x] for x in r[0]]))
 
 print(content_recommend(tfidf_matrix, r[0], 10))
