@@ -35,17 +35,6 @@ def most_similar(tfidf, item_index, k):
 
     return most_similar_items
 
-"""Parses a file in the same format as jester_ratings.csv.
-Args:
-filename: a string: the name of the file to parse.
-num_jokes: the global number of jokes (some may never appear in the file,
-Which is why this argument is necessary).
-Returns:
-A list of dictionaries: the list of ratings for each user. The ratings for a
-user are a dictionary {joke_id: rating}, where joke_id is an integer in
-0..num_jokes-1 and rating is a float in [-10,10].
-When a joke is not rated by a user, it should not be in the user's dictionary.
-"""
 def read_ratings(filename, num_jokes):
 
     user_dico_ratings = defaultdict(lambda: defaultdict(float))
@@ -59,6 +48,9 @@ def read_ratings(filename, num_jokes):
         if (joke_id < num_jokes):
             user_dico_ratings[user_id][joke_id] = rating
     return user_dico_ratings
+
+def content_recommend(similarity_matrix, user_ratings, k):
+    
 
 ### Exercice 1 ###
 
@@ -74,10 +66,14 @@ nbr_index_to_return = 5
 item_index = 0
 similar_items = most_similar(tfidf_matrix, item_index, nbr_index_to_return)
 
+print("### EXERCICE 1 ###")
+
 # Afficher les indices des blagues les plus similaires
 print(f"Blagues similaires à {item_index} : {similar_items}")
 
 ### Exercice 2 ###
+
+print("### EXERCICE 2 ###")
 
 r = read_ratings('jester_ratings.csv', 150)
 print(r[0])
