@@ -143,4 +143,4 @@ r = read_ratings('jester_ratings.csv', 150)
 print(r[0])
 print(sum([r[0][x] for x in r[0]]))
 
-print(content_recommend(tfidf_matrix, {10: 10.0, 65: 10.0, 25: 10.0, 12: 10.0, 17: 4, 29:10}, 5))
+content_recommend(tfidf_matrix, r[0], 5)
