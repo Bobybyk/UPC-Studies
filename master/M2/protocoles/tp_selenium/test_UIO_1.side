@@ -1,7 +1,7 @@
 {
   "id": "61070299-5e3f-4ebe-adae-c283ce966ec8",
   "version": "2.0",
-  "name": "selenium_UIO_1",
+  "name": "test_UIO_1",
   "url": "https://mairie-splc.fr",
   "tests": [{
     "id": "f18496e1-442f-4268-9f82-40a2de71d9d8",

@@ -1,41 +1,27 @@
 {
   "id": "4fba629f-f050-4f80-91c8-17f0a9271701",
   "version": "2.0",
-  "name": "tp_selenium",
+  "name": "tests_assert",
   "url": "https://duckduckgo.com/",
   "tests": [{
     "id": "325a019c-d41e-4dba-bbe2-ddb33e8c94a3",
     "name": "test0",
     "commands": [{
-      "id": "42f104fe-ac07-47ce-bee2-95e77bd60033",
+      "id": "2f5f001e-7462-4e9d-a26b-42d52005e869",
       "comment": "",
       "command": "open",
-      "target": "/",
+      "target": "https://duckduckgo.com/",
       "targets": [],
       "value": ""
     }, {
-      "id": "539209b0-7fc6-4b3b-82d0-1c28cf55c905",
+      "id": "75f6d186-398c-4ff4-aaf0-e35840b10e79",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x1036",
+      "target": "1482x975",
       "targets": [],
       "value": ""
     }, {
-      "id": "fc34eb23-edb0-4b01-829b-1cf460d4904a",
-      "comment": "",
-      "command": "click",
-      "target": "id=searchbox_input",
-      "targets": [
-        ["id=searchbox_input", "id"],
-        ["name=q", "name"],
-        ["css=#searchbox_input", "css:finder"],
-        ["xpath=//input[@id='searchbox_input']", "xpath:attributes"],
-        ["xpath=//form[@id='searchbox_homepage']/div/input[2]", "xpath:idRelative"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "637732e8-99d0-407a-9a7f-fa67d6aa6fca",
+      "id": "6841a82d-4e35-4745-bbec-6562afe45912",
       "comment": "",
       "command": "type",
       "target": "id=searchbox_input",
@@ -47,7 +33,19 @@
         ["xpath=//form[@id='searchbox_homepage']/div/input[2]", "xpath:idRelative"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "Le Franc Matthieu"
+      "value": "Matthieu Le Franc"
+    }, {
+      "id": "268809d2-a64a-4485-b954-81299f51b1c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchbox_searchButton__F5Bwq",
+      "targets": [
+        ["css=.searchbox_searchButton__F5Bwq", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbox_homepage']/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "da20baf9-accb-4c20-9952-aea8f27226b9",
@@ -94,7 +92,7 @@
     }]
   }, {
     "id": "be00578c-e94f-4cc5-87ac-0d6d41af5cd3",
-    "name": "test3_complexe",
+    "name": "test2_complexe",
     "commands": [{
       "id": "171e73b6-90b5-46e6-ac1a-af19232ebec0",
       "comment": "",
