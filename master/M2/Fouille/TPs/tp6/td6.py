@@ -55,9 +55,26 @@ def read_ratings(filename, num_jokes):
             user_dico_ratings[user_id][joke_id] = rating
     return user_dico_ratings
 
-# def content_recommend(similarity_matrix, user_ratings, k):
+def content_recommend(similarity_matrix, user_ratings, k):
+    similarities = cosine_similarity(similarity_matrix)[0]
+    indices = list(range(len(similarities)))
+    index = 0
+    rating_list = []
+    for joke, _ in user_ratings:
+        if index%2 == 0:
+            rating = 0
+            sim_sum = 0
+            for r in similarity_matrix[joke]:
+                rating += r
+            for i in range(len(indices)):
+                if i == joke:
+                    sim_sum += rating
+            rating_list.append((rating * sim_sum)/sim_sum)
+        index+=1
 
-
+    # on retourne les k meilleures blagues (meilleur rating) de rating_list
+    return sort_index(rating_list)[:k]
+            
 ### Exercice 1 ###
 
 # Chargement des données à partir du fichier
@@ -84,3 +101,5 @@ print("### EXERCICE 2 ###")
 r = read_ratings('jester_ratings.csv', 150)
 print(r[0])
 print(sum([r[0][x] for x in r[0]]))
+
+print(content_recommend(tfidf_matrix, r[0], 5))
