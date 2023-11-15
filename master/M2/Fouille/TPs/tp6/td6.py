@@ -49,8 +49,8 @@ def read_ratings(filename, num_jokes):
             user_dico_ratings[user_id][joke_id] = rating
     return user_dico_ratings
 
-def content_recommend(similarity_matrix, user_ratings, k):
-    
+#def content_recommend(similarity_matrix, user_ratings, k):
+
 
 ### Exercice 1 ###
 
