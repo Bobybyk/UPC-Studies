@@ -55,25 +55,66 @@ def read_ratings(filename, num_jokes):
             user_dico_ratings[user_id][joke_id] = rating
     return user_dico_ratings
 
-def content_recommend(similarity_matrix, user_ratings, k):
-    similarities = cosine_similarity(similarity_matrix)[0]
-    indices = list(range(len(similarities)))
-    index = 0
-    rating_list = []
-    for joke, _ in user_ratings:
-        if index%2 == 0:
-            rating = 0
-            sim_sum = 0
-            for r in similarity_matrix[joke]:
-                rating += r
-            for i in range(len(indices)):
-                if i == joke:
-                    sim_sum += rating
-            rating_list.append((rating * sim_sum)/sim_sum)
-        index+=1
+"""
+On va coder le moteur de recommandation à proprement parler. 
+L’idée qu’on va utiliser ici est de calculer les similarités des blagues entre elles (avec la similarité cosinus), 
+et de les utiliser comme poids pour le calcul d’une moyenne pondérée:
 
-    # on retourne les k meilleures blagues (meilleur rating) de rating_list
-    return sort_index(rating_list)[:k]
+rating(b) = (rating(b[i]) * similarity(b[i], b)) / similarity(b[i], b)
+
+On calculera cette formule pour tous les blagues “impaires” (d’index impair), et on proposera donc les K meilleures.
+L’idée est donc de se baser sur des ratings connus (les blagues paires) pour classer des blagues inconnues (les blagues impaires), 
+en se basant uniquement sur une analyse de similarité fondée sur le contenu.
+
+Indice: on peut calculer d’un seul coup une matrice de similarité à partir d’une matrice TF-IDF, par exemple, avec:
+from sklearn.metrics.pairwise import cosine_similarity
+cosine_similarity(tfidf)
+
+
+Recommends k best jokes for a given user.
+
+This recommendation takes as input the ratings of a single user, but only
+takes into account the ratings of even-numbered jokes, while it only recommends
+Odd-numbered jokes.
+
+Args:
+similarity_matrix: A similarity matrix of size NxN.
+user_ratings: a dictionary {joke id: rating} containing the known joke
+                ratings of a given user.
+k: an integer, the number of odd-indexed jokes to recommend.
+
+Returns:
+A list of odd joke indices recommended for this user, based on the joke
+similarities and using only the user's ratings of even-indexed jokes.
+"""
+def content_recommend(similarity_matrix, user_ratings, k):
+
+    matrice_sim = cosine_similarity(similarity_matrix)
+
+    # On calcule la moyenne pondérée pour chaque blague impaire
+    ratings = defaultdict(float)
+    numerateur = 0
+    denominateur = 0
+    for joke_id in range(1, len(matrice_sim), 2):
+        for user_id in user_ratings:
+            numerateur += user_ratings[user_id] * matrice_sim[joke_id][user_id]
+            denominateur += matrice_sim[joke_id][user_id]
+        ratings[joke_id] = numerateur / denominateur
+        numerateur = 0
+        denominateur = 0
+
+    # On trie les blagues du plus haut rating au plus bas
+    sorted_jokes = sort_index(ratings)
+
+    # On sélectionne les k premières blagues
+    best_jokes = sorted_jokes[:k]
+
+    # On affiche les k premières blagues de best_jokes et leur rating
+    for joke_id in best_jokes:
+        print(f"Joke {joke_id} : {ratings[joke_id]}")
+
+    return best_jokes
+
             
 ### Exercice 1 ###
 
@@ -102,4 +143,4 @@ r = read_ratings('jester_ratings.csv', 150)
 print(r[0])
 print(sum([r[0][x] for x in r[0]]))
 
-print(content_recommend(tfidf_matrix, r[0], 5))
+print(content_recommend(tfidf_matrix, {10: 10.0, 65: 10.0, 25: 10.0, 12: 10.0, 17: 4, 29:10}, 5))
