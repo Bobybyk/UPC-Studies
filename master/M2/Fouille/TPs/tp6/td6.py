@@ -37,7 +37,13 @@ def most_similar(tfidf, item_index, k):
 
 def read_ratings(filename, num_jokes):
 
-    user_dico_ratings = defaultdict(lambda: defaultdict(float))
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        last_line = lines[-1]
+
+    nbr_entries = int(last_line.split(',')[0])
+
+    user_dico_ratings = [ {} for i in range (nbr_entries+1)] 
 
     for line in open(filename, 'r').readlines():
         user_id, joke_id, rating = line.split(',')
@@ -49,7 +55,7 @@ def read_ratings(filename, num_jokes):
             user_dico_ratings[user_id][joke_id] = rating
     return user_dico_ratings
 
-#def content_recommend(similarity_matrix, user_ratings, k):
+# def content_recommend(similarity_matrix, user_ratings, k):
 
 
 ### Exercice 1 ###
