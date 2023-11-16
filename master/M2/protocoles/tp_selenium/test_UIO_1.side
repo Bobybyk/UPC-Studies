@@ -2,54 +2,53 @@
   "id": "61070299-5e3f-4ebe-adae-c283ce966ec8",
   "version": "2.0",
   "name": "test_UIO_1",
-  "url": "https://mairie-splc.fr",
+  "url": "https://pleex.fr",
   "tests": [{
     "id": "f18496e1-442f-4268-9f82-40a2de71d9d8",
     "name": "test_UIO",
     "commands": [{
-      "id": "cd3786e3-9169-4392-bccf-ff83b83f5463",
+      "id": "5fc186a8-28a0-4d2e-8520-15a61ba9609e",
       "comment": "",
       "command": "open",
-      "target": "/",
+      "target": "https://www.pleex.fr/",
       "targets": [],
       "value": ""
     }, {
-      "id": "9a3b40d4-b765-48ba-a7cd-15e6c760efc1",
+      "id": "01fa22c5-329a-4d41-a2bb-1fc769dbbe55",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1482x973",
+      "target": "1482x978",
       "targets": [],
       "value": ""
     }, {
-      "id": "bc112ce5-e5b7-4940-9bd6-62b34c005c5e",
+      "id": "9ce4d0ef-d77f-4129-99c0-b090e99b4cf5",
       "comment": "",
       "command": "click",
-      "target": "linkText=Bulletins municipaux",
+      "target": "linkText=PRENDRE CONTACT",
       "targets": [
-        ["linkText=Bulletins municipaux", "linkText"],
-        ["css=#menu-item-468 > .menu-link", "css:finder"],
-        ["xpath=//a[contains(text(),'Bulletins municipaux')]", "xpath:link"],
-        ["xpath=//li[@id='menu-item-468']/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://mairie-splc.fr/index.php/bulletins-municipaux/')]", "xpath:href"],
-        ["xpath=//li[7]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Bulletins municipaux')]", "xpath:innerText"]
+        ["linkText=PRENDRE CONTACT", "linkText"],
+        ["css=.flex:nth-child(1) > .flex > .flex > .rounded-lg:nth-child(1) .button", "css:finder"],
+        ["xpath=//a[contains(text(),'PRENDRE CONTACT')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div/div[3]/div/div/div/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#contact')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'PRENDRE CONTACT')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "12d63ddd-9eff-42b4-a938-1365436355a3",
+      "id": "9e8370c5-62eb-4492-b88f-36c186234f27",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Bulletin municipal octobre 2019",
-      "targets": [
-        ["linkText=Bulletin municipal octobre 2019", "linkText"],
-        ["css=.entry-content li:nth-child(4) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Bulletin municipal octobre 2019')]", "xpath:link"],
-        ["xpath=//article[@id='post-465']/div/ul/li[4]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://mairie-splc.fr/bulletin/BULLETIN05.pdf')]", "xpath:href"],
-        ["xpath=//article/div/ul/li[4]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Bulletin municipal octobre 2019')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "command": "storeValue",
+      "target": "id=formContent",
+      "targets": [],
+      "value": "content"
+    }, {
+      "id": "8ead0b4a-2cc5-4062-ac5b-d1efa776ddfb",
+      "comment": "",
+      "command": "assert",
+      "target": "content",
+      "targets": [],
+      "value": "Bonjour,\\n\\nJe souhaiterais obtenir une estimation pour la création de mon site vitrine.\\n\\nVoici qui je suis et ce dont j'ai besoin :"
     }]
   }],
   "suites": [{
@@ -60,6 +59,6 @@
     "timeout": 300,
     "tests": ["f18496e1-442f-4268-9f82-40a2de71d9d8"]
   }],
-  "urls": ["https://mairie-splc.fr/"],
+  "urls": ["https://mairie-splc.fr/", "https://pleex.fr/"],
   "plugins": []
 }
