@@ -19,7 +19,7 @@ J'ai pu aisément effectuer ce premier exercice sans blocages, peu importe la vi
 *tests_assert.side*
 
 Partant du moteur de recherche "duckduckgo" j'ai ajouté une assertion pour vérifier la présence d'un élément.
-On vérifie si le logo de la page d'accueil (au dessus de la bar de recherche) est présent après l'ouverture de la page avec :
+On vérifie que le bouton de lancement de la recherche dans la page d'accueil est présent après l'ouverture de la page avec :
 ```
 assert element present
 ```
@@ -49,27 +49,19 @@ J'ai utilisé un petit script pour compter le nombre de mots, avant de réaliser
 
 ## Partie 4 : comportement unique
 
-*test_UIO_1*
+*test_UIO*
 
 Ce test se trouve dans un autre projet selenium car il semble que la convention soit : un url = un projet selenium.
 
-Nous nous rendons sur un site de prestations web : www.pleex.fr
+Nous nous rendons à cette url : https://www.apple.com/go/awards/index.html avec la commande ``open``
 
-Il existe sur ce site 6 offres avec pour chacunes d'elles 6 boutons "prendre contact". Chaque bouton amène vers un formulaire au bas de la page qui est ensuite pré-rempli avec un contenu différent en fonction du bouton cliqué.
+J'ai trouvé cette page en cherchant les pages du site www.apple.com n'étant pas censées être indexées. On peut visualiser cette liste grâce à la ressource de format texte placée généralement à la racine des sites web, ici : https://www.apple.com/robots.txt
 
-Voici donc les phases majeures du test :
+La route /go/awards/index.html n'est pas indexée, elle n'est donc pas censée être accessible par un utilisateur depuis la racine du site.
 
-On clique sur le lien "prendre contact" de la première offre en haut de la page (celle pour un site vitrine).
-Le formulaire au bas de la page vient d'être rempli avec un contenu spécifique à l'offre sélectionnée, on exécute maintenant la commande :
-```
-store value
-```
-avec comme **target** l'id du formulaire pour récupérer son contenu dans une **value** ***content***
+Après avoir redimensionné la page, le **préambule** du test est passé.
 
-Maintenant, on utilise la commande :
-```
-assert
-```
-pour vérifier si ***content*** contient bien la chaîne de caractère unique spécifique à l'offre sélectionnée.
+On va maintenant cliquer sur le lien *Get a Mac / Viruses* qui nous redirige vers la page : https://www.apple.com/go/awards/getamac_viruses/index.html
+Cette page, pas indexée non plus, est censée être accessible uniquement depuis la page précédente. On a donc notre **transition**.
 
-Avec cette séquence d'action, on arrive à un résultat unique (le formulaire prérempli avec un certain contenu) qui n'est pas obtenable autrement qu'en passant par le lien "prendre contact" de l'offre choisie
+Pour la **sortie** du test, on veut s'assurer que l'on est bien au point d'arrivée escompté. On va pour cela vérifier la présence d'un élément et de son contenu, ici le titre de la page, avec la commande : ``assert``

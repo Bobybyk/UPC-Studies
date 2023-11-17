@@ -1,5 +1,0 @@
-- sélectionner un élément, utiliser fonction de localisation d'un élément
-- Jmeter
-- UIO : signatures d'état
-- cas de test construit préambule comportement à tester
-- 

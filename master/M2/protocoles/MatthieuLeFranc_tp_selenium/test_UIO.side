@@ -1,0 +1,67 @@
+{
+  "id": "61070299-5e3f-4ebe-adae-c283ce966ec8",
+  "version": "2.0",
+  "name": "test_UIO",
+  "url": "https://www.apple.com/go/awards/index.html",
+  "tests": [{
+    "id": "f18496e1-442f-4268-9f82-40a2de71d9d8",
+    "name": "test_UIO",
+    "commands": [{
+      "id": "91a437a7-584f-4e96-9502-c2a45517c535",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.apple.com/go/awards/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87b5d281-2ec0-4c1d-873e-cef5af86f5fc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1482x981",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e020e5e-bb04-487f-ba22-3d8eef756999",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Get a Mac / Viruses >",
+      "targets": [
+        ["linkText=Get a Mac / Viruses >", "linkText"],
+        ["css=a:nth-child(9)", "css:finder"],
+        ["xpath=//a[contains(text(),'Get a Mac / Viruses >')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'getamac_viruses/index.html')]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Get a Mac / Viruses >')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "157b8ef4-6c03-44c4-ae09-c02c4264ab3c",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Get a Mac / Viruses')]", "xpath:innerText"]
+      ],
+      "value": "content"
+    }, {
+      "id": "98f431ac-d0d1-4c08-9242-d4ef23fe2904",
+      "comment": "",
+      "command": "assert",
+      "target": "content",
+      "targets": [],
+      "value": "Get a Mac / Viruses"
+    }]
+  }],
+  "suites": [{
+    "id": "469b9100-6db3-4823-b00e-027b4a78f35c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f18496e1-442f-4268-9f82-40a2de71d9d8"]
+  }],
+  "urls": ["https://mairie-splc.fr/", "https://pleex.fr/", "https://www.apple.com/go/awards/index.html"],
+  "plugins": []
+}

@@ -81,12 +81,9 @@
       "id": "b21110a6-466d-4753-ba27-461c35cc9b22",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.legacy-homepage_logo__DLUJg",
+      "target": "css=.iconButton_size-20__O3lP5",
       "targets": [
-        ["css=.legacy-homepage_logo__DLUJg", "css:finder"],
-        ["xpath=//img[@alt='DuckDuckGo Logo']", "xpath:img"],
-        ["xpath=//div[@id='__next']/main/article/div/div/div/section/img", "xpath:idRelative"],
-        ["xpath=//section/img", "xpath:position"]
+        ["css=.iconButton_size-20__O3lP5", "css:finder"]
       ],
       "value": ""
     }]
