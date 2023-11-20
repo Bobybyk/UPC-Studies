@@ -13,23 +13,6 @@ type jsonAddr struct {
 	Port int64  `json:"port"`
 }
 
-func reqToByte(msgToSnd Req) []byte {
-    idBytes := make([]byte, 4)
-    typeBytes := make([]byte, 4)
-    lengthBytes := make([]byte, 4)
-    bodyBytes := []byte(msgToSnd.Body)
-
-    binary.LittleEndian.PutUint32(idBytes, uint32(msgToSnd.Id))
-    binary.LittleEndian.PutUint32(typeBytes, uint32(msgToSnd.Type))
-    binary.LittleEndian.PutUint32(lengthBytes, uint32(msgToSnd.Length))
-
-    msgBytes := append(idBytes, typeBytes...)
-    msgBytes = append(msgBytes, lengthBytes...)
-    msgBytes = append(msgBytes, bodyBytes...)
-
-    return msgBytes
-}
-
 func main() {
 	url := "https://jch.irif.fr:8443/udp-addresses.json"
 
@@ -85,39 +68,46 @@ func main() {
 		url := fmt.Sprintf("%s:%d", message.Host, message.Port)
 
 		// création requête HTTP.
-		conn, err := net.Dial("udp", url)	
+		conn, err := net.ResolveUDPAddr("udp", url)	
 		if err != nil {
 			fmt.Println("Erreur lors de la création de la connexion :", err)
 			return
 		}
 
 		// envoie de la requête HTTP.
-		_, err = conn.Write(udpBody[:])
+		socket, err := net.ListenUDP("udp", nil)
 		if err != nil {
 			fmt.Println("Erreur lors de l'envoie de la requête :", err)
 			return
 		}
 
-		rec := make([]byte, 256)
+		// send udpBody to server
+		n, err := socket.WriteToUDP(udpBody[:], conn)
 
-		// lecture du contenu JSON de la réponse.
-		_, err = conn.Read(rec)
+		msg := make([]byte, 2048)
+
+		
+
+		n, retAddr, err := socket.ReadFromUDP(msg)
 		if err != nil {
 			fmt.Println("Erreur lors de la lecture des données :", err)
 			return
 		}
 
-		// parsing des trois premiers entiers de rec et vérification de l'id (4 premiers octets)
-		var id int32
+		// parse n bytes of msg (4 first bytes are the id, 1 next byte is the type, 2 next byte is the length, and the rest is the body)
+		id := int(msg[0]) << 24 | int(msg[1]) << 16 | int(msg[2]) << 8 | int(msg[3])
 
-		id = int32(rec[0]) << 24 | int32(rec[1]) << 16 | int32(rec[2]) << 8 | int32(rec[3])
+		typeMsg := int(msg[4])
 
-		fmt.Println("Id : ", id)
+		length := int(msg[5]) << 8 | int(msg[6])
 
-		fmt.Println("Reponse : ", string(rec))
+        fmt.Println("received from : ", retAddr, "\n    -> id :", id, "\n    -> type :", typeMsg, "\n    -> length : ", length, "\n    -> body : ", string(msg[7:n]))
 
-		
+        /* reply := []byte(fmt.Sprintf("received from you: %v bytes", n))
+        n, err = conn.WriteToUDP(reply, retAddr)
+        errcheck(err)
 
+        fmt.Println("sent reply %v bytes\n", n) */
 
 	}
 }
