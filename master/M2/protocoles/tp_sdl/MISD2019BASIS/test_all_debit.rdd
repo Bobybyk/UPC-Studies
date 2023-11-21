@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="-" text="atmproc
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="-" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM2" identifier="COND1" background="-" text="idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="idle" identifier="COND1" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="insertcard" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM3" identifier="MSG1" text="insertcard"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_START" color="-" text="tempo(60)" type="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM113"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM4" identifier="COND2" background="-" text="waitcode"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="waitcode" identifier="COND2" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM4"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="insertcode(|{param1|=1234|})" identifier="MSG2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM5" identifier="MSG2" text="insertcode(|{param1|=1234|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_CANCEL" color="-" text="tempo" type="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM118"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM19" identifier="COND3" background="-" text="whataction"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whataction" identifier="COND3" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM19"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="debit" identifier="MSG3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM26" identifier="MSG3" text="debit"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM82" identifier="MSG4" text="debitamount"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitamount" identifier="MSG4"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28" identifier="COND4" background="-" text="whatamountd"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whatamountd" identifier="COND4" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="a10" identifier="MSG5"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM60" identifier="MSG5" text="a10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM84" identifier="COND5" background="-" text="howmanybk"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="howmanybk" identifier="COND5" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM84"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="numberbanknotes(|{param1|=2|})" identifier="MSG6"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM100" identifier="MSG6" text="numberbanknotes(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM34" identifier="MSG7" text="bknote10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote10" identifier="MSG7"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM34" identifier="MSG8" text="bknote10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote10" identifier="MSG8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM16" identifier="MSG9" text="debitreceipt"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitreceipt" identifier="MSG9"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM102" identifier="MSG10" text="OKop"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="OKop" identifier="MSG10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103" identifier="COND6" background="-" text="whataction"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whataction" identifier="COND6" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="debit" identifier="MSG11"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM26" identifier="MSG11" text="debit"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM82" identifier="MSG12" text="debitamount"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitamount" identifier="MSG12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28" identifier="COND7" background="-" text="whatamountd"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whatamountd" identifier="COND7" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="a20" identifier="MSG13"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM90" identifier="MSG13" text="a20"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM92" identifier="COND8" background="-" text="howmanybk"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="howmanybk" identifier="COND8" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM92"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="numberbanknotes(|{param1|=2|})" identifier="MSG14"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM100" identifier="MSG14" text="numberbanknotes(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM36" identifier="MSG15" text="bknote20"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote20" identifier="MSG15"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM36" identifier="MSG16" text="bknote20"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote20" identifier="MSG16"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM16" identifier="MSG17" text="debitreceipt"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitreceipt" identifier="MSG17"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM102" identifier="MSG18" text="OKop"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="OKop" identifier="MSG18"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103" identifier="COND9" background="-" text="whataction"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whataction" identifier="COND9" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="debit" identifier="MSG19"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM26" identifier="MSG19" text="debit"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM82" identifier="MSG20" text="debitamount"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitamount" identifier="MSG20"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28" identifier="COND10" background="-" text="whatamountd"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whatamountd" identifier="COND10" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="a50" identifier="MSG21"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM97" identifier="MSG21" text="a50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM99" identifier="COND11" background="-" text="howmanybk"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="howmanybk" identifier="COND11" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM99"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="numberbanknotes(|{param1|=2|})" identifier="MSG22"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM100" identifier="MSG22" text="numberbanknotes(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM37" identifier="MSG23" text="bknote50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote50" identifier="MSG23"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM37" identifier="MSG24" text="bknote50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote50" identifier="MSG24"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM16" identifier="MSG25" text="debitreceipt"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitreceipt" identifier="MSG25"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM102" identifier="MSG26" text="OKop"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="OKop" identifier="MSG26"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103" identifier="COND12" background="-" text="whataction"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whataction" identifier="COND12" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="debit" identifier="MSG27"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM26" identifier="MSG27" text="debit"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM82" identifier="MSG28" text="debitamount"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitamount" identifier="MSG28"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28" identifier="COND13" background="-" text="whatamountd"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whatamountd" identifier="COND13" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM28"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="a100" identifier="MSG29"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM104" identifier="MSG29" text="a100"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM106" identifier="COND14" background="-" text="howmanybk"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="howmanybk" identifier="COND14" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM106"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="numberbanknotes(|{param1|=2|})" identifier="MSG30"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM100" identifier="MSG30" text="numberbanknotes(|{param1|=2|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM38" identifier="MSG31" text="bknote100"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote100" identifier="MSG31"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM38" identifier="MSG32" text="bknote100"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="bknote100" identifier="MSG32"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/debitproc.rdd*SYM16" identifier="MSG33" text="debitreceipt"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="debitreceipt" identifier="MSG33"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM102" identifier="MSG34" text="OKop"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="OKop" identifier="MSG34"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103" identifier="COND15" background="-" text="whataction"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="whataction" identifier="COND15" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM103"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>
