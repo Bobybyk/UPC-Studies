@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="11340" language="sdl" diagramType="prcs">
+<Signal id="SIG1" name="insertcard">
+<UsingSymbols>
+<SymbolReference symbolId="SYM3" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG10" name="cancelop">
+<UsingSymbols>
+<SymbolReference symbolId="SYM22" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG11" name="cancelopquestion">
+<UsingSymbols>
+<SymbolReference symbolId="SYM55" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG12" name="OKcancel">
+<UsingSymbols>
+<SymbolReference symbolId="SYM56" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG13" name="returncard">
+<UsingSymbols>
+<SymbolReference symbolId="SYM57" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG14" name="credita">
+<UsingSymbols>
+<SymbolReference symbolId="SYM33" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG15" name="OKop">
+<UsingSymbols>
+<SymbolReference symbolId="SYM88" usingKind="output"/>
+<SymbolReference symbolId="SYM109" usingKind="output"/>
+<SymbolReference symbolId="SYM95" usingKind="output"/>
+<SymbolReference symbolId="SYM50" usingKind="output"/>
+<SymbolReference symbolId="SYM102" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG16" name="a10">
+<UsingSymbols>
+<SymbolReference symbolId="SYM60" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG17" name="numberbanknotes">
+<UsingSymbols>
+<SymbolReference symbolId="SYM100" usingKind="input"/>
+<SymbolReference symbolId="SYM93" usingKind="input"/>
+<SymbolReference symbolId="SYM85" usingKind="input"/>
+<SymbolReference symbolId="SYM107" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG18" name="a20">
+<UsingSymbols>
+<SymbolReference symbolId="SYM90" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG19" name="a50">
+<UsingSymbols>
+<SymbolReference symbolId="SYM97" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG2" name="tempo" isTimer="TRUE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM113" usingKind="output"/>
+<SymbolReference symbolId="SYM114" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG20" name="a100">
+<UsingSymbols>
+<SymbolReference symbolId="SYM104" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG3" name="insertcode">
+<UsingSymbols>
+<SymbolReference symbolId="SYM5" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG4" name="errorcode">
+<UsingSymbols>
+<SymbolReference symbolId="SYM9" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG5" name="retaincard">
+<UsingSymbols>
+<SymbolReference symbolId="SYM115" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG6" name="credit">
+<UsingSymbols>
+<SymbolReference symbolId="SYM25" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG7" name="creditamount">
+<UsingSymbols>
+<SymbolReference symbolId="SYM83" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG8" name="debit">
+<UsingSymbols>
+<SymbolReference symbolId="SYM26" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG9" name="debitamount">
+<UsingSymbols>
+<SymbolReference symbolId="SYM82" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Item id="ITEM1" type="process" name="atmproc" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Body>
+<SentSignals>
+<SignalReference id="SIG4"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG11"/>
+<SignalReference id="SIG13"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG7"/>
+<SignalReference id="SIG5"/>
+<SignalReference id="SIG15"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG20"/>
+<SignalReference id="SIG3"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG18"/>
+<SignalReference id="SIG14"/>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG16"/>
+<SignalReference id="SIG19"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG8"/>
+<SignalReference id="SIG17"/>
+</ReceivedSignals>
+</Body>
+</Item>
+<Item id="ITEM10" type="variable" name="code" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM16" positions="1,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM11" type="variable" name="amountcredit" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM16" positions="3,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM12" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM16" positions="5,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM13" type="variable" name="d" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM16" positions="2,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM14" type="variable" name="nbkn" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM16" positions="4,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM15" type="procedure" name="creditproc" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" procedureKind="NORMAL_PROCEDURE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM38"/>
+</DefiningSymbols>
+<Prototype>
+<Signature>creditproc</Signature>
+</Prototype>
+</Item>
+<Item id="ITEM16" type="procedure" name="debitproc" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" procedureKind="NORMAL_PROCEDURE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM39"/>
+</DefiningSymbols>
+<Prototype>
+<Signature>debitproc</Signature>
+</Prototype>
+</Item>
+<Item id="ITEM17" type="state" name="idle" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM2"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM117"/>
+<SymbolReference symbolId="SYM2"/>
+<SymbolReference symbolId="SYM58"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM18" type="timer" name="tempo" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM113"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM118"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM19" type="state" name="waitcode" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM4"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM18"/>
+<SymbolReference symbolId="SYM4"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM2" type="variable" name="n" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM13"/>
+<SymbolReference symbolId="SYM12"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM20" type="state" name="whataction" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM20"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM89"/>
+<SymbolReference symbolId="SYM103"/>
+<SymbolReference symbolId="SYM54"/>
+<SymbolReference symbolId="SYM96"/>
+<SymbolReference symbolId="SYM110"/>
+<SymbolReference symbolId="SYM19"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM21" type="state" name="whatamountc" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM29"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM27"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM22" type="state" name="whatamountd" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM59"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM28"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM23" type="state" name="*" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM21"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM24" type="state" name="wait4confcancel" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM24"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM24"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM25" type="state" name="howmanybk" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM106"/>
+<SymbolReference symbolId="SYM84"/>
+<SymbolReference symbolId="SYM92"/>
+<SymbolReference symbolId="SYM99"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYM106"/>
+<SymbolReference symbolId="SYM84"/>
+<SymbolReference symbolId="SYM92"/>
+<SymbolReference symbolId="SYM99"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM3" type="variable" name="code" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM6"/>
+<SymbolReference symbolId="SYM5"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM4" type="type" name="integer" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM16"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM5" type="procedure" name="creditproc" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM46"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM6" type="procedure" name="debitproc" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM108"/>
+<SymbolReference symbolId="SYM101"/>
+<SymbolReference symbolId="SYM94"/>
+<SymbolReference symbolId="SYM87"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM7" type="variable" name="d" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM101"/>
+<SymbolReference symbolId="SYM105"/>
+<SymbolReference symbolId="SYM98"/>
+<SymbolReference symbolId="SYM108"/>
+<SymbolReference symbolId="SYM94"/>
+<SymbolReference symbolId="SYM91"/>
+<SymbolReference symbolId="SYM87"/>
+<SymbolReference symbolId="SYM86"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM8" type="variable" name="nbkn" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM100"/>
+<SymbolReference symbolId="SYM101"/>
+<SymbolReference symbolId="SYM107"/>
+<SymbolReference symbolId="SYM108"/>
+<SymbolReference symbolId="SYM94"/>
+<SymbolReference symbolId="SYM93"/>
+<SymbolReference symbolId="SYM85"/>
+<SymbolReference symbolId="SYM87"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM9" type="variable" name="amountcredit" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<UsingSymbols>
+<SymbolReference symbolId="SYM33"/>
+<SymbolReference symbolId="SYM46"/>
+</UsingSymbols>
+</Item>
+</DictionaryObjects>
