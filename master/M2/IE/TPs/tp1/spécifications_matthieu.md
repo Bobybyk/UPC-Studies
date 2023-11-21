@@ -17,12 +17,13 @@
 - éteint : tant que éteint
 
 **les transitions d'états :**
-- rouge <-> jaune
-- vert <-> jaune
+- rouge -> vert
+- vert -> jaune
+- jaune -> rouge
 
 **Remarques :**
-- lorsqu'un état est activé, il remplace l'état précédent
+- lorsqu'un état est activé, il remplace l'état précédent, deux états ne peuvent pas cohabiter
 
-**le lexique :*
+**le lexique :**
 - fixe : reste dans l'état de sa couleur durant son temps d'ativité
 - intermitent : alterne entre la couleur de son état et éteint
