@@ -1,5 +1,6 @@
-import time
+# Implémentation de Matthieu
 
+import time
 
 def refresh(structure):
     if structure[0]:
