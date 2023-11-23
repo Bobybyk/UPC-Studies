@@ -2,8 +2,6 @@
  * Implémentation de Hugo
  */
 
-import javax.swing.*;
-
 public class Main {
 
     //0 = green

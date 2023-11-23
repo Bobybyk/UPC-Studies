@@ -2,9 +2,7 @@
  * Implémentation de Gabriel
  */
 
-import java.time.Duration;
-
-public class FeuTriColor {
+public class FeuTricolor {
 
     public int  feu_actuel = 0;
 
@@ -18,7 +16,7 @@ public class FeuTriColor {
                     System.out.println("\u001B[30m O");
                     System.out.println("-----");
                     try {
-                        Thread.sleep(Duration.ofSeconds(10));
+                        Thread.sleep(10000); //10 seconds
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }                   
@@ -31,7 +29,7 @@ public class FeuTriColor {
                     System.out.println("\u001B[30m O");
                     System.out.println("-----");
                     try {
-                        Thread.sleep(Duration.ofSeconds(2));
+                        Thread.sleep(2000); // 2 s
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }  
@@ -43,7 +41,7 @@ public class FeuTriColor {
                     System.out.println("\u001B[32m O");
                     System.out.println("------");
                     try {
-                        Thread.sleep(Duration.ofSeconds(10));
+                        Thread.sleep(10000); //10 seconds
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } 
@@ -56,7 +54,6 @@ public class FeuTriColor {
     }
 
     public static void main(String[] args) {
-        FeuTriColor s = new FeuTriColor();
-        s.feuTriColor_start();
+        new FeuTricolor().feuTriColor_start();
     }
 }

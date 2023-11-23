@@ -1,4 +1,4 @@
-# rapport du projet
+# rapport d'expérimentation
 
 **Structure du projet :**
 - implémentations/ : contient les implémentations de chacun
@@ -7,17 +7,17 @@
 
 **Ce que nous avons fait**
 
-- Chaque membre de l'équipe a décris le mode de fonctionnement de son système et les différentes parties à implémenter.
-- Les spécifications du système de chacun a été implémenté par un autre membre de l'équipe.
-    - Matthieu a implémenté en python la spec de Gabriel
-    - Gabriel a implémenté en java la spec de Hugo
-    - Hugo a implémenté en java la spec de Matthieu
+- Chaque membre de l'équipe a décrit le mode de fonctionnement de son système et les différentes parties à implémenter.
+- Les spécifications du système de chacun ont été implémentées par un autre membre de l'équipe.
+    - Matthieu a implémenté en python la spécification de Gabriel
+    - Gabriel a implémenté en java la spécification de Hugo
+    - Hugo a implémenté en java la spécification de Matthieu
 
 **Constat**
 
 Quelques différences entre les propositions de chacun ont pu être constatées (penser une fonctionnalité de différentes manière) mais tout a, dans l'ensemble, quand même été pensé de façon relativement similaire.
 
-La manière de décrire les éxigences a pu varier. Les formulations un peu floues ou incomplètes ont pu amener à des implémentations légèrement différentes de ce que le concepteur pouvait imaginer à l'origine.
+La manière de décrire les exigences a pu varier. Les formulations un peu floues ou incomplètes ont pu amener à des implémentations légèrement différentes de ce que le concepteur pouvait imaginer à l'origine.
 
 - *Exemple* : le temps entre chaque changement de couleur du feu tricolore n'est pas précisé dans la spécification de Gabriel. Il a donc été choisi de le fixer arbitrairement dans l'implémentation.*
 

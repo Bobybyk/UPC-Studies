@@ -14,11 +14,11 @@ model FeuRouge
     eteint;
   end EtatType;
 
-  // Paramètres des temps d'activité par états
+  // Paramètres des temps d'activité par états, ratio rouge:jaune:vert = 1:0.1:1
   parameter Real tempsRouge = 30;
   parameter Real tempsJaune = 3;
   parameter Real tempsVert = 30;
-  parameter Real tempsJauneIntermitent = 0.5;
+  parameter Real tempsJauneIntermitent = 1;
   parameter Real tempsEteint = -1; // -1 signifie tant que éteint
 
   // Paramètres des transitions d'états
