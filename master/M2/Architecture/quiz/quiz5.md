@@ -1,3 +1,97 @@
-# quiz5
+# Quiz 5
 
-- 
+- Quelle est la signification du trigramme API ?
+    - Application Programming Interface
+- Dans quel cas doit-on effectuer les opérations de jointure sur disque ?
+    - Lorsque les données ne tiennent pas en mémoire
+- Quelles sont les trois étapes d'un algorithme d'optimisation de requêtes SQL ?
+    - Enumérer les arbres, déterminer le coût de chaque arbre, choisir l'arbre le moins coûteux
+- Quels sont les types de plan qui permettent d'optimiser les performances d'une requête SQL ?
+    - Plans d'exécution de requêtes
+- Quelle est la figure géométrique qui symbolise un arbre ?
+    - Un triangle
+- Quelle est la signification du trigramme IRQ ?
+    - Interruption Request
+
+- Quel est le nom d'une unité de stockage sur disque ?
+    - Un bloc
+- Dans quel composant sont écrites les tables de la base de données ?
+    - Une table
+- Mec soixantaine, costume cravate cheveux courts lisses :
+    - douglas comer
+
+- Quelle est la couche quatre du model OSI ?
+    - Transport
+- Que fait l'optimiseur de requêtes SQL ?
+    - Il détermine le plan d'exécution le plus efficace
+- Qu'est-ce qu'une base de données Server-less
+    - Une base de données qui ne nécessite pas de serveur
+- Citez le nom d'une base de données Server-less
+    - SQLite
+- Figure arbres reliés par des flèches vers un losange
+    - Algo optimisation requêtes SQL
+
+- Quels sont les deux modes d'exécution d'un programme ?
+    - Kernel, User
+- Dans quel espace d'adressage est stocké le code du noyau ?
+    - Le code
+- Qu'est-ce qu'une IT ?
+    - Une interruption
+- Dans quel espace mémoire les tables d'une base de données sont-elles chargées ?
+    - Le tas
+- Quel est le nom d'une unité de stockage sur disque ?
+    - Un bloc
+- Quel est le système encapsulé dans une table ?
+    - Pointeur
+
+- Comment s'appelle la mémoire utilisée pour amortir les délais de transfert entre le disque et la mémoire ?
+    - Le cache, un tampon
+- Quel composant dela base de donnée évalue les arbres de requêtes ?
+    - L'optimiseur
+- Quelle est la signification du trigramme WAL ?
+    - Write Ahead Log
+- Les bases de données SQLite sont elles stockées sur disque ou en mémoire ?
+    - Les deux
+- Quelle est la signification du trigramme BST ?
+    - Binary Search Tree
+- Quelle est la couche 3 du model OSI ?
+    - Réseau
+
+- Quel mécanisme physique est remplacé par l'abstraction table ?
+    - Le pointeur
+- Quelle est la signification du trigramme DDL ?
+    - Data Definition Language
+- Quelle est la signification du trigramme DML ?
+    - Data Manipulation Language
+- Est-ce que les données d'un fichier sont stockées sur disque en un seul block ?
+    - Non en plusieurs morceaux
+- Pour linux quelle est la signification du trigramme SCI ?
+    - System Call Interface
+
+- Quels sont les 3 types d'arbres que l'on rencontre dans le traitement des requêtes SQL ?
+    - Arbre logique, arbre physique, arbre syntaxique
+- Que représente un plan d'exécution ?
+    - Un arbre, l'ensemble des plans nécessaires aux entreprises pour la réalisation des différents ouvrages
+- Comment fonctionne un modèle en couche ?
+    - La couche inférieur offre un service à la couche supérieure
+- Combien de couches dans le modèle OSI de l'ISO ?
+    - 7
+- Dans quelle couche du modèle OSI se trouve HTTP ?
+    - Application   
+
+- Quel article décrit les B-Tree ?
+    - The Ubiquitous B-Tree
+- Pourquoi utilise-t-on des B-Tree dans les bases de données ?
+    - Pour accélérer les recherches
+- Quelle est la propriété d'un arbre B-Tree ?
+    - Toutes les feuilles sont à la même profondeur
+- Quelle est la particularité des moteurs de stockage de MySQL ?
+    - Ils utilisent des couches débrayables
+- Qui est My ?
+    - La fille de Michael Widenius
+- Que signifie le trigramme TSP ?
+    - Traveling Salesman Problem
+- Quel est le nom de l'algorithme qui permet de résoudre le TSP ?
+    - Traveling Salesman Problem
+- Quel est le traveling salesman problem ?
+    - Un problème d'optimisation combinatoire
