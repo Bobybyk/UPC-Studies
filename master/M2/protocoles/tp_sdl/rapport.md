@@ -23,3 +23,5 @@ Que constatez-vous? pourquoi ?**
 
 Mes traces passent le check, mais la trace *tr3vFAIL* ne passe toujours pas. La couverture est de 76%, soit la même couverture que pour mes traces seules.
 
+**d). 
+
