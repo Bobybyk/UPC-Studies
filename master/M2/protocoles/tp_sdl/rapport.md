@@ -32,4 +32,9 @@ Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est
 
 ![Couverture](couverture_MP72022SOLUTION_FAIL.png)
 
+## 3/. SCRIPTS TTCN3
 
+**3). Ecrire un Test Case TTCN3 (tous les TC seront insérés dans le même fichier TTCN_TestsAndControl.ttcn3)
+permettant de prouver ce comportement B1 (dans tous les cas) dans SPEC3 ==> verdict pass**
+
+Généré avec MSC
