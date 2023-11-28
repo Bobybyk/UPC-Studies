@@ -23,17 +23,12 @@
 <SymbolReference symbolId="SYM56" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG13" name="returncard">
-<UsingSymbols>
-<SymbolReference symbolId="SYM57" usingKind="output"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG14" name="credita">
+<Signal id="SIG13" name="credita">
 <UsingSymbols>
 <SymbolReference symbolId="SYM33" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG15" name="OKop">
+<Signal id="SIG14" name="OKop">
 <UsingSymbols>
 <SymbolReference symbolId="SYM88" usingKind="output"/>
 <SymbolReference symbolId="SYM109" usingKind="output"/>
@@ -42,12 +37,12 @@
 <SymbolReference symbolId="SYM102" usingKind="output"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG16" name="a10">
+<Signal id="SIG15" name="a10">
 <UsingSymbols>
 <SymbolReference symbolId="SYM60" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG17" name="numberbanknotes">
+<Signal id="SIG16" name="numberbanknotes">
 <UsingSymbols>
 <SymbolReference symbolId="SYM100" usingKind="input"/>
 <SymbolReference symbolId="SYM93" usingKind="input"/>
@@ -55,25 +50,25 @@
 <SymbolReference symbolId="SYM107" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG18" name="a20">
+<Signal id="SIG17" name="a20">
 <UsingSymbols>
 <SymbolReference symbolId="SYM90" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG19" name="a50">
+<Signal id="SIG18" name="a50">
 <UsingSymbols>
 <SymbolReference symbolId="SYM97" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG19" name="a100">
+<UsingSymbols>
+<SymbolReference symbolId="SYM104" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG2" name="tempo" isTimer="TRUE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM113" usingKind="output"/>
 <SymbolReference symbolId="SYM114" usingKind="input"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG20" name="a100">
-<UsingSymbols>
-<SymbolReference symbolId="SYM104" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG3" name="insertcode">
@@ -116,27 +111,26 @@
 <SentSignals>
 <SignalReference id="SIG4"/>
 <SignalReference id="SIG11"/>
-<SignalReference id="SIG5"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG9"/>
-<SignalReference id="SIG13"/>
+<SignalReference id="SIG14"/>
 <SignalReference id="SIG7"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG5"/>
+<SignalReference id="SIG9"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG3"/>
-<SignalReference id="SIG8"/>
 <SignalReference id="SIG6"/>
-<SignalReference id="SIG14"/>
-<SignalReference id="SIG1"/>
-<SignalReference id="SIG16"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG20"/>
-<SignalReference id="SIG17"/>
-<SignalReference id="SIG18"/>
+<SignalReference id="SIG3"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG13"/>
 <SignalReference id="SIG2"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG15"/>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG19"/>
+<SignalReference id="SIG18"/>
+<SignalReference id="SIG8"/>
+<SignalReference id="SIG17"/>
+<SignalReference id="SIG16"/>
 </ReceivedSignals>
 </Body>
 </Item>
@@ -150,9 +144,9 @@
 <SymbolReference symbolId="SYM16" positions="3,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM12" type="variable" name="nbkn" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM12" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM16" positions="4,0"/>
+<SymbolReference symbolId="SYM16" positions="5,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM13" type="variable" name="d" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -160,9 +154,9 @@
 <SymbolReference symbolId="SYM16" positions="2,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM14" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM14" type="variable" name="nbkn" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM16" positions="5,0"/>
+<SymbolReference symbolId="SYM16" positions="4,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM15" type="procedure" name="creditproc" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" procedureKind="NORMAL_PROCEDURE">
@@ -196,7 +190,7 @@
 <SymbolReference symbolId="SYM113"/>
 </DefiningSymbols>
 <UsingSymbols>
-<SymbolReference symbolId="SYM118"/>
+<SymbolReference symbolId="SYM119"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM19" type="state" name="waitcode" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -301,9 +295,9 @@
 <SymbolReference symbolId="SYM98"/>
 <SymbolReference symbolId="SYM108"/>
 <SymbolReference symbolId="SYM94"/>
-<SymbolReference symbolId="SYM91"/>
-<SymbolReference symbolId="SYM87"/>
 <SymbolReference symbolId="SYM86"/>
+<SymbolReference symbolId="SYM87"/>
+<SymbolReference symbolId="SYM91"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM8" type="variable" name="nbkn" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -320,8 +314,8 @@
 </Item>
 <Item id="ITEM9" type="variable" name="amountcredit" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM33"/>
 <SymbolReference symbolId="SYM46"/>
+<SymbolReference symbolId="SYM33"/>
 </UsingSymbols>
 </Item>
 </DictionaryObjects>
