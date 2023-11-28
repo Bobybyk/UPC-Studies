@@ -115,28 +115,28 @@
 <Body>
 <SentSignals>
 <SignalReference id="SIG4"/>
-<SignalReference id="SIG11"/>
 <SignalReference id="SIG5"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG9"/>
 <SignalReference id="SIG13"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG11"/>
+<SignalReference id="SIG15"/>
 <SignalReference id="SIG7"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG10"/>
 <SignalReference id="SIG3"/>
+<SignalReference id="SIG18"/>
 <SignalReference id="SIG8"/>
+<SignalReference id="SIG17"/>
+<SignalReference id="SIG20"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG19"/>
+<SignalReference id="SIG1"/>
 <SignalReference id="SIG6"/>
 <SignalReference id="SIG14"/>
-<SignalReference id="SIG1"/>
-<SignalReference id="SIG16"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG20"/>
-<SignalReference id="SIG17"/>
-<SignalReference id="SIG18"/>
 <SignalReference id="SIG2"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG16"/>
 </ReceivedSignals>
 </Body>
 </Item>
@@ -150,9 +150,9 @@
 <SymbolReference symbolId="SYM16" positions="3,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM12" type="variable" name="nbkn" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM12" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM16" positions="4,0"/>
+<SymbolReference symbolId="SYM16" positions="5,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM13" type="variable" name="d" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -160,9 +160,9 @@
 <SymbolReference symbolId="SYM16" positions="2,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM14" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM14" type="variable" name="nbkn" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM4" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM16" positions="5,0"/>
+<SymbolReference symbolId="SYM16" positions="4,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM15" type="procedure" name="creditproc" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" procedureKind="NORMAL_PROCEDURE">
