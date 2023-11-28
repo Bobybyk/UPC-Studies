@@ -1,0 +1,25 @@
+# TP SDL
+
+## 1/. MODELISATION
+
+
+
+## 2/. VERIFICATION DE LA SPECIFICATION
+
+**a). Récupérer une trace MSC d'un.e camarade et faire un
+"check" de cette trace sur votre spécification, que
+constatez-vous? pourquoi?** 
+
+Je ne constate pas de différences particulières entre la trace MSC de mon camarade et la mienne. Les deux passent le check.
+
+**b). Récupérer la trace MSC que je vous fournis
+(tr3vFAIL), faire un nouveau check avec seulement
+cette trace. Que constatez-vous? pourquoi?**
+
+Check effectué avec seulement la trace *tr3vFAIL* : le test fail, comme son nom pouvait le laisser penser, et la couverture est de 41%.
+
+**c). Refaire un check en ajoutant ma trace à vos traces.
+Que constatez-vous? pourquoi ?**
+
+Mes traces passent le check, mais la trace *tr3vFAIL* ne passe toujours pas. La couverture est de 76%, soit la même couverture que pour mes traces seules.
+

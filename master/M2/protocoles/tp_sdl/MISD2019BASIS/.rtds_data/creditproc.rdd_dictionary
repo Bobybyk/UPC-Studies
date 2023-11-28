@@ -24,15 +24,14 @@
 <SymbolReference symbolId="SYM1"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM3" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM3" type="variable" name="bank_account" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM9"/>
+<SymbolReference symbolId="SYM5"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM4" type="variable" name="amountcredit" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM4" type="variable" name="true" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM8"/>
-<SymbolReference symbolId="SYM5"/>
+<SymbolReference symbolId="SYM9"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM5" type="variable" name="false" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -40,8 +39,9 @@
 <SymbolReference symbolId="SYM10"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM6" type="variable" name="bank_account" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM6" type="variable" name="amountcredit" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
+<SymbolReference symbolId="SYM8"/>
 <SymbolReference symbolId="SYM5"/>
 </UsingSymbols>
 </Item>
