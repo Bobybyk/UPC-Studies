@@ -30,3 +30,6 @@ constatez-vous?**
 
 Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé est n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie pour debitproc, cette vérification n'est pas faite.   
 
+![Couverture](couverture_MP72022SOLUTION_FAIL.png)
+
+
