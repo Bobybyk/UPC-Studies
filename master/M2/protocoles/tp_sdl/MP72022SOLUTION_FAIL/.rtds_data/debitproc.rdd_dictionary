@@ -38,9 +38,9 @@
 <SentSignals>
 <SignalReference id="SIG1"/>
 <SignalReference id="SIG2"/>
-<SignalReference id="SIG5"/>
 <SignalReference id="SIG3"/>
 <SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
 </SentSignals>
 </Body>
 </Item>

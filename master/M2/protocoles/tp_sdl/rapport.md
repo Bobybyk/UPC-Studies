@@ -23,5 +23,10 @@ Que constatez-vous? pourquoi ?**
 
 Mes traces passent le check, mais la trace *tr3vFAIL* ne passe toujours pas. La couverture est de 76%, soit la même couverture que pour mes traces seules.
 
-**d). 
+**d). Je vous fournis une nouvelle spécification du DAB, nommée MISD2019SOLUTION_FAIL, qui contient déjà une
+trace MSC (tr2d). Refaire un Check en y
+ajoutant toutes les traces précédentes. Que
+constatez-vous?**
+
+Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé est n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie pour debitproc, cette vérification n'est pas faite.   
 
