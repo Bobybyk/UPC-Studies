@@ -3,6 +3,7 @@ from math import sqrt
 import math
 
 from sklearn.model_selection import KFold
+from sklearn import svm
 
 def read_data(filename):
     X = []
@@ -107,6 +108,35 @@ def sampled_range(mini, maxi, num):
     out.sort()
     return out
 
+def find_best_c(train_x, train_y, classifier_c):
+
+    k_fold = KFold(n_splits=5)
+
+    ideal_values = []
+    best_current = 1
+
+    # Avec des valeurs de sample_range un peu plus gourmandes, on peut trouver un C encore meilleur mais le temps d'exécution devient beaucoup trop long
+    sample = sampled_range(1, len(train_x), 10)
+
+    for i in range(len(sample)):
+        error = 0
+
+        for train_index, test_index in k_fold.split(train_x):
+
+            train_fold_x, test_x = get_fold_list(train_x, train_index), get_fold_list(train_x, test_index)
+            train_fold_y, test_y = get_fold_list(train_y, train_index), get_fold_list(train_y, test_index)
+
+            # On entraine le classifieur
+            classifier_funtion = lambda e: classifier_c(train_fold_x, train_fold_y, [e], sample[i])[0]
+
+            error += eval_cancer_classifier(train_x, train_y, classifier_funtion)
+
+            if error < best_current:
+                best_current = error
+                ideal_values.append(sample[i])
+            
+    return error/k_fold.get_n_splits(), ideal_values[len(ideal_values)-1]
+
 # On cherche le plus petit k, tel que l'erreur soit minimale, pour déduire le nombre de plus proches voisins le plus adapté
 def find_best_k(train_x, train_y, untrained_classifier_for_k):
 
@@ -126,3 +156,32 @@ def find_best_k(train_x, train_y, untrained_classifier_for_k):
             ideal_values.append(k)
             
     return ideal_values[len(ideal_values)-1]
+
+def svm_classify_tuned(train_x, train_y, x, c):
+    classification = svm.SVC(C=c, kernel='rbf')
+    classification.fit(train_x, train_y)
+    return classification.predict(x)
+
+def svm_classify(train_x, train_y, X):
+    classification = svm.SVC(C=1.0, kernel='rbf')
+    classification.fit(train_x, train_y)
+    return classification.predict(X)
+
+# Décomenter le code ci-dessous pour tester mon implémentation de svm_classify tuné (l'exécution prend quelques minutes)
+
+"""
+
+split_lines("wdbc.data", 351685138435, "train", "test")
+
+test_x, test_y = read_data("test")
+train_x, train_y = read_data("train")
+
+# On cherche le meilleur C
+error_rate, best_c = find_best_c(train_x=train_x, train_y=train_y, classifier_c=svm_classify_tuned)
+print("Meilleur error rate : ", error_rate, " avec pour C : ", best_c)
+
+# On entraine le classifieur avec le meilleur C
+error_rate = eval_cancer_classifier(test_x, test_y, lambda e: svm_classify_tuned(train_x, train_y, [e], best_c)[0])
+print("Error rate sur le test : ", error_rate)
+
+"""
