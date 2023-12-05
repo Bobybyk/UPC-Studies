@@ -17,6 +17,7 @@ Je ne constate pas de différences particulières entre la trace MSC de mon cama
 cette trace. Que constatez-vous? pourquoi?**
 
 Check effectué avec seulement la trace *tr3vFAIL* : le test fail, comme son nom pouvait le laisser penser, et la couverture est de 41%.
+fail parce que demande 3 ou 2 et reçoit 2 ou 3
 
 **c). Refaire un check en ajoutant ma trace à vos traces.
 Que constatez-vous? pourquoi ?**
@@ -34,7 +35,7 @@ Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est
 
 ## 3/. SCRIPTS TTCN3
 
-**3). Ecrire un Test Case TTCN3 (tous les TC seront insérés dans le même fichier TTCN_TestsAndControl.ttcn3)
+**1). Ecrire un Test Case TTCN3 (tous les TC seront insérés dans le même fichier TTCN_TestsAndControl.ttcn3)
 permettant de prouver ce comportement B1 (dans tous les cas) dans SPEC3 ==> verdict pass**
 
-Généré avec MSC
+Le test case pour B1 obtient un pass,

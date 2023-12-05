@@ -23,31 +23,17 @@
 <SymbolReference symbolId="SYM56" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG13" name="returncard">
-<UsingSymbols>
-<SymbolReference symbolId="SYM57" usingKind="output"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG14" name="credita">
+<Signal id="SIG13" name="credita">
 <UsingSymbols>
 <SymbolReference symbolId="SYM33" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG15" name="OKop">
-<UsingSymbols>
-<SymbolReference symbolId="SYM88" usingKind="output"/>
-<SymbolReference symbolId="SYM109" usingKind="output"/>
-<SymbolReference symbolId="SYM95" usingKind="output"/>
-<SymbolReference symbolId="SYM50" usingKind="output"/>
-<SymbolReference symbolId="SYM102" usingKind="output"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG16" name="a10">
+<Signal id="SIG14" name="a10">
 <UsingSymbols>
 <SymbolReference symbolId="SYM60" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG17" name="numberbanknotes">
+<Signal id="SIG15" name="numberbanknotes">
 <UsingSymbols>
 <SymbolReference symbolId="SYM100" usingKind="input"/>
 <SymbolReference symbolId="SYM93" usingKind="input"/>
@@ -55,25 +41,33 @@
 <SymbolReference symbolId="SYM107" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG18" name="a20">
+<Signal id="SIG16" name="OKop">
+<UsingSymbols>
+<SymbolReference symbolId="SYM88" usingKind="output"/>
+<SymbolReference symbolId="SYM109" usingKind="output"/>
+<SymbolReference symbolId="SYM95" usingKind="output"/>
+<SymbolReference symbolId="SYM102" usingKind="output"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG17" name="a20">
 <UsingSymbols>
 <SymbolReference symbolId="SYM90" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG19" name="a50">
+<Signal id="SIG18" name="a50">
 <UsingSymbols>
 <SymbolReference symbolId="SYM97" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG19" name="a100">
+<UsingSymbols>
+<SymbolReference symbolId="SYM104" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG2" name="tempo" isTimer="TRUE">
 <UsingSymbols>
 <SymbolReference symbolId="SYM113" usingKind="output"/>
 <SymbolReference symbolId="SYM114" usingKind="input"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG20" name="a100">
-<UsingSymbols>
-<SymbolReference symbolId="SYM104" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG3" name="insertcode">
@@ -86,9 +80,10 @@
 <SymbolReference symbolId="SYM9" usingKind="output"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG5" name="retaincard">
+<Signal id="SIG5" name="returncard">
 <UsingSymbols>
 <SymbolReference symbolId="SYM115" usingKind="output"/>
+<SymbolReference symbolId="SYM57" usingKind="output"/>
 </UsingSymbols>
 </Signal>
 <Signal id="SIG6" name="credit">
@@ -114,29 +109,28 @@
 <Item id="ITEM1" type="process" name="atmproc" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
-<SignalReference id="SIG5"/>
 <SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
+<SignalReference id="SIG16"/>
 <SignalReference id="SIG9"/>
-<SignalReference id="SIG11"/>
 <SignalReference id="SIG2"/>
-<SignalReference id="SIG15"/>
+<SignalReference id="SIG11"/>
 <SignalReference id="SIG7"/>
-<SignalReference id="SIG13"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG18"/>
 <SignalReference id="SIG3"/>
+<SignalReference id="SIG15"/>
 <SignalReference id="SIG8"/>
-<SignalReference id="SIG17"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG20"/>
-<SignalReference id="SIG6"/>
 <SignalReference id="SIG10"/>
-<SignalReference id="SIG1"/>
 <SignalReference id="SIG14"/>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG19"/>
+<SignalReference id="SIG13"/>
 <SignalReference id="SIG2"/>
 <SignalReference id="SIG12"/>
-<SignalReference id="SIG16"/>
+<SignalReference id="SIG17"/>
 </ReceivedSignals>
 </Body>
 </Item>
@@ -196,7 +190,7 @@
 <SymbolReference symbolId="SYM113"/>
 </DefiningSymbols>
 <UsingSymbols>
-<SymbolReference symbolId="SYM118"/>
+<SymbolReference symbolId="SYM119"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM19" type="state" name="waitcode" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -248,7 +242,7 @@
 <SymbolReference symbolId="SYM21"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM24" type="state" name="wait4confcancel" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM24" type="state" name="owait4confcancel" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM24"/>
 </DefiningSymbols>
@@ -320,8 +314,8 @@
 </Item>
 <Item id="ITEM9" type="variable" name="amountcredit" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM33"/>
 <SymbolReference symbolId="SYM46"/>
+<SymbolReference symbolId="SYM33"/>
 </UsingSymbols>
 </Item>
 </DictionaryObjects>

@@ -1,0 +1,27 @@
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+05/12/23 at 11:21 : Simulation started
+05/12/23 at 11:21 : control part started
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
+05/12/23 at 11:21 : control part started
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
+05/12/23 at 11:21 : control part started
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
+05/12/23 at 11:21 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+05/12/23 at 11:21 : Simulation started
+05/12/23 at 11:21 : control part started
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
+05/12/23 at 11:21 : control part started
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
+05/12/23 at 11:21 : simulation ended
