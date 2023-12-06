@@ -8,7 +8,8 @@
 - D’après Maurice J. Bach, quels sont les 4 états d’un process Unix ?
 	- kernel (intéruptions)
 	- user
-	- attente
+	- asleep (attente)
+	- Ready to run
 - Que signifie le trigramme UML ?
 	- Unified modeling language
 - Citez deux Framework orientés Composants Logiciels ?
