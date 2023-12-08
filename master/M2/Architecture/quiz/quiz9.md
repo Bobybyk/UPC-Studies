@@ -1,0 +1,30 @@
+- Qui a développé l'arithmétique modulaire ?
+    - Gauss
+- Quel est le principe d'une fonction de hash() ?
+    - Elle compresse les données
+- En java quel est le hash code de la String "Hello" ?
+    - 69609650
+- Quelle est la valeur de CAR("A") ?
+    - 65
+- Quel est le principe de l'arithmétique modulaire ?
+    - Replier l'espace
+- Citer un exemple de structure key value :
+    - HashMap
+- Citez une application des fonctions de hashage :
+    - Jointure
+- Comment réduire le nombre d'opération de jointure :
+    - en hashant les données
+- Quel est le but du quadratic hashing :
+    - aérer les clusters
+
+- Valeur de Hash d'une value : sa key
+- Que signifie le triplet RID ?
+    - Row ID
+- Comment est accédée une case d'un tableau associatif ?
+    - par son contenu
+- HashJoin complexité ?
+    - O(1)
+- Pour quel type de jointure peut-on utiliser table de "hashage" ?
+    - équijointure
+- La classe java.util.HashMap supporte-t-elle les doublons ?
+    - Non
