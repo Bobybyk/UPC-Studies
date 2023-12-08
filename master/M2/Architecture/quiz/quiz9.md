@@ -28,3 +28,27 @@
     - équijointure
 - La classe java.util.HashMap supporte-t-elle les doublons ?
     - Non
+
+- Qu'est-ce qu'un "comodity computer" ?
+    - Un pc pas cher
+- Quel est le nom du système de base de données de Google ?
+    - Big Table
+- Dans quelle université la première version de Google a-t-elle été développée ?
+    - Stanford
+- Quelle est la puissance de 10 d'un PETA ?
+    - 15
+- Quelles sont les 3 types de structures de données possibles pour une table de hachage ?
+    - Table, chaînage
+- Que signifie le sigle SATA ?
+    - Serial Advanced Technology Attachment
+- Citez un standard de transfert de données série ?
+    - USB
+
+- Quel est le débit théorique d'une interface série SATA 3 ?
+    - 6 Gbit/s
+- Quel est le débit théorique d'une interface série USB 3.2 ?
+    - 20 Gbit/s
+- Quel est le débit théorique d'une interface série USB 4 ?
+    - 40 Gbit/s
+- Fondateurs de Google ?
+    - Larry Page, Sergey Brin
