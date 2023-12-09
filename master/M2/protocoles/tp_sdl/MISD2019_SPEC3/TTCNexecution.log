@@ -25,3 +25,136 @@ project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rd
 05/12/23 at 11:21 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
 05/12/23 at 11:21 : module 'TTCN_TestsAndControl' control part verdict 'error'
 05/12/23 at 11:21 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:02 : Simulation started
+09/12/23 at 16:02 : control part started
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'pass'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' control part verdict 'pass'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'fail'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:02 : simulation stopped
+09/12/23 at 16:02 : control part started
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:02 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:02 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:03 : Simulation started
+09/12/23 at 16:03 : TC_test_inconc started
+09/12/23 at 16:03 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'pass'
+09/12/23 at 16:03 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:03 : Simulation started
+09/12/23 at 16:04 : TC_test_inconc started
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'pass'
+09/12/23 at 16:04 : TC_test_B2 started
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:04 : TC_test_B1 started
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'pass'
+09/12/23 at 16:04 : control part started
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'pass'
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' control part verdict 'pass'
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'fail'
+09/12/23 at 16:04 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:04 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:10 : Simulation started
+09/12/23 at 16:10 : control part started
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'pass'
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' control part verdict 'pass'
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'fail'
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:10 : simulation stopped
+09/12/23 at 16:10 : TC_test_inconc started
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:10 : TC_test_B2 started
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:10 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:10 : Simulation started
+09/12/23 at 16:10 : TC_test_inconc started
+09/12/23 at 16:10 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:11 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:14 : Simulation started
+09/12/23 at 16:14 : TC_test_inconc started
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:14 : simulation stopped
+09/12/23 at 16:14 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:14 : Simulation started
+09/12/23 at 16:14 : control part started
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:14 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : control part started
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:15 : Simulation started
+09/12/23 at 16:15 : TC_test_B1 started
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'error'
+09/12/23 at 16:15 : module 'TTCN_TestsAndControl' control part verdict 'error'
+09/12/23 at 16:15 : simulation stopped
+09/12/23 at 16:15 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/MISD2019ttcn.rdp
+09/12/23 at 16:16 : Simulation started
+09/12/23 at 16:16 : control part started
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' testcase 'TC_test_B1' verdict 'pass'
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' control part verdict 'pass'
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' testcase 'TC_test_B2' verdict 'fail'
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' testcase 'TC_test_inconc' verdict 'fail'
+09/12/23 at 16:16 : module 'TTCN_TestsAndControl' control part verdict 'fail'
+09/12/23 at 16:16 : simulation ended
