@@ -114,29 +114,29 @@
 <Item id="ITEM1" type="process" name="atmproc" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
-<SignalReference id="SIG4"/>
-<SignalReference id="SIG11"/>
-<SignalReference id="SIG13"/>
 <SignalReference id="SIG15"/>
+<SignalReference id="SIG4"/>
+<SignalReference id="SIG13"/>
 <SignalReference id="SIG7"/>
-<SignalReference id="SIG2"/>
 <SignalReference id="SIG5"/>
+<SignalReference id="SIG2"/>
 <SignalReference id="SIG9"/>
+<SignalReference id="SIG11"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG3"/>
-<SignalReference id="SIG6"/>
-<SignalReference id="SIG14"/>
 <SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 <SignalReference id="SIG12"/>
+<SignalReference id="SIG20"/>
 <SignalReference id="SIG16"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG1"/>
 <SignalReference id="SIG18"/>
 <SignalReference id="SIG8"/>
 <SignalReference id="SIG17"/>
-<SignalReference id="SIG20"/>
+<SignalReference id="SIG19"/>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG14"/>
 </ReceivedSignals>
 </Body>
 </Item>

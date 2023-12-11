@@ -84,11 +84,11 @@
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="credita(|{param1|=50|})" identifier="MSG5"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="credita(|{param1|=71800858|})" identifier="MSG5"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM33" identifier="MSG5" text="credita(|{param1|=50|})"/>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019BASIS/atmproc.rdd*SYM33" identifier="MSG5" text="credita(|{param1|=71800858|})"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
 </MscEventRow>
 <MscEventRow>

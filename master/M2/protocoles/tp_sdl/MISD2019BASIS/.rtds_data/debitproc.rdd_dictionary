@@ -38,9 +38,9 @@
 <SentSignals>
 <SignalReference id="SIG1"/>
 <SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 <SignalReference id="SIG4"/>
 <SignalReference id="SIG5"/>
-<SignalReference id="SIG3"/>
 </SentSignals>
 </Body>
 </Item>
@@ -49,14 +49,14 @@
 <SymbolReference symbolId="SYM3" positions="1,3"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM11" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM2" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="5,0"/>
-</DefiningSymbols>
-</Item>
-<Item id="ITEM12" type="variable" name="bank_account" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM2" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM11" type="variable" name="bank_account" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM2" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM3" positions="4,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM12" type="variable" name="n" parentId="ITEM1" scope="none" variableTypeName="integer" variableTypeId="ITEM2" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM3" positions="5,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM13" type="connector" name="restart" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
