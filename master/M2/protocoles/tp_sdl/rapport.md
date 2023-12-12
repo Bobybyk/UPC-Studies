@@ -53,7 +53,7 @@ Mes traces passent le check, mais la trace *tr3vFAIL* ne passe toujours pas. La 
 
 ![couverture fail](couverture_spec_fail.png)
 
-Toutes mes traces passent à part mon test : *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie ici pour debitproc, cette vérification n'est pas faite.
+Toutes mes traces passent mise à part : *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie ici pour debitproc, cette vérification n'est pas faite.
 
 Un comportement dans la spécification **MP72022SOLUTION_FAIL** est particulier : peu importe le nombre de billets de 10 demandé, on obtiendra toujours 2 billets de 10 en sortie. 
 La trace tr2d obtient un verdict pass car le test a été créé dans la spécification **MP72022SOLUTION_FAIL** mais si on importait une trace réalisant ce test généré dans **MISD2019BASIS**, on obtiendrait un verdict fail.
