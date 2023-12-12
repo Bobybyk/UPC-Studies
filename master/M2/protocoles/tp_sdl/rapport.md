@@ -55,8 +55,11 @@ Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est
 
 **A partir de (d), cliquer sur 'Actions' à droite de la fenêtre de vérification et générer les TTCN pour tous ('ALL') les scenarios. Interpréter les résultats obtenus visibles dans le fichier TTCN_TestsAndControl.ttcn3.**
 
-Dans le fichier ```TTCN_TestsAndControl.ttcn3```, on peut voir :
+Dans le fichier ```TTCN_TestsAndControl.ttcn3```, on peut voir plusieurs instructions comme :
 - *altstep RTDS_fail()* : pour gérer une situation d'échec. Si un message est reçu sur cardchan, l'étape déclenche un échec avec le message "Fail in default altstep!" et arrête l'exécution.
+
+![TTCN3 code exemple](ttcn3_fail_code.png)
+
 - Les cas de test (testcase) : avec chaque série d'interactions
 - Les messages envoyés et reçus comme par exemple ``debit_tr2dMSG3`` qui représente un types d'action dans le scénario de test.
 

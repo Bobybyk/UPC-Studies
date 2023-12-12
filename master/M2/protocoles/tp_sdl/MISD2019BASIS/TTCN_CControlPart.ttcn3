@@ -1,0 +1,17 @@
+module TTCN_CControlPart {
+
+  import from TTCN_TestsAndControl all;
+
+
+  control
+    {
+    execute(TC_test_montant_negatif_null());
+    execute(TC_tr3vFAIL());
+    execute(TC_cancel_op());
+    execute(TC_test_err_code());
+    execute(TC_test_camarade());
+    execute(TC_test_credit());
+    execute(TC_test_debit());
+    execute(TC_test_debit_all());
+    }
+  }

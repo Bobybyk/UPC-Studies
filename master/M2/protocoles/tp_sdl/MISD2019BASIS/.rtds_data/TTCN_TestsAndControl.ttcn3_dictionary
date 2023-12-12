@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="11340" language="none">
+<Item id="ITEM1" type="ttcn_module" name="TTCN_TestsAndControl" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="TRUE" lineNumber="0" columnNumber="7"/>
+<TtcnImportedModule moduleId="ITEM6"/>
+<TtcnImportedModule moduleId="ITEM7"/>
+</Item>
+<Item id="ITEM10" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="200" columnNumber="13"/>
+</Item>
+<Item id="ITEM100" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="88" columnNumber="18"/>
+</Item>
+<Item id="ITEM101" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="85" columnNumber="18"/>
+</Item>
+<Item id="ITEM102" type="ttcn_template" name="debitreceipt_tr3vFAILMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="94" columnNumber="21"/>
+</Item>
+<Item id="ITEM103" type="variable" name="insertcode_test_err_codeMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="86" columnNumber="18"/>
+</Item>
+<Item id="ITEM104" type="ttcn_template" name="errorcode_cancel_opMSG3" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="87" columnNumber="21"/>
+</Item>
+<Item id="ITEM105" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="90" columnNumber="21"/>
+</Item>
+<Item id="ITEM106" type="ttcn_test_case" name="TC_test_debit_all" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="281" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="235" columnNumber="11"/>
+</Item>
+<Item id="ITEM107" type="ttcn_template" name="bknote20_tr3vFAILMSG16" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="252" columnNumber="21"/>
+</Item>
+<Item id="ITEM108" type="variable" name="a10_tr3vFAILMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="243" columnNumber="18"/>
+</Item>
+<Item id="ITEM109" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="237" columnNumber="13"/>
+</Item>
+<Item id="ITEM11" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="208" columnNumber="21"/>
+</Item>
+<Item id="ITEM110" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="247" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="254" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="261" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="268" columnNumber="21"/>
+</Item>
+<Item id="ITEM111" type="ttcn_template" name="bknote50_test_camaradeMSG30" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="259" columnNumber="21"/>
+</Item>
+<Item id="ITEM112" type="variable" name="a100_test_montant_negatif_nullMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="264" columnNumber="18"/>
+</Item>
+<Item id="ITEM113" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="238" columnNumber="8"/>
+</Item>
+<Item id="ITEM114" type="variable" name="numberbanknotes_test_err_codeMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="244" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="251" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="258" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="265" columnNumber="18"/>
+</Item>
+<Item id="ITEM115" type="ttcn_template" name="bknote10_tr3vFAILMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="245" columnNumber="21"/>
+</Item>
+<Item id="ITEM116" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="241" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="248" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="255" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="262" columnNumber="18"/>
+</Item>
+<Item id="ITEM117" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="240" columnNumber="18"/>
+</Item>
+<Item id="ITEM118" type="ttcn_template" name="bknote100_test_camaradeMSG41" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="266" columnNumber="21"/>
+</Item>
+<Item id="ITEM119" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="239" columnNumber="18"/>
+</Item>
+<Item id="ITEM12" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="201" columnNumber="8"/>
+</Item>
+<Item id="ITEM120" type="variable" name="a20_tr3vFAILMSG13" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="250" columnNumber="18"/>
+</Item>
+<Item id="ITEM121" type="ttcn_template" name="debitreceipt_tr3vFAILMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="246" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="253" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="260" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="267" columnNumber="21"/>
+</Item>
+<Item id="ITEM122" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="242" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="249" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="256" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="263" columnNumber="21"/>
+</Item>
+<Item id="ITEM123" type="variable" name="a50_test_camaradeMSG27" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM106" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="257" columnNumber="18"/>
+</Item>
+<Item id="ITEM124" type="ttcn_test_case" name="TC_cancel_op" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="276" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="63" columnNumber="11"/>
+</Item>
+<Item id="ITEM125" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="65" columnNumber="13"/>
+</Item>
+<Item id="ITEM126" type="ttcn_template" name="cancelopquestion_tr3vFAILMSG21" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="74" columnNumber="21"/>
+</Item>
+<Item id="ITEM127" type="variable" name="insertcode_cancel_opMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="68" columnNumber="18"/>
+</Item>
+<Item id="ITEM128" type="variable" name="cancelop_tr3vFAILMSG20" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="73" columnNumber="18"/>
+</Item>
+<Item id="ITEM129" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="66" columnNumber="8"/>
+</Item>
+<Item id="ITEM13" type="ttcn_template" name="creditreceipt_test_creditMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="207" columnNumber="21"/>
+</Item>
+<Item id="ITEM130" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="71" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="77" columnNumber="18"/>
+</Item>
+<Item id="ITEM131" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="70" columnNumber="18"/>
+</Item>
+<Item id="ITEM132" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="67" columnNumber="18"/>
+</Item>
+<Item id="ITEM133" type="variable" name="a20_tr3vFAILMSG13" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="75" columnNumber="18"/>
+</Item>
+<Item id="ITEM134" type="variable" name="credit_test_montant_negatif_nullMSG3" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="76" columnNumber="18"/>
+</Item>
+<Item id="ITEM135" type="ttcn_template" name="errorcode_cancel_opMSG3" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="69" columnNumber="21"/>
+</Item>
+<Item id="ITEM136" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM124" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="72" columnNumber="21"/>
+</Item>
+<Item id="ITEM14" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="203" columnNumber="18"/>
+</Item>
+<Item id="ITEM15" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="202" columnNumber="18"/>
+</Item>
+<Item id="ITEM16" type="variable" name="credit_test_montant_negatif_nullMSG3" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="204" columnNumber="18"/>
+</Item>
+<Item id="ITEM17" type="ttcn_template" name="creditamount_test_montant_negatif_nullMSG4" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="205" columnNumber="21"/>
+</Item>
+<Item id="ITEM18" type="ttcn_test_case" name="TC_tr3vFAIL" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="275" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="34" columnNumber="11"/>
+</Item>
+<Item id="ITEM19" type="ttcn_template" name="bknote20_tr3vFAILMSG16" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="52" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="53" columnNumber="21"/>
+</Item>
+<Item id="ITEM2" type="ttcn_component" name="atmsys" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="16" columnNumber="71"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="34" columnNumber="54"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="63" columnNumber="55"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="81" columnNumber="59"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="99" columnNumber="59"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="198" columnNumber="57"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="212" columnNumber="56"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="235" columnNumber="60"/>
+</Item>
+<Item id="ITEM20" type="variable" name="a10_tr3vFAILMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="42" columnNumber="18"/>
+</Item>
+<Item id="ITEM21" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="36" columnNumber="13"/>
+</Item>
+<Item id="ITEM22" type="ttcn_template" name="cancelopquestion_tr3vFAILMSG21" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="57" columnNumber="21"/>
+</Item>
+<Item id="ITEM23" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="47" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="55" columnNumber="21"/>
+</Item>
+<Item id="ITEM24" type="variable" name="cancelop_tr3vFAILMSG20" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="56" columnNumber="18"/>
+</Item>
+<Item id="ITEM25" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="37" columnNumber="8"/>
+</Item>
+<Item id="ITEM26" type="ttcn_template" name="bknote10_tr3vFAILMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="44" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="45" columnNumber="21"/>
+</Item>
+<Item id="ITEM27" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="40" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="48" columnNumber="18"/>
+</Item>
+<Item id="ITEM28" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="39" columnNumber="18"/>
+</Item>
+<Item id="ITEM29" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="38" columnNumber="18"/>
+</Item>
+<Item id="ITEM3" type="ttcn_port" name="cardchan" parentId="ITEM2" scope="global" defined="FALSE" createInRealizing="FALSE" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="19" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="19" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="37" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="37" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="66" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="66" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="84" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="84" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="102" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="102" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="201" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="201" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="215" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="215" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="238" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="238" columnNumber="30"/>
+</Item>
+<Item id="ITEM30" type="variable" name="a20_tr3vFAILMSG13" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="50" columnNumber="18"/>
+</Item>
+<Item id="ITEM31" type="ttcn_template" name="debitreceipt_tr3vFAILMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="46" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="54" columnNumber="21"/>
+</Item>
+<Item id="ITEM32" type="ttcn_template" name="returncard_tr3vFAILMSG23" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="59" columnNumber="21"/>
+</Item>
+<Item id="ITEM33" type="variable" name="numberbanknotes_tr3vFAILMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="43" columnNumber="18"/>
+</Item>
+<Item id="ITEM34" type="variable" name="numberbanknotes_tr3vFAILMSG14" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="51" columnNumber="18"/>
+</Item>
+<Item id="ITEM35" type="variable" name="OKcancel_tr3vFAILMSG22" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="58" columnNumber="18"/>
+</Item>
+<Item id="ITEM36" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM18" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="41" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="49" columnNumber="21"/>
+</Item>
+<Item id="ITEM37" type="ttcn_test_case" name="TC_test_camarade" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="278" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="99" columnNumber="11"/>
+</Item>
+<Item id="ITEM38" type="ttcn_template" name="bknote20_tr3vFAILMSG16" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="120" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="121" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="122" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="123" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="124" columnNumber="21"/>
+</Item>
+<Item id="ITEM39" type="variable" name="a10_tr3vFAILMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="107" columnNumber="18"/>
+</Item>
+<Item id="ITEM4" type="ttcn_component" name="runsOn_atmsys" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="7" columnNumber="30"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="16" columnNumber="50"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="34" columnNumber="33"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="63" columnNumber="34"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="81" columnNumber="38"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="99" columnNumber="38"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="198" columnNumber="36"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="212" columnNumber="35"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="235" columnNumber="39"/>
+</Item>
+<Item id="ITEM40" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="101" columnNumber="13"/>
+</Item>
+<Item id="ITEM41" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="115" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="126" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="138" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="194" columnNumber="21"/>
+</Item>
+<Item id="ITEM42" type="ttcn_template" name="bknote50_test_camaradeMSG30" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="132" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="133" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="134" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="135" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="136" columnNumber="21"/>
+</Item>
+<Item id="ITEM43" type="variable" name="a100_test_montant_negatif_nullMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="141" columnNumber="18"/>
+</Item>
+<Item id="ITEM44" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="102" columnNumber="8"/>
+</Item>
+<Item id="ITEM45" type="ttcn_template" name="bknote10_tr3vFAILMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="109" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="110" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="111" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="112" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="113" columnNumber="21"/>
+</Item>
+<Item id="ITEM46" type="variable" name="numberbanknotes_test_camaradeMSG40" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="142" columnNumber="18"/>
+</Item>
+<Item id="ITEM47" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="105" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="116" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="127" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="139" columnNumber="18"/>
+</Item>
+<Item id="ITEM48" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="104" columnNumber="18"/>
+</Item>
+<Item id="ITEM49" type="ttcn_template" name="bknote100_test_camaradeMSG41" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="143" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="144" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="145" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="146" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="147" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="148" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="149" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="150" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="151" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="152" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="153" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="154" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="155" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="156" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="157" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="158" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="159" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="160" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="161" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="162" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="163" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="164" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="165" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="166" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="167" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="168" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="169" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="170" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="171" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="172" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="173" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="174" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="175" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="176" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="177" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="178" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="179" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="180" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="181" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="182" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="183" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="184" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="185" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="186" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="187" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="188" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="189" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="190" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="191" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="192" columnNumber="21"/>
+</Item>
+<Item id="ITEM5" type="ttcn_port" name="cardchan" parentId="ITEM4" scope="global" defined="FALSE" createInRealizing="FALSE" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="9" columnNumber="6"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="20" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="21" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="22" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="23" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="24" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="25" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="26" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="27" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="28" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="29" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="30" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="38" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="39" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="40" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="41" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="42" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="43" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="44" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="45" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="46" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="47" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="48" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="49" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="50" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="51" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="52" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="53" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="54" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="55" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="56" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="57" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="58" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="59" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="67" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="68" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="69" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="70" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="71" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="72" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="73" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="74" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="75" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="76" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="77" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="85" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="86" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="87" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="88" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="89" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="90" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="91" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="92" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="93" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="94" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="95" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="103" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="104" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="105" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="106" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="107" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="108" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="109" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="110" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="111" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="112" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="113" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="114" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="115" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="116" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="117" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="118" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="119" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="120" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="121" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="122" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="123" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="124" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="125" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="126" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="127" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="128" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="129" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="130" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="131" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="132" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="133" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="134" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="135" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="136" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="137" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="138" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="139" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="140" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="141" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="142" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="143" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="144" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="145" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="146" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="147" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="148" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="149" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="150" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="151" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="152" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="153" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="154" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="155" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="156" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="157" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="158" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="159" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="160" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="161" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="162" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="163" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="164" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="165" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="166" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="167" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="168" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="169" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="170" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="171" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="172" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="173" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="174" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="175" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="176" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="177" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="178" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="179" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="180" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="181" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="182" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="183" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="184" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="185" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="186" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="187" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="188" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="189" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="190" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="191" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="192" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="193" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="194" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="202" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="203" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="204" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="205" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="206" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="207" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="208" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="216" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="217" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="218" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="219" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="220" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="221" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="222" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="223" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="224" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="225" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="226" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="227" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="228" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="229" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="230" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="231" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="239" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="240" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="241" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="242" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="243" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="244" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="245" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="246" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="247" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="248" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="249" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="250" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="251" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="252" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="253" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="254" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="255" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="256" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="257" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="258" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="259" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="260" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="261" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="262" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="263" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="264" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="265" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="266" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="267" columnNumber="4"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="268" columnNumber="4"/>
+</Item>
+<Item id="ITEM50" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="103" columnNumber="18"/>
+</Item>
+<Item id="ITEM51" type="variable" name="a20_tr3vFAILMSG13" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="118" columnNumber="18"/>
+</Item>
+<Item id="ITEM52" type="variable" name="insertcode_test_camaradeMSG28" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="130" columnNumber="18"/>
+</Item>
+<Item id="ITEM53" type="ttcn_template" name="debitreceipt_tr3vFAILMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="114" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="125" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="137" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="193" columnNumber="21"/>
+</Item>
+<Item id="ITEM54" type="variable" name="numberbanknotes_test_camaradeMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="108" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="119" columnNumber="18"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="131" columnNumber="18"/>
+</Item>
+<Item id="ITEM55" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="106" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="117" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="128" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="140" columnNumber="21"/>
+</Item>
+<Item id="ITEM56" type="variable" name="a50_test_camaradeMSG27" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM37" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="129" columnNumber="18"/>
+</Item>
+<Item id="ITEM57" type="ttcn_test_case" name="TC_test_montant_negatif_null" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="274" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="16" columnNumber="11"/>
+</Item>
+<Item id="ITEM58" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="18" columnNumber="13"/>
+</Item>
+<Item id="ITEM59" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="25" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="30" columnNumber="21"/>
+</Item>
+<Item id="ITEM6" type="ttcn_module" name="TTCN_Declarations" scope="package" defined="FALSE" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="2" columnNumber="14"/>
+</Item>
+<Item id="ITEM60" type="variable" name="numberbanknotes_test_montant_negatif_nullMSG10" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="29" columnNumber="18"/>
+</Item>
+<Item id="ITEM61" type="variable" name="a100_test_montant_negatif_nullMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="28" columnNumber="18"/>
+</Item>
+<Item id="ITEM62" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="19" columnNumber="8"/>
+</Item>
+<Item id="ITEM63" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="26" columnNumber="18"/>
+</Item>
+<Item id="ITEM64" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="21" columnNumber="18"/>
+</Item>
+<Item id="ITEM65" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="20" columnNumber="18"/>
+</Item>
+<Item id="ITEM66" type="variable" name="credita_test_montant_negatif_nullMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="24" columnNumber="18"/>
+</Item>
+<Item id="ITEM67" type="variable" name="credit_test_montant_negatif_nullMSG3" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="22" columnNumber="18"/>
+</Item>
+<Item id="ITEM68" type="ttcn_template" name="creditamount_test_montant_negatif_nullMSG4" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="23" columnNumber="21"/>
+</Item>
+<Item id="ITEM69" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM57" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="27" columnNumber="21"/>
+</Item>
+<Item id="ITEM7" type="ttcn_module" name="TTCN_Templates" scope="package" defined="FALSE" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="4" columnNumber="14"/>
+</Item>
+<Item id="ITEM70" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4">
+<SourceFilePosition isDefine="FALSE" lineNumber="18" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="36" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="65" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="83" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="101" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="200" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="214" columnNumber="13"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="237" columnNumber="13"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="7" columnNumber="10"/>
+</Item>
+<Item id="ITEM71" type="ttcn_function" name="control" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM72" type="ttcn_test_case" name="TC_test_debit" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="280" columnNumber="12"/>
+</Item>
+<Item id="ITEM73" type="ttcn_test_case" name="TC_test_err_code" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="277" columnNumber="12"/>
+</Item>
+<Item id="ITEM74" type="ttcn_test_case" name="TC_cancel_op" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="276" columnNumber="12"/>
+</Item>
+<Item id="ITEM75" type="ttcn_test_case" name="TC_test_camarade" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="278" columnNumber="12"/>
+</Item>
+<Item id="ITEM76" type="ttcn_test_case" name="TC_test_debit_all" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="281" columnNumber="12"/>
+</Item>
+<Item id="ITEM77" type="ttcn_test_case" name="TC_test_credit" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="279" columnNumber="12"/>
+</Item>
+<Item id="ITEM78" type="ttcn_test_case" name="TC_tr3vFAIL" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="275" columnNumber="12"/>
+</Item>
+<Item id="ITEM79" type="ttcn_test_case" name="TC_test_montant_negatif_null" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM71" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="274" columnNumber="12"/>
+</Item>
+<Item id="ITEM8" type="ttcn_test_case" name="TC_test_credit" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="279" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="198" columnNumber="11"/>
+</Item>
+<Item id="ITEM80" type="ttcn_test_case" name="TC_test_debit" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="280" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="212" columnNumber="11"/>
+</Item>
+<Item id="ITEM81" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="214" columnNumber="13"/>
+</Item>
+<Item id="ITEM82" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="231" columnNumber="21"/>
+</Item>
+<Item id="ITEM83" type="ttcn_template" name="bknote50_test_camaradeMSG30" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="222" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="223" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="224" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="225" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="226" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="227" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="228" columnNumber="21"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="229" columnNumber="21"/>
+</Item>
+<Item id="ITEM84" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="215" columnNumber="8"/>
+</Item>
+<Item id="ITEM85" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="218" columnNumber="18"/>
+</Item>
+<Item id="ITEM86" type="variable" name="insertcode_test_montant_negatif_nullMSG2" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="217" columnNumber="18"/>
+</Item>
+<Item id="ITEM87" type="variable" name="insertcard_test_montant_negatif_nullMSG1" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="216" columnNumber="18"/>
+</Item>
+<Item id="ITEM88" type="ttcn_template" name="debitreceipt_tr3vFAILMSG9" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="230" columnNumber="21"/>
+</Item>
+<Item id="ITEM89" type="variable" name="numberbanknotes_test_debitMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="221" columnNumber="18"/>
+</Item>
+<Item id="ITEM9" type="variable" name="credita_test_creditMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM8" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="206" columnNumber="18"/>
+</Item>
+<Item id="ITEM90" type="ttcn_template" name="debitamount_test_montant_negatif_nullMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="219" columnNumber="21"/>
+</Item>
+<Item id="ITEM91" type="variable" name="a50_test_camaradeMSG27" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM80" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="220" columnNumber="18"/>
+</Item>
+<Item id="ITEM92" type="ttcn_test_case" name="TC_test_err_code" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE" runsOn="ITEM4" systemInterface="ITEM2">
+<SourceFilePosition isDefine="FALSE" lineNumber="277" columnNumber="12"/>
+<SourceFilePosition isDefine="TRUE" lineNumber="81" columnNumber="11"/>
+</Item>
+<Item id="ITEM93" type="variable" name="a10_tr3vFAILMSG5" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="91" columnNumber="18"/>
+</Item>
+<Item id="ITEM94" type="ttcn_altstep" name="RTDS_fail" parentId="ITEM1" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="83" columnNumber="13"/>
+</Item>
+<Item id="ITEM95" type="ttcn_template" name="OKop_test_montant_negatif_nullMSG6" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="95" columnNumber="21"/>
+</Item>
+<Item id="ITEM96" type="variable" name="self" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="84" columnNumber="8"/>
+</Item>
+<Item id="ITEM97" type="variable" name="numberbanknotes_test_err_codeMSG8" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="92" columnNumber="18"/>
+</Item>
+<Item id="ITEM98" type="ttcn_template" name="bknote10_tr3vFAILMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="93" columnNumber="21"/>
+</Item>
+<Item id="ITEM99" type="variable" name="debit_test_montant_negatif_nullMSG7" parentId="ITEM7" scope="global" defined="FALSE" anchorItemId="ITEM92" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="ttcn_template"/>
+<SourceFilePosition isDefine="FALSE" lineNumber="89" columnNumber="18"/>
+</Item>
+</DictionaryObjects>

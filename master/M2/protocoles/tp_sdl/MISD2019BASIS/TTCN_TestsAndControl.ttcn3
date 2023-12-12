@@ -1,0 +1,284 @@
+module TTCN_TestsAndControl
+  {
+  import from TTCN_Declarations all;
+
+  import from TTCN_Templates all;
+
+
+  altstep RTDS_fail() runs on runsOn_atmsys
+    {
+    []cardchan.receive
+      {
+      setverdict(fail, "Fail in default altstep!");
+      stop;
+      };
+    }
+
+  testcase TC_test_montant_negatif_null() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(credit_test_montant_negatif_nullMSG3);
+    cardchan.receive(creditamount_test_montant_negatif_nullMSG4);
+    cardchan.send(credita_test_montant_negatif_nullMSG5);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a100_test_montant_negatif_nullMSG9);
+    cardchan.send(numberbanknotes_test_montant_negatif_nullMSG10);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  testcase TC_tr3vFAIL() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a10_tr3vFAILMSG5);
+    cardchan.send(numberbanknotes_tr3vFAILMSG6);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a20_tr3vFAILMSG13);
+    cardchan.send(numberbanknotes_tr3vFAILMSG14);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(cancelop_tr3vFAILMSG20);
+    cardchan.receive(cancelopquestion_tr3vFAILMSG21);
+    cardchan.send(OKcancel_tr3vFAILMSG22);
+    cardchan.receive(returncard_tr3vFAILMSG23);
+    setverdict(pass);
+    }
+
+  testcase TC_cancel_op() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_cancel_opMSG2);
+    cardchan.receive(errorcode_cancel_opMSG3);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(cancelop_tr3vFAILMSG20);
+    cardchan.receive(cancelopquestion_tr3vFAILMSG21);
+    cardchan.send(a20_tr3vFAILMSG13);
+    cardchan.send(credit_test_montant_negatif_nullMSG3);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    setverdict(pass);
+    }
+
+  testcase TC_test_err_code() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_err_codeMSG2);
+    cardchan.receive(errorcode_cancel_opMSG3);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a10_tr3vFAILMSG5);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  testcase TC_test_camarade() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a10_tr3vFAILMSG5);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a20_tr3vFAILMSG13);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a50_test_camaradeMSG27);
+    cardchan.send(insertcode_test_camaradeMSG28);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a100_test_montant_negatif_nullMSG9);
+    cardchan.send(numberbanknotes_test_camaradeMSG40);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  testcase TC_test_credit() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(credit_test_montant_negatif_nullMSG3);
+    cardchan.receive(creditamount_test_montant_negatif_nullMSG4);
+    cardchan.send(credita_test_creditMSG5);
+    cardchan.receive(creditreceipt_test_creditMSG6);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  testcase TC_test_debit() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a50_test_camaradeMSG27);
+    cardchan.send(numberbanknotes_test_debitMSG6);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  testcase TC_test_debit_all() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_montant_negatif_nullMSG1);
+    cardchan.send(insertcode_test_montant_negatif_nullMSG2);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a10_tr3vFAILMSG5);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote10_tr3vFAILMSG7);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a20_tr3vFAILMSG13);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote20_tr3vFAILMSG16);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a50_test_camaradeMSG27);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote50_test_camaradeMSG30);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    cardchan.send(debit_test_montant_negatif_nullMSG7);
+    cardchan.receive(debitamount_test_montant_negatif_nullMSG8);
+    cardchan.send(a100_test_montant_negatif_nullMSG9);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote100_test_camaradeMSG41);
+    cardchan.receive(debitreceipt_tr3vFAILMSG9);
+    cardchan.receive(OKop_test_montant_negatif_nullMSG6);
+    setverdict(pass);
+    }
+
+  control
+    {
+    execute(TC_test_montant_negatif_null());
+    execute(TC_tr3vFAIL());
+    execute(TC_cancel_op());
+    execute(TC_test_err_code());
+    execute(TC_test_camarade());
+    execute(TC_test_credit());
+    execute(TC_test_debit());
+    execute(TC_test_debit_all());
+    }
+  }
