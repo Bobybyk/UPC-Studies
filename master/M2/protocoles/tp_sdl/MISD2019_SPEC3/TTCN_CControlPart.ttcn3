@@ -1,0 +1,13 @@
+module TTCN_CControlPart {
+
+  import from TTCN_TestsAndControl all;
+
+
+  control
+    {
+    execute(TC_test_B1());
+    execute(TC_test_B2());
+    execute(TC_test_err_code());
+    execute(TC_test_timeout());
+    }
+  }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="-" text="atmproc
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="-" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM2" identifier="COND1" background="-" text="idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="idle" identifier="COND1" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" text="insertcard" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM3" identifier="MSG1" text="insertcard"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_START" color="-" text="tempo(60)" type="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM113"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM4" identifier="COND2" background="-" text="waitcode"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="60"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="waitcode" identifier="COND2" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM4"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="TIMER_TIMEOUT" color="-" text="tempo" type="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM114"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="60"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM115" identifier="MSG2" text="returncard"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="60"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" text="returncard" identifier="MSG2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="60"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM117" identifier="COND3" background="-" text="idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="60"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="idle" identifier="COND3" model_id="PragmaDevStudio:symbol*/home/sha/Fac/master/M2/protocoles/tp_sdl/MISD2019_SPEC3/atmproc.rdd*SYM117"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>

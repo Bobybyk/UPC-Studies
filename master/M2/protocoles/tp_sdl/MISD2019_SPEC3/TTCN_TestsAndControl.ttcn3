@@ -1,0 +1,85 @@
+module TTCN_TestsAndControl
+  {
+  import from TTCN_Declarations all;
+
+  import from TTCN_Templates all;
+
+
+  altstep RTDS_fail() runs on runsOn_atmsys
+    {
+    []cardchan.receive
+      {
+      setverdict(fail, "Fail in default altstep!");
+      stop;
+      };
+    }
+
+  testcase TC_test_B1() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_B1MSG1);
+    cardchan.send(insertcode_test_B1MSG2);
+    cardchan.send(debit_test_B1MSG3);
+    cardchan.receive(debitamount_test_B1MSG4);
+    cardchan.send(a20_test_B1MSG5);
+    cardchan.send(numberbanknotes_test_B1MSG6);
+    cardchan.receive(bknote20_test_B1MSG7);
+    cardchan.receive(bknote20_test_B1MSG7);
+    cardchan.receive(debitreceipt_test_B1MSG9);
+    cardchan.receive(OKop_test_B1MSG10);
+    setverdict(pass);
+    }
+
+  testcase TC_test_B2() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_B1MSG1);
+    cardchan.send(insertcode_test_B1MSG2);
+    cardchan.send(debit_test_B1MSG3);
+    cardchan.receive(debitamount_test_B1MSG4);
+    cardchan.send(a50_test_B2MSG5);
+    cardchan.send(numberbanknotes_test_B1MSG6);
+    cardchan.receive(bknote50_test_B2MSG7);
+    cardchan.receive(bknote50_test_B2MSG7);
+    cardchan.receive(debitreceipt_test_B1MSG9);
+    cardchan.receive(OKop_test_B1MSG10);
+    setverdict(pass);
+    }
+
+  testcase TC_test_err_code() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_B1MSG1);
+    cardchan.send(insertcode_test_err_codeMSG2);
+    cardchan.receive(errorcode_test_err_codeMSG3);
+    cardchan.send(insertcode_test_B1MSG2);
+    cardchan.send(debit_test_B1MSG3);
+    cardchan.receive(debitamount_test_B1MSG4);
+    cardchan.send(a10_test_err_codeMSG7);
+    cardchan.send(numberbanknotes_test_err_codeMSG8);
+    cardchan.receive(bknote10_test_err_codeMSG9);
+    cardchan.receive(debitreceipt_test_B1MSG9);
+    cardchan.receive(OKop_test_B1MSG10);
+    setverdict(pass);
+    }
+
+  testcase TC_test_timeout() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_B1MSG1);
+    cardchan.receive(returncard_test_timeoutMSG2);
+    setverdict(pass);
+    }
+
+  control
+    {
+    execute(TC_test_B1());
+    execute(TC_test_B2());
+    execute(TC_test_err_code());
+    execute(TC_test_timeout());
+    }
+  }

@@ -1,0 +1,98 @@
+module TTCN_Declarations {
+
+  // Records declaration
+  type enumerated a20 { e_a20 }
+
+  type record credita {
+    integer param1
+    }
+
+  type enumerated a10 { e_a10 }
+
+  type record insertcode {
+    integer param1
+    }
+
+  type record numberbanknotes {
+    integer param1
+    }
+
+  type enumerated OKcancel { e_OKcancel }
+
+  type enumerated bknote10 { e_bknote10 }
+
+  type enumerated credit { e_credit }
+
+  type enumerated bknote20 { e_bknote20 }
+
+  type enumerated creditreceipt { e_creditreceipt }
+
+  type enumerated bknote50 { e_bknote50 }
+
+  type enumerated cancelopquestion { e_cancelopquestion }
+
+  type enumerated a100 { e_a100 }
+
+  type enumerated OKop { e_OKop }
+
+  type enumerated debitamount { e_debitamount }
+
+  type enumerated returncard { e_returncard }
+
+  type enumerated cancelop { e_cancelop }
+
+  type enumerated retaincard { e_retaincard }
+
+  type enumerated creditamount { e_creditamount }
+
+  type enumerated errorcode { e_errorcode }
+
+  type enumerated a50 { e_a50 }
+
+  type enumerated debitreceipt { e_debitreceipt }
+
+  type enumerated debit { e_debit }
+
+  type enumerated bknote100 { e_bknote100 }
+
+  type enumerated insertcard { e_insertcard }
+
+  // Ports declaration
+  type port port_cardchan message
+    {
+    out cancelop;
+    out insertcode;
+    out credit;
+    out OKcancel;
+    out numberbanknotes;
+    out credita;
+    out a20;
+    out insertcard;
+    out a100;
+    out debit;
+    out a10;
+    out a50;
+    in bknote20;
+    in cancelopquestion;
+    in returncard;
+    in creditreceipt;
+    in retaincard;
+    in bknote50;
+    in bknote10;
+    in bknote100;
+    in creditamount;
+    in errorcode;
+    in debitamount;
+    in debitreceipt;
+    in OKop;
+    }
+
+  // TSI and MTC component declaration
+  type component runsOn_atmsys {
+    port port_cardchan cardchan;
+  }
+
+  type component atmsys {
+    port port_cardchan cardchan;
+  }
+}

@@ -51,9 +51,16 @@ Mes traces passent le check, mais la trace *tr3vFAIL* ne passe toujours pas. La 
 
 **d). Je vous fournis une nouvelle spécification du DAB, nommée MISD2019SOLUTION_FAIL, qui contient déjà une trace MSC (tr2d). Refaire un Check en y ajoutant toutes les traces précédentes. Que constatez-vous?**
 
-Toutes mes traces passent à part mon test *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé est n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie pour debitproc, cette vérification n'est pas faite.   
+![couverture fail](couverture_spec_fail.png)
 
-**A partir de (d), cliquer sur 'Actions' à droite de la fenêtre de vérification et générer les TTCN pour tous ('ALL') les scenarios. Interpréter les résultats obtenus visibles dans le fichier TTCN_TestsAndControl.ttcn3.**
+Toutes mes traces passent à part mon test : *test_montant_negatif_null*. Cela est normal, dans ma spécification de debitproc, je vérifie que le montant demandé n'est pas négatif et, si tel est le cas, je ne fais rien. Or, dans la spécification fournie ici pour debitproc, cette vérification n'est pas faite.
+
+Un comportement dans la spécification **MP72022SOLUTION_FAIL** est particulier : peu importe le nombre de billets de 10 demandé, on obtiendra toujours 2 billets de 10 en sortie. 
+La trace tr2d obtient un verdict pass car le test a été créé dans la spécification **MP72022SOLUTION_FAIL** mais si on importait une trace réalisant ce test généré dans **MISD2019BASIS**, on obtiendrait un verdict fail.
+
+Dans ma trace *test_debit_all* importé de **MISD2019BASIS**, je demande plusieurs valeurs de billets dont 2 billets de 10 (exclusivement 2 pour les billets de 10). C'est pour cela que j'obtiens un verdict pass avec cette trace importée dans la spec **MP72022SOLUTION_FAIL** mais si j'avais tenté de demander par exemple 3 billets de 10, je n'aurais pas eu un verdict pass avec cette trace.
+
+**A partir de (d), cliquer sur 'Actions' à droite de la fenêtre de vérification et générer l car le comportement es TTCN pour tous ('ALL') les scenarios. Interpréter les résultats obtenus visibles dans le fichier TTCN_TestsAndControl.ttcn3.**
 
 Dans le fichier ```TTCN_TestsAndControl.ttcn3```, on peut voir plusieurs instructions comme :
 - *altstep RTDS_fail()* : pour gérer une situation d'échec. Si un message est reçu sur cardchan, l'étape déclenche un échec avec le message "Fail in default altstep!" et arrête l'exécution.
@@ -65,12 +72,24 @@ Dans le fichier ```TTCN_TestsAndControl.ttcn3```, on peut voir plusieurs instruc
 
 ## 3/. SCRIPTS TTCN3
 
+![TTCN3 verdict](spec3_verdict.png)
+
 **a). Ecrire un Test Case TTCN3 (tous les TC seront insérés dans le même fichier TTCN_TestsAndControl.ttcn3) permettant de prouver ce comportement B1 (dans tous les cas) dans SPEC3 ==> verdict pass**
 
-Le test case pour B1 obtient un pass,
+Le test case *test_B1* est réalisé dans la spécification **MISD2019BASIS** (on demande 2 billets de 10 et on reçoit 2 billets de 10). En important dans **MISD2019SPEC3** la trace MSC associée, on obtient bien un verdict pass.
 
-**Dans SPEC3, 3 fautes (de type différents) ont été insérées (en comparant avec la spécification et les besoins initiaux du système), à vous de les détecter à l'aide de Test Cases TTCN3 bien définis.**
+**b). Ecrire un Test Case TTCN3 menant au verdict fail du comportement B2**
+
+On génère la trace pour le *test_B2* dans la spécification **MISD2019BASIS** (on demande un billet de 50 et on reçoit bien ce billet de 50). Ici, en l'important dans la spécification **MISD2019SPEC3**, on obtient un verdict fail car on reçoit un billet de 20.
+
+**d). Obtenir une exécution du TTCN3 menant aux autres verdicts none et error,  résultats que vous justifierez et interpréterez**
+
+- *TC_test_timeout* : obtient un verdict none car le temps est dépassé sans qu'une action ait été effectuée.
+
+- *TC_test_err_code* : obtient un verdict error car on entre un code de carte erroné et on ne peut pas réessayer.
+
+**e). Dans SPEC3, 3 fautes (de type différents) ont été insérées (en comparant avec la spécification et les besoins initiaux du système), à vous de les détecter à l'aide de Test Cases TTCN3 bien définis.**
 
 - première faute : dans la spec BASIS on permet à l'utilisateur de faire une erreur de code et de réessayer avant de l'éjecter alors que dans SPEC3 on éjecte directement après la première erreur de code. Situation mise en valeur avec le test case *test_err_code*.
 - deuxième faute : après avoir fait un ``cancelop`` la condition est owait4confcancel dans la SPEC3 alors que dans la spec BASIS on attend avec *wait4confcancel*.
-- troisième faute : après avoir demandé un credit, et au retour de la task creditproc(amountcredit), on a un output *OKop* dans la spec BASIS alors que dans SPEC3 on ne l'a pas.
+- troisième faute : après avoir demandé un credit, et au retour de la task creditproc(amountcredit), on a un output ``OKop`` dans la spec BASIS alors que dans SPEC3 on ne l'a pas.

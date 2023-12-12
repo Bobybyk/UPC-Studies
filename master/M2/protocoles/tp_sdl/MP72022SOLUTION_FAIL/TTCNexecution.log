@@ -4,3 +4,24 @@
 project /home/sha/Fac/master/M2/protocoles/tp_sdl/MP72022SOLUTION_FAIL/MISD2019ttcn.rdp
 09/12/23 at 15:36 : Simulation started
 09/12/23 at 15:36 : simulation ended
+
+
+==============================
+project /home/sha/Fac/master/M2/protocoles/tp_sdl/MP72022SOLUTION_FAIL/MISD2019ttcn.rdp
+12/12/23 at 14:35 : Simulation started
+12/12/23 at 14:35 : TC_test_all_debit started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_all_debit' verdict 'pass'
+12/12/23 at 14:35 : TC_test_credit started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_credit' verdict 'pass'
+12/12/23 at 14:35 : TC_test_debit started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_debit' verdict 'pass'
+12/12/23 at 14:35 : TC_test_err_code started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_err_code' verdict 'pass'
+12/12/23 at 14:35 : TC_test_hugo_debit started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_hugo_debit' verdict 'pass'
+12/12/23 at 14:35 : TC_test_montant_negatif_null started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_test_montant_negatif_null' verdict 'fail'
+12/12/23 at 14:35 : TC_tr2d started
+12/12/23 at 14:35 : module 'TTCN_TestsAndControl' testcase 'TC_tr2d' verdict 'pass'
+12/12/23 at 14:36 : simulation stopped
+12/12/23 at 14:36 : simulation ended
