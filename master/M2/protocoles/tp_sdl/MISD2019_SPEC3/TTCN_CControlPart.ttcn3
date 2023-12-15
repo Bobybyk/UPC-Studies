@@ -9,5 +9,6 @@ module TTCN_CControlPart {
     execute(TC_test_B2());
     execute(TC_test_err_code());
     execute(TC_test_timeout());
+    execute(TC_test_inconc());
     }
   }

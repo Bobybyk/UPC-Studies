@@ -15,13 +15,16 @@
 <Item id="ITEM4" type="ttcn_test_case" name="TC_test_B1" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <SourceFilePosition isDefine="FALSE" lineNumber="7" columnNumber="12"/>
 </Item>
-<Item id="ITEM5" type="ttcn_test_case" name="TC_test_B2" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM5" type="ttcn_test_case" name="TC_test_inconc" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<SourceFilePosition isDefine="FALSE" lineNumber="11" columnNumber="12"/>
+</Item>
+<Item id="ITEM6" type="ttcn_test_case" name="TC_test_B2" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <SourceFilePosition isDefine="FALSE" lineNumber="8" columnNumber="12"/>
 </Item>
-<Item id="ITEM6" type="ttcn_test_case" name="TC_test_timeout" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM7" type="ttcn_test_case" name="TC_test_timeout" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <SourceFilePosition isDefine="FALSE" lineNumber="10" columnNumber="12"/>
 </Item>
-<Item id="ITEM7" type="ttcn_test_case" name="TC_test_err_code" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM8" type="ttcn_test_case" name="TC_test_err_code" parentId="ITEM2" scope="global" defined="FALSE" anchorItemId="ITEM3" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <SourceFilePosition isDefine="FALSE" lineNumber="9" columnNumber="12"/>
 </Item>
 </DictionaryObjects>

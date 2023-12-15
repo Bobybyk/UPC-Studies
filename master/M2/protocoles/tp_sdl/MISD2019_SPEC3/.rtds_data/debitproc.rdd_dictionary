@@ -51,10 +51,10 @@
 </Item>
 <Item id="ITEM4" type="variable" name="nbkn" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM45"/>
-<SymbolReference symbolId="SYM9"/>
 <SymbolReference symbolId="SYM12"/>
+<SymbolReference symbolId="SYM45"/>
 <SymbolReference symbolId="SYM15"/>
+<SymbolReference symbolId="SYM9"/>
 <SymbolReference symbolId="SYM18"/>
 </UsingSymbols>
 </Item>

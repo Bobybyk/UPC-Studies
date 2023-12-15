@@ -62,29 +62,29 @@ module TTCN_Declarations {
     {
     out cancelop;
     out insertcode;
-    out credit;
+    out a100;
     out OKcancel;
     out numberbanknotes;
-    out credita;
+    out credit;
     out a20;
     out insertcard;
-    out a100;
-    out debit;
     out a10;
+    out debit;
     out a50;
+    out credita;
     in bknote20;
     in cancelopquestion;
+    in retaincard;
     in returncard;
     in creditreceipt;
-    in retaincard;
     in bknote50;
     in bknote10;
     in bknote100;
+    in OKop;
     in creditamount;
     in errorcode;
     in debitamount;
     in debitreceipt;
-    in OKop;
     }
 
   // TSI and MTC component declaration

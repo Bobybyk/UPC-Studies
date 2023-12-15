@@ -60,31 +60,31 @@ module TTCN_Declarations {
   // Ports declaration
   type port port_cardchan message
     {
-    out a50;
     out insertcode;
+    out a50;
+    out cancelop;
+    out OKcancel;
+    out numberbanknotes;
+    out insertcard;
+    out credit;
+    out a20;
+    out a10;
+    out credita;
     out debit;
     out a100;
-    out cancelop;
-    out a10;
-    out OKcancel;
-    out insertcard;
-    out a20;
-    out numberbanknotes;
-    out credita;
-    out credit;
-    in bknote100;
     in bknote20;
-    in debitamount;
-    in creditamount;
-    in errorcode;
-    in retaincard;
     in debitreceipt;
     in OKop;
-    in bknote10;
+    in debitamount;
     in cancelopquestion;
-    in returncard;
     in creditreceipt;
+    in returncard;
+    in bknote10;
+    in retaincard;
     in bknote50;
+    in bknote100;
+    in creditamount;
+    in errorcode;
     }
 
   // TSI and MTC component declaration

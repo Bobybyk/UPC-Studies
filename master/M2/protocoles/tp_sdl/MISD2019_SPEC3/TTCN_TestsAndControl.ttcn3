@@ -13,6 +13,14 @@ module TTCN_TestsAndControl
       stop;
       };
     }
+  altstep RTDS_inconc() runs on runsOn_atmsys
+    {
+    []cardchan.receive
+      {
+      setverdict(inconc, "inconclusive in default altstep!");
+      stop;
+      };
+    }
 
   testcase TC_test_B1() runs on runsOn_atmsys system atmsys
     {
@@ -75,11 +83,29 @@ module TTCN_TestsAndControl
     setverdict(pass);
     }
 
+  testcase TC_test_inconc() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_inconc());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_test_B1MSG1);
+    cardchan.send(insertcode_test_err_codeMSG2);
+    cardchan.send(debit_test_B1MSG3);
+    cardchan.receive(debitamount_test_B1MSG4);
+    cardchan.send(a20_test_B1MSG5);
+    cardchan.send(numberbanknotes_test_B1MSG6);
+    cardchan.receive(bknote20_test_B1MSG7);
+    cardchan.receive(bknote20_test_B1MSG7);
+    cardchan.receive(debitreceipt_test_B1MSG9);
+    cardchan.receive(OKop_test_B1MSG10);
+    setverdict(pass);
+    }
+
   control
     {
     execute(TC_test_B1());
     execute(TC_test_B2());
     execute(TC_test_err_code());
     execute(TC_test_timeout());
+    execute(TC_test_inconc());
     }
   }

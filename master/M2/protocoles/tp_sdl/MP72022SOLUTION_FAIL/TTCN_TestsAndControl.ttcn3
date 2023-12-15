@@ -133,43 +133,6 @@ module TTCN_TestsAndControl
     setverdict(pass);
     }
 
-  testcase TC_test_hugo_debit() runs on runsOn_atmsys system atmsys
-    {
-    activate(RTDS_fail());
-    map(self:cardchan, system:cardchan);
-    cardchan.send(insertcard_tr2dMSG1);
-    cardchan.send(insertcode_tr2dMSG2);
-    cardchan.send(debit_tr2dMSG3);
-    cardchan.receive(debitamount_tr2dMSG4);
-    cardchan.send(a10_tr2dMSG5);
-    cardchan.send(numberbanknotes_test_hugo_debitMSG6);
-    cardchan.receive(bknote10_tr2dMSG7);
-    cardchan.receive(debitreceipt_tr2dMSG9);
-    cardchan.receive(OKop_tr2dMSG10);
-    cardchan.send(debit_tr2dMSG3);
-    cardchan.receive(debitamount_tr2dMSG4);
-    cardchan.send(a20_tr2dMSG13);
-    cardchan.send(numberbanknotes_test_hugo_debitMSG6);
-    cardchan.receive(bknote20_tr2dMSG15);
-    cardchan.receive(debitreceipt_tr2dMSG9);
-    cardchan.receive(OKop_tr2dMSG10);
-    cardchan.send(debit_tr2dMSG3);
-    cardchan.receive(debitamount_tr2dMSG4);
-    cardchan.send(a50_test_all_debitMSG21);
-    cardchan.send(numberbanknotes_test_hugo_debitMSG6);
-    cardchan.receive(bknote50_test_all_debitMSG23);
-    cardchan.receive(debitreceipt_tr2dMSG9);
-    cardchan.receive(OKop_tr2dMSG10);
-    cardchan.send(debit_tr2dMSG3);
-    cardchan.receive(debitamount_tr2dMSG4);
-    cardchan.send(a100_test_all_debitMSG29);
-    cardchan.send(numberbanknotes_test_hugo_debitMSG6);
-    cardchan.receive(bknote100_test_all_debitMSG31);
-    cardchan.receive(debitreceipt_tr2dMSG9);
-    cardchan.receive(OKop_tr2dMSG10);
-    setverdict(pass);
-    }
-
   testcase TC_test_montant_negatif_null() runs on runsOn_atmsys system atmsys
     {
     activate(RTDS_fail());
@@ -188,6 +151,43 @@ module TTCN_TestsAndControl
     setverdict(pass);
     }
 
+  testcase TC_test_camarade() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_tr2dMSG1);
+    cardchan.send(insertcode_tr2dMSG2);
+    cardchan.send(debit_tr2dMSG3);
+    cardchan.receive(debitamount_tr2dMSG4);
+    cardchan.send(a10_tr2dMSG5);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote10_tr2dMSG7);
+    cardchan.receive(debitreceipt_tr2dMSG9);
+    cardchan.receive(OKop_tr2dMSG10);
+    cardchan.send(debit_tr2dMSG3);
+    cardchan.receive(debitamount_tr2dMSG4);
+    cardchan.send(a20_tr2dMSG13);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote20_tr2dMSG15);
+    cardchan.receive(debitreceipt_tr2dMSG9);
+    cardchan.receive(OKop_tr2dMSG10);
+    cardchan.send(debit_tr2dMSG3);
+    cardchan.receive(debitamount_tr2dMSG4);
+    cardchan.send(a50_test_all_debitMSG21);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote50_test_all_debitMSG23);
+    cardchan.receive(debitreceipt_tr2dMSG9);
+    cardchan.receive(OKop_tr2dMSG10);
+    cardchan.send(debit_tr2dMSG3);
+    cardchan.receive(debitamount_tr2dMSG4);
+    cardchan.send(a100_test_all_debitMSG29);
+    cardchan.send(numberbanknotes_test_camaradeMSG6);
+    cardchan.receive(bknote100_test_all_debitMSG31);
+    cardchan.receive(debitreceipt_tr2dMSG9);
+    cardchan.receive(OKop_tr2dMSG10);
+    setverdict(pass);
+    }
+
   control
     {
     execute(TC_tr2d());
@@ -195,7 +195,7 @@ module TTCN_TestsAndControl
     execute(TC_test_credit());
     execute(TC_test_debit());
     execute(TC_test_err_code());
-    execute(TC_test_hugo_debit());
     execute(TC_test_montant_negatif_null());
+    execute(TC_test_camarade());
     }
   }

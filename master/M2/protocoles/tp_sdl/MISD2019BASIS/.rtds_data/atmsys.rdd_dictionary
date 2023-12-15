@@ -8,14 +8,14 @@
 <SymbolReference symbolId="SYMB3" positions="10,12"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG10" name="a10">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB3" positions="10,0"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG11" name="debit">
+<Signal id="SIG10" name="debit">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB3" positions="6,0"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG11" name="credit">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB3" positions="5,0"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG12" name="insertcard">
@@ -23,39 +23,39 @@
 <SymbolReference symbolId="SYMB3" positions="2,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG13" name="errorcode">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB4" positions="8,0"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG14" name="debitamount">
+<Signal id="SIG13" name="debitamount">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="6,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG15" name="debitreceipt">
+<Signal id="SIG14" name="debitreceipt">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="7,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG16" name="bknote50">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB4" positions="2,18"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG17" name="bknote20">
+<Signal id="SIG15" name="bknote20">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="2,9"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG18" name="cancelopquestion">
+<Signal id="SIG16" name="cancelopquestion">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="3,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG19" name="returncard">
+<Signal id="SIG17" name="returncard">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="10,0"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG18" name="OKop">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB4" positions="9,0"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG19" name="retaincard">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB4" positions="11,0"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG2" name="insertcode">
@@ -65,9 +65,9 @@
 <SymbolReference symbolId="SYMB3" positions="3,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG20" name="OKop">
+<Signal id="SIG20" name="bknote50">
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB4" positions="9,0"/>
+<SymbolReference symbolId="SYMB4" positions="2,18"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG21" name="creditreceipt">
@@ -75,24 +75,24 @@
 <SymbolReference symbolId="SYMB4" positions="4,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG22" name="retaincard">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB4" positions="11,0"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG23" name="bknote10">
+<Signal id="SIG22" name="bknote10">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="2,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG24" name="bknote100">
+<Signal id="SIG23" name="bknote100">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="2,27"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG25" name="creditamount">
+<Signal id="SIG24" name="creditamount">
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB4" positions="5,0"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG25" name="errorcode">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB4" positions="8,0"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG3" name="cancelop">
@@ -117,9 +117,9 @@
 <SymbolReference symbolId="SYMB3" positions="10,4"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG7" name="credit">
+<Signal id="SIG7" name="a50">
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB3" positions="5,0"/>
+<SymbolReference symbolId="SYMB3" positions="10,8"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG8" name="credita">
@@ -129,9 +129,9 @@
 <SymbolReference symbolId="SYMB3" positions="7,0"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG9" name="a50">
+<Signal id="SIG9" name="a10">
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB3" positions="10,8"/>
+<SymbolReference symbolId="SYMB3" positions="10,0"/>
 </DefiningSymbols>
 </Signal>
 <Item id="ITEM1" type="system" name="atmsys" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -147,30 +147,30 @@
 <SignalReference id="SIG12"/>
 <SignalReference id="SIG2"/>
 <SignalReference id="SIG3"/>
-<SignalReference id="SIG7"/>
 <SignalReference id="SIG11"/>
+<SignalReference id="SIG10"/>
 <SignalReference id="SIG8"/>
 <SignalReference id="SIG4"/>
 <SignalReference id="SIG5"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG6"/>
 <SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG7"/>
 <SignalReference id="SIG1"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG23"/>
-<SignalReference id="SIG17"/>
-<SignalReference id="SIG16"/>
-<SignalReference id="SIG24"/>
-<SignalReference id="SIG18"/>
-<SignalReference id="SIG21"/>
-<SignalReference id="SIG25"/>
-<SignalReference id="SIG14"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG20"/>
 <SignalReference id="SIG22"/>
+<SignalReference id="SIG15"/>
+<SignalReference id="SIG20"/>
+<SignalReference id="SIG23"/>
+<SignalReference id="SIG16"/>
+<SignalReference id="SIG21"/>
+<SignalReference id="SIG24"/>
+<SignalReference id="SIG13"/>
+<SignalReference id="SIG14"/>
+<SignalReference id="SIG25"/>
+<SignalReference id="SIG17"/>
+<SignalReference id="SIG18"/>
+<SignalReference id="SIG19"/>
 </ReceivedSignals>
 </SignalWindow>
 <Channel name="cardchan" fromSignalWindow="SIGWDW2" toSignalWindow="SIGWDW1"/>
@@ -190,32 +190,32 @@
 <SignalWindow id="SIGWDW1" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK7" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG23"/>
-<SignalReference id="SIG17"/>
-<SignalReference id="SIG16"/>
-<SignalReference id="SIG24"/>
-<SignalReference id="SIG18"/>
-<SignalReference id="SIG21"/>
-<SignalReference id="SIG25"/>
-<SignalReference id="SIG14"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG19"/>
-<SignalReference id="SIG20"/>
 <SignalReference id="SIG22"/>
+<SignalReference id="SIG15"/>
+<SignalReference id="SIG20"/>
+<SignalReference id="SIG23"/>
+<SignalReference id="SIG16"/>
+<SignalReference id="SIG21"/>
+<SignalReference id="SIG24"/>
+<SignalReference id="SIG13"/>
+<SignalReference id="SIG14"/>
+<SignalReference id="SIG25"/>
+<SignalReference id="SIG17"/>
+<SignalReference id="SIG18"/>
+<SignalReference id="SIG19"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG12"/>
 <SignalReference id="SIG2"/>
 <SignalReference id="SIG3"/>
-<SignalReference id="SIG7"/>
 <SignalReference id="SIG11"/>
+<SignalReference id="SIG10"/>
 <SignalReference id="SIG8"/>
 <SignalReference id="SIG4"/>
 <SignalReference id="SIG5"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG6"/>
 <SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG7"/>
 <SignalReference id="SIG1"/>
 </ReceivedSignals>
 </SignalWindow>

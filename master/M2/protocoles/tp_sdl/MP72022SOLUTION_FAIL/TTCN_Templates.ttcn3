@@ -3,11 +3,11 @@ module TTCN_Templates {
   import from TTCN_Declarations all;
 
   template a20 a20_tr2dMSG13 := ?;
+  template numberbanknotes numberbanknotes_test_camaradeMSG6 := {
+    param1 := 1
+  };
   template numberbanknotes numberbanknotes_test_debitMSG6 := {
     param1 := 10
-  };
-  template numberbanknotes numberbanknotes_test_hugo_debitMSG6 := {
-    param1 := 1
   };
   template numberbanknotes numberbanknotes_test_montant_negatif_nullMSG10 := {
     param1 := -5
