@@ -92,3 +92,6 @@ received 11 stop
 L'utilisation de volatile permet de garantir qu'on récupère une valeur à jour en allant regarder la valeur directement en mémoire partagée et non pas dans un registre local.
 
 Donc, dans le cas où ce mot clef est utilisé, on obtient la valeur de check à jour, supérieure à cur, et on peut donc sortir de la boucle. Sans l'utilisation de volatile, on ne va pas chercher la bonne valeur de check pour effectuer la comparaison.
+
+## Exercice 5
+
