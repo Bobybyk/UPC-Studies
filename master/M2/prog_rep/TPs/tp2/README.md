@@ -220,6 +220,8 @@ class Backery implements Lock {
 }
 ```
 
+**5/.**
+
 **a).  Si la thread i a écrit ``label[i]`` à l’instant t et la thread j écrit ``label[j]`` à l’instant ``t′ > t``, a-t-on toujours ``labelt[i]<labelt'[j]`` ?**
 
 Oui car ``label[i]`` est incrémenté à chaque fois qu'une thread entre en section critique donc on a toujours ``labelt[i] < labelt'[j]``.
@@ -244,3 +246,49 @@ Exemple d'exécution avec 4 threads :
 - avant l'instant t, les threads 0, 2 et 3 ont déjà écrits leurs labels mais tous leurs flags étaient false donc elles n'attendaient pas activement pour entrer en section critique. 
 - à t+1, les threads 0, 2 et 3 mettent leurs flags à true et se préparent à entrer en section critique.
 - même si la thread 1 a écrit son label avant les autres, elle devra attendre que les threads 0, 2 et 3 terminent leur exécution en section critique avant de pouvoir y entrer elle même.
+
+**6/. Ecrire l’implémentation de Lock par cet algorithme. Vous justifierez votre implémentation et fournirez des exemples d’exécution de l’algorithme.**
+
+*marche pas*
+
+```java
+public class Exo2Question6 implements Lock {
+    // Flag de chaque thread
+    private boolean[] flag;
+    // Label de chaque thread
+    private int[] label;
+    // Nombre de threads
+    private int n;
+
+    public Exo2Question6(int n) {
+        this.n = n;
+        flag = new boolean[n];
+        label = new int[n];
+    }
+
+    public void lock() {
+        int i = (int) Thread.currentThread().getId();
+        System.out.println("Thread " + i + ", n = " + n);
+        flag[i] = true;
+        label[i] = max(label) + 1;
+        for (int j = 0 ; j < n ; j++) {
+            while (j != i && flag[j] && (label[j] < label[i] || (label[j] == label[i] && j < i)));
+        }
+    }
+
+    public void unlock() {
+        flag[(int) Thread.currentThread().getId()] = false;
+    }
+
+    private int max(int[] tab) {
+        int max = tab[0];
+        for (int i = 1; i < tab.length; i++) {
+            if (tab[i] > max) {
+                max = tab[i];
+            }
+        }
+        return max;
+    }
+}
+```
+

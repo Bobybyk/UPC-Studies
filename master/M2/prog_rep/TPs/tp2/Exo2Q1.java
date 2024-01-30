@@ -1,6 +1,6 @@
 import java.util.concurrent.locks.*;
 
-public class ThreadCrit {
+public class Exo2Q1 {
     public static class Critique implements Runnable {
         private Lock lock;
         private int nb;
