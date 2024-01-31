@@ -1,8 +1,6 @@
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
+package exo2;
 
-public class Exo2Q6 implements Lock {
+public class Exo2Q6 {
     // Flag de chaque thread
     private boolean[] flag;
     // Label de chaque thread
@@ -17,7 +15,7 @@ public class Exo2Q6 implements Lock {
     }
 
     public void lock() {
-        int i = (int) Thread.currentThread().getId();
+        int i = ThreadId.get();
         System.out.println("Thread " + i + ", n = " + n);
         flag[i] = true;
         label[i] = max(label) + 1;
@@ -27,7 +25,7 @@ public class Exo2Q6 implements Lock {
     }
 
     public void unlock() {
-        flag[(int) Thread.currentThread().getId()] = false;
+        flag[ThreadId.get()] = false;
     }
 
     private int max(int[] tab) {
@@ -41,7 +39,7 @@ public class Exo2Q6 implements Lock {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Lock lock = new Exo2Q6(26);
+        Exo2Q6 lock = new Exo2Q6(3);
 
         // Thread 0
         new Thread(() -> {
@@ -88,29 +86,5 @@ public class Exo2Q6 implements Lock {
             lock.unlock();
             System.out.println("Thread 2 sort de SC");
         }).start();
-    }
-
-    @Override
-    public void lockInterruptibly() throws InterruptedException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'lockInterruptibly'");
-    }
-
-    @Override
-    public boolean tryLock() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tryLock'");
-    }
-
-    @Override
-    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tryLock'");
-    }
-
-    @Override
-    public Condition newCondition() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'newCondition'");
     }
 }

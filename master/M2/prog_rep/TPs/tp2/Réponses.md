@@ -1,30 +1,10 @@
 # TP2
 
+*Hugo Jacotot : 71802786*
+
+*Matthieu Le Franc : 71800858*
+
 ## Exercice 1
-
-```java
-public class Exo {
-    public static boolean fait = false;
-    public static int n;
-    
-    //1
-    public static class Lecteur extends Thread {
-        public void run() {
-            while (!fait);
-            System.out.println(n);
-        }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        //2
-        new Lecteur().start();
-        Thread.sleep(100);
-        n = 150;
-        fait = true;
-        System.out.println("fait");
-    }
-}
-```
 
 **1/. Est ce que vous observez que la thread Lecteur ne termine pas ?**
 
@@ -32,7 +12,7 @@ Effectivement, la thread lecteur ne termine pas car le thread lecteur et modifie
 
 **2/. On ajoute en //1 ```public static Integer I=3;``` et on remplace ```while (!fait);``` par ```while (!fait) {synchronized(I){} ;}``` Est ce que la thread Lecteur termine toujours ?**
 
-Oui car on lit la valeur en mémoire partagée
+Si le main s'exécute d'abord elle termine car on lit la valeur en mémoire partagée et sinon elle ne termine pas. Donc pas toujours.
 
 **3/. On ajoute en //1 ```public static Integer I=3;``` et on remplace ```fait = true;``` par ```synchronized(I){fait = true;}``` Est ce que la thread Lecteur termine toujours ?**
 
@@ -80,7 +60,11 @@ Oui car volatile permet de lire la valeur en mémoire partagée, la dernière va
 
 **8/. On ajoute à Exo2 en //1 ```boolean [] lt=t[0];``` et on remplace ```while (!t[0][0]);``` par ```while (!lt[0]);``` Est ce que la thread Lecteur termine toujours ?**
 
+Non car lt n'est pas volatile donc on ne lit pas la valeur en mémoire partagée.
+
 **9/. Est ce que la thread Lecteur termine toujours ?**
+
+Non car la thread lecteur ne voit pas la dernière modification donc elle ne termine pas.
 
 **10/. On ajoute en //1 Essai ```x=fait.d;``` et on remplace ```while (! fait.d.a);``` par ```while (! x.a);``` Est ce que la thread Lecteur termine toujours ?**
 
@@ -112,6 +96,8 @@ public class Exo {
 }
 ```
 
+Ne termine pas car x n'est pas volatile donc on ne lit pas la valeur en mémoire partagée.
+
 ## Exercice 2
 
 *Dans le package ```java.util.concurrent.locks``` se trouve l’interface Lock.*
@@ -124,6 +110,87 @@ public interface Lock{
 ```
 
 **1/. Ecrire le code d’une thread qui rentre régulièrement en section critique en utilisant un verrou (une implementation de l’interface Lock). La section critique et la section non critique pourront être simulées par une mise en sommeil de la thread et l’impression d’un message indiquant le nombre de fois où cette thread est rentrée en section critique. Apres 20 entrées en section critique la thread s’arrête. Ecrire le code d’un programme qui lance un nombre variable de ces threads.**
+
+Implémentation de l'interface Lock :
+
+```java
+public class Exo2Q1 implements Lock, Runnable {
+    private boolean[] flag;
+    private int nb;
+    volatile int victim;
+
+    public Exo2Q1() {
+        this.nb = 0;
+        this.flag = new boolean[2];
+    }
+
+    public void run() {
+        while (nb < 20) {
+            lock();
+
+            // Section critique
+            try {
+                System.out.println("la thread entre en section critique pour la " + nb + " fois");
+                nb++;
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                unlock();
+            }
+        }
+
+        // Simulation en dehors de la section critique
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void lock() {
+        int i = ThreadId.get();
+        int j = 1 - i;
+        flag[i] = true;
+        victim = i ;
+        while (flag[j] && victim == i) {}; // wait
+    }
+
+    @Override
+    public void unlock() {
+        int i = ThreadId.get();
+        flag[i]=false; // I’m not interested
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {}
+
+    @Override
+    public boolean tryLock() {return false;}
+
+    public static void main(String[] args) {
+        Exo2Q1 lock = new Exo2Q1();
+        for (int i = 0; i < 10; i++) {
+            new Thread(lock).start();
+        }
+    }
+
+    @Override
+    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'tryLock'");
+    }
+
+    @Override
+    public Condition newCondition() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'newCondition'");
+    }
+}
+```
+
+En utilisant ``java.util.concurrent.locks.ReentrantLock`` :
 
 ```java
 public class ThreadCrit {
@@ -175,7 +242,7 @@ public class ThreadCrit {
 
 **2/. Utiliser l’implémentation de Java java.util.concurrent.locks.ReentrantLock de l’interface Lock pour exécuter votre programme (avec 10 threads).**
 
-Exécuter code pour voir
+Voir ci-dessous ou ``Exo2Q2.java``
 
 **3/. Quelles sont les differences lors de l’execution sans demande d’équité ou avec demande de verrou équitable ?**
 
@@ -249,10 +316,8 @@ Exemple d'exécution avec 4 threads :
 
 **6/. Ecrire l’implémentation de Lock par cet algorithme. Vous justifierez votre implémentation et fournirez des exemples d’exécution de l’algorithme.**
 
-*marche pas*
-
 ```java
-public class Exo2Question6 implements Lock {
+public class Exo2Q6 {
     // Flag de chaque thread
     private boolean[] flag;
     // Label de chaque thread
@@ -260,14 +325,14 @@ public class Exo2Question6 implements Lock {
     // Nombre de threads
     private int n;
 
-    public Exo2Question6(int n) {
+    public Exo2Q6(int n) {
         this.n = n;
         flag = new boolean[n];
         label = new int[n];
     }
 
     public void lock() {
-        int i = (int) Thread.currentThread().getId();
+        int i = ThreadId.get();
         System.out.println("Thread " + i + ", n = " + n);
         flag[i] = true;
         label[i] = max(label) + 1;
@@ -277,7 +342,7 @@ public class Exo2Question6 implements Lock {
     }
 
     public void unlock() {
-        flag[(int) Thread.currentThread().getId()] = false;
+        flag[ThreadId.get()] = false;
     }
 
     private int max(int[] tab) {
@@ -292,3 +357,63 @@ public class Exo2Question6 implements Lock {
 }
 ```
 
+Exemple d'exécution avec 4 Threads :
+- Thread 1 appelle lock() et entre en section critique (son label est 1)
+- Thread 2 appelle lock() et entre en section critique (son label est 2)
+- Thread 3 appelle lock() et entre en section critique (son label est 3)
+- Thread 1 appelle unlock() et sort de la section critique
+- Thread 4 appelle lock() et entre en section critique (son label est 4)
+- Thread 2 appelle unlock() et sort de la section critique
+- Thread 3 appelle unlock() et sort de la section critique
+- Thread 4 appelle unlock() et sort de la section critique
+
+**7/. L’implémentation de Lock par l’algorithme de Lamport donne-t-il un Lock Réentrant ? Quelle propriété n’est plus assurée ?**
+
+Non, l'implémentation de Lock par l'algorithme de Lamport ne donne pas un Lock Réentrant car il n'est pas possible pour une thread de réacquérir le verrou si elle l'a déjà acquis. Si un thread détient déjà le verrou, pour le réacquérir il doit le libérer le même nombre de fois qu'il a été acquis pour que le verrou soit réellement libéré.
+
+## Exercice 3
+
+**Peut on avoir plusieurs rédacteurs qui écrivent en même temps dans base.tab ?**
+- Non car red.java prend le verrou en écriture lors de son entrée en section critique
+
+**Peut on avoir plusieurs lecteurs qui lisent en même temps dans base.tab ?**
+- Oui car le verrou en lecture n'est pas 
+
+**Peut on avoir des lecteurs et des rédacteurs qui accèdent en même temps à base.tab ?**
+- Non car le verrou en écriture est en exclusion mutuelle avec les verrous en lecture
+
+**Que se passe-t-il si dans le main de la classe LectRed on a à la place de `//com` on a `lecteur[0].interrupt();`**
+- On obtient un deadlock lors de l'exécution car lorsque le thread est interrompu il ne relâche pas son verrou, ce qui empĉhe tous les autres de rentrer en section critique
+
+**Modifier le code des classes Lec et Red afin que les verrous soient toujours relâchés même en cas d’interruption.**
+- J'ai retiré le ̀`break` qui provoquait la sortie de la boucle lors d'une iterruption d'un thread. Ainsi le thread continue l'exécution de la boucle for et n'est pas bloqué lors de la prochaine acquisition du lock, car celui-ci est réentrant.
+
+## Exercice 4
+
+**On remplace dans la classe BD ``lock=new ReentrantReadWriteLock(true);`` par ``lock=new TropSimple();``. A-t-on toujours l’exclusion entre rédacteurs? entre lecteurs et rédacteurs? Plusieurs lecteurs peuvent-ils lire en même temps ?**
+
+Tous les threads seront en exclusion mutuelle car plus aucune différence n'est faite entre les verrous en lecture et les verrous en écriture.
+
+En utilisant ``lock=new TropSimple();`` :
+- On assure toujours l'exclusion entre rédacteurs car ``TropSimple`` utilise un seul ``ReentrantLock`` donc un seul rédacteur peut détenir le verrou à la fois, ce qui empêche d'autres rédacteurs d'entrer dans les sections critiques en même temps.
+- On assure toujours l'exclusion entre lecteurs et rédacteurs un lecteur tenant le verrou empêche un rédacteur d'entrer dans la section critique et inversement.
+- Plusieurs lecteurs ne peuvent pas lire en même temps car plusieurs threads peuvent acquérir le verrou de lecture tant qu'aucun thread n'a acquis le verrou d'écriture.
+
+## Exercice 5
+
+**A-t-on l’exclusion entre rédacteurs? entre lecteurs et rédacteurs? Plusieurs lecteurs peuvent-ils lire en même temps ?**
+
+-Entre rédacteurs : oui car les rédacteurs ne peuvent pas rentrer en section critique si il existe déjà un lecteur ou un rédacteur étant en section critique 
+- Entre lecteurs et rédacteurs : oui car les lecteurs ne peuvent pas rentrer en section critique si il existe déjà un rédacteur en section critique et les rédacteur doivent être les seuls étant en section critique.
+- Plusieurs lecteurs peuvent lire en même temps car les lecteurs ne se préoccupent que de savoir s'il existe déjà un rédacteur en section critique.
+
+**On suppose que des lecteurs lisent. Un rédacteur A demande l’accès à la base de données puis un lecteur B. Dans cette implémentation A passera-t-il avant B? Y a t-il des executions dans lesquelles un rédacteur n’a jamais accès à la base de données ?**
+
+- B rentre en premier car plusieurs lecteurs peuvent avoir accès à la ressource en même temps
+- Il y a des exécutions dans lesquelles un rédacteur n'a jamais accès à la base de données car les lecteurs rentrent directement. Si des lecteurs continuent d'affluer, le rédacteur ne pourra jamais rentrer en section critique
+
+**Ecrire une implémentation de ReadWriteLock dans laquelle il n’y a pas famine des écrivains i.e. quand des lecteurs lisent, si un rédacteur A demande l’accès à la base de données plus aucun lecteur ne pourra accéder à la base avant qu’un écrivain n’y ait accédé. Une fois que le rédacteur a eu accès à la base il n’y a pas de priorité entre les lecteurs ou les rédacteurs pour l’accès suivant.**
+
+Nous avons ajouté un booléen indiquant si un rédacteur a demandé l'accès à la section critique sans l'avoir obtenu, ainsi les rédacteurs seront prioritaires lorsque tous les lecteurs auront quitté la section critique.
+
+Voir code répertoire exo5/

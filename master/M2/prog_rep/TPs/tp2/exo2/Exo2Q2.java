@@ -1,6 +1,7 @@
+package exo2;
 import java.util.concurrent.locks.*;
 
-public class Exo2Q1 {
+public class Exo2Q2 {
     public static class Critique implements Runnable {
         private Lock lock;
         private int nb;
