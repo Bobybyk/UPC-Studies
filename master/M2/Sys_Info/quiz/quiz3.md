@@ -1,0 +1,107 @@
+# Quiz 3
+
+- Donner un exemple de IaaS Google
+- Donner un exemple de PaaS Google
+- Donner un exemple de SaaS Google
+- Quels sont les 3 modèles de service ?
+- Que signifie l'acronyme IaaS ?
+- Quelles sont les deux types de clients Cloud Computing ?
+    - client lourd et léger (portable fixe)
+- Dans le modèle IaaS quels niveaux de la "Cloud Computing Stack" sont gérés par le fournisseur de service cloud ?
+    - Compute, server, storage
+
+- Qu'est-ce qu'on runtime ?
+    - Un environnement d'exécution ou de déploiement
+- A quel niveau de la "Stack computing" se trouvent les WEB frameworks ?
+    - Runtime
+- Quel est le principe minimum d'un PaaS WEB ?
+    - Une page WEB
+- Citez le nom de deux serveurs WEB ?
+    - Apache, Nginx
+- Qui a créé les servlets ?
+    - Sun Microsystems
+- En quelle année ont été créé les servlets ?
+    - 1995
+- Citez le nom d'un runtime PHP
+    - Zend
+- Citez le nom d'un runtime Python
+    - Django 
+- Citez le nom d'un runtime Microsoft
+    - .NET
+
+- En quelle année a été créé le www ?
+    - 1989
+- Qui a créé le www ?
+    - Tim Berners-Lee
+- En quelle année est paru le RFC définissant le protocole HTTP ?
+    - 1996
+- Que signifie l'acronyme RFC ?
+    - Request for comments
+- Que signifie l'acronyme NCSA ?
+    - National Center for Supercomputing Applications
+- En quelle année a été créé Mozilla ?
+    - 1998
+- Qui est l'ancêtre de Chrome et Firefox ?
+    - Netscape
+- Où trouve-t-on des racks informatiques ?
+    - Dans les data centers
+- Quel est l'OS des ordinateurs des serveurs WEB modernes ?
+    - Linux
+- Dans quelle couche du modèle OSI se trouve html ?
+    - Couche 6, présentation
+
+- Quelle est l'architecture de référence des serveurs WEB modernes ?
+    - 
+- Que signifie l'acronyme AWS ?
+    - Amazon Web Services
+- D'où le vient le terme "Cloud" ?
+    - Du schéma de représentation des réseaux
+- Quel est le modèle équivalent du Cloud Computing ?
+    - On paye que ce qu'on utilise
+- Dans quelle couche du modèle OSI se trouve http ?
+    - Couche session
+- Que signifie l'acronyme RFC ?
+    - Request for comments
+
+- Quelle est la principale possibilité offerte par le "Cloud Computing ?"
+    - On paye que ce qu'on utilise (elasticité, le robinet grossissant)
+- Quelles ont les couches de la computing stack du "Cloud Computing" ?
+    - IaaS, PaaS, SaaS
+- Que signifie l'acronyme NIST ?
+    - National Institute of Standards and Technology
+- Quel est l'équivalent français du NIST ?
+    - L'AFNOR
+- Dans quel langage est écrit Node.JS ?
+    - C++
+- Quel est le nom du cloud de Microsoft ?
+    - Azure
+
+- Quel est le rôle du Edge Computing ?
+    - Gérer les extrémités
+- Quel est le modèle économique du Cloud Computing ?
+    - On paye que ce qu'on utilise
+- Quelle est la traduction de "Kubernetes" ?
+    - Timonier (gouvernaille)
+- Qui est Tim Berners-Lee ?
+    - Le créateur du www
+- Sur quelle machine a fonctionné le premier serveur WEB ?
+    - Un NeXT
+- Qui est le créateur de l'entreprise NEXT ?
+    - Steve Jobs
+- De quel OS, NeXTSTEP est-il l'ancêtre ?
+    - MacOS
+- Quel est l'OS sous-jacent à NeXTSTEP OS ?
+    - Unix
+
+- Que signifie l'acronyme PDP ?
+    - Programmable Data Processor
+- Que signifie l'acronyme IMP ?
+    - Interface Message Processor
+- Que signifie ARPANET ?
+    - Advanced Research Projects Agency Network
+- Que signifie l'acronyme PPP ?
+    - Point to Point Protocol
+- Que signifie l'acronyme NCP ?
+    - Network Control Protocol
+- Que signifie l'acronyme PSN ?
+    - Packet Switching Network
