@@ -21,3 +21,118 @@
     Donc scanj[i] = i, ou scani[j] = j car si une thread j observe la valeur i à l'indice i, alors la thread i observera la valeur j à l'indice j.
  
 - **Pour j != i, scanj ⊆ scani ou scani ⊆ scanj ( la relation ⊆ est A ⊆ B si et seulement si "pour tout i, si A[i]̸ = −1 alors A[i] = B[i]")**, vrai car l'opération est atomique donc si la thread j scan avant la thread i, alors scanj ⊆ scani, et si la thread i scan avant la thread j, alors scani ⊆ scanj.
+
+## Exercice 2
+
+**1/. On réalise une première implémentation de scan et de update et on utilise dans le programme suivant des threads qui ne font qu’écrire et une thread qui lit**
+
+```java
+public class SimpleSnap<T> implements Snapshot<T> {
+    private T[] a_table;
+    
+    public SimpleSnap(int capacity, T init){
+        a_table= (T[]) new Object[capacity];
+        for (int i=0;i<capacity;i++) {
+            a_table[i]=init;
+        }
+    }
+
+    public void update(T v) {
+        int me=ThreadID.get();
+        a_table[me]=v;
+        //ne fait pas partie de l’implémentation
+        try { 
+            MyThread.sleep(1);
+        } catch(InterruptedException e){};
+        
+        MyThread.yield();
+    }
+    private T[] collect() {
+        T[] copy= (T[]) new Object[a_table.length];
+        
+        for(int j=0;j<a_table.length;j++){ copy[j]=a_table[j];
+            //ne fait pas partie de l’implémentation
+            try { 
+                MyThread.sleep(3);
+            } catch(InterruptedException e){};
+        MyThread.yield();
+        }
+
+        return copy;
+    }
+
+    public T[] scan(){
+        T[] result;
+        result=collect();
+        return result;
+    }
+}
+
+public class MyThread extends Thread{
+    public SimpleSnap<Integer> partage;
+    public int nb;
+
+    public MyThread( SimpleSnap<Integer> partage, int nb) {
+        this.partage=partage;
+        this.nb=nb;
+    }
+
+    public void run(){
+        if (ThreadID.get()!=0){
+            partage.update(new Integer(1));
+            partage.update(new Integer(2));
+            partage.update(new Integer(3));
+        } else {
+            Object [] O=new Object[nb];
+            O=partage.scan();
+            System.out.print("scan de "+ThreadID.get() + ": ");
+            
+            for(int i=0;i<nb;i++) {
+                System.out.print((Integer)O[i]+" ");
+            } 
+            
+            System.out.println();
+        }
+    }
+}
+public class Main {
+
+    public static void main(String[] args) {
+        int nb=15;
+        SimpleSnap<Integer> partage= new SimpleSnap<Integer>(nb,new Integer(0));
+        MyThread R[]=new MyThread[nb];
+        
+        for (int i=0;i<nb;i++) {
+            R[i]= new MyThread(partage,nb);
+        }
+        try {
+            for (int i=0;i<nb;i++){ 
+                R[i].start(); 
+                if (i!=0) {
+                    R[i].join();
+                }
+            }
+        } catch(InterruptedException e){};
+    }
+}
+```
+
+**a). Toutes les exécutions de ce programme donnent-elles les mêmes affichages ?**
+
+Non, les affichages ne sont pas les mêmes à chaque exécution car ils dépendent de l'ordonnancement des threads. Par exemple, si la thread 0 scan avant que les autres threads n'aient effectué leur update, alors le scan de la thread 0 affichera des valeurs 0. Si la thread 0 scan après que les autres threads aient effectué leur update, alors le scan de la thread 0 affichera des valeurs 1, 2, 3. Les mises à jour ne sont pas synchronisées entre les threads, ce qui signifie qu'elles pourraient être intercalées avec les opérations de la thread principale.
+
+**b). En supposant que toutes les valeurs écrites dans chaque entrée du tableau sont différentes, l’implémentation réalise-t-elle l’atomicité des opérations update et scan? Si oui justifiez, si non donnez un exemple.**
+
+Non, l'implémentation ne réalise pas l'atomicité des opérations update et scan. Dans cette implémentation, les opérations `update` et `scan` ne sont pas synchronisées de sorte à assurer l'atomicité. Pour `update`, chaque thread écrit une valeur à son indice respectif dans le tableau partagé. Il n'y a pas de mécanisme garantissant que plusieurs threads ne puissent pas écrire simultanément. De la même manière, l'opération `scan` n'est pas protégé contre les mises à jour concurrentes (malgré que la méthode collect crée une copie du tableau partagé).
+
+Exemple :
+    - La première thread commence une opération scan
+    - La deuxième thread commence une opération update et écrit une valeur à son indice
+    - La première thread copie le tableau partagé dans sa copie locale alors que T2 modifie une valeur
+    - La copie retournée par la première thread contient une valeur incorrecte à son indice
+
+**c). Que se passe t-il si une thread écrit 2 fois la même valeur (ex partage.update(new Integer(1)); partage.update(new Integer(2)); partage.update(new Integer(1));) ?**
+
+Si une thread écrit deux fois la même valeur, alors la dernière valeur écrite à l'indice de la thread sera la valeur 1. Lorsque la thread principale effectue son scan, elle obtiendra la valeur 1 à l'indice de la thread qui a écrit deux fois la valeur 1.
+
+**2/. Afin de réaliser une implémentation atomique, on associe une estampille à chaque écriture. On utilise la classe AtomicStampedReference<T> qui contient la référence d’un objet et un entier (l’estampille) qui sont mis à jour de façon atomique. Le scan réalise des lectures de la mémoire tant que deux lectures successives sont différentes. Quand elles sont identiques le résultat est la dernière lecture faite.**
