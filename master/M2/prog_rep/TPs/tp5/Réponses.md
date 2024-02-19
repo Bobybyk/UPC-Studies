@@ -123,7 +123,7 @@ Non, les affichages ne sont pas les mêmes à chaque exécution car ils dépende
 
 **b). En supposant que toutes les valeurs écrites dans chaque entrée du tableau sont différentes, l’implémentation réalise-t-elle l’atomicité des opérations update et scan? Si oui justifiez, si non donnez un exemple.**
 
-Non, l'implémentation ne réalise pas l'atomicité des opérations update et scan. Dans cette implémentation, les opérations `update` et `scan` ne sont pas synchronisées de sorte à assurer l'atomicité. Pour `update`, chaque thread écrit une valeur à son indice respectif dans le tableau partagé. Il n'y a pas de mécanisme garantissant que plusieurs threads ne puissent pas écrire simultanément. De la même manière, l'opération `scan` n'est pas protégé contre les mises à jour concurrentes (malgré que la méthode collect crée une copie du tableau partagé).
+Avec update on réalise l'atomicité car même sans gestion de la concurrence, chaque thread modifie sa case du tableau à son id. Par contre, pour scan, pas de gestion de la concurrence et on accède à toutes les cases du tableau, ce qui peut être problématique si d'autres threads font par exemple un update pendant qu'on scan.
 
 Exemple :
     - La première thread commence une opération scan
