@@ -6,19 +6,19 @@
 
 ![histoire](./histoire.png)
 
-Pour que l'histoire soit linéarisable il faut que :
-- Les opérations de retrait de la file d'attente doivent renvoyer les éléments dans l'ordre dans lequel ils ont été mis en file d'attente.
-- Chaque opération de retrait de la file d'attente doive correspondre à une opération de mise en file d'attente précédente.
-
-L'histoire n'est donc pas linéarisable par rapport à la spécification séquentielle d'une file car les opérations de retrait de la file d'attente ne reflètent pas l'ordre FIFO des opérations de mise en file d'attente.
-
----
-
-Linéarisable enq(x) enq(y) deq(x) deq(y)
+L'histoire est linéarisable, exemple :
+1. enq(x) 
+2. enq(y) 
+3. deq(x) 
+4. deq(y)
 
 **p2 et p3 aurait-il pu obtenir une autre réponse à leur demande de deq ?**
 
-Oui autre sénario possible enq(x) deq() -> x enq(y) deq() -> y
+Oui autre sénario possible est :
+1. enq(x) 
+2. deq() -> x 
+3. enq(y) 
+4. deq() -> y
 
 ## Exercice 2
 

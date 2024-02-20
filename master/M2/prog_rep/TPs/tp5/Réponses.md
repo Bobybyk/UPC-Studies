@@ -2,9 +2,9 @@
 
 ## Exercice 1
 
-**n notera scani le résultat du scan effectué par la thread i. Parmi les propriétés suivantes, lesquelles sont vraies ? (démonstration ou contre-exemple)**
+**On notera scani le résultat du scan effectué par la thread i. Parmi les propriétés suivantes, lesquelles sont vraies ? (démonstration ou contre-exemple)**
 - **a). Pour tout i: scani[i] = i**, vrai car chaque thread exécute d'abord update(i), ce qui signifie qu'elle écrit sa propre valeur i à l'indice i dans le tableau partagé. Ensuite, lors du scan, chaque thread récupère la dernière valeur écrite à son indice, qui est précisément i dans ce cas.
-- **b). Pour j != i, scanj [i] = i ou scanj [i] = −1**, vrai car pour toute thread j différente de la thread i, scanj[i] sera soit i (si la thread i a écrit à cet indice) ou -1 (si la thread i n'a pas encore écrit à cet indice).
+- **b). Pour j != i, scanj [i] = i ou scanj [i] = −1**, vrai car pour toute thread j différente de la thread i, scanj[i] sera i (si la thread i a écrit à cet indice) ou -1 (si la thread i n'a pas encore écrit à cet indice).
 - **c). Pour j != i, si scanj [i] = i alors scani[j] = j**, faux car si scanj[i] = i, pour une thread j ≠ i, alors scani[j] = i. Cela découle du fait que si une thread j voit une valeur i à l'indice i lors de son scan, alors la thread i doit avoir écrit cette valeur i à cet indice, et par conséquent, la valeur à l'indice j lors du scan de la thread i est également i.
 - **d). Pour j != i, si scanj [i] = i alors scani[j] = −1**, faux car si :
     - la thread i exécute update(i), écrivant i à l'indice i,
@@ -15,10 +15,10 @@
     alors il est possible que la thread j n'ait pas encore terminé son update, donc scani[j] pourrait ne pas être -1, mais plutôt la valeur que j a écrite à l'indice j.
 
 - **Pour j != i, scanj [i] = i ou scani[j] = j** vrai :
-    - Si scanj[i] = i, cela signifie que la thread j a lu la valeur i à l'indice i lors de son scan. Cela ne peut se produire que si la thread i a effectivement écrit à l'indice i. Ainsi, la dernière valeur écrite à l'indice i est i. Par conséquent, lorsque la thread i effectue son scan, scani[j] devrait également être égal à j, car la dernière valeur écrite à l'indice j est j (et j ≠ i).
-    - Si scani[j] = j, cela signifie que la thread i a lu la valeur j à l'indice j lors de son scan. Cela ne peut se produire que si la thread j a effectivement écrit à l'indice j. Ainsi, la dernière valeur écrite à l'indice j est j. Par conséquent, lorsque la thread j effectue son scan, scanj[i] devrait également être égal à i, car la dernière valeur écrite à l'indice i est i (et i ≠ j).
+    - Si scanj[i] = i, cela signifie que la thread j a lu la valeur i à l'indice i lors de son scan. Cela ne peut se produire que si la thread i a effectivement écrit à l'indice i. Ainsi, la dernière valeur écrite à l'indice i est i. Donc, lorsque la thread i effectue son scan, scani[j] devrait également être égal à j, car la dernière valeur écrite à l'indice j est j.
+    - pour scani[j] = j, le raisonnement est le même pour scanj[i] = i et donc même conclusion.
 
-    Donc scanj[i] = i, ou scani[j] = j car si une thread j observe la valeur i à l'indice i, alors la thread i observera la valeur j à l'indice j.
+    Donc scanj[i] = i ou scani[j] = j car si une thread j observe la valeur i à l'indice i, alors la thread i observera la valeur j à l'indice j.
  
 - **Pour j != i, scanj ⊆ scani ou scani ⊆ scanj ( la relation ⊆ est A ⊆ B si et seulement si "pour tout i, si A[i]̸ = −1 alors A[i] = B[i]")**, vrai car l'opération est atomique donc si la thread j scan avant la thread i, alors scanj ⊆ scani, et si la thread i scan avant la thread j, alors scani ⊆ scanj.
 
@@ -136,3 +136,6 @@ Exemple :
 Si une thread écrit deux fois la même valeur, alors la dernière valeur écrite à l'indice de la thread sera la valeur 1. Lorsque la thread principale effectue son scan, elle obtiendra la valeur 1 à l'indice de la thread qui a écrit deux fois la valeur 1.
 
 **2/. Afin de réaliser une implémentation atomique, on associe une estampille à chaque écriture. On utilise la classe AtomicStampedReference<T> qui contient la référence d’un objet et un entier (l’estampille) qui sont mis à jour de façon atomique. Le scan réalise des lectures de la mémoire tant que deux lectures successives sont différentes. Quand elles sont identiques le résultat est la dernière lecture faite.**
+
+- **a). Dans quel cas une exécution ne termine pas? Quelle condition de progression assure cette implémentation (obstruction-free? non locking? wait-free?)**
+    - Une exécution ne termine pas si deux threads effectuent un scan en même temps et que les valeurs lues par les deux threads sont différentes. Dans ce cas, les threads continueront à lire la mémoire jusqu'à ce que les valeurs lues soient identiques.
