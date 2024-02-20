@@ -124,7 +124,7 @@ public class Main2 {
 
 L'implémentation de la pile est linéarisable. En effet, les méthodes empiler et depiler sont synchronisées, ce qui garantit que les opérations sont atomiques. Ainsi, l'ordre d'exécution des opérations est respecté.
 
-Points de linéarisation : moments où on va empiler ou dépiler avec synchronized.
+Points de linéarisation : moments où on va empiler ou dépiler avec synchronized. Affectation et incrémentation, décrémentation.
 
 ```java
     synchronized void empiler(int j) {
@@ -143,11 +143,11 @@ Points de linéarisation : moments où on va empiler ou dépiler avec synchroniz
 
 **(a) Il n’y a pas de concurrence entre les appels des threads.**
 
-Implémentation linéarisable d'une pile, synchronized est superflu car sans concurence, les opérations sont atomiques.
+Implémentation linéarisable d'une pile, synchronized est superflu car sans concurence, les opérations sont atomiques par essence.
 
 **(b) Quand il y a concurrence entre deux threads, c’est 2 threads qui appellent empiler**
 
-On ne peut pas appeler cela une implémentation linéarisable car si deux thread empilent en même temps, l'opération n'est plus atomique.
+On ne peut pas appeler cela une implémentation linéarisable car si deux thread empilent en même temps, l'opération n'est plus atomique, il y a un problème de race condition.
 
 **(c) Quand il y a concurrence entre deux threads, c’est 2 threads qui appellent dépiler**
 

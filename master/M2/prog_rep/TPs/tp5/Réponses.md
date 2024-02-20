@@ -60,3 +60,140 @@ thread i update et scan et que scanj update et scan, on peut très bien, selon l
     - Cette implémentation avec la classe ``AtomicStampedReference<T>`` est atomique car, lorsqu'on update, on met une estampille puis, grâce à deux scan successif, on va collecter les estampilles qu'on compare pour s'assurer qu'elles sont égales avant de retourner la valeur. Si la classe ``AtomicStampedReference<T>`` était remplacée par la classe ``Stamped<T>``, cette implémentation resterait atomique car même sans un ``int stamp`` atomique (c'est à dire que maintenant chaque thread a sa propre estampille), on s'assure lors d'un snapshot, grâce à deux scan successifs, que l'estampille de chaque case est égale entre les scans avant de retourner la valeur.
 
 - **c). Réaliser cette implémentation du snapshot**
+
+```java
+class ThreadID {
+	private static volatile int nextID = 0;
+
+	private static class ThreadLocalID extends ThreadLocal<Integer> {
+		protected synchronized Integer initialValue() {
+			return nextID++;
+		}
+	}
+
+	private static ThreadLocalID threadID = new ThreadLocalID();
+
+	public static int get() {
+		return threadID.get();
+	}
+
+	public static void set(int index) {
+		threadID.set(index);
+	}
+}
+
+public class Stamped<T>{
+    T reference;
+    int stamp;
+}
+
+public interface Snapshot<T> {
+    public void update(T v);
+    public T[] scan();
+    }
+
+public class SimpleSnap<T> implements Snapshot<T> {
+    private T[] a_table;
+    
+    public SimpleSnap(int capacity, T init){
+        a_table= (T[]) new Object[capacity];
+        for (int i=0;i<capacity;i++) {
+            a_table[i]=init;
+        }
+    }
+
+    public void update(T v) {
+        int me=ThreadID.get();
+        a_table[me]=v;
+        
+        //ne fait pas partie de l’implémentation
+        try { 
+            MyThread.sleep(1);
+        } catch(InterruptedException e){};
+        MyThread.yield();
+    }
+
+    private T[] collect() {
+        T[] copy= (T[]) new Object[a_table.length];
+        for(int j=0;j<a_table.length;j++) { 
+            copy[j]=a_table[j];
+            //ne fait pas partie de l’implémentation
+            try { 
+                MyThread.sleep(3);
+            } catch(InterruptedException e){};
+            MyThread.yield();
+        }
+        return copy;
+    }
+
+    public T[] scan(){
+        T[] result1 = collect();
+        T[] result2 = collect();
+        for (int i = 0 ; i < result1.length ; i++) {
+            Stamped<Integer> stamp1 = (Stamped<Integer>)result1[i];
+            Stamped<Integer> stamp2 = (Stamped<Integer>)result2[i];
+            if (stamp1.stamp != stamp2.stamp) {
+                return scan();
+            }
+        }
+        return result1;
+    }
+}
+
+public class MyThread extends Thread {
+    public SimpleSnap<Stamped<Integer>> partage;
+    public int nb;
+    
+    public MyThread( SimpleSnap<Stamped<Integer>> partage, int nb){
+        this.partage=partage;
+        this.nb=nb;
+    }
+
+    public void run(){
+        if (ThreadID.get()!=0) {
+            Stamped<Integer> first = new Stamped<Integer>();
+            first.reference = 1;
+            first.stamp++;
+            partage.update(first);
+
+            Stamped<Integer> second = new Stamped<Integer>();
+            second.reference = 2;
+            second.stamp++;
+            partage.update(second);
+
+            Stamped<Integer> third = new Stamped<Integer>();
+            third.reference = 3;
+            third.stamp++;
+            partage.update(third);
+        } else {
+            Object [] O=new Object[nb];
+            O=partage.scan();
+            System.out.print("scan de "+ThreadID.get() + ": ");
+            for(int i=0;i<nb;i++){
+                Stamped<Integer> stamp = (Stamped<Integer>)O[i];
+                System.out.print(stamp.reference+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int nb=15;
+        SimpleSnap<Stamped<Integer>> partage = new SimpleSnap<Stamped<Integer>>(nb, new Stamped<Integer>());
+        MyThread R[]=new MyThread[nb];
+        for (int i=0;i<nb;i++) {
+            R[i]= new MyThread(partage,nb);
+        }
+        try {
+            for (int i=0;i<nb;i++){
+                R[i].start();
+                if (i!=0) {
+                    R[i].join();
+                }
+            }
+        } catch(InterruptedException e){};
+    }
+}
+```
