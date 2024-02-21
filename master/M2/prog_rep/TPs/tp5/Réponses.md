@@ -42,7 +42,7 @@ thread i update et scan et que scanj update et scan, on peut très bien, selon l
 
 - **c). Que se passe t-il si une thread écrit 2 fois la même valeur (ex partage.update(new Integer(1)); partage.update(new Integer(2)); partage.update(new Integer(1));) ?**
 
-    - Si une thread écrit deux fois la même valeur, alors la dernière valeur écrite à l'indice de la thread sera la valeur 1. Lorsque la thread principale effectue son scan, elle obtiendra la valeur 1 à l'indice de la thread qui a écrit deux fois la valeur 1.
+    - Si une thread écrit deux fois la même valeur, alors la dernière valeur écrite à l'indice de la thread sera la valeur 1. Lorsque la thread principale effectue son scan, elle obtiendra la valeur 1 à l'indice de la thread qui a écrit deux fois la valeur 1. En bref, la dernière valeur écrite à l'indice de la thread sera la valeur qui sera retournée par le scan.
 
 **2/. Afin de réaliser une implémentation atomique, on associe une estampille à chaque écriture. On utilise la classe AtomicStampedReference<T> qui contient la référence d’un objet et un entier (l’estampille) qui sont mis à jour de façon atomique. Le scan réalise des lectures de la mémoire tant que deux lectures successives sont différentes. Quand elles sont identiques le résultat est la dernière lecture faite.**
 
@@ -61,139 +61,164 @@ thread i update et scan et que scanj update et scan, on peut très bien, selon l
 
 - **c). Réaliser cette implémentation du snapshot**
 
-```java
-class ThreadID {
-	private static volatile int nextID = 0;
+    - Ci-dessous l'implémentation, les fonctions modifiées sont : ``scan``, ``run`` et ``main``.
+    Voici le résultat de l'affichage : ``scan de 0: 3 3 3 3 3 3 3 3 3 3 3 3 3 3``
 
-	private static class ThreadLocalID extends ThreadLocal<Integer> {
-		protected synchronized Integer initialValue() {
-			return nextID++;
-		}
-	}
+    ```java
+    class ThreadID {
+        private static volatile int nextID = 0;
 
-	private static ThreadLocalID threadID = new ThreadLocalID();
+        private static class ThreadLocalID extends ThreadLocal<Integer> {
+            protected synchronized Integer initialValue() {
+                return nextID++;
+            }
+        }
 
-	public static int get() {
-		return threadID.get();
-	}
+        private static ThreadLocalID threadID = new ThreadLocalID();
 
-	public static void set(int index) {
-		threadID.set(index);
-	}
-}
+        public static int get() {
+            return threadID.get();
+        }
 
-public class Stamped<T>{
-    T reference;
-    int stamp;
-}
-
-public interface Snapshot<T> {
-    public void update(T v);
-    public T[] scan();
-    }
-
-public class SimpleSnap<T> implements Snapshot<T> {
-    private T[] a_table;
-    
-    public SimpleSnap(int capacity, T init){
-        a_table= (T[]) new Object[capacity];
-        for (int i=0;i<capacity;i++) {
-            a_table[i]=init;
+        public static void set(int index) {
+            threadID.set(index);
         }
     }
 
-    public void update(T v) {
-        int me=ThreadID.get();
-        a_table[me]=v;
-        
-        //ne fait pas partie de l’implémentation
-        try { 
-            MyThread.sleep(1);
-        } catch(InterruptedException e){};
-        MyThread.yield();
+    public class Stamped<T>{
+        T reference;
+        int stamp;
     }
 
-    private T[] collect() {
-        T[] copy= (T[]) new Object[a_table.length];
-        for(int j=0;j<a_table.length;j++) { 
-            copy[j]=a_table[j];
+    public interface Snapshot<T> {
+        public void update(T v);
+        public T[] scan();
+    }
+
+    public class SimpleSnap<T> implements Snapshot<T> {
+        private T[] a_table;
+        
+        public SimpleSnap(int capacity, T init){
+            a_table= (T[]) new Object[capacity];
+            for (int i=0;i<capacity;i++) {
+                a_table[i]=init;
+            }
+        }
+
+        public void update(T v) {
+            int me=ThreadID.get();
+            a_table[me]=v;
+            
             //ne fait pas partie de l’implémentation
             try { 
-                MyThread.sleep(3);
+                MyThread.sleep(1);
             } catch(InterruptedException e){};
             MyThread.yield();
         }
-        return copy;
-    }
 
-    public T[] scan(){
-        T[] result1 = collect();
-        T[] result2 = collect();
-        for (int i = 0 ; i < result1.length ; i++) {
-            Stamped<Integer> stamp1 = (Stamped<Integer>)result1[i];
-            Stamped<Integer> stamp2 = (Stamped<Integer>)result2[i];
-            if (stamp1.stamp != stamp2.stamp) {
-                return scan();
+        private T[] collect() {
+            T[] copy= (T[]) new Object[a_table.length];
+            for(int j=0;j<a_table.length;j++) { 
+                copy[j]=a_table[j];
+                //ne fait pas partie de l’implémentation
+                try { 
+                    MyThread.sleep(3);
+                } catch(InterruptedException e){};
+                MyThread.yield();
             }
+            return copy;
         }
-        return result1;
-    }
-}
 
-public class MyThread extends Thread {
-    public SimpleSnap<Stamped<Integer>> partage;
-    public int nb;
-    
-    public MyThread( SimpleSnap<Stamped<Integer>> partage, int nb){
-        this.partage=partage;
-        this.nb=nb;
-    }
-
-    public void run(){
-        if (ThreadID.get()!=0) {
-            Stamped<Integer> first = new Stamped<Integer>();
-            first.reference = 1;
-            first.stamp++;
-            partage.update(first);
-
-            Stamped<Integer> second = new Stamped<Integer>();
-            second.reference = 2;
-            second.stamp++;
-            partage.update(second);
-
-            Stamped<Integer> third = new Stamped<Integer>();
-            third.reference = 3;
-            third.stamp++;
-            partage.update(third);
-        } else {
-            Object [] O=new Object[nb];
-            O=partage.scan();
-            System.out.print("scan de "+ThreadID.get() + ": ");
-            for(int i=0;i<nb;i++){
-                Stamped<Integer> stamp = (Stamped<Integer>)O[i];
-                System.out.print(stamp.reference+" ");
-            }
-            System.out.println();
-        }
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        int nb=15;
-        SimpleSnap<Stamped<Integer>> partage = new SimpleSnap<Stamped<Integer>>(nb, new Stamped<Integer>());
-        MyThread R[]=new MyThread[nb];
-        for (int i=0;i<nb;i++) {
-            R[i]= new MyThread(partage,nb);
-        }
-        try {
-            for (int i=0;i<nb;i++){
-                R[i].start();
-                if (i!=0) {
-                    R[i].join();
+        public T[] scan(){
+            T[] result1 = collect();
+            T[] result2 = collect();
+            for (int i = 0 ; i < result1.length ; i++) {
+                Stamped<Integer> stamp1 = (Stamped<Integer>)result1[i];
+                Stamped<Integer> stamp2 = (Stamped<Integer>)result2[i];
+                if (stamp1.stamp != stamp2.stamp) {
+                    return scan();
                 }
             }
-        } catch(InterruptedException e){};
+            return result1;
+        }
     }
-}
-```
+
+    public class MyThread extends Thread {
+        public SimpleSnap<Stamped<Integer>> partage;
+        public int nb;
+        
+        public MyThread( SimpleSnap<Stamped<Integer>> partage, int nb){
+            this.partage=partage;
+            this.nb=nb;
+        }
+
+        public void run(){
+            if (ThreadID.get()!=0) {
+                Stamped<Integer> first = new Stamped<Integer>();
+                first.reference = 1;
+                first.stamp++;
+                partage.update(first);
+
+                Stamped<Integer> second = new Stamped<Integer>();
+                second.reference = 2;
+                second.stamp++;
+                partage.update(second);
+
+                Stamped<Integer> third = new Stamped<Integer>();
+                third.reference = 3;
+                third.stamp++;
+                partage.update(third);
+            } else {
+                Object [] O=new Object[nb];
+                O=partage.scan();
+                System.out.print("scan de "+ThreadID.get() + ": ");
+                for(int i=0;i<nb;i++){
+                    Stamped<Integer> stamp = (Stamped<Integer>)O[i];
+                    System.out.print(stamp.reference+" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            int nb=15;
+            SimpleSnap<Stamped<Integer>> partage = new SimpleSnap<Stamped<Integer>>(nb, new Stamped<Integer>());
+            MyThread R[]=new MyThread[nb];
+            for (int i=0;i<nb;i++) {
+                R[i]= new MyThread(partage,nb);
+            }
+            try {
+                for (int i=0;i<nb;i++){
+                    R[i].start();
+                    if (i!=0) {
+                        R[i].join();
+                    }
+                }
+            } catch(InterruptedException e){};
+        }
+    }
+    ```
+
+## Exercice 3
+
+**On souhaite réaliser une implémentation wait-free d’un atomique snapshot. On utilisera pour cela des registres atomiques estampillés contenant un tableau et une valeur. On modifie le update, en écrivant un snapshot en même temps que la nouvelle valeur et que la nouvelle estampille.**
+
+**1/. On modifie maintenant le scan: on fait 2 collect (lectures séquentielles des éléments du tableau). Le scan retourne le résultat de ces deux collects s’ils sont égaux, et sinon le snapshot associé à la première valeur différente dans les deux collects (celle dans le premier collect). Est-ce que le scan et le update terminent toujours? Cette implémentation n’est pas atomique, donnez un contre exemple.**
+
+Oui le scan et le update terminent toujours car il n'y a pas de situation bloquante. Pour update, on modifie toujours l'indexe du tableau correspondant au thread courant et pour le scan, s'il n'y a pas de différences entre les résultats des deux collectes, on retourne ce résultat, sinon on retourne le snapshot associé à la première valeur différente dans les deux collectes (les deux cas de figures sont couverts).
+
+Cette implémentation n'est pas atomique car on ne garantit pas que le snapshot retourné est représentatif de l'état du tableau à un instant t. Par exemple, si une thread effectue un update, puis une autre thread effectue un update, puis la première thread effectue un scan, le snapshot retourné ne sera pas représentatif de l'état du tableau à un instant t.
+
+**2/. Même question si on prend celle dans le deuxième collect.**
+
+Dans ce cas là les deux fonctions terminent également car pas plus de conditions bloquantes que dans le cas précédent.
+
+Cette implémentation n'est pas atomique car : si on fait deux update en même temps, dans deux threads i et j distincts, chaque update va faire son scan, ses deux collect, mais ils n'auront pas la valeur d'update de l'autre. la thread i aura l'ancienne valeur d'update de la thread j à l'indice j et réciproquement pour j.
+
+**3/. On modifie maintenant le scan: on fait des collect jusqu’à ce que deux collect soient égaux ou bien que pour un indice i on ait vu 3 valeurs différentes. On retourne le snapshot associé à la troisième valeur différente. Combien fait-on au plus de collect pour réaliser un scan ? Est-ce que le scan et le update terminent toujours? Est-ce que l’implémentation obtenue est atomique (faites une preuve ou donnez un contre-exemple) ?**
+
+Scan et update terminent toujours car si trois valeurs sont différentes ont sort, autrement, au bout de 2 collectes sans modifications (donc 2 collectes identiques), on sort. On couvre suffisament de situations pour ne pas se retrouver dans une situation bloquante.
+
+**4/. Réalisez cette implémentation atomique wait-free.**
