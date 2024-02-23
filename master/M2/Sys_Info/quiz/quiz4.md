@@ -1,0 +1,114 @@
+# Quiz 4
+
+- Quelle est la traduction de "Kubernetes" ?
+    - Gouvernaille
+- Quel est l'équivalent numérique de la commutation de circuit ?
+    - le packet switching
+- Quel est le type d'un hyperviseur hardware ?
+    - Type 1 (vm)
+    - Type 2 (machine hote)
+- Un container est-il un process Linux ?
+    - Oui
+- Citer le nom d'un gestionnaire de container ?
+    - Docker
+- Qu'est-ce qu'un hyperviseur "bare metal" ?
+    - Un hyperviseur de type 1
+- Citer le nom d'un hyperviseur "bare metal" ?
+    - VMware ESXi
+- Citer le nom d'un hyperviseur de type 1 ?
+    - Hyper-V
+- Citer le nom d'un hyperviseur de type 2 ?
+    - VirtualBox
+
+- Que signifie le trigramme SDN ?
+    - Software Defined Network
+- Que signifie le sigle MPLS ?
+    - Multi Protocol Label Switching
+- Dans un SDN que gère le plan "Data" ?
+    - Les données
+- Dans un SDN que gère le plan "Control" ?
+    - Les règles, la gestion
+- Qu'est-ce qu'un hyperviseur "bare metal" ?
+    - Un hyperviseur de type 1
+- Citer le nom d'un hyperviseur "hosted" ?
+    - VirtualBox
+- Qu'est-ce qu'un hyperviseur "hosted" ?
+    - Un hyperviseur de type 2
+- Citer le nom d'un hyperviseur "hosted" ?
+    - VMware Workstation
+- Que signifie le trigramme KVM ?
+    - Kernel-based Virtual Machine
+- Que signifie le trigramme PSN ?
+    - Packet Switched Network
+
+- Que signifie le trigramme VRF ?
+    - Virtual Routing and Forwarding
+- Que signifie le trigramme NAT ?
+    - Network Address Translation
+- Citez deux marques de VM ?
+    - VMware, Parallel
+- A quoi sert un composant ?
+    - gérer les dépendances
+- Quel est la fonction de Docker ?
+    - Créer des environnements isolés
+- Virtual Box est-il un hyperviseur de type 1 ?
+    - Non
+- Combien existe-t-il de type d'hyperviseur ?
+    - 2
+- Quel est le type de l'hyperviseur VMware ESXi ?
+    - Type 1
+- A quelle compagnie appartient Virtual Box ?
+    - Oracle
+- Est-ce qu'un container Docker embarque un système d'exploitation ?
+    - Non, à la différence d'une VM
+
+- Est-ce que l'image d'une VM peut embarquer un système d'exploitation ?
+    - Oui
+- Que contient un Pod "Kubernetes" ?
+    - Un ou plusieurs containers schedulés ensemble
+- Quel est le nom raccourci de "Kubernetes" ?
+    - K8s
+- Quelle est la couche OSI d'un routeur IP ?
+    - Couche Réseau (3)
+- Qu'est-ce qu'un canal x25 ?
+    - Un circuit virtuel pour la commutation de paquets
+- Qu'est-ce qu'un Circuit Virtuel ?
+    - Un protocole de commutation de paquets
+- D'où vient l'origine du nom "Apache" ?
+    - A patch
+- Quelle est la couche OSI d'x25
+    - Couche 3 (routage)
+- Donnez la définition d'un POD Kubernates ?
+    - Un ou plusieurs containers schedulés ensemble
+
+- Quel est le titre du livre de Clemens Szyperski ?
+    - Component Software: Beyond Object-Oriented Programming
+- Quel est le nom du réseau de VMware ?
+    - NSX
+- Que signifie l'acronyme SDDC ?
+    - Software Defined Data Center
+- Quel est le nom du stockage virtuel de VMware ?
+    - vSAN
+- Quel est le nom du composant de superision de data center de VMware ?
+    - vRealize Operations
+- Quel est le rôle de VMware vRealize ?
+    - Supervision de data center
+- Quel est le principe de la gestion des Circuits Virtuel de X25 ?
+    - Le multiplexage de paquets
+- Quel est le principe de base de la virtualisation ?
+    - Le multiplexage
+
+- Qu'est-ce qu'un container sidecar ?
+    - Un container qui partage le même espace de stockage
+- Dans un POD quels sont les 3 types de containers ?
+    - Init, Sidecar, Application
+- Que signifie l'acronyme IPC ?
+    - Inter Process Communication
+- Donnez la liste des IPC Unix :
+    - Pipe, Signals, Shared Memory
+- Qu'est-ce qu'un Mainframe ?
+    - Un ordinateur central
+- Donnez le nom d'un mini calculateur
+    - PDP-11
+- Donnez le nom d'un maxi calculateur
+    - IBM 360
