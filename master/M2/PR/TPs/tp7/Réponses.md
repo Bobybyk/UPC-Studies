@@ -326,6 +326,24 @@ Non, l'implémentation n'est pas wait-free car elle utilise des locks. Si un Thr
 **4/. Réutiliser le programme de l’exercice précédent qui lancent 3 threads et les threads qui ajoutent et enlèvent des éléments avec cette implémentation**
 
 ```java
+public class MyThread extends Thread {
+    private MonSet set;
+
+    public MyThread(MonSet set) {
+        this.set = set;
+    }
+
+    public void run() {
+        int i = ThreadID.get();
+        set.add(i);
+        set.add(2 * i);
+        set.add(i + 4);
+        set.add(i + 3);
+        set.contains(i + 5);
+        set.remove(i + 4);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
 
