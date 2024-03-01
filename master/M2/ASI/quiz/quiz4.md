@@ -8,7 +8,7 @@
     - Type 1 (vm)
     - Type 2 (machine hote)
 - Un container est-il un process Linux ?
-    - Oui
+    - Non, un container est une instance d'un espace utilisateur qui est isolée
 - Citer le nom d'un gestionnaire de container ?
     - Docker
 - Qu'est-ce qu'un hyperviseur "bare metal" ?
@@ -49,8 +49,8 @@
     - VMware, Parallel
 - A quoi sert un composant ?
     - gérer les dépendances
-- Quel est la fonction de Docker ?
-    - Créer des environnements isolés
+- Quelle est la fonction de Docker ?
+    - Faire communiquer les containers entre eux
 - Virtual Box est-il un hyperviseur de type 1 ?
     - Non
 - Combien existe-t-il de type d'hyperviseur ?
@@ -112,3 +112,5 @@
     - PDP-11
 - Donnez le nom d'un maxi calculateur
     - IBM 360
+- Quel est le rincipe fondamentale des containers ?
+    - les namespaces

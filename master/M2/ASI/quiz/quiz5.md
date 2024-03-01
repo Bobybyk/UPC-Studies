@@ -1,0 +1,72 @@
+# Quiz 5
+
+- Quel OS est développé en Objective-C ?
+    - macOS
+- Comment s'appelle la couche 6 du modèle OSI ?
+    - Présentation
+- Que signifie l'acronyme CCITT ?
+    - Comité Consultatif International Téléphonique et Télégraphique
+- Que signifie l'acronyme ITU ?
+    - Union Internationale des Télécommunications
+- Dans quelle couche du modèle OSI se trouve le DNS ?
+    - Application
+- Pourquoi les applicatipns de la stack IP sont-elles monolithiques ?
+    - Car elles n'ont pas une architecture commune
+- Citer le nom d'un protocole de communication non connecté ?
+    - UDP
+
+- Quelle est la fonction de la norme X500 ?
+    - Définir un annuaire
+- Que signifie le trigramme TLD ?
+    - Top Level Domain
+- Que signifie l'acronyme BIND ?
+    - Berkeley Internet Name Domain
+- Dans quelle université l'application BIND a-t-elle été développée ?
+    - Berkeley
+- Que signifie l'acronyme IETF ?
+    - Internet Engineering Task Force
+- Que signifie le trigramme PDU ?
+    - Protocol Data Unit
+- HTTP est-il un protocole avec état (stateful) ?
+    - Non
+- Que signifie le trigramme DMZ ?
+    - Demilitarized Zone
+
+- Quel mécanisme les applications HTTP utilisent-elles pour gérer les connexions ?
+    - Les cookies
+- Quel est le numéro du port TCP du protocole HTTP ?
+    - 80
+- Qui initialise la connexion HTTP ?
+    - Le client
+- Nommer deux requêtes HTTP 
+    - POST
+    - GET
+- Que signifie l'acronyme POTS ?
+    - Plain Old Telephone Service
+- Que signifie l'acronyme PSTN ?
+    - Public Switched Telephone Network
+
+- Que signifie l'acronyme FTP ?
+    - File Transfer Protocol
+- Quel est le rôle de l'application FTP ?
+    - Transférer des fichiers
+- Nommer deux serveurs WEB
+    - Apache
+    - Nginx
+- En quelle année le serveur web Apache a-t-il été développé ?
+    - 1995
+- Que signifie l'acronyle CGI ?
+    - Common Gateway Interface
+- Nommer un serveur Web dynamique 
+    - Tomcat
+- Où est situé un reverse proxy
+    - Côté serveur
+- Où est situé le forward proxy 
+    - Côté client
+
+- Les application de la pile IP sont-elles conformes aux principes SOLID ?
+    - Non
+- Quel est le nom de la zone située entre deux Firewalls ?
+    - DMZ
+- Quel est le principe du WWW ?
+    - Partager des ressources
