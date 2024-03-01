@@ -1,29 +1,29 @@
 # Acronymes
 
 - OT
-    - Opérational technologie
+    - Opérational technologie : technologie utilisée pour gérer les processus physiques dans les contextes industriels. On y prend en charge la collecte et le traitement de données opérationnelles pour le contrôle de matériels physique comme des moteurs, vannes, etc.
 - IT
-    - Information technologie
+    - Information technologie : le traitement de l'information
 - GIS
-    - Geographique Information System
+    - Geographique Information System : Système d'information géographique permettant de recueillir, stocker, traiter, analyser et présenter tous types de données spaciales et géographiques
 - SAFe
-    - Scaled Agile Framework
+    - Scaled Agile Framework : cadre de travail pour l'agilité à l'échelle, ce sont des méthodes de travail permettant de gérer des projets de toutes échelles et toutes envergures
 - VPN
     - Virtual Private Network
 - AWS
-    - Amazon Web Services
+    - Amazon Web Services : plateforme de services cloud proposée par Amazon
 - IaaS
-    - Infrastructure as a Service
+    - Infrastructure as a Service : modèle de cloud computing qui fournit des ressources informatiques virtualisées sur internet
 - PaaS
-    - Platform as a Service
+    - Platform as a Service : modèle de cloud computing qui fournit une plateforme permettant de développer, de gérer et de déployer des applications
 - SaaS
-    - Software as a Service
+    - Software as a Service : modèle de cloud computing qui fournit des logiciels en tant que service
 - RFC
-    - Request for comments
+    - Request for comments : série de notes techniques et de mémos publiés par l'Internet Engineering Task Force (IETF)
 - NIST
     - National Institute of Standards and Technology
 - PDP
-    Programmable Data Processor
+    Programmable Data Processor : ordinateur de la série PDP-8 de Digital Equipment Corporation
 - IMP
     - Interface Message Processor
 - ARPANET
