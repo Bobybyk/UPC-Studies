@@ -43,8 +43,6 @@ Citez le nom d'un runtime Microsoft
 
 Quelle est l'architecture de référence des serveurs WEB modernes ?
     - L'architecture MVC
-Que signifie l'acronyme AWS ?
-    - Amazon Web Services
 D'où le vient le terme "Cloud" ?
     - Du schéma de représentation des réseaux
 Quel est le modèle équivalent du Cloud Computing ?

@@ -1,10 +1,5 @@
 # Quiz 3
 
-- Donner un exemple de IaaS Google
-- Donner un exemple de PaaS Google
-- Donner un exemple de SaaS Google
-- Quels sont les 3 modèles de service ?
-- Que signifie l'acronyme IaaS ?
 - Quelles sont les deux types de clients Cloud Computing ?
     - client lourd et léger (portable fixe)
 - Dans le modèle IaaS quels niveaux de la "Cloud Computing Stack" sont gérés par le fournisseur de service cloud ?
@@ -35,8 +30,6 @@
     - Tim Berners-Lee
 - En quelle année est paru le RFC définissant le protocole HTTP ?
     - 1996
-- Que signifie l'acronyme RFC ?
-    - Request for comments
 - Que signifie l'acronyme NCSA ?
     - National Center for Supercomputing Applications
 - En quelle année a été créé Mozilla ?
@@ -50,25 +43,17 @@
 - Dans quelle couche du modèle OSI se trouve html ?
     - Couche 6, présentation
 
-- Quelle est l'architecture de référence des serveurs WEB modernes ?
-    - 
-- Que signifie l'acronyme AWS ?
-    - Amazon Web Services
 - D'où le vient le terme "Cloud" ?
     - Du schéma de représentation des réseaux
 - Quel est le modèle équivalent du Cloud Computing ?
     - On paye que ce qu'on utilise
 - Dans quelle couche du modèle OSI se trouve http ?
     - Couche session
-- Que signifie l'acronyme RFC ?
-    - Request for comments
 
 - Quelle est la principale possibilité offerte par le "Cloud Computing ?"
     - On paye que ce qu'on utilise (elasticité, le robinet grossissant)
 - Quelles ont les couches de la computing stack du "Cloud Computing" ?
     - IaaS, PaaS, SaaS
-- Que signifie l'acronyme NIST ?
-    - National Institute of Standards and Technology
 - Quel est l'équivalent français du NIST ?
     - L'AFNOR
 - Dans quel langage est écrit Node.JS ?
@@ -92,16 +77,3 @@
     - MacOS
 - Quel est l'OS sous-jacent à NeXTSTEP OS ?
     - Unix
-
-- Que signifie l'acronyme PDP ?
-    - Programmable Data Processor
-- Que signifie l'acronyme IMP ?
-    - Interface Message Processor
-- Que signifie ARPANET ?
-    - Advanced Research Projects Agency Network
-- Que signifie l'acronyme PPP ?
-    - Point to Point Protocol
-- Que signifie l'acronyme NCP ?
-    - Network Control Protocol
-- Que signifie l'acronyme PSN ?
-    - Packet Switching Network

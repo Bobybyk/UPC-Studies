@@ -1,0 +1,74 @@
+# Acronymes
+
+- OT
+    - Opérational technologie
+- IT
+    - Information technologie
+- GIS
+    - Geographique Information System
+- SAFe
+    - Scaled Agile Framework
+- VPN
+    - Virtual Private Network
+- AWS
+    - Amazon Web Services
+- IaaS
+    - Infrastructure as a Service
+- PaaS
+    - Platform as a Service
+- SaaS
+    - Software as a Service
+- RFC
+    - Request for comments
+- NIST
+    - National Institute of Standards and Technology
+- PDP
+    Programmable Data Processor
+- IMP
+    - Interface Message Processor
+- ARPANET
+    - Advanced Research Projects Agency Network
+- PPP
+    - Point to Point Protocol
+- NCP
+    - Network Control Protocol
+- PSN
+    - Packet Switching Network
+- NCSA
+    - National Center for Supercomputing Applications
+- SDN
+    - Software Defined Network
+- MPLS
+    - Multi Protocol Label Switching
+- KVM
+    - Kernel-based Virtual Machine
+- VRF
+    - Virtual Routing and Forwarding
+- NAT
+    - Network Address Translation
+- SDDC
+    - Software Defined Data Center
+- IPC
+    - Inter Process Communication
+- CCITT
+    - Comité Consultatif International Téléphonique et Télégraphique
+- ITU
+    - Union Internationale des Télécommunications 
+- TLD
+    - Top Level Domain
+- BIND
+    - Berkeley Internet Name Domain
+- IETF
+    - Internet Engineering Task Force
+- PDU
+    - Protocol Data Unit
+- DMZ
+    - Demilitarized Zone
+- POTS
+    - Plain Old Telephone Service
+- PSTN
+    - Public Switched Telephone Network
+- FTP 
+    - File Transfer Protocol
+- CGI
+    - Common Gateway Interface

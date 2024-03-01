@@ -38,8 +38,6 @@
     - VMware Workstation
 - Que signifie le trigramme KVM ?
     - Kernel-based Virtual Machine
-- Que signifie le trigramme PSN ?
-    - Packet Switched Network
 
 - Que signifie le trigramme VRF ?
     - Virtual Routing and Forwarding
