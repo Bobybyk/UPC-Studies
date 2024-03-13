@@ -1,4 +1,4 @@
-**TP n°6 V n°1**
+**TP n°6 V n°2**
 
 **Titre du TP :** Servlet Context Listener
 
@@ -52,3 +52,7 @@ Maintenant en relançant le serveur et en allant à l'url ``/archiTP6/MonServlet
 ![terminal](terminal.png)
 
 ![wildfly_servlet](wildfly_Servlet.png)
+
+Voici le diagramme de séquence de l'implémentation du context listener.
+
+![sequence](sequence.png)
