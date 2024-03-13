@@ -106,4 +106,16 @@ T[] scan() {
 
 **1. Si n threads exécutent write, puis scan, est il possible qu’une thread ne termine pas ?**
 
-Oui, il est possible qu'une thread ne termine pas. En effet, si une thread est interrompue par une autre thread, elle doit attendre que l'opération de l'autre thread soit terminée pour réaliser la sienne. Cela peut entraîner un blocage de la thread.
+**2. On exécute 2 threads T1 et T2, T1 exécute write(v1) et T2 write(v2). Est il possible que T2 ne mette jamais v1 dans son ensemble L? Dans ce cas quelle valeur T1 a-t-elle dans son ensemble L?**
+
+**3. On exécute 3 threads T1, T2 et T3 ou T1 exécute write(v1), T2 write(v2) et T3 write(v3). Est il possible que ni T1 ni T2 ne mettent jamais la valeur de v3 dans leur ensemble L? Dans ce cas quelles valeurs T1 et T2 peuvent elles avoir dans leur ensemble L?**
+
+**4. Si une thread qui exécute write(v) termine à l’instant t, est ce que toutes les threads qui commencent après t (qu’elles terminent ou pas) auront dans leur ensemble L la valeur v?**
+
+**5. Si on exécute n threads quelle sont les valeurs possibles des ensembles L?**
+
+**6. L’implémentation du snapf aible proposée est-elle linéarisable ? est-elle wait free?**
+
+**7. Implémenter cet objet en java.**
+
+**8. Répondre à nouveau à la question 6 , si le tableau tab contient n/2 éléments ( n > 6) et que l’objet est utilisé par n threads.**
