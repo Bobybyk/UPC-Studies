@@ -8,104 +8,6 @@
 
 **On rappelle l’implémentation a un gros grain. Elle utilise la classe Node ci dessous. Pour simplifier on supposera que la clef (key) est l’entier (int) correspondant à l’Integer item**
 
-```java
-public class Node {
-    public Integer item;
-    public int key;
-    public Node next;
-    
-    public Node(Integer i){
-        item=i;
-        key=i;
-    }
-}
-
-public class MonSet {
-    private Node head;
-    private Lock lock= new ReentrantLock();
-
-    public MonSet(){
-        head= new Node(Integer.MIN_VALUE);
-        head.next= new Node(Integer.MAX_VALUE);
-    }
-
-    public boolean add(Integer item) {
-        Node pred, curr;
-        int key= item;
-        
-        lock.lock();
-        
-        try {
-            pred=head;
-            curr=pred.next;
-            while (curr.key<key) {
-                pred=curr;
-                curr=curr.next;
-            }
-            if (key==curr.key) {
-                return false;
-            }
-            else {
-                Node node= new Node( item);
-                node.next=curr;
-                pred.next=node;
-                return true;
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    public boolean contains(Integer item){
-        Node pred, curr;
-        int key= item;
-        lock.lock();
-        
-        try {
-            pred=head;
-            curr=pred.next;
-            
-            while (curr.key<key) {
-                pred=curr;
-                curr=curr.next;
-            }
-            if (key==curr.key) {
-                return true;
-            } else {
-                return false;
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    public boolean remove(Integer item){
-        Node pred, curr;
-        int key= item;
-        lock.lock();
-
-        try {
-            pred=head;
-            curr=pred.next;
-            
-            while (curr.key<key){
-                pred=curr;
-                curr=curr.next;
-            }
-            if (key==curr.key) {
-                pred.next=curr.next;
-                return true;
-            }
-            else {
-                return false;
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-}
-```
-
 **1/. Cette implementation est-elle linéarisable (si oui donnez les points de linéarisation et justifiez sinon donnez un exemple)**
 
 Cette implémentation est linéarisable, points de linéarisation :
@@ -318,6 +220,9 @@ public class MonSet implements Set{
 **2/. Cette implementation est-elle linéarisable (si oui donnez les points de linéarisation et justifiez sinon donnez un exemple)**
 
 Cette implémentation est linéarisable, points de linéarisation :
+
+- après avoir fait un ``lock.lock();`` le moment où on va effectivement obtenir le vérrou
+- après avoir libéré le verrou, le moment où on aura effectivement libéré la ressource
 
 **3/. Est-elle wait-free ?**
 
