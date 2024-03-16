@@ -68,7 +68,6 @@ public class AtomicList implements Set {
         while (true) {
             pred = head;
             curr = pred.next.getReference();
-            System.out.println(curr.next);
 
             while (true) {
 
@@ -89,6 +88,10 @@ public class AtomicList implements Set {
                 curr = succ;
             }
         }
+    }
+
+    public Node getNode() {
+        return head;
     }
     
 }

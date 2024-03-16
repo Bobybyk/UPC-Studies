@@ -17,16 +17,16 @@ public class ThreadSet extends Thread{
         boolean b;
 
         b = set.add(ThreadID.get());
-        System.out.println("résultat add" + b + " id:" + ThreadID.get() + " " + set);
+        System.out.println("résultat add " + b + ", id:" + ThreadID.get());
 
         b = set.add(ThreadID.get() * 2);
-        System.out.println("résultat add" + b + " id:" + ThreadID.get() + " " + set);
+        System.out.println("résultat add " + b + ", id:" + ThreadID.get());
 
         b = set.contains(ThreadID.get() + 5);
-        System.out.println("résultat contains" + b + " id:" + ThreadID.get() + " " + set);
+        System.out.println("résultat contains " + b + ", id:" + ThreadID.get());
 
         b = set.remove(ThreadID.get() * 2);
-        System.out.println("résultat remove" + b + " id:" + ThreadID.get() + " " + set);
+        System.out.println("résultat remove " + b + ", id:" + ThreadID.get());
         
     }
 }
