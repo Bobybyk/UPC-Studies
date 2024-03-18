@@ -34,14 +34,14 @@ pop(){
         Stack[index].C&S( stackTop,counter-1), (value, counter)
         if (index=0) then return Empty
         belowTop<-- Stack[index-1]
-        if (Top.C&S( (index, value, counter), (index-1, belowTop.value,belowTop.counter+1))) then return valu
+        if (Top.C&S( (index, value, counter), (index-1, belowTop.value,belowTop.counter+1))) then return value
     }
 }
 ```
 
 **1/. A-ton besoin d’utiliser des compare_and_ swap pour implementer une pile ?**
 
-Oui, on a besoin d'utiliser des compare_and_swap pour implémenter la pile. En effet, le compare_and_swap permet de réaliser des opérations atomiques, c'est-à-dire que l'opération est effectuée sans être interrompue par un autre processus. Cela permet d'éviter les problèmes de concurrence car compare and swap garantie que les opérations de push et pop sont effectuées de manière sûre (pas interrompue par d'autres threads).
+Oui, on entre autres avoir besoin d'utiliser des compare_and_swap pour implémenter la pile. En effet, le compare_and_swap permet de réaliser des opérations atomiques, c'est-à-dire que l'opération est effectuée sans être interrompue par un autre processus. Cela permet d'éviter les problèmes de concurrence car compare and swap garantie que les opérations de push et pop sont effectuées de manière sûre (pas interrompue par d'autres threads).
 
 **2/. L’implémentation réalise-t-elle une pile atomique? (Où sont les points de linéarisation ?)**
 
@@ -53,8 +53,8 @@ Points de linéarisation :
 
 **3/. L’implémentation proposée est-elle non blocking ? wait-free ?**
 
-L'implémentation proposée n'est pas non blocking car, compare and swap étant atomique, si un processus est en train de réaliser une opération de push ou pop, les autres processus doivent attendre que l'opération soit terminée pour réaliser la leur.
-L'implémentation n'est pas non plus wait-free car elle n'assure pas que chaque processus termine son opération en un nombre fini d'étapes. En effet, si un processus est interrompu par un autre processus, il doit attendre que l'opération de l'autre processus soit terminée pour réaliser la sienne.
+L'implémentation proposée est non blocking car on terminera en un nombre fini d'étapes. Dès lors que l'on a pu effectuer notre compare and swap (retour de la fonction à true) on sort de la boucle et sinon on réessaye. 
+L'implémentation n'est pas wait-free car compare and swap étant atomique, si un processus est en train de réaliser une opération de push ou pop, les autres processus doivent attendre que l'opération soit terminée pour réaliser la leur.
 
 **4. Implémenter cette pile en java à l’aide du package concurrent.**
 
