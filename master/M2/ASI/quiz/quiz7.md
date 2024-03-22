@@ -1,0 +1,43 @@
+# Quiz 7
+
+- Représenter l'automate du cycle de vie d'un servlet
+- Quels sont les états d'un servlet ?
+    - Chargé
+- Pourquoi les servlets ont-ils un constructeur sans paramètres ?
+    - parce qu'ils sont lancés par le framework
+- Qui est à l'initiative des Servlets ?
+    - Gosling
+- a quel mécanisme correspond le pattern "hollywood" ?
+    - callback
+- Qui est à l'origine de tomcat ?
+    - Sun
+- Quels types de composants sont hébergés par un "web server" ?
+    - des web applications
+- Que signifie IOC ?
+    - Inversion of Control
+- Les spécifications JEE désignent-elles une mise en oeuvre ?
+    - non
+- Quel est le nom de la librairie Unix qui gère l'API de la stack de communication TCP/IP ?
+    - Les sockets
+- Citer le numéro de la dernière version des Jakarta Servlet 
+    - 5
+- Selon Martin Fowler quelles sont les 3 perspectives d'un diagramme de classes UML ?
+    - statique, dynamique, implémentation
+
+- Nommer la distribution OpenJDK d'AWS
+    - Corretto
+- Quel est le nom de la méthode de la classe HttpServlet qui fournit le contexte courant du Servlet ?
+    - getServletContext()
+- Comment le Context du Servlet est-il fourni à partir de la version 3.x des Servlets ?
+    - par injection de dépendance
+- Quel est le nom des composants clients Java téléchargeables ?
+    - Applets
+
+- Quel est le nom des composants Java qui gèrent les bases de données ?
+    - Les EJP
+- Qui doit obligatoirement mettre en oeuvre l'interface Java "Serializable" ?
+    - les objets qui doivent être mis sur disque
+- Dans quel ouvrage Martin Fowler définit-il les 3 "perspectives" d'un diagramme de classes UML ?
+    - UML Distilled
+- Quel est le type des attributs de "context" d'un servlet ?
+    - Pas de type
