@@ -1,0 +1,40 @@
+# Quiz 8
+
+- Quel est le nom de la méthode de James Rumbaugh ?
+    - OMT
+- Que signifie le trigramme OMT ?
+    - Object Modeling Technique
+- Quelle est la notation graphique de modélisation utilisée dans le GOF ?
+    - OMT
+- En quelle année les Filter ont été intégrés au JEE ?
+    - 2001
+- Quel sont les design pattern du GoF correspondant aux intercepteurs ?
+    - Chain of Responsibility
+- Que signifie le trigramme BSD ?
+    - Berkeley Software Distribution
+- Que signifie le trigramme AOP ?
+    - Aspect-Oriented Programming
+- Quel est le nom de l'architexture des drives d'UNIX AT&T system V ?
+    - STREAMS
+- Que signifie le trigramme BPF ?
+    - Berkeley Packet Filter
+- Nommer les intercepteurs IP d'UNIX
+    - les packets filters
+- Quel est le titre du livre de Frank Buschmann ?
+    - Pattern-Oriented Software Architecture
+- Dans quel espace s'exécutent les Streams ?
+    - Kernel
+- A quoi correspond le crosscuttings logiciel ?
+    - Les préoccupations transversales
+- Citer un exemple de crosscuttings logiciel ?
+    - La sécurité
+- Qu'est-ce qu'un Hook AOP ?
+    - Un point d'extension
+- Nommer un framework AOP Java
+    - AspectJ
+- Nommer un framework AOP Java Web
+    - Spring
+- Citer une application des filters servlets
+    - La compression de données
+- Un filter est-il un servlet ?
+    - Oui

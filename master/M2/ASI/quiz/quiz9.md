@@ -1,0 +1,26 @@
+# Quiz 9
+
+- Qu'est-ce qu'un bundle Symfony ?
+    - Un composant
+- A quel niveau de la Cloud Computing Stack se trouve les Frameworks WEB ?
+    - Le runtime
+- Quel est l'ancêtre de JPA ?
+    - Hibernate
+- En quelle année Node.js a-t-il été créé ?
+    - 2009
+- En quelle année Struts a-t-il été créé ? Par qui ?
+    - 2000, Craig McClanahan
+- Qui est Ryan Dahl ?
+    - Le créateur de Node.js
+- Qui est Craig MacClanahan ?
+    - Le créateur de Struts
+- Que signifient les trigrammes COM/DCOM ?
+    - Component Object Model / Distributed Component Object Model de Microsoft
+- Que signifie le trigramme REST ?
+    - Representational State Transfer
+- Quelle librairie JavaScript a pour sloggan "It's about the user interface, baby !" ?
+    - Stritaculus
+- Qui est Gaving Kink ?
+    - Le créateur d'hibernate
+- Qui a créé Hibernate ?
+    - Gavin King
