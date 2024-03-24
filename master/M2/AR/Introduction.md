@@ -1,6 +1,4 @@
-# Récapitulatif
-
-## Cours 1
+# Introduction
 
 - Systèmes et algorithmes distribués (internet, cloud, réseaux sociaux, blockchain, IoT, multiprocesseurs...)
 - Systèmes répartis : ensemble de noeuds qui communiquent par échange de messages
@@ -45,5 +43,3 @@ Lors de la réception de <Valeur,val_j> envoyer par le noeud j
         val_i=val_j
     if tmp!= val_i: Pour tout j∈Voisins_i Envoyer <Valeur,val_i> à j    
 ```
-
-page 59
