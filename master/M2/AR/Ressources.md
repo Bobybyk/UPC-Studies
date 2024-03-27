@@ -140,5 +140,7 @@ Ce qui veut dire que i est plus prioritaire que j car :
 **Règles :**
 - Un ensemble ***Si*** sera appelé ***quorum***
 - Pour être sûr que la propriété de sûreté est vérifiée, il faut que les quorums vérifient la propriété suivante : si i != j alors ***Si*** ∩ ***Sj*** != ∅
-- **Règle d'insertion :**
+- **Règle d'intersection :**
     - pour assurer que lorsque deux noeuds i et j demandent les permissions pour entrer en section critique, les noeuds qui sont à la fois dans ***Si*** et ***Sj*** ne peuvent pas accorder la permission aux deux.
+    - ainsi en cas de demandes simultanées au moins un des noeuds n'aura pas une permission
+    - l'estampillage reste obligatoire pour départager les demandes multiples
