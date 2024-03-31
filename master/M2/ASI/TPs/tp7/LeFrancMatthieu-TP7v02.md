@@ -1,4 +1,4 @@
-**TP n°7 V n°1**
+**TP n°7 V n°2**
 
 **Titre du TP :** Servlet Context Listener Filter CDI
 
@@ -43,14 +43,30 @@ Désormais, on peut lancer le serveur Wildfly et voir que tout fonctionne correc
 
 ![console](console.png)
 
+La sortie du filtre (fonction doFilter) est bien affichée dans la console.
+
+![console_filter](console_filter.png)
+
 Ci-dessous les affichages des Servlets dans le navigateur.
 
 **Premier Servlet**
+
+Réalise l'injection
+
 ![MonServletPage](MonServletPage.png)
 
 **Second Servlet**
+
+Récupère les informations reçues par le premier Servlet
+
 ![MonSecondServletPage](MonSecondServletPage.png)
+
+## Annexe
+
+Le diagramme de sequences du programme
+
+![sequence_diagram](sequence_diagram.png)
 
 ## Rappels des précédents TPs
 
-Je ne l'ai pas abordé ici mais j'ai également ajouté un fichier ``beans.xml`` dans le dossier ``WEB-INF`` pour activer CDI (Context and Dependency Injection). J'avais fait ceci dans le TP6 pour que ce soit déployable.
+Je ne l'ai pas abordé ici mais j'ai également ajouté un fichier ``beans.xml`` dans le dossier ``WEB-INF`` pour activer le CDI (Context and Dependency Injection). Je l'avait déjà fait dans le TP6
